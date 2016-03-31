@@ -1,0 +1,82 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/12/2015, 10:30:53
+    Author     : RenaTha
+*/
+body {
+    background-color: gray;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#titulo {
+    border-radius: 25px;
+    border: 5px solid graytext;
+    background-color: white;
+    padding: 10px; 
+    height: 90px;
+}
+
+#titulo img {
+    float: left;
+}
+
+#titulo span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px graytexty;
+    height: 97px;
+}
+
+#esquerda {
+    border-radius: 25px;
+    border: 5px solid gray;
+    background-color: white;
+    padding: 10px;
+}
+
+#conteudo {
+    border-radius: 25px;
+    border: 5px solid gray;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    height: 430px;
+}
+
+#esquerda .ui-menu {
+    background: white;
+    border-width: 0;
+}
+
+#principal {
+    width:60%;
+    float: left;
+    margin-right: 50px;
+}
+
+#conteudo h1 {
+    border-bottom: 2px solid red;
+}
+
+#formDados {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.msgInfo {
+    color: blue;
+}
+
+.msgErro {
+    color: red;
+}
+
+.info {
+    font-weight: bold;
+}

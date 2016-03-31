@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Sistema Judiciario</title>
+        <h:outputStylesheet library="css" name="estilos.css"/>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit id="titulo" position="north">
+                <h:graphicImage library="imagens" name="justica1.jpg" width="108" height="97"/>
+                <span> Sistema Judiciario </span>
+            </p:layoutUnit>
+            <p:layoutUnit id="esquerda" position="west" size="270">
+                <h:form>
+                    <p:menu id="menu">
+                        <p:submenu label="Cliente">
+                            <p:menuitem ajax="false" value="Incluir" action="#{justicaBean.iniciarInclusaocliente}"/>
+                        </p:submenu>
+                        <p:submenu label="Advogado">
+                            <p:menuitem ajax="false" value="Incluir" action="#{justicaBean.iniciarInclusaoadvogado}"/>
+                        </p:submenu>
+                        <p:submenu label="Processo">
+                            <p:menuitem ajax="false" value="Incluir" action="#{justicaBean.iniciarInclusaoprocesso}"/>
+                            <p:menuitem ajax="false" value="Consultar Processo" action="consultaprocesso1"/>
+                            <p:menuitem ajax="false" value="Detalhes Processo" action="consultaprocesso2"/>
+                        </p:submenu>
+                        <p:submenu label="Audiencia">
+                            <p:menuitem ajax="false" value="Incluir" action="#{justicaBean.iniciarInclusaoaudiencia}"/>
+                        </p:submenu>
+                    </p:menu>
+                </h:form>
+            </p:layoutUnit>
+            <p:layoutUnit id="conteudo" position="center">
+                <ui:insert name="conteudo"/>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
