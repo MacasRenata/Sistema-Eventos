@@ -1,6 +1,7 @@
 
 package persistencia;
 
+import java.util.ArrayList;
 import modelo.Evento;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -29,13 +30,13 @@ public class EventoDAO {
         t.commit();
     }
       
-      /*
+      
       public ArrayList<Evento> listar() {
-          return (ArrayList<Evento> sessao.createCriteria(Evento.class).list();
+          return (ArrayList<Evento>) sessao.createCriteria(Evento.class).list();
  }
 
       public Evento carregar(int id) {
           return (Evento) sessao.get(Evento.class, id);
       }
-      */
+      
 }
