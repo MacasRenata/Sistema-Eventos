@@ -3,26 +3,12 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
-    Created on : 16/12/2015, 10:30:53
-    Author     : RenaTha
-*/
+
 body {
     background-color: gray;
     font-family: Verdana, Arial, sans-serif;
 }
 
-#titulo {
-    border-radius: 25px;
-    border: 5px solid graytext;
-    background-color: white;
-    padding: 10px; 
-    height: 90px;
-}
-
-#titulo img {
-    float: left;
-}
 
 #titulo span {
     display: table-cell;
@@ -33,12 +19,6 @@ body {
     height: 97px;
 }
 
-#esquerda {
-    border-radius: 25px;
-    border: 5px solid gray;
-    background-color: white;
-    padding: 10px;
-}
 
 #conteudo {
     border-radius: 25px;
@@ -49,10 +29,6 @@ body {
     height: 430px;
 }
 
-#esquerda .ui-menu {
-    background: white;
-    border-width: 0;
-}
 
 #principal {
     width:60%;
@@ -61,7 +37,7 @@ body {
 }
 
 #conteudo h1 {
-    border-bottom: 2px solid red;
+    border-bottom: 2px gray;
 }
 
 #formDados {
@@ -80,3 +56,7 @@ body {
 .info {
     font-weight: bold;
 }
+
+
+
+
