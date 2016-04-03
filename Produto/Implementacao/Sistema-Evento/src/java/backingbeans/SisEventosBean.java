@@ -1,4 +1,3 @@
-
 package backingbeans;
 
 import java.util.List;
@@ -9,8 +8,6 @@ import javax.faces.context.FacesContext;
 import modelo.Evento;
 import persistencia.EventoDAO;
 
-
-
 /**
  *
  * @author luis
@@ -18,19 +15,17 @@ import persistencia.EventoDAO;
 @ManagedBean
 @SessionScoped
 public class SisEventosBean {
-    
+
     private Evento evento = new Evento();
     private List<Evento> listaEventos;
     
-    
-    private EventoDAO evtDao = new EventoDAO();
  
-    
+
+    private EventoDAO evtDao = new EventoDAO();
+
     public SisEventosBean() {
         listaEventos = evtDao.listar();
     }
-    
-    
 
     public Evento getEvento() {
         return evento;
@@ -50,12 +45,15 @@ public class SisEventosBean {
         evtDao.incluir(evento);
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                                        "Evento criado, incluído..., com sucesso!", "");
+                "Evento criado, incluído..., com sucesso!", "");
         evento = new Evento();
         context.addMessage(null, msg);
         return null;
     }
-        
 
-  
+    public String consultarEvento(int id) {
+        evento = evtDao.carregar(id);//idEvento
+        return "consultaEvento";
+
+    }
 }
