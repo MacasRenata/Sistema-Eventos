@@ -29,6 +29,7 @@ public class Evento implements Serializable {
     private String categoria_evento;
     private String area_evento; 
     private Boolean inscricoes;
+    private String descricao_evento;
     @Temporal(TemporalType.DATE)
     private Date data_inicial_inscricao;
     @Temporal(TemporalType.DATE)
@@ -148,6 +149,20 @@ public class Evento implements Serializable {
 
     public void setEmail_organizador(String email_organizador) {
         this.email_organizador = email_organizador;
+    }
+
+    /**
+     * @return the descricao_evento
+     */
+    public String getDescricao_evento() {
+        return descricao_evento;
+    }
+
+    /**
+     * @param descricao_evento the descricao_evento to set
+     */
+    public void setDescricao_evento(String descricao_evento) {
+        this.descricao_evento = descricao_evento;
     }
     
 }
