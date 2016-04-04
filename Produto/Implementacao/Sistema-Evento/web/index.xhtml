@@ -1,12 +1,45 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        Hello from Facelets
-    </h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="templates/padrao.xhtml">
+        <ui:define name="conteudo">
+      
+        <div class="jumbotron">
+      <div class="container">
+        <h1>Crie seu Evento</h1>
+        <p> Um Sistema desenvolvido para a Criação de Eventos. </p>
+        <p:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Listar Eventos</h2>
+          <p> Consulte maiores informações sobre o evento. </p>
+          <p:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
+        </div>      
+          <div class="col-md-4">
+          <h2>Inscrição em Eventos</h2>
+          <p> Inscreva-se nos eventos. </p>
+          <p:button class="btn btn-primary btn-lg"  value="Inscrição" outcome="incluirUsuario"/>
+        </div>
+      </div>
+    </div>   
+           <div align="justify">
+      <footer>
+        <p> 2016 Equipe1 ADS, Inc.</p>
+        <p>
+         Este sistema foi desenvolvido na disciplina de Desenvolvimento de Sistemas II do curso de Análise e Desenvolvimento de Sistemas do Campus Restinga do IFRS.
+        </p>
+      </footer>
+    </div> 
+     
+        </ui:define>
+    </ui:composition>
 </html>
+
+
 

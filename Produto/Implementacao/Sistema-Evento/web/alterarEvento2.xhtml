@@ -75,16 +75,17 @@
                         <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="emailOrganizador" maxlength="50" size="50" value="#{sisEventoBean.evento.emailOrganizador}"/>
                         
-                        <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
+                         <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
                              <p:selectOneRadio id="subTrab" value="#{sisEventoBean.evento.subTrab}">
                                  <f:selectItem itemLabel="Sim" itemValue="Sim" />
                                  <f:selectItem itemLabel="Não" itemValue="Não" />
                              </p:selectOneRadio>
 
+
                        </h:panelGrid>
                     
                        <h:panelGroup> 
-                    <p:commandButton class="btn btn-default" value="Cadastrar" action="#{sisEventoBean.incluirEvento}"/>
+                    <p:commandButton class="btn btn-default" value="Alterar" action="#{sisEventoBean.alterarEvento}"/>
                     <p:button class="btn btn-default" value="Voltar" outcome="index"/>
                       </h:panelGroup>
                 </h:form>
@@ -93,3 +94,5 @@
         </ui:define>
     </ui:composition>
 </html>
+
+
