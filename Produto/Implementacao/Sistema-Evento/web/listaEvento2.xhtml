@@ -16,21 +16,21 @@
                     <h:panelGrid columns="2">
                       <h:outputLabel for="txtTitulo" value="Titulo: "/>
                         <h:outputText id="txtTitulo"
-                        value="#{sisEventoBean.evento.titulo}"/>
+                                      value="#{sisEventosBean.evento.descricao_evento}"/>
                         <h:outputLabel for="txtDescr" value="Descrição: "/>
                         <h:outputText id="txtDescr"
-                        value="#{sisEventoBean.evento.descricao}"/>
+                                      value="#{sisEventosBean.evento.descricao_evento}"/>
                         <h:outputLabel for="txtInicioEvento" value="Data de Inicio: "/>
                         <h:outputText id="txtData"
-                        value="#{sisEventoBean.evento.inicioEvento}"/>
+                                      value="#{sisEventosBean.evento.data_inicial}"/>
                     </h:panelGrid>
                     
                     <p:outputLabel for="txtTitulo" value="Titulo do Evento:"/>
-                    <h:outputText id="txtTitulo" value="#{sisEventoBean.evento.tituloEvento}"/>
+                    <h:outputText id="txtTitulo" value="#{sisEventosBean.evento.titulo}"/>
                     <p:outputLabel for="txtLocal" value="CPF do Cliente:"/>
-                    <h:outputText id="txtLocal" value="#{sisEventoBean.evento.localEvento}"/>
+                    <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local}"/>
 
-                    <p:dataTable id="tabIncricoes" value="#{sisEventoBean.evento.inscricaoEvento}"
+                    <p:dataTable id="tabIncricoes" value="#{sisEventosBean.evento.inscricaoEvento}"
                             var="inscritos">
                     <p:column headerText="Total de Inscritos">
                             #{usuario.inscritos}
@@ -42,7 +42,7 @@
 
                    
                       <h:panelGroup> 
-                    <p:commandButton class="btn btn-default" value="Consultar" action="#{sisEventoBean.alterarEvento}"/>
+                    <p:commandButton class="btn btn-default" value="Consultar" action="#{sisEventosBean.alterarEvento}"/>
                     <p:button class="btn btn-default" value="Voltar" outcome="index"/>
                       </h:panelGroup>
                 </h:form>

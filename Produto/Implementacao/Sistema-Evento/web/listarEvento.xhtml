@@ -14,16 +14,16 @@
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
                     <h:outputLabel for="evento" value="Selecione a categoria: "/>
-                    <h:selectOneMenu id="evento" value="#{sisEventoBean.listaCategoriaSelecionada}">
-                        <f:selectItems value="#{sisEventoBean.listaCategoria}" var="a" itemValue="#{e.categoria}" itemLabel="#{e.categoria}"/>
+                    <h:selectOneMenu id="evento" value="#{sisEventosBean.listaCategoriaSelecionada}">
+                        <f:selectItems value="#{sisEventosBean.listaCategoria}" var="a" itemValue="#{e.categoria}" itemLabel="#{e.categoria}"/>
                     </h:selectOneMenu>
                
                 <h:panelGroup> 
-                    <p:commandButton class="btn btn-default" value="Listar" action="#{sisEventoBean.listaEvento}"/>
+                    <p:commandButton class="btn btn-default" value="Listar" action="#{sisEventosBean.listaEventos}"/>
                     <p:button class="btn btn-default" value="Voltar" outcome="index"/>
                 </h:panelGroup>
                     <h:panelGrid columns="2">
-                       <p:dataTable value="#{sisEventoBean.listaevento}" var="evento">
+                       <p:dataTable value="#{sisEventosBean.listaevento}" var="evento">
                 <p:column headerText="Título">
                   #{evento.tituloEvento}
                    </p:column>

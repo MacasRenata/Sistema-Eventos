@@ -1,100 +1,3 @@
-<<<<<<< HEAD
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"  
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
-    <ui:composition template="templates/padrao.xhtml">
-        <ui:define name="conteudo">
-           
-      <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">
-            <div id="formDados">
-                <h:messages infoClass="msgInfo" errorClass="msgErro"/>
-                <h:form>
-                    <h:panelGrid columns="2">
-                        <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtTitulo" maxlength="60" size="50" value="#{sisEventoBean.evento.tituloEvento}"/>
-                        
-                        <h:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
-                        <h:inputText id="txtLocal" maxlength="60" size="50" value="#{sisEventoBean.evento.localEvento}"/>
-                        
-                        <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="inicioEvento" value="#{sisEventoBean.evento.inicioEvento}" />
-                        
-                        <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold" />
-                        <p:calendar id="fimEvento" value="#{sisEventoBean.evento.fimEvento}" />
-                        
-                        
-                               <p:outputLabel for="categoriaEvento" value="Categoria:" />
-                                  <p:selectOneMenu id="categoriaEvento" value="#{sisEventoBean.evento.categoriaEvento}" style="width:125px">
-                                     <f:selectItem itemLabel="Selecione" itemValue="" />
-                                     <f:selectItem itemLabel="Mostra Científica" itemValue="Mostra Científica" />
-                                     <f:selectItem itemLabel="Seminario" itemValue="Seminario" />
-                                     <f:selectItem itemLabel="Fórum" itemValue="Fórum" />
-                                </p:selectOneMenu>
-                               
-                               <p:outputLabel for="areaEvento" value="Área de conhecimento:" />
-                                  <p:selectOneMenu id="areaEvento" value="#{sisEventoBean.evento.areaEvento}" style="width:125px">
-                                     <f:selectItem itemLabel="Selecione" itemValue="" />
-                                     <f:selectItem itemLabel="Ciêncas Humanas" itemValue="Ciêncas Humanas" />
-                                     <f:selectItem itemLabel="Ciências Exatas" itemValue="Ciências Exatas" />
-                                     <f:selectItem itemLabel="Informática" itemValue="Informática" />
-                                </p:selectOneMenu>
-                      
-                        
-                        <p:outputLabel for="inscricaoEvento" value="Inscrições:" />
-                             <p:selectOneRadio id="inscricaoEvento" value="#{sisEventoBean.evento.areaEvento}">
-                                 <f:selectItem itemLabel="Sim" itemValue="Sim" />
-                                 <f:selectItem itemLabel="Não" itemValue="Não" />
-                             </p:selectOneRadio>
-                        
-                        <p:outputLabel for="inicioIncricao" value="Período Inscrição:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="inicioIncricao" value="#{sisEventoBean.evento.inicioIncricao}" />
-                        
-                        <p:outputLabel for="fimInscricao" value="Até:" style="color:gray;font-weight:bold" />
-                        <p:calendar id="fimInscricao" value="#{sisEventoBean.evento.fimInscricao}" />
-                        
-                        
-                        <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:" />
-                             <p:selectOneRadio id="inscricaoLimite" value="#{sisEventoBean.evento.areaEvento}">
-                                 <f:selectItem itemLabel="Sim" itemValue="Sim" />
-                                 <f:selectItem itemLabel="Não" itemValue="Não" />
-                             </p:selectOneRadio>
-                        
-                        <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="qntidadeIncritos" maxlength="60" size="50" value="#{sisEventoBean.evento.qntidadeIncritos}"/>
-                        
-                        <p:outputLabel for="txtDescricao" value="Descrição do Evento: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtDescricao" maxlength="200" size="200" value="#{sisEventoBean.evento.descricaoEvento}"/>
-                        
-                        <p:outputLabel for="txtOrganizador" value="Organizador: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtOrganizador" maxlength="50" size="50" value="#{sisEventoBean.evento.organizador}"/>
-                        
-                        <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="emailOrganizador" maxlength="50" size="50" value="#{sisEventoBean.evento.emailOrganizador}"/>
-                        
-                        <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
-                             <p:selectOneRadio id="subTrab" value="#{sisEventoBean.evento.subTrab}">
-                                 <f:selectItem itemLabel="Sim" itemValue="Sim" />
-                                 <f:selectItem itemLabel="Não" itemValue="Não" />
-                             </p:selectOneRadio>
-
-                       </h:panelGrid>
-                    
-                       <h:panelGroup> 
-                    <p:commandButton class="btn btn-default" value="Cadastrar" action="#{sisEventoBean.incluirEvento}"/>
-                    <p:button class="btn btn-default" value="Voltar" outcome="index"/>
-                      </h:panelGroup>
-                </h:form>
-            </div>
-         </p:panel>
-        </ui:define>
-    </ui:composition>
-</html>
-=======
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -155,7 +58,7 @@
                         
                         
                         <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:" />
-                        <p:selectOneRadio id="inscricaoLimite" value="#{sisEventosBean.evento.limite_inscricoes}">
+                        <p:selectOneRadio id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}">
                                  <f:selectItem itemLabel="Sim" itemValue="Sim" />
                                  <f:selectItem itemLabel="Não" itemValue="Não" />
                              </p:selectOneRadio>
@@ -181,7 +84,7 @@
                        </h:panelGrid>
                     
                        <h:panelGroup> 
-                    <p:commandButton class="btn btn-default" value="Cadastrar" action="#{sisEventosBean.incluirEvento}"/>
+                           <p:commandButton class="btn btn-default" value="Cadastrar" action="#{sisEventosBean.incluirEvento}"/>
                     <p:button class="btn btn-default" value="Voltar" outcome="index"/>
                       </h:panelGroup>
                 </h:form>
@@ -190,4 +93,3 @@
         </ui:define>
     </ui:composition>
 </html>
->>>>>>> origin/master

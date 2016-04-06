@@ -151,16 +151,12 @@ public class Evento implements Serializable {
         this.email_organizador = email_organizador;
     }
 
-    /**
-     * @return the descricao_evento
-     */
+
     public String getDescricao_evento() {
         return descricao_evento;
     }
 
-    /**
-     * @param descricao_evento the descricao_evento to set
-     */
+  
     public void setDescricao_evento(String descricao_evento) {
         this.descricao_evento = descricao_evento;
     }
