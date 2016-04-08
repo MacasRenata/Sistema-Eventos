@@ -3,15 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b = "http://bootsfaces.net/ui" >
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-      
          <div class="jumbotron">
       <div class="container">
         <h1>Crie seu Evento</h1>
         <p> Um Sistema desenvolvido para a Criação de Eventos. </p>
-        <p:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
+        <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
       </div>
     </div>
     <div class="container">
@@ -19,12 +19,12 @@
         <div class="col-md-4">
           <h2>Listar Eventos</h2>
           <p> Consulte maiores informações sobre o evento. </p>
-          <p:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
+          <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
         </div>      
           <div class="col-md-4">
           <h2>Inscrição em Eventos</h2>
           <p> Inscreva-se nos eventos. </p>
-          <p:button class="btn btn-primary btn-lg"  value="Inscrição" outcome="incluirUsuario"/>
+          <b:button class="btn btn-primary btn-lg"  value="Inscrição" outcome="incluirUsuario"/>
         </div>
       </div>
     </div>   
@@ -36,39 +36,6 @@
         </p>
       </footer>
     </div> 
-     
-=======
-
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Crie seu Evento</h1>
-                    <p> Um Sistema desenvolvido para a Criação de Eventos. </p>
-                    <p:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2>Listar Eventos</h2>
-                        <p> Consulte maiores informações sobre o evento. </p>
-                        <p:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
-                    </div>      
-                    <div class="col-md-4">
-                        <h2>Inscrição em Eventos</h2>
-                        <p> Inscreva-se nos eventos. </p>
-                        <p:button class="btn btn-primary btn-lg"  value="Inscrição" outcome="incluirUsuario"/>
-                    </div>
-                </div>
-            </div>   
-            <div align="justify">
-                <footer>
-                    <p> 2016 Equipe1 ADS, Inc.</p>
-                    <p>
-                        Este sistema foi desenvolvido na disciplina de Desenvolvimento de Sistemas II do curso de Análise e Desenvolvimento de Sistemas do Campus Restinga do IFRS.
-                    </p>
-                </footer>
-            </div> 
->>>>>>> 850ae9b3dba735348603ef464ee09c6e8de03e0a
         </ui:define>
     </ui:composition>
 </html>

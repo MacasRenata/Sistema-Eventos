@@ -4,10 +4,11 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+       xmlns:b = "http://bootsfaces.net/ui">
     
     <ui:composition template="templates/padrao.xhtml">
-        <ui:define name="conteudo">
+         <ui:define name="conteudo">
            
       <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">
             <div id="formDados">
@@ -80,12 +81,10 @@
                                  <f:selectItem itemLabel="Sim" itemValue="Sim" />
                                  <f:selectItem itemLabel="Não" itemValue="Não" />
                              </p:selectOneRadio>
-
                        </h:panelGrid>
-                    
                        <h:panelGroup> 
-                           <p:commandButton class="btn btn-default" value="Cadastrar" action="#{sisEventosBean.incluirEvento}"/>
-                    <p:button class="btn btn-default" value="Voltar" outcome="index"/>
+                    <b:commandButton class="btn btn-default" value="Cadastrar" action="#{sisEventosBean.incluirEvento}"/>
+                    <b:button class="btn btn-default" value="Voltar" outcome="index"/>
                       </h:panelGroup>
                 </h:form>
             </div>
