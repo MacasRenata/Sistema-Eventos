@@ -1,0 +1,3253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:pencil="http://www.evolus.vn/Namespace/Pencil"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448"
+   height="1052.3622"
+   id="svg4516"
+   version="1.1"
+   inkscape:version="0.91 r"
+   viewBox="0 0 744.09448 1052.3622"
+   sodipodi:docname="Proto_interface.svg">
+  <defs
+     id="defs4518" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#ffffff"
+     borderopacity="0.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="0"
+     inkscape:zoom="0.2621405"
+     inkscape:cx="670.1117"
+     inkscape:cy="1678.5126"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4521">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       transform="scale(-1,1)"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503134;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504"
+       width="113.0139"
+       height="60.956074"
+       x="-1113.3593"
+       y="1484.0482"
+       inkscape:tile-cx="505.96793"
+       inkscape:tile-cy="202.96005"
+       inkscape:tile-w="861.93585"
+       inkscape:tile-h="61.299013"
+       inkscape:tile-x0="75.000001"
+       inkscape:tile-y0="172.31055" />
+    <rect
+       transform="scale(-1,1)"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5548"
+       width="113.0139"
+       height="60.956074"
+       x="-1001.1966"
+       y="1914.0221"
+       inkscape:tile-x0="75.000001"
+       inkscape:tile-y0="172.31055" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1484.0482"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4488"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1545.3771"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4472"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1606.7059"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4474"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1668.035"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4476"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1729.3641"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4478"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1790.693"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4480"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1852.0221"
+       x="-1001.1966"
+       height="60.956074"
+       width="113.0139"
+       id="use4482"
+       style="display:inline;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <path
+       style="fill:#33cc00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 777.13867 779.79688 C 772.32411 779.79688 768.06832 782.06561 765.3457 785.58594 L 758.2168 792.19727 L 750.98633 798.90039 L 762.22852 801.0625 L 762.22852 814.98633 C 762.22852 823.24679 768.87821 829.89648 777.13867 829.89648 L 944.73438 829.89648 C 952.99483 829.89648 959.64453 823.24679 959.64453 814.98633 L 959.64453 794.70703 C 959.64453 786.44657 952.99483 779.79688 944.73438 779.79688 L 777.13867 779.79688 z "
+       id="rect5345" />
+    <g
+       style="display:inline"
+       transform="matrix(1.0364615,0,0,0.9999762,177.8647,-583.19273)"
+       id="1e841742418249d8b2722eba5e42b030"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">967.578125,757.421875</pencil:property>
+        <pencil:property
+           name="textPadding">48.37890625,50.494791666666664</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent" />
+        <pencil:property
+           name="textFont">'Comic Sans MS'|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="M 0,0 C 323,2 645,2 967.57812,0 966,252 966,505 967.57812,757.42187 645,759 323,759 0,757.42187 -1,505 -1,252 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="8cf59db1004f4ac3b6fef833c636f3fa"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(484,379)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Comic Sans MS';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="c65291f3377f46aa89a134af8acc6e42"
+         pencil:name="text" />
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(571.18441,-277.39459)"
+       id="b679c97658794a1aa442b438eb6e96fd"
+       pencil:def="Evolus.Sketchy.GUI:button"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">209,38</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="default">false</pencil:property>
+        <pencil:property
+           name="fillColor">#CCCCCCFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Criar Evento</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="1a5c6d3fb3464d8b8089754cacca709b"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 70,1 139,1 209,0 0,13 0,25 0,38 C 139,39 70,39 0,38 0,25 0,13 0,0 Z"
+           id="313179fe37714700a65e9c174bc24fbc"
+           pencil:name="line1"
+           style="stroke-linejoin:round" />
+      </g>
+      <text
+         transform="translate(76,24)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="3ed1ea07909643f2bdedd96ab1bd4e6b"
+         pencil:name="text">Criar Evento</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(571.18441,-212.39279)"
+       id="f1e2706ee19a46f296ebecfae7b77b93"
+       pencil:def="Evolus.Sketchy.GUI:button"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">209,38</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="default">false</pencil:property>
+        <pencil:property
+           name="fillColor">#CCCCCCFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Listar Eventos</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="c0ecdb854e29471a9928c12a2401acc3"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 70,1 139,1 209,0 0,13 0,25 0,38 C 139,39 70,39 0,38 0,25 0,13 0,0 Z"
+           id="0af7dba93afd4986b4eeb0aba9b4c066"
+           pencil:name="line1"
+           style="stroke-linejoin:round" />
+      </g>
+      <text
+         transform="translate(72,24)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="54bdc9b3973044e781ec86fde137a90d"
+         pencil:name="text">Listar Eventos</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="matrix(1.0403016,0,0,0.99964535,184.9109,-504.87889)"
+       id="5bf005f87c3f4125a6cc8532e43724b6"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">949.0625,55</pencil:property>
+        <pencil:property
+           name="textPadding">47.453125,3.6666666666666665</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Barra de Menus</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|18px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="M 0,0 C 316,0 633,0 949.0625,0 949,18 949,37 949.0625,55 633,56 316,56 0,55 0,37 0,18 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="7ab5112ce4784f9ca5dcd3e165b8e441"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(47,34)"
+         style="font-style:normal;font-weight:normal;font-size:18px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="815600423b0447ea96d1cc1f6b9a8fcb"
+         pencil:name="text">
+        <tspan
+           id="tspan4020"
+           y="0"
+           x="372.07812">Barra de Menus</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(188.871,-577.38917)"
+       id="edd1b6bbbf614f9284a2574ec4bd06bd"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">950.25,65.25</pencil:property>
+        <pencil:property
+           name="textPadding">47.51249999999999,4.3500000000000005</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Sistema de Eventos</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|32px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="m 0.50837934,0.50819056 c 327.79665066,-0.99974823 655.59329066,-0.99974823 982.61440066,0 -0.25852,21.99446144 -0.25852,43.98892144 0,65.23357144 -327.02111,0.749811 -654.81775,0.749811 -982.61440066,0 1.03405886,-21.24465 1.03405886,-43.23911 0,-65.23357144 z"
+         id="0d5f663f407a4d19babf07da87da4b9a"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.0167588;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(48,44)"
+         style="font-style:normal;font-weight:normal;font-size:32px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="7fe9a3503be04ff6af75d44f4c666eda"
+         pencil:name="text">
+        <tspan
+           id="tspan4025"
+           y="0"
+           x="308.61249">Sistema de Eventos</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline"
+       transform="matrix(1.0307106,0,0,0.99972544,184.229,118.12167)"
+       id="c8397b36cde6431c8a3128c4247585b7"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">958.046875,55</pencil:property>
+        <pencil:property
+           name="textPadding">47.90234375,3.6666666666666665</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Footer</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|18px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="M 0,0 C 319,0 639,0 958.04687,0 958,18 958,37 958.04687,55 639,53 319,53 0,55 0,37 0,18 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="f5209da6c44a4d5b912933d6cab3a129"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(48,33)"
+         style="font-style:normal;font-weight:normal;font-size:18px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="ec78c24f19f14d36bb62c7ddc7398320"
+         pencil:name="text">
+        <tspan
+           id="tspan4030"
+           y="0"
+           x="409.63672">Footer</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(924.76221,-407.15538)"
+       id="1cc45d91071548a19e284989ba4c8f78"
+       pencil:def="Evolus.Sketchy.GUI:Balloon"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">200,59</pencil:property>
+        <pencil:property
+           name="withBlur">false</pencil:property>
+        <pencil:property
+           name="radius">8,0</pencil:property>
+        <pencil:property
+           name="leftStart">0,10</pencil:property>
+        <pencil:property
+           name="leftEnd">0,24.337500000000002</pencil:property>
+        <pencil:property
+           name="rightStart">200,10</pencil:property>
+        <pencil:property
+           name="rightEnd">200,24.337500000000002</pencil:property>
+        <pencil:property
+           name="topStart">12,0</pencil:property>
+        <pencil:property
+           name="topEnd">33,0</pencil:property>
+        <pencil:property
+           name="bottomStart">12,59</pencil:property>
+        <pencil:property
+           name="bottomEnd">33,59</pencil:property>
+        <pencil:property
+           name="pin">-12,16.962500000000002</pencil:property>
+        <pencil:property
+           name="fillColor">#33CC00FF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Tela inicial para o Administrador</pencil:property>
+        <pencil:property
+           name="textFont">'Comic Sans MS'|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <defs
+         id="defs4033">
+        <filter
+           id="9f8d358a5adb4b97849e3788d7e9daa8"
+           pencil:name="imageShading"
+           x="-0.03198"
+           width="1.06396"
+           y="-0.12792"
+           height="1.2558399">
+          <feGaussianBlur
+             id="feGaussianBlur4036"
+             in="SourceAlpha"
+             stdDeviation="1.3325" />
+        </filter>
+        <g
+           id="4fa5a732e1c54cdcaae8c858fdb700b9"
+           pencil:name="container">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 8,0 c 61,1 123,1 184,0 5.33333,0 8,2.6666667 8,8 0,11 0,27 0,43 0,5.333333 -2.66667,8 -8,8 C 134,58 71,58 8,59 2.6666667,59 0,56.333333 0,51 0,46 0,35 0,24.3375 -4,22 -8,19 -12,16.9625 -8,15 -4,12 0,10 0,9 0,9 0,8 0,2.6666667 2.6666667,0 8,0"
+             id="2b88a50397a546a3b5ad1d8c59e2dcbf"
+             pencil:name="rect"
+             style="fill:#33cc00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+             transform="translate(0.5,0.5)" />
+        </g>
+      </defs>
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         id="8f91aa52eba34d78b9d525e0ea97ce24"
+         pencil:name="bgCopy"
+         pencil:heavy="true"
+         style="display:none;visibility:hidden;opacity:0.6"
+         pencil:filter="url(#9f8d358a5adb4b97849e3788d7e9daa8)"
+         transform="translate(1,1)"
+         xlink:href="#4fa5a732e1c54cdcaae8c858fdb700b9" />
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         id="use4041"
+         xlink:href="#4fa5a732e1c54cdcaae8c858fdb700b9" />
+      <text
+         transform="translate(4,27)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Comic Sans MS';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="812f75179f0740d7a3bd13f891df7902"
+         pencil:name="text">
+        <tspan
+           id="tspan4044"
+           y="0"
+           x="41">Tela inicial para o</tspan>
+        <tspan
+           id="tspan4046"
+           y="15"
+           x="51">Administrador</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline;fill:none"
+       transform="matrix(0.99997344,0,0,1.0541358,182.0877,187.16457)"
+       id="677b56a75fdb4e948d1645ccbb1f68c9"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">1002.734375,976.171875</pencil:property>
+        <pencil:property
+           name="textPadding">50.13671875,65.078125</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent" />
+        <pencil:property
+           name="textFont">'Comic Sans MS'|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="m 0,0 c 334,-1 668,-1 1002.7344,0 1.2656,325 1.2656,651 0,976.17187 C 668,978 334,978 0,976.17187 -2,651 -2,325 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="4b95c2dc655d4f8cad826504defec388"
+         pencil:name="line1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(501,488)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Comic Sans MS';text-decoration:none;text-decoration-line:none;fill:none;fill-opacity:1"
+         id="b1d2ef4090f1481cbda9eaf83c227216"
+         pencil:name="text" />
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(177.5582,188.8921)"
+       id="15319c080a85454d9989af1f59d5dfeb"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">1001.1875,65.25</pencil:property>
+        <pencil:property
+           name="textPadding">50.05937499999998,4.3500000000000005</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Sistema de Eventos</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|32px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="m 0,0 c 334,0 667,0 1001.1875,0 0.8125,22 0.8125,44 0,65.25 C 667,64 334,64 0,65.25 0,44 0,22 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="c03e44e142814009bee7e7b07ec8a994"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(50,44)"
+         style="font-style:normal;font-weight:normal;font-size:32px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="b616cfc8ea374b849b9b9b8ab1537a14"
+         pencil:name="text">
+        <tspan
+           id="tspan4059"
+           y="0"
+           x="331.39377">Sistema de Eventos</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(565.80691,395.39271)"
+       id="ea427e69a2ba4e0b9d9adb1cd420a5bb"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">265.5,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="3e94774f3ef54c298e0cb733323ebc8b"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 C 88,0 177,0 265.5,0 265,8 265,17 265.5,25 177,25 88,25 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="0e91988b52014bd6aa1768ff906656b5"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="d050a59f29554c66bfbc8d4e794022a2"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,414.39244)"
+       id="20e75340ac96489b944c2185ba71c96f"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Título do Evento:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="5a8931d260854063b4dc61c7416d11e1"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="0afe0670283d409788f4011aa5d8b248"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4068"
+           y="0"
+           x="0">Título do Evento:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(397.30891,355.39323)"
+       id="275a24288c4041be8ee44df9e31d3a04"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Criar Evento</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="f401bf09474f498781324bd000077bb9"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="8cd559be0c9f48c78f94c53fa3070c57"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4073"
+           y="0"
+           x="0">Criar Evento</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(567.05691,443.39207)"
+       id="33fc65ec26b74fd48b42ea169fbb3f67"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">264.25,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="436e30495cad45288fb08c2dff3aaba1"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 C 88,-2 176,-2 264.25,0 264,8 264,17 264.25,25 176,26 88,26 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="d15f0b52346c4afc92b50bd3adcefb3d"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="1df0d496f9d545478b2dd5f812d713ec"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,461.39137)"
+       id="d6791d4dc2f24c6ebde07751ac9f988c"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Local do Evento:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="1b7b297615964de185fd723c4de1e5e1"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="0bb9fab6bb3b446d8d7d8389a000fb11"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4082"
+           y="0"
+           x="0">Local do Evento:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(565.80691,491.39097)"
+       id="bab8c083e9324f56b8f1acb69baa3a02"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">97.5,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="e9af72d469304954b6fcb7fe99bd9653"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 C 32,-1 65,-1 97.5,0 97,8 97,17 97.5,25 65,25 32,25 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="ec703d9ef5c84124959a4842a1d4c8d2"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="3825c0d7b9a944ef8b1f7631657eb201"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,510.39137)"
+       id="ecab4a27ceaf4ba9bf56c8c15d52ac16"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Período do Evento:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="dbf0040b2da7421cb4ece1f5d81a6a6a"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="8e76c6ce24154e75963b4b040b99ad15"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4091"
+           y="0"
+           x="0">Período do Evento:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,554.39137)"
+       id="517372a48a9b4053b55f3f2bafcf57fb"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Categoria do Evento:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="e09dd74c5d0b4fffbaa01094dcc35b98"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="7a3584f3cc0146848618660b144a0e26"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4096"
+           y="0"
+           x="0">Categoria do Evento:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(562.70691,837.39777)"
+       id="7198ebd791704868a25c3137eb9cd886"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">268.8,129.8</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent" />
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="ecdd15ea340a445e89d99aa80b8165c3"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 90,2 179,2 268.8,0 0.2,43 0.2,87 0,129.8 C 179,130 90,130 0,129.8 0,87 0,43 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="1687f6db55854a9fa9f7e87c03674b77"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,65)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="d157bc61c22d4b06b7d7caed0c79c611"
+         pencil:name="text" />
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,855.39657)"
+       id="eb24a6d9065648c89ac5112e8d6afb7b"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Descrição do Evento:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="597ed9ec64504ff182eb1979f960f8ce"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="ed0a17842de54548aa08de90054c395d"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4105"
+           y="0"
+           x="0">Descrição do Evento:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(569.55691,1014.3917)"
+       id="ad99c7c1b992401a982bf335d1777872"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">178.75,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="efe0792e16614a49ac8cbde9c8fcbe54"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 60,-1 119,-1 178.75,0 0.25,8 0.25,17 0,25 C 119,24 60,24 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="a3a5805046f3406aa7efea8e9bdcc36d"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="fce270661b98453eb46c0b5ad363094b"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(445.30991,1031.3903)"
+       id="582d3641907b45d8a80db11701b318b5"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="c07f3f7e883d4ea49f6f7f01ab57019d"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="2fdf833d0b6f458a86868889384d9c8f"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4114"
+           y="0"
+           x="0">Organizador:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(720.55821,491.39097)"
+       id="66e6133a653a4264bd13398e74eb7c65"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">110.75,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="6641d7e37cc6437e952c322ef3836647"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 37,0 74,0 110.75,0 0.25,8 0.25,17 0,25 C 74,24 37,24 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="43800d800c0443ea9bea6d2732ef9a85"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="981a35587d5f4982bb962acf056bd755"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(686.30781,509.39137)"
+       id="5bf940aecb344126b2d5704185074311"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Até:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="834a98e156aa4b158c85572af22958c1"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="3002772337ad41f099ad7c08b635c128"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4123"
+           y="0"
+           x="0">Até:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(563.80701,532.39147)"
+       id="bdf4bb1350e5485ca3d61f28816052b1"
+       pencil:def="Evolus.Sketchy.GUI:listbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">268.5,41</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="withscrollbar">true</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="contentText">Feira
+Mostra</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="41"
+         width="268.5"
+         y="0"
+         x="0"
+         id="9947ce3d030d458fb2bb819dc53f3182"
+         pencil:name="bg"
+         style="fill:#ffffff;stroke:none"
+         ry="0"
+         rx="0" />
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="45b23202b14d4dc5a5edd50d2fbbd8f7"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 89,-1 179,-1 268.5,0 0.5,14 0.5,27 0,41 C 179,42 89,42 0,41 0,27 0,14 0,0 Z"
+           id="872d5672f2f04c8fbdf46f681e1bc294"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <foreignObject
+         style=""
+         height="40"
+         width="266.5"
+         y="1"
+         x="1"
+         id="ffaced4a0cb34217ab5fa879850b370a"
+         pencil:name="content">
+        <xhtml:div
+           style="font-family: Smart Kid; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; color: rgb(0, 0, 0); opacity: 1;"
+           id="a847bb203982493abb113d2155ff41f0"
+           pencil:name="div">
+          <xhtml:div
+             style="height: 20px; line-height: 20px; padding: 0px 5px">Feira</xhtml:div>
+          <xhtml:div
+             style="height: 20px; line-height: 20px; padding: 0px 5px">Mostra</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <g
+         id="92970c3989cd4c89bfc8a1894e4f274e"
+         pencil:name="scrollbar"
+         style="visibility:visible;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 254.5,0 c -0.5,14 -0.5,27 0,41 4.5,0 9.5,0 14,0 0.5,-14 0.5,-27 0,-41 z m 2,30.5 c 2.5,0.5 5.5,0.5 8,0 m -8,-10 c 2.5,-0.5 5.5,-0.5 8,0 m -8,-10 c 2.5,-0.5 5.5,-0.5 8,0 m -8,-0.5 c 1.5,-2 3.5,-3 5,-5 0.5,2 1.5,3 3,5 m -8,21 c 1.5,2 3.5,3 5,5 1.5,-2 2.5,-3 3,-5"
+           id="50e2bb4ad9814993a20fd9473d57e7c2"
+           pencil:name="line2"
+           style="stroke-linejoin:round" />
+      </g>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(569.55691,1059.3874)"
+       id="9f438e35866643eebd1a87a6ab384f56"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">178.75,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="b047e60614ad454aad9652c5a41d7d68"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 60,-1 119,-1 178.75,0 0.25,8 0.25,17 0,25 C 119,24 60,24 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="ee1a2a2a2a0a4467bc42acc54eb3a3ec"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="6ec9584ceb6e4294ad86b1047fab0cea"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(389.31081,1076.3872)"
+       id="6fa25afa425343bca1b663ca1af88200"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Email do Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="b9014076a3b74f7cb8ffdc0081592dca"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="cc31b94d1014401bb9e0e213dbed5758"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4138"
+           y="0"
+           x="0">Email do Organizador:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(572.55421,1135.1394)"
+       id="447a18e0ba3547378b7c007dd8685e68"
+       pencil:def="Evolus.Sketchy.GUI:button"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">90,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="default">false</pencil:property>
+        <pencil:property
+           name="fillColor">#CCCCCCFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Criar</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="e2cec7a29fd34508b5ec9c7c782665ad"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 30,1 60,1 90,0 0,8 0,17 0,25 C 60,26 30,26 0,25 0,17 0,8 0,0 Z"
+           id="a2ec8d547f504d9b9cbc3169e4fc44e9"
+           pencil:name="line1"
+           style="stroke-linejoin:round" />
+      </g>
+      <text
+         transform="translate(34,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="301ce1a80e554f58ac3d140ab60613d7"
+         pencil:name="text">Criar</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(694.55601,1135.1394)"
+       id="cdf00b00f1c9434897bd81ce6b02ff6e"
+       pencil:def="Evolus.Sketchy.GUI:button"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">90,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="default">false</pencil:property>
+        <pencil:property
+           name="fillColor">#CCCCCCFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Voltar</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="2c394627144742909ca345f22b241512"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 30,1 60,1 90,0 0,8 0,17 0,25 C 60,26 30,26 0,25 0,17 0,8 0,0 Z"
+           id="78d2946e46dd40de9989648c58c05ab9"
+           pencil:name="line1"
+           style="stroke-linejoin:round" />
+      </g>
+      <text
+         transform="translate(31,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="fb2d8be12987429b91ea60e3e724a613"
+         pencil:name="text">Voltar</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="matrix(0.99862916,0,0,1.0625403,1163.0429,265.04782)"
+       id="838224dbfe2a491596316e7778e49474"
+       pencil:def="Evolus.Sketchy.GUI:scrollbar"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">21.8125,893.359375</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+      </pencil:metadata>
+      <rect
+         y="0"
+         x="0"
+         height="893.35901"
+         width="21.8125"
+         id="3c16539792b249b6b6325173f8e3fb9a"
+         pencil:name="bg"
+         style="fill:#ffffff;stroke:none"
+         ry="0"
+         rx="0" />
+      <g
+         id="a074021c18c54bcb89742160ddd92281"
+         pencil:name="scrollbar"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 C 0,298 0,596 0,893.35937 7,894 15,894 21.8125,893.35937 22,596 22,298 21.8125,0 Z M 2,456.67969 C 7,457 13,457 17.8125,456.67969 M 2,446.67969 C 7,447 13,447 17.8125,446.67969 M 2,436.67969 C 7,437 13,437 17.8125,436.67969 M 2,10 C 5,8 8,7 10.90625,5 13,7 15,8 17.8125,10 M 2,883.35937 C 5,885 8,887 10.90625,888.35937 13,887 16,885 17.8125,883.35937"
+           id="0458ec4b5c2049aeb0dc6ef5a8654ed9"
+           pencil:name="line2"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(180.8083,254.39214)"
+       id="91d291823a534d5c9d9d0fe9b530962d"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">976.171875,55</pencil:property>
+        <pencil:property
+           name="textPadding">48.80859375,3.6666666666666665</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Barra de Menus</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|18px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="M 0,0 C 325,1 651,1 976.17187,0 976,18 976,37 976.17187,55 651,54 325,54 0,55 0,37 0,18 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="16bf4aee20fa4b528ccc3b999f5eadaa"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(49,33)"
+         style="font-style:normal;font-weight:normal;font-size:18px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="80cb1a85daea43a59121cd9c6a4bbe8d"
+         pencil:name="text">
+        <tspan
+           id="tspan4155"
+           y="0"
+           x="384.58984">Barra de Menus</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,611.39047)"
+       id="3cf8ef5941a4443d8c1b51912c7d3b0f"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Área de Conhecimento:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="01d3a634d49f4ac989eacf8934f047c1"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="5084f685bbf244619e50728ec4131c3f"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4160"
+           y="0"
+           x="0">Área de Conhecimento:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(563.80701,589.39067)"
+       id="613ab9ad712c45d6a7c2b871415e922e"
+       pencil:def="Evolus.Sketchy.GUI:listbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">268.5,41</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="withscrollbar">true</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="contentText">MenuItem*
+MenuItem
+MenuItem</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="41"
+         width="268.5"
+         y="0"
+         x="0"
+         id="0faaf4d175004e439d7fbedbeb6e6aeb"
+         pencil:name="bg"
+         style="fill:#ffffff;stroke:none"
+         ry="0"
+         rx="0" />
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="d921ac5929b94e018cab77aea5f5c2a0"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 89,-1 179,-1 268.5,0 0.5,14 0.5,27 0,41 C 179,42 89,42 0,41 0,27 0,14 0,0 Z"
+           id="2b9603558e10472195fb16a74cdd2a8b"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <foreignObject
+         height="40"
+         width="266.5"
+         y="1"
+         x="1"
+         id="805e4f88fe83418da8513aa86b5388c1"
+         pencil:name="content">
+        <xhtml:div
+           style="font-family: Smart Kid; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none; color: rgb(0, 0, 0); opacity: 1;"
+           id="f0ee09120d494411ac739d4c40bc9bd5"
+           pencil:name="div">
+          <xhtml:div
+             style="height: 20px; line-height: 20px; padding: 0px 5px; background: #E5E5E5">MenuItem</xhtml:div>
+          <xhtml:div
+             style="height: 20px; line-height: 20px; padding: 0px 5px">MenuItem</xhtml:div>
+          <xhtml:div
+             style="height: 20px; line-height: 20px; padding: 0px 5px">MenuItem</xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <g
+         id="11ce0bb246b147e4bdf699ab916f22d0"
+         pencil:name="scrollbar"
+         style="visibility:visible;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 254.5,0 c -0.5,14 -0.5,27 0,41 4.5,0 9.5,0 14,0 0.5,-14 0.5,-27 0,-41 z m 2,30.5 c 2.5,0.5 5.5,0.5 8,0 m -8,-10 c 2.5,-0.5 5.5,-0.5 8,0 m -8,-10 c 2.5,-0.5 5.5,-0.5 8,0 m -8,-0.5 c 1.5,-2 3.5,-3 5,-5 0.5,2 1.5,3 3,5 m -8,21 c 1.5,2 3.5,3 5,5 1.5,-2 2.5,-3 3,-5"
+           id="ead78de1441b40a991e37b249593f24f"
+           pencil:name="line2"
+           style="stroke-linejoin:round" />
+      </g>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,667.38967)"
+       id="5e911b269e534b1dac727ba083f00c97"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Inscrições :</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="ea1ec8838896467aa2a4fff3e5ad2fc6"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="6d8782308dfd47468bbda3efbe3736b1"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4171"
+           y="0"
+           x="0">Inscrições :</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(566.55771,656.64207)"
+       id="2429702636cc4851811c030ca8a6f14d"
+       pencil:sc="Selected Radio"
+       pencil:def="Evolus.Sketchy.GUI:radio"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="selected">true</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">sim</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+      </pencil:metadata>
+      <g
+         id="d09fb57e244044a1a18fb90b44de70e1"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+           id="f693d1643ee941f38348e990ec83ea84"
+           pencil:name="rdCircle"
+           d="m 14.854643,7.698003 c 0,3.85476 -2.200949,6.63069 -7.000875,6.97968 C 3.997527,14.958043 0.50284396,11.669103 0.85288796,7.698003 1.191377,3.858033 4.003037,0.37077296 7.853768,0.71833296 11.720246,1.067323 14.854643,3.843233 14.854643,7.698003 Z" />
+        <path
+           inkscape:connector-curvature="0"
+           id="cef87018c2114d6eaac2b089b18de603"
+           pencil:name="rdTick"
+           d="m 11.354207,7.349023 c 0,1.79888 -0.295905,3.60616 -3.500439,3.60616 -1.804357,0 -3.500439,-1.57462 -3.500439,-3.37351 0,-1.79889 1.696082,-3.14085 3.500439,-3.14085 1.804357,0 3.500439,1.10931 3.500439,2.9082 z"
+           style="visibility:visible;fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <text
+         y="12"
+         x="20"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="34dde711055647eda58b2dc0d955f9d3"
+         pencil:name="text">sim</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(694.55831,653.89177)"
+       id="53925c7921b14db8a64989389dfae1d1"
+       pencil:def="Evolus.Sketchy.GUI:radio"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="selected">false</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">não</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+      </pencil:metadata>
+      <g
+         id="09cd515180d84340a397f8d8c67b70ff"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+           id="446cf34910314bcfbdea370ed3ea1b13"
+           pencil:name="rdCircle"
+           d="m 14.854643,7.698003 c 0,3.85476 -2.200949,6.63069 -7.000875,6.97968 C 3.997527,14.958043 0.50284396,11.669103 0.85288796,7.698003 1.191377,3.858033 4.003037,0.37077296 7.853768,0.71833296 11.720246,1.067323 14.854643,3.843233 14.854643,7.698003 Z" />
+        <path
+           inkscape:connector-curvature="0"
+           id="374b38ccafbc440aadbfeace7fa540f6"
+           pencil:name="rdTick"
+           d="m 11.354207,7.349023 c 0,1.79888 -0.295905,3.60616 -3.500439,3.60616 -1.804357,0 -3.500439,-1.57462 -3.500439,-3.37351 0,-1.79889 1.696082,-3.14085 3.500439,-3.14085 1.804357,0 3.500439,1.10931 3.500439,2.9082 z"
+           style="display:none;visibility:hidden;fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <text
+         y="12"
+         x="20"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="98750c43391549c499b1495f5ac6c275"
+         pencil:name="text">não</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,757.39357)"
+       id="10e2aa210d0a4721bde258593a5172a5"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Limite de inscritos:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="6b3c1ab4a0ad4daa85a182a1f6da6083"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="473698742e2c4b8cbfb5ab59de240752"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4186"
+           y="0"
+           x="0">Limite de inscritos:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(566.55771,746.64527)"
+       id="e0d9a6cc8e6c48ea86e39c804783324c"
+       pencil:sc="Selected Radio"
+       pencil:def="Evolus.Sketchy.GUI:radio"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="selected">true</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">sim</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+      </pencil:metadata>
+      <g
+         id="27b2f6b4741848968083823012508269"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+           id="de1eec97cd884fa08ca1404c9d739c1f"
+           pencil:name="rdCircle"
+           d="m 14.854643,7.698003 c 0,3.85476 -2.200949,6.63069 -7.000875,6.97968 C 3.997527,14.958043 0.50284396,11.669103 0.85288796,7.698003 1.191377,3.858033 4.003037,0.37077296 7.853768,0.71833296 11.720246,1.067323 14.854643,3.843233 14.854643,7.698003 Z" />
+        <path
+           inkscape:connector-curvature="0"
+           id="e0641897117f4ab7865c023e91c97011"
+           pencil:name="rdTick"
+           d="m 11.354207,7.349023 c 0,1.79888 -0.295905,3.60616 -3.500439,3.60616 -1.804357,0 -3.500439,-1.57462 -3.500439,-3.37351 0,-1.79889 1.696082,-3.14085 3.500439,-3.14085 1.804357,0 3.500439,1.10931 3.500439,2.9082 z"
+           style="visibility:visible;fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <text
+         y="12"
+         x="20"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="45fe79d1ace44e7ca97b47c4e6664e72"
+         pencil:name="text">sim</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(565.80691,686.38807)"
+       id="5dfc57e8bcd741ee81e8cf18494f7f53"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">97.5,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="5b836afe84ff45b9b88a66c310abde98"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 C 32,-1 65,-1 97.5,0 97,8 97,17 97.5,25 65,25 32,25 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="c473dddc91a142bfb37286344724c2d1"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="de1119dbe1104baf837b699d7f512d4c"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,705.38947)"
+       id="cc35b4face464acebe31b2771f9ea63a"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Período de Inscrições:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="176a5e9b916a4f2cb1526970736ccfbd"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="44393a64cde64d028fe0b8a2c02d92e9"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4200"
+           y="0"
+           x="0">Período de Inscrições:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(720.55821,686.38807)"
+       id="0192a9cdd44f4c4ba46f5c2b05dea1a2"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">110.75,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">text</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="be6d125315984344a20c986549ffd854"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 37,0 74,0 110.75,0 0.25,8 0.25,17 0,25 C 74,24 37,24 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="256542a44cdd4018926405d99863815f"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="73cf1835927d453eb6e5b392efe62fbd"
+         pencil:name="text">text</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(686.30781,704.38937)"
+       id="27e424cbe3c14931a8bf2e946d9ea918"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Até:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="8af2c3319a4540d4b45e5264dcae0a47"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="4046ab1b43e9438c921ee8d521a2e64c"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4209"
+           y="0"
+           x="0">Até:</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(706.05811,743.64187)"
+       id="bc035019582b4e529add410de29dfa41"
+       pencil:def="Evolus.Sketchy.GUI:textbox"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">125,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">45</pencil:property>
+        <pencil:property
+           name="textFont">|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">0,1</pencil:property>
+      </pencil:metadata>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         transform="translate(0.5,0.5)"
+         id="74b38c0753b44a0ab94b2f16804cb953"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 0,0 c 42,1 83,1 125,0 0,8 0,17 0,25 C 83,24 42,24 0,25 0,17 0,8 0,0 Z"
+           transform="translate(0.5,0.5)"
+           id="25577d9f1e8f46799fb76d2a8994f711"
+           pencil:name="line1"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+      <text
+         transform="translate(5,17)"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:sans-serif;text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="bebf8216c6ac4784b354a735a3605973"
+         pencil:name="text">45</text>
+    </g>
+    <use
+       xlink:href="#4e124c2ef7214c1a8cba7fe46c09cd3b"
+       id="use4224"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%"
+       transform="translate(759.30701,776.63957)"
+       style="display:inline;fill:#00ff00" />
+    <text
+       pencil:name="text"
+       id="2bd6e4eed8324f9c9c729c8a7fd90d40"
+       style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;display:inline;fill:#000000;fill-opacity:1"
+       x="763.30707"
+       y="800.63953">
+      <tspan
+         x="780.94696"
+         y="800.63953"
+         id="tspan4227">Habilitará o upload de arquivos no</tspan>
+      <tspan
+         x="771.44696"
+         y="815.63953"
+         id="tspan4229">momento da inscrição do participante</tspan>
+    </text>
+    <g
+       style="display:inline"
+       transform="translate(396.30911,806.38967)"
+       id="06a119d4512546cf849241b18f075d64"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Submissâo de Trabalhos :</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="916e3ae6e6f7441582e31eec78f6f448"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="a674b1bd07424b96aad82d4160c2eb03"
+         pencil:name="text"
+         xml:space="preserve"><tspan
+           id="tspan4234"
+           y="0"
+           x="0">Submissâo de Trabalhos :</tspan></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(566.55771,795.64207)"
+       id="9ac89e6e62ee4238930d0ebdac2cb195"
+       pencil:sc="Selected Radio"
+       pencil:def="Evolus.Sketchy.GUI:radio"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="selected">true</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">sim</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+      </pencil:metadata>
+      <g
+         id="66f44c1334a34a76b7c31efb767ef735"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+           id="dabb3df30d524192bc48ec99b7fdc2a7"
+           pencil:name="rdCircle"
+           d="m 14.854643,7.698003 c 0,3.85476 -2.200949,6.63069 -7.000875,6.97968 C 3.997527,14.958043 0.50284396,11.669103 0.85288796,7.698003 1.191377,3.858033 4.003037,0.37077296 7.853768,0.71833296 11.720246,1.067323 14.854643,3.843233 14.854643,7.698003 Z" />
+        <path
+           inkscape:connector-curvature="0"
+           id="a5702f2699e243d2adc21e0d187f2451"
+           pencil:name="rdTick"
+           d="m 11.354207,7.349023 c 0,1.79888 -0.295905,3.60616 -3.500439,3.60616 -1.804357,0 -3.500439,-1.57462 -3.500439,-3.37351 0,-1.79889 1.696082,-3.14085 3.500439,-3.14085 1.804357,0 3.500439,1.10931 3.500439,2.9082 z"
+           style="visibility:visible;fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <text
+         y="12"
+         x="20"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="fe036f0292b944e3a217e345e1d87e5b"
+         pencil:name="text">sim</text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(694.55831,792.89177)"
+       id="d7574e05412e43c3b63e206be43cfe70"
+       pencil:def="Evolus.Sketchy.GUI:radio"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="selected">false</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">não</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+      </pencil:metadata>
+      <g
+         id="9f38cd5ff38a4e019ef6d82277b83461"
+         pencil:name="rect">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+           id="8ad9edf9290443c7bf6f98114d23243d"
+           pencil:name="rdCircle"
+           d="m 14.854643,7.698003 c 0,3.85476 -2.200949,6.63069 -7.000875,6.97968 C 3.997527,14.958043 0.50284396,11.669103 0.85288796,7.698003 1.191377,3.858033 4.003037,0.37077296 7.853768,0.71833296 11.720246,1.067323 14.854643,3.843233 14.854643,7.698003 Z" />
+        <path
+           inkscape:connector-curvature="0"
+           id="40e007a4df6145188337b99c884d79cf"
+           pencil:name="rdTick"
+           d="m 11.354207,7.349023 c 0,1.79888 -0.295905,3.60616 -3.500439,3.60616 -1.804357,0 -3.500439,-1.57462 -3.500439,-3.37351 0,-1.79889 1.696082,-3.14085 3.500439,-3.14085 1.804357,0 3.500439,1.10931 3.500439,2.9082 z"
+           style="display:none;visibility:hidden;fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <text
+         y="12"
+         x="20"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="ae721adee97c4575a0b0ae1f719bf68d"
+         pencil:name="text">não</text>
+    </g>
+    <g
+       pencil:type="Shape"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       id="g3861"
+       transform="translate(183.8729,1252.2313)"
+       style="display:inline;fill:none">
+      <pencil:metadata>
+        <pencil:property
+           name="box">1002.734375,976.171875</pencil:property>
+        <pencil:property
+           name="textPadding">50.13671875,65.078125</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent" />
+        <pencil:property
+           name="textFont">'Comic Sans MS'|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1"
+         pencil:name="line1"
+         id="path3863"
+         transform="translate(0.5,0.5)"
+         d="m 0,0 c 334,-1 668,-1 1002.7344,0 1.2656,325 1.2656,651 0,976.17187 C 668,978 334,978 0,976.17187 -2,651 -2,325 0,0 Z"
+         inkscape:connector-curvature="0" />
+      <text
+         pencil:name="text"
+         id="text3865"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Comic Sans MS';text-decoration:none;text-decoration-line:none;fill:none;fill-opacity:1"
+         transform="translate(501,488)" />
+    </g>
+    <path
+       style="display:inline;fill:#33cc00;fill-opacity:1;stroke:#000000;stroke-width:0.8119446;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 483.98121,1089.0529 c -7.3524,-0.1688 -12.7936,4.6504 -11.7566,9.2441 0.1457,7.071 -0.2999,14.1664 0.238,21.2212 1.1201,4.3187 10.441,5.0816 16.6719,4.5432 l 124.3354,0 c 3.4534,3.9353 4.4328,9.4984 7.8873,13.4333 3.4535,-3.935 6.9071,-9.1871 10.3608,-13.1221 5.3961,0.2888 11.6086,-0.5127 14.2132,-4.0415 2.4373,-3.6023 1.0451,-6.3447 1.415,-10.1772 -0.1358,-4.9741 0.2857,-9.9714 -0.2381,-14.9294 -1.12,-4.3187 -7.9658,-6.7099 -14.1968,-6.1716 z"
+       id="rect3877"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc" />
+    <text
+       pencil:name="text"
+       id="02fe088d75f64dd28e02be1eb2a49543"
+       style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;display:inline;fill:#000000;fill-opacity:1"
+       x="481.12872"
+       y="1105.6227">
+      <tspan
+         x="487.84869"
+         y="1105.6227"
+         id="tspan4258">Exibir mensagem: Evento criado</tspan>
+      <tspan
+         x="528.84869"
+         y="1120.6227"
+         id="tspan4260">com sucesso!</tspan>
+    </text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="375.39362"
+       y="1524.1879"
+       id="text3901"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903"
+         x="375.39362"
+         y="1524.1879">Feira Um</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="375.5755"
+       y="1581.2479"
+       id="text3901-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-2"
+         x="375.5755"
+         y="1581.2479">Mostra Um</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="374.2265"
+       y="1647.726"
+       id="text3901-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-0"
+         x="374.2265"
+         y="1647.726">Feira Dois</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="374.40839"
+       y="1704.786"
+       id="text3901-8-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-2-7"
+         x="374.40839"
+         y="1704.786">Mostra Dois</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="372.48529"
+       y="1757.1583"
+       id="text3901-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-5"
+         x="372.48529"
+         y="1757.1583">CongressoUm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="372.66718"
+       y="1814.2186"
+       id="text3901-8-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-2-0"
+         x="372.66718"
+         y="1814.2186">Mostra Três</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="371.31818"
+       y="1880.6964"
+       id="text3901-0-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-0-4"
+         x="371.31818"
+         y="1880.6964">Palestra Um</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:'Smart Kid';-inkscape-font-specification:'Smart Kid Medium';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="371.50006"
+       y="1937.7567"
+       id="text3901-8-9-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3903-2-7-8"
+         x="371.50006"
+         y="1937.7567">Congresso Dois</tspan><tspan
+         sodipodi:role="line"
+         x="371.50006"
+         y="1965.8817"
+         id="tspan3985" /><tspan
+         sodipodi:role="line"
+         x="371.50006"
+         y="1994.0067"
+         id="tspan3983" /></text>
+    <g
+       style="display:inline"
+       transform="translate(918.87781,1517.2697)"
+       id="582d3641907b45d8a80db11701b318b5-6"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="c07f3f7e883d4ea49f6f7f01ab57019d-3"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="2fdf833d0b6f458a86868889384d9c8f-1"
+         pencil:name="text"
+         xml:space="preserve"
+         x="2.4223993"
+         y="6.0559978"><tspan
+           id="tspan4114-2"
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px">Detalhes</tspan><tspan
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px"
+           id="tspan4011" /></text>
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="2fdf833d0b6f458a86868889384d9c8f-1-9"
+         pencil:name="text"
+         xml:space="preserve"
+         x="113.93832"
+         y="6.1259017"><tspan
+           id="tspan4114-2-2"
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px">Editar</tspan><tspan
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px"
+           id="tspan4034" /></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="matrix(1.0065211,0,0,1.0327143,179.8283,1280.5495)"
+       id="g4283"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">1001.1875,65.25</pencil:property>
+        <pencil:property
+           name="textPadding">50.05937499999998,4.3500000000000005</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Sistema de Eventos</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|32px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="m 0,0 c 334,0 667,0 1001.1875,0 0.8125,22 0.8125,44 0,65.25 C 667,64 334,64 0,65.25 0,44 0,22 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="3adf57ef834f4d9f876aa38252b682a1"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(50,44)"
+         style="font-style:normal;font-weight:normal;font-size:32px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="124f0e69b42b490682191aa1bfbae17f"
+         pencil:name="text">
+        <tspan
+           id="tspan4287"
+           y="0"
+           x="331.39377">Sistema de Eventos</tspan>
+      </text>
+    </g>
+    <g
+       style="display:inline"
+       transform="matrix(1.0080293,0,0,0.96722709,1171.7078,1359.1413)"
+       id="g4321"
+       pencil:def="Evolus.Sketchy.GUI:scrollbar"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">21.8125,893.359375</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+      </pencil:metadata>
+      <rect
+         y="0"
+         x="0"
+         height="893.35901"
+         width="21.8125"
+         id="4bc9c2afe105410496cbae42ac41e059"
+         pencil:name="bg"
+         style="fill:#ffffff;stroke:none"
+         ry="0"
+         rx="0" />
+      <g
+         id="b5e28361a0f9451a8d28b04ffba96aa4"
+         pencil:name="scrollbar"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 C 0,298 0,596 0,893.35937 7,894 15,894 21.8125,893.35937 22,596 22,298 21.8125,0 Z M 2,456.67969 C 7,457 13,457 17.8125,456.67969 M 2,446.67969 C 7,447 13,447 17.8125,446.67969 M 2,436.67969 C 7,437 13,437 17.8125,436.67969 M 2,10 C 5,8 8,7 10.90625,5 13,7 15,8 17.8125,10 M 2,883.35937 C 5,885 8,887 10.90625,888.35937 13,887 16,885 17.8125,883.35937"
+           id="695b2dcf90d840209042fd6c4db0a732"
+           pencil:name="line2"
+           style="stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       style="display:inline"
+       transform="matrix(1.0065211,0,0,1.0327143,183.0996,1348.1923)"
+       id="g4326"
+       pencil:def="Evolus.Sketchy.GUI:box"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="box">976.171875,55</pencil:property>
+        <pencil:property
+           name="textPadding">48.80859375,3.6666666666666665</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFFFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Barra de Menus</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|18px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <path
+         inkscape:connector-curvature="0"
+         d="M 0,0 C 325,1 651,1 976.17187,0 976,18 976,37 976.17187,55 651,54 325,54 0,55 0,37 0,18 0,0 Z"
+         transform="translate(0.5,0.5)"
+         id="78597e778a214404ba72793135b3e13d"
+         pencil:name="line1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-opacity:1" />
+      <text
+         transform="translate(49,33)"
+         style="font-style:normal;font-weight:normal;font-size:18px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="3d0a71f9085d4591889bc3881d15f7a6"
+         pencil:name="text">
+        <tspan
+           id="tspan4330"
+           y="0"
+           x="384.58984">Barra de Menus</tspan>
+      </text>
+    </g>
+    <rect
+       style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.30413985;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4442"
+       width="573.53644"
+       height="60.934803"
+       x="314.42804"
+       y="1484.1337"
+       inkscape:tile-cx="505.96793"
+       inkscape:tile-cy="202.96005"
+       inkscape:tile-w="861.93585"
+       inkscape:tile-h="61.299013"
+       inkscape:tile-x0="75.000001"
+       inkscape:tile-y0="172.31055" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,61.307581)"
+       id="use4454"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,122.61518)"
+       id="use4456"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,183.92278)"
+       id="use4458"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,245.23038)"
+       id="use4460"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,306.53798)"
+       id="use4462"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,367.84558)"
+       id="use4464"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#rect4442"
+       xlink:href="#rect4442"
+       transform="translate(4.6847005e-5,429.15317)"
+       id="use4466"
+       width="100%"
+       height="100%" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1545.3771"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4508"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1606.7059"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4510"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1668.035"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4512"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1729.3641"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4514"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1790.693"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4516"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1852.0221"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4518"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <rect
+       inkscape:tile-y0="172.31055"
+       inkscape:tile-x0="75.000001"
+       y="1913.351"
+       x="-1113.3595"
+       height="60.956074"
+       width="113.0139"
+       id="use4520"
+       style="display:inline;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.13503133;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:500;font-size:27.5px;line-height:125%;font-family:'Smart Kid';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Smart Kid Medium';font-stretch:normal;font-variant:normal;"
+       x="440.7984"
+       y="1459.9941"
+       id="text3893"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3895"
+         x="440.7984"
+         y="1459.9941">Lista de Eventos</tspan></text>
+    <g
+       pencil:type="Shape"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:sc="Label"
+       id="g5350"
+       transform="translate(918.87781,1575.2697)"
+       style="display:inline">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         x="0"
+         y="0"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         pencil:name="bgRect"
+         id="rect5352"
+         width="0"
+         height="0" />
+      <text
+         y="6.0559978"
+         x="2.4223993"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5354"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978"
+           id="tspan5356">Detalhes</tspan><tspan
+           id="tspan5358"
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978" /></text>
+      <text
+         y="6.1259017"
+         x="113.93832"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5360"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017"
+           id="tspan5362">Editar</tspan><tspan
+           id="tspan5364"
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017" /></text>
+    </g>
+    <g
+       pencil:type="Shape"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:sc="Label"
+       id="g5370"
+       transform="translate(918.87781,1639.2697)"
+       style="display:inline">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         x="0"
+         y="0"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         pencil:name="bgRect"
+         id="rect5372"
+         width="0"
+         height="0" />
+      <text
+         y="6.0559978"
+         x="2.4223993"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5374"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978"
+           id="tspan5376">Detalhes</tspan><tspan
+           id="tspan5378"
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978" /></text>
+      <text
+         y="6.1259017"
+         x="113.93832"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5380"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017"
+           id="tspan5382">Editar</tspan><tspan
+           id="tspan5384"
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017" /></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(918.87781,1697.2697)"
+       id="g5386"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="rect5388"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="text5390"
+         pencil:name="text"
+         xml:space="preserve"
+         x="2.4223993"
+         y="6.0559978"><tspan
+           id="tspan5392"
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px">Detalhes</tspan><tspan
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px"
+           id="tspan5394" /></text>
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="text5396"
+         pencil:name="text"
+         xml:space="preserve"
+         x="113.93832"
+         y="6.1259017"><tspan
+           id="tspan5398"
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px">Editar</tspan><tspan
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px"
+           id="tspan5400" /></text>
+    </g>
+    <g
+       pencil:type="Shape"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:sc="Label"
+       id="g5482"
+       transform="translate(918.87781,1759.2697)"
+       style="display:inline">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         x="0"
+         y="0"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         pencil:name="bgRect"
+         id="rect5484"
+         width="0"
+         height="0" />
+      <text
+         y="6.0559978"
+         x="2.4223993"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5486"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978"
+           id="tspan5488">Detalhes</tspan><tspan
+           id="tspan5490"
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978" /></text>
+      <text
+         y="6.1259017"
+         x="113.93832"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5492"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017"
+           id="tspan5494">Editar</tspan><tspan
+           id="tspan5496"
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017" /></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(918.87781,1817.2697)"
+       id="g5498"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="rect5500"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="text5502"
+         pencil:name="text"
+         xml:space="preserve"
+         x="2.4223993"
+         y="6.0559978"><tspan
+           id="tspan5504"
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px">Detalhes</tspan><tspan
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px"
+           id="tspan5506" /></text>
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="text5508"
+         pencil:name="text"
+         xml:space="preserve"
+         x="113.93832"
+         y="6.1259017"><tspan
+           id="tspan5510"
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px">Editar</tspan><tspan
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px"
+           id="tspan5512" /></text>
+    </g>
+    <g
+       style="display:inline"
+       transform="translate(918.87781,1881.2697)"
+       id="g5516"
+       pencil:sc="Label"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:type="Shape">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         height="0"
+         width="0"
+         id="rect5518"
+         pencil:name="bgRect"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         y="0"
+         x="0" />
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="text5520"
+         pencil:name="text"
+         xml:space="preserve"
+         x="2.4223993"
+         y="6.0559978"><tspan
+           id="tspan5522"
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px">Detalhes</tspan><tspan
+           y="6.0559978"
+           x="2.4223993"
+           style="font-size:17.5px"
+           id="tspan5524" /></text>
+      <text
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         id="text5526"
+         pencil:name="text"
+         xml:space="preserve"
+         x="113.93832"
+         y="6.1259017"><tspan
+           id="tspan5528"
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px">Editar</tspan><tspan
+           y="6.1259017"
+           x="113.93832"
+           style="font-size:17.5px"
+           id="tspan5530" /></text>
+    </g>
+    <g
+       pencil:type="Shape"
+       pencil:def="Evolus.Common:PlainTextV2"
+       pencil:sc="Label"
+       id="g5532"
+       transform="translate(918.87781,1939.2697)"
+       style="display:inline">
+      <pencil:metadata>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="width">100,0</pencil:property>
+        <pencil:property
+           name="fixedWidth">false</pencil:property>
+        <pencil:property
+           name="label">Organizador:</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textAlign">0,0</pencil:property>
+      </pencil:metadata>
+      <rect
+         x="0"
+         y="0"
+         style="display:none;visibility:hidden;fill:none;stroke:none"
+         pencil:name="bgRect"
+         id="rect5534"
+         width="0"
+         height="0" />
+      <text
+         y="6.0559978"
+         x="2.4223993"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5536"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978"
+           id="tspan5538">Detalhes</tspan><tspan
+           id="tspan5540"
+           style="font-size:17.5px"
+           x="2.4223993"
+           y="6.0559978" /></text>
+      <text
+         y="6.1259017"
+         x="113.93832"
+         xml:space="preserve"
+         pencil:name="text"
+         id="text5542"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"><tspan
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017"
+           id="tspan5544">Editar</tspan><tspan
+           id="tspan5546"
+           style="font-size:17.5px"
+           x="113.93832"
+           y="6.1259017" /></text>
+    </g>
+    <g
+       pencil:type="Shape"
+       pencil:def="Evolus.Sketchy.GUI:button"
+       id="g5558"
+       transform="translate(631.06576,2051.045)"
+       style="display:inline">
+      <pencil:metadata>
+        <pencil:property
+           name="box">90,25</pencil:property>
+        <pencil:property
+           name="disabled">false</pencil:property>
+        <pencil:property
+           name="default">false</pencil:property>
+        <pencil:property
+           name="fillColor">#CCCCCCFF</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">1|</pencil:property>
+        <pencil:property
+           name="textContent">Voltar</pencil:property>
+        <pencil:property
+           name="textFont">Smart Kid|normal|normal|12px|none</pencil:property>
+        <pencil:property
+           name="textColor">#000000FF</pencil:property>
+        <pencil:property
+           name="textAlign">1,1</pencil:property>
+      </pencil:metadata>
+      <g
+         pencil:name="rect"
+         id="g5560"
+         style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1">
+        <path
+           style="stroke-linejoin:round"
+           pencil:name="line1"
+           id="path5562"
+           d="m 0,0 c 30,1 60,1 90,0 0,8 0,17 0,25 C 60,26 30,26 0,25 0,17 0,8 0,0 Z"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         pencil:name="text"
+         id="text5564"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Smart Kid';text-decoration:none;text-decoration-line:none;fill:#000000;fill-opacity:1"
+         transform="translate(31,17)">Voltar</text>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5919"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion5921"><rect
+           id="rect5923"
+           width="269.89343"
+           height="504.50046"
+           x="278.47662"
+           y="1481.5214" /></flowRegion><flowPara
+         id="flowPara5925" /></flowRoot>  </g>
+</svg>
