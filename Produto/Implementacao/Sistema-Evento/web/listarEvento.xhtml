@@ -5,7 +5,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:b = "http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui">
     
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
@@ -15,8 +15,8 @@
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
                     <h:outputLabel for="evento" value="Selecione a categoria: "/>
-                    <h:selectOneMenu id="evento" value="#{sisEventosBean.listaCategoriaSelecionada}">
-                        <f:selectItems value="#{sisEventosBean.listaCategoriaSelecionada}" var="a" itemValue="#{e.categoria}" />
+                    <h:selectOneMenu id="evento" value="#{sisEventosBean.listaEventos}">
+                        <f:selectItems value="#{sisEventosBean.listaEventos}" var="a" itemValue="#{evt.categoria}" />
                     </h:selectOneMenu>
                
                 <h:panelGroup> 
@@ -31,7 +31,7 @@
                 <p:column headerText="Local">
                 #{evento.local}
                 </p:column>
-               <p:column headerText="Data Evento">
+               <p:column headerText="Categoria">
                #{evento.categoria}
             </p:column>
             <p:column headerText="Detalhes">
