@@ -1,5 +1,6 @@
 package backingbeans;
 
+import excecoes.SisEventoException;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -8,10 +9,7 @@ import javax.faces.context.FacesContext;
 import modelo.Evento;
 import persistencia.EventoDAO;
 
-/**
- *
- * @author luis
- */
+
 @ManagedBean
 @SessionScoped
 public class SisEventosBean {
@@ -56,4 +54,23 @@ public class SisEventosBean {
         return "consultaEvento";
 
     }
+    
+     public String iniciaAlteracaoEvento() {    
+         EventoDAO dao = new EventoDAO();
+     evento = dao.carregar(evento.getId());
+     return "alterarEvento2";
+    }
+    
+    public String alterarEvento() {               //alterando o evento com os dados do banco -- nao ta subindo os dados :(
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        EventoDAO dao = new EventoDAO();
+        dao.alterar(evento);
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Evento alterado com sucesso!", "");
+        evento = new Evento();
+        context.addMessage(null, msg);
+        return "alterarEvento";
+    }
+    
 }
