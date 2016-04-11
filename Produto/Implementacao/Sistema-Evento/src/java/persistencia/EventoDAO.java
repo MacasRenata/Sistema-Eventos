@@ -6,10 +6,7 @@ import modelo.Evento;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author luis
- */
+
 public class EventoDAO {
     private Session sessao;
     

@@ -10,10 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- *
- * @author luis
- */
+
 @Entity
 @Table(name="Eventos")
 public class Evento implements Serializable {
@@ -38,6 +35,7 @@ public class Evento implements Serializable {
     private Boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
     private String nome_organizador;
     private String email_organizador;  
+    private String senha;
 
     public int getId() {
         return id;
@@ -161,4 +159,11 @@ public class Evento implements Serializable {
         this.descricao_evento = descricao_evento;
     }
     
+    public String getSenha() {
+        return senha;
+    }
+ 
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }

@@ -8,17 +8,24 @@
     <h:head>
         <title>Sistema de Eventos</title>
         <h:outputStylesheet library="css" name="estilos.css"/>
+        <h:outputStylesheet library="js" name="validacao.js"/>     
     </h:head>
     <h:body>
         <p:layout fullPage="true">
            <p:layoutUnit position="north">  
-         <nav class="navbar navbar-inverse navbar-fixed-top">   
-          <span>Sistema de Eventos</span>
-          <h:form  class="navbar-form navbar-left"  > 
-             <b:inputText type="text" placeholder="Email" class="form-control"/>
-              <b:inputText type="password" placeholder="Password" class="form-control" />
+         <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <span> <h1> Sistema de Eventos </h1></span>
+          <h:form  class="navbar-form navbar-left" > 
+              <div class="form-group">
+             <p:outputLabel for="emailOrganizador" value="Email:" />
+             <p:inputText id="emailOrganizador" value="#{sisEventosBean.evento.email_organizador}" required="true" />
+             <p:outputLabel for="pwd1" value="Senha:" />
+             <p:password id="pwd1" value="#{sisEventosBean.evento.senha}" required="true" />
             <b:button  class="btn btn-success" value="Entrar" outcome="index"/>  
+              </div>
           </h:form>  
+            </div>
            </nav>
             </p:layoutUnit>    
             <p:layoutUnit id="conteudo" position="center">

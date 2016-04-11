@@ -10,19 +10,10 @@
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
       
-      <p:panel id="basic" header="Informações Processo" style="margin-bottom:20px">
+      <p:panel id="basic" header="Informações Eventos" style="margin-bottom:20px">
             <div id="formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
-                    <h:outputLabel for="evento" value="Selecione a categoria: "/>
-                    <h:selectOneMenu id="evento" value="#{sisEventosBean.listaEventos}">
-                        <f:selectItems value="#{sisEventosBean.listaEventos}" var="a" itemValue="#{evt.categoria}" />
-                    </h:selectOneMenu>
-               
-                <h:panelGroup> 
-                    <p:commandButton class="btn btn-default" value="Listar" action="#{sisEventosBean.listaEventos}"/>
-                    <p:button class="btn btn-default" value="Voltar" outcome="index"/>
-                </h:panelGroup>
                     <h:panelGrid columns="2">
                        <p:dataTable value="#{sisEventosBean.listaEventos}" var="evento">
                 <p:column headerText="Título">
@@ -32,7 +23,7 @@
                 #{evento.local}
                 </p:column>
                <p:column headerText="Categoria">
-               #{evento.categoria}
+               #{evento.categoria_evento}
             </p:column>
             <p:column headerText="Detalhes">
                 <p:commandLink id="ajax" action="listaEvento2">
@@ -41,6 +32,7 @@
             </p:column>
                </p:dataTable>       
                     </h:panelGrid>   
+                    <b:button class="btn btn-default" value="Voltar" outcome="index"/>
                 </h:form>
             </div>
          </p:panel>
