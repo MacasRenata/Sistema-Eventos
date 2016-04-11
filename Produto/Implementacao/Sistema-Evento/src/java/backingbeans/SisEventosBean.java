@@ -37,6 +37,7 @@ public class SisEventosBean {
         return listaEventos;
     }
 
+    // Conferir se está Duplicando a inclusão
     public String incluirEvento() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
@@ -44,7 +45,7 @@ public class SisEventosBean {
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento criado, incluído..., com sucesso!", "");
-        evento = new Evento();
+    //    evento = new Evento();
         context.addMessage(null, msg);
         return null;
     }
@@ -56,16 +57,20 @@ public class SisEventosBean {
     }
     
      public String iniciaAlteracaoEvento() {    
-         EventoDAO dao = new EventoDAO();
-     evento = dao.carregar(evento.getId());
+     //    EventoDAO dao = new EventoDAO();
+     evento = evtDao.carregar(evento.getId());
      return "alterarEvento2";
     }
     
-    public String alterarEvento() {               //alterando o evento com os dados do banco -- nao ta subindo os dados :(
+     
+     //Método alterado, deve funcionar, conferir no xhtml
+     //msg na alteraçao:
+     //nested transactions not suported
+    public String alterarEvento() {             
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        EventoDAO dao = new EventoDAO();
-        dao.alterar(evento);
+    //    EventoDAO dao = new EventoDAO();
+        evtDao.alterar(evento);
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento alterado com sucesso!", "");
         evento = new Evento();
