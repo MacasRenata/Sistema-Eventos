@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    
+    <ui:composition template="templates/padrao.xhtml">
+        <ui:define name="conteudo">
+           
+      <p:panel id="basic" header="Detalhes do Evento" style="margin-bottom:20px">
+            <div id= "formDados">
+                <h:messages infoClass="msgInfo" errorClass="msgErro"/>
+                <h:form>
+                    <h:panelGrid columns="2">
+                      <h:outputLabel for="txtDesricao" value="Descrição do evento: "/>
+                        <h:outputText id="txtDescricao"
+                                      value="#{sisEventosBean.evento.descricao_evento}"/>
+                        <h:outputLabel for="txtInicioEvento" value="Data de Inicio: "/>
+                        <h:outputText id="inicioEvento"
+                                      value="#{sisEventosBean.evento.data_inicial}"/>
+                    </h:panelGrid>
+                    
+
+                    <p:dataTable id="tabIncricoes" value="#{sisEventosBean.evento.inscricoes}"
+                            var="inscritos">
+                    <p:column headerText="Total de Inscritos">
+                            #{usuario.inscritos}
+                    </p:column>
+                    <p:column headerText="Submissão de trabalhos">
+                            #{usuario.subTrab}
+                    </p:column>
+                    </p:dataTable>
+
+                   
+                      <h:panelGroup> 
+                    <b:button class="btn btn-default" value="Editar" outcome="alterarEvento" />
+                    <b:button class="btn btn-default" value="Voltar" outcome="listarEvento"/>
+                      </h:panelGroup>
+                </h:form>
+            </div>
+         </p:panel>
+        </ui:define>
+    </ui:composition>
+</html>

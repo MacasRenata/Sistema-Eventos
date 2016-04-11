@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    
+    <ui:composition template="templates/padrao.xhtml">
+        <ui:define name="conteudo">
+       
+     <div class="jumbotron"  align="center">
+        <h1>Crie seu Evento</h1>
+        <p> Um Sistema desenvolvido para a Criação de Eventos. </p>
+        <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
+      </div>
+   
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Listar Eventos</h2>
+          <p> Consulte maiores informações sobre o evento. </p>
+          <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
+        </div>      
+          <div class="col-md-4">
+          <h2>Inscrição em Eventos</h2>
+          <p> Inscreva-se nos eventos. </p>
+          <b:button class="btn btn-primary btn-lg"  value="Inscrição" outcome="incluirUsuario"/>
+        </div>
+         <div class="col-md-4">
+          <h2>Alterar Eventos</h2>
+          <p> Alterar dados do eventos. </p>
+          <b:button class="btn btn-primary btn-lg" value="Alterar" outcome="alterarEvento" />
+         </div>
+      </div>
+    </div>  
+      <p:spacer height="20" />
+         <p:separator />
+             <div class="container">
+           <div class="footer">
+      <footer class="container-fluid text-center">
+        <p> 2016 Equipe1 ADS, Inc.</p>
+         <p>
+         Este sistema foi desenvolvido na disciplina de Desenvolvimento de Sistemas II do curso de Análise e Desenvolvimento de Sistemas do Campus Restinga do IFRS.
+        </p>
+      </footer>
+    </div> 
+       </div> 
+        </ui:define>
+    </ui:composition>
+</html>
+
+
