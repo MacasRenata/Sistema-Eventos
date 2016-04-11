@@ -4,13 +4,27 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 
-body {
+    #body {
     background-color: gray;
     font-family: Verdana, Arial, sans-serif;
-}
+    }
 
-
-#titulo span {
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    .footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    
+    .span {
     display: table-cell;
     vertical-align: middle;
     font-size: 40px;
@@ -21,24 +35,12 @@ body {
 
 
 #conteudo {
-    border-radius: 25px;
-    border: 5px solid gray;
     background-color: white;
     padding: 10px;
     margin-top: 5px;
     height: 430px;
 }
 
-
-#principal {
-    width:60%;
-    float: left;
-    margin-right: 50px;
-}
-
-#conteudo h1 {
-    border-bottom: 2px gray;
-}
 
 #formDados {
     width: 70%;
