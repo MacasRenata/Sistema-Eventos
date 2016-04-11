@@ -1,6 +1,9 @@
 package excecoes;
 
-
+/**
+ *
+ * @author luis
+ */
 public class SisEventoException extends Exception {
 
     public SisEventoException() {

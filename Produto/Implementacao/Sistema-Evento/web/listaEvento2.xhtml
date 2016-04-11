@@ -15,14 +15,21 @@
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
                     <h:panelGrid columns="2">
-                      <h:outputLabel for="txtDesricao" value="Descrição do evento: "/>
-                        <h:outputText id="txtDescricao"
+                      <h:outputLabel for="txtTitulo" value="Titulo: "/>
+                        <h:outputText id="txtTitulo"
+                                      value="#{sisEventosBean.evento.descricao_evento}"/>
+                        <h:outputLabel for="txtDescr" value="Descrição: "/>
+                        <h:outputText id="txtDescr"
                                       value="#{sisEventosBean.evento.descricao_evento}"/>
                         <h:outputLabel for="txtInicioEvento" value="Data de Inicio: "/>
-                        <h:outputText id="inicioEvento"
+                        <h:outputText id="txtData"
                                       value="#{sisEventosBean.evento.data_inicial}"/>
                     </h:panelGrid>
                     
+                    <p:outputLabel for="txtTitulo" value="Titulo do Evento:"/>
+                    <h:outputText id="txtTitulo" value="#{sisEventosBean.evento.titulo}"/>
+                    <p:outputLabel for="txtLocal" value="CPF do Cliente:"/>
+                    <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local}"/>
 
                     <p:dataTable id="tabIncricoes" value="#{sisEventosBean.evento.inscricoes}"
                             var="inscritos">
@@ -37,7 +44,7 @@
                    
                       <h:panelGroup> 
                     <b:button class="btn btn-default" value="Editar" outcome="alterarEvento" />
-                    <b:button class="btn btn-default" value="Voltar" outcome="listarEvento"/>
+                    <b:button class="btn btn-default" value="Voltar" outcome="index"/>
                       </h:panelGroup>
                 </h:form>
             </div>

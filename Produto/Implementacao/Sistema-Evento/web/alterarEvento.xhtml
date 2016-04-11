@@ -13,13 +13,12 @@
                 <div id= "formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
         <h:form>
-            <h:selectOneListbox value="#{sisEventosBean.evento.id}">
-                    <f:selectItems value="#{sisEventosBean.listaEventos}" var="evt" itemValue="#{evt.id}" itemLabel="#{evt.titulo}"/>
+                <h:selectOneListbox value="#{sisEventosBean.listaEventos}">
+                    <f:selectItems value="#{sisEventosBean.evento.categoria}" var="e" itemValue="#{evt.categoria}"/>
                 </h:selectOneListbox>
-            <b:commandButton class="btn btn-default" value="Enviar" action="#{sisEventosBean.iniciaAlteracaoEvento}"/>
+            <b:button value="Enviar" outcome="alteraEvento2"/>
             <b:button value="Voltar" outcome="index"/>
         </h:form>
-            </div>
           </p:panel>
     </ui:define>
     </ui:composition>
