@@ -83,8 +83,6 @@
                                  <f:selectItem itemLabel="Sim" itemValue="Sim" />
                                  <f:selectItem itemLabel="Não" itemValue="Não" />
                         </p:selectOneRadio>
-                         <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
-                           <p:commandButton value="Submit" ajax="false" actionListener="#{sisEventosBean.upload}" disabled="true" />
                        </h:panelGrid>
                        <h:panelGroup> 
                     <b:commandButton class="btn btn-default" value="Alterar" action="#{sisEventosBean.alterarEvento}"/>

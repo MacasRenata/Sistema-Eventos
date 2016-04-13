@@ -27,7 +27,7 @@
      return false;
      }
     // O utilizador necessita de selecionar um dos dois
-    //radio buttons: Masculino ou Feminino.
+    //radio buttons: sim e não.
     inscricoesEvento = -1; //valor negativo default (padrão) que significa que nada foi escolhido ainda.
     //No bloco de código abaixo foi criado um ciclo entre
     //os radios button com o mesmo nome (inscricoes)

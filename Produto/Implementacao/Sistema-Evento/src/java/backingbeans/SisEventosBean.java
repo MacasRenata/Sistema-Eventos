@@ -17,7 +17,7 @@ public class SisEventosBean {
 
     private Evento evento = new Evento();
     private List<Evento> listaEventos;
-    private UploadedFile file;
+    
  
 
     private EventoDAO evtDao = new EventoDAO();
@@ -74,18 +74,5 @@ public class SisEventosBean {
         return "alterarEvento";
     }
     
-    public UploadedFile getFile() {   //método para submeter arquivos
-        return file;
-    }
- 
-    public void setFile(UploadedFile file) {
-        this.file = file;
-    }
-     
-    public void upload() {
-        if(file != null) {
-            FacesMessage message = new FacesMessage("Sucesso", file.getFileName() + " arquivo submetido.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-        }
-    }
-}
+  }
+
