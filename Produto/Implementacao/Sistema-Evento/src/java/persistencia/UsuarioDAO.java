@@ -15,35 +15,41 @@ import org.hibernate.Transaction;
  * @author sergio
  */
 public class UsuarioDAO {
-        private Session sessao;
-    
-    public UsuarioDAO(){
+
+    private Session sessao;
+
+    public UsuarioDAO() {
         sessao = HibernateUtil.getSessionFactory().openSession();
-    
+
     }
-    
+
     public void incluir(Usuario usr) {
         Transaction t = sessao.beginTransaction();
         sessao.save(usr);
         t.commit();
     }
-    
-      public void alterar(Usuario usr) {
+
+    public void alterar(Usuario usr) {
         Transaction t = sessao.beginTransaction();
         sessao.update(usr);
         t.commit();
         sessao.flush();
-            
-    }
-      
-      
-      public ArrayList<Usuario> listar() {
-          return (ArrayList<Usuario>) sessao.createCriteria(Usuario.class).list();
- }
 
-      public Usuario carregar(int id) {
-          return (Usuario) sessao.get(Usuario.class, id);
-      }
-      
-    
+    }
+
+    public void excluir(Usuario usr) {
+        Transaction t = sessao.beginTransaction();
+        sessao.delete(usr);
+        t.commit();
+
+    }
+
+    public ArrayList<Usuario> listar() {
+        return (ArrayList<Usuario>) sessao.createCriteria(Usuario.class).list();
+    }
+
+    public Usuario carregar(int id) {
+        return (Usuario) sessao.get(Usuario.class, id);
+    }
+
 }
