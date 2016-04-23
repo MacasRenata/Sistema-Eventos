@@ -7,27 +7,29 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import modelo.Evento;
+import modelo.Usuario;
 import persistencia.EventoDAO;
+import persistencia.UsuarioDAO;
 
 
 @ManagedBean
 @SessionScoped
-//Se mantenho escopo de sessão, após visualizar os detalhes do evento, quando vou criar outro evento a tela aparece com os
-//campos preenchidos e ao clicar em criar o evento visualizado anteriormente é alterado.
-//Se uso escopo de requisição não consigo alterar o evento, e recebo a seguinte mensagem: 
-//org.hibernate.StaleStateException: Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1
 
 public class SisEventosBean {
 
     private Evento evento = new Evento();
+    private Usuario usuario = new Usuario();
     private List<Evento> listaEventos;
-    
+    private List<Usuario> listaUsuarios;
  
 
-    private EventoDAO evtDao = new EventoDAO();
+    private final EventoDAO evtDao = new EventoDAO();
+    private final UsuarioDAO usuarioDao = new UsuarioDAO();
+    
 
     public SisEventosBean() {
         listaEventos = evtDao.listar();
+        listaUsuarios = usuarioDao.listar();
     }
 
     public Evento getEvento() {
@@ -40,6 +42,18 @@ public class SisEventosBean {
 
     public List<Evento> getListaEventos() {
         return listaEventos;
+    }
+
+     public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
     }
 
  
@@ -57,10 +71,9 @@ public class SisEventosBean {
 
      
     public String consultarEvento(int id) {
-       
         evento = evtDao.carregar(id);//idEvento
         return "consultaEvento";
-
+    
     }
     
     //Para ir para a página de alteração do Evento selecionado à partir de Editar, em detalhes do Evento// 
@@ -83,6 +96,41 @@ public class SisEventosBean {
         context.addMessage(null, msg);
         return "listarEvento";
         
+    }
+    public String incluirUsuario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        usuarioDao.incluir(usuario);
+        listaUsuarios = usuarioDao.listar();
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Usuario cadastrado com Sucesso!", "");
+        usuario = new Usuario();
+        context.addMessage(null, msg);
+        return null;
+    }
+    
+     public String alterarUsuario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        usuarioDao.alterar(usuario);
+        listaUsuarios = usuarioDao.listar();
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Usuario alterado com Sucesso!", "");
+        usuario = new Usuario();
+        context.addMessage(null, msg);
+        return null;
+    }
+    
+       public String excluirUsuario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        usuarioDao.excluir(usuario);
+        listaUsuarios = usuarioDao.listar();
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Usuario removido com Sucesso!", "");
+        usuario = new Usuario();
+        context.addMessage(null, msg);
+        return null;
     }
     
 }
