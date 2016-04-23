@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 public class Evento implements Serializable {
     @Id
     @GeneratedValue
-    private int id;//mudar para idEvento
+    private int id_evento;//mudar para idEvento
     private String titulo;
     private String local; //mudar nome do atributo
     @Temporal(TemporalType.DATE)
@@ -35,15 +35,8 @@ public class Evento implements Serializable {
     private Boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
     private String nome_organizador;
     private String email_organizador;  
-    private String senha;
 
-    public int getId() {
-        return id;
-    }
     
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -158,12 +151,19 @@ public class Evento implements Serializable {
     public void setDescricao_evento(String descricao_evento) {
         this.descricao_evento = descricao_evento;
     }
+
+    /**
+     * @return the id_evento
+     */
+    public int getId_evento() {
+        return id_evento;
+    }
+
+    /**
+     * @param id_evento the id_evento to set
+     */
+    public void setId_evento(int id_evento) {
+        this.id_evento = id_evento;
+    }
     
-    public String getSenha() {
-        return senha;
-    }
- 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
 }
