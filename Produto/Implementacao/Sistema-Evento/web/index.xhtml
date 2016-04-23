@@ -4,36 +4,38 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
        
      <div class="jumbotron"  align="center">
-        <h1>Crie seu Evento</h1>
-        <p> Um Sistema desenvolvido para a Criação de Eventos. </p>
-        <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
+        <h1>Inscreva-se no Evento</h1>
+        <p> Um Sistema desenvolvido para a Criação e Particiapção em Eventos. </p>
+        <b:button class="btn btn-primary btn-lg"  value="Listar Todos os Eventos" outcome="listarEvento"/>
+        <b:button class="btn btn-primary btn-lg"  value="Administrador" outcome="administrador"/>
+        <b:button class="btn btn-primary btn-lg"  value="Usuario" outcome="usuario"/>
       </div>
+       <p:spacer height="20" />
+         <p:separator />
+            <h:form id="form">
+                <p:carousel value="#{sisEventosBean.listaEventos}" headerText="Eventos" var="evento" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+            <f:facet name="header">
+                <p:graphicImage value="templates/images/cookies" /> 
+            </f:facet>
+            
+            <h:outputText value="Titulo" />
+            <h:outputText value="#{sisEventosBean.evento.titulo}" />
+ 
+            <h:outputText value="Data:" />
+            <h:outputText value="#{sisEventosBean.evento.data_inicial}" style="color:#{sisEventosBean.evento.data_final}"/>
+
+        </p:panelGrid>  
+    </p:carousel>
+            </h:form>
    
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Listar Eventos</h2>
-          <p> Consulte maiores informações sobre o evento. </p>
-          <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
-        </div>      
-          <div class="col-md-4">
-          <h2>Inscrição em Eventos</h2>
-          <p> Inscreva-se nos eventos. </p>
-          <b:button class="btn btn-primary btn-lg"  value="Inscrição" outcome="incluirUsuario"/>
-        </div>
-         <div class="col-md-4">
-          <h2>Alterar Eventos</h2>
-          <p> Alterar dados do eventos. </p>
-          <b:button class="btn btn-primary btn-lg" value="Alterar" outcome="alterarEvento" />
-         </div>
-      </div>
-    </div>  
       <p:spacer height="20" />
          <p:separator />
              <div class="container">

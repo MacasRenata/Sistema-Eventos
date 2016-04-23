@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    
+    <ui:composition template="templates/padrao.xhtml">
+        <ui:define name="conteudo">
+       
+     <div class="jumbotron"  align="center">
+        <h1>Cadastre-se</h1>
+        <p> Um Sistema desenvolvido para participação em Eventos. </p>
+        <b:button class="btn btn-primary btn-lg"  value="Cadastrar" outcome="incluirUsuario"/>
+      </div>
+   
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Alterar Usuario</h2>
+          <p> Atualizar dados do usuario. </p>
+          <b:button class="btn btn-primary btn-lg"  value="Alterar" outcome="alterarUsuario"/>
+        </div>      
+          <div class="col-md-4">
+          <h2>Listar Eventos</h2>
+          <p> Listar todos os eventos com inscrições abertas. </p>
+          <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listarEvento"/>
+        </div>
+         <div class="col-md-4">
+          <h2>Remover Usuario</h2>
+          <p> Remover dados do usuario. </p>
+          <b:button class="btn btn-primary btn-lg" value="Remover" outcome="alterarUsuario" />
+         </div>
+      </div>
+    </div>  
+      <p:spacer height="20" />
+         <p:separator />
+             <div class="container">
+           <div class="footer">
+      <footer class="container-fluid text-center">
+        <p> 2016 Equipe1 ADS, Inc.</p>
+         <p>
+         Este sistema foi desenvolvido na disciplina de Desenvolvimento de Sistemas II do curso de Análise e Desenvolvimento de Sistemas do Campus Restinga do IFRS.
+        </p>
+      </footer>
+    </div> 
+       </div> 
+        </ui:define>
+    </ui:composition>
+</html>
+
+

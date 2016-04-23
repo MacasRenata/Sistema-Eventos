@@ -14,6 +14,7 @@
             <div id= "formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
+                     <p:growl id="growl" life="2000" />
                     <h:panelGrid columns="2">
                       <h:outputLabel for="txtDesricao" value="Descrição do evento: "/>
                         <h:outputText id="txtDescricao"
@@ -33,11 +34,8 @@
                             #{usuario.subTrab}
                     </p:column>
                     </p:dataTable>
-
-                   
                       <h:panelGroup> 
-                    <b:button class="btn btn-default" value="Editar" outcome="alterarEvento" />
-                    <b:button class="btn btn-default" value="Voltar" outcome="listarEvento"/>
+                   <p:button outcome="listarEvento" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>
             </div>
