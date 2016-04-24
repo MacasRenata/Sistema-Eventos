@@ -14,11 +14,11 @@
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
         <h:form>
              <p:growl id="growl" life="2000" />
-            <h:selectOneListbox value="#{sisEventosBean.evento.id}">
-                    <f:selectItems value="#{sisEventosBean.listaEventos}" var="evt" itemValue="#{evt.id}" itemLabel="#{evt.titulo}"/>
+            <h:selectOneListbox value="#{sisEventosBean.evento.id_evento}">
+                    <f:selectItems value="#{sisEventosBean.listaEventos}" var="evt" itemValue="#{evt.id_evento}" itemLabel="#{evt.titulo}"/>
                 </h:selectOneListbox>
             <p:commandButton value="alterar" id="Alterar" actionListener="#{sisEventosBean.iniciaAlteracaoEvento}" update="growl" icon="ui-icon-disk" />
-           <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+           <p:button outcome="administrador" value="Voltar" icon="ui-icon-star"/>
         </h:form>
             </div>
           </p:panel>

@@ -16,22 +16,22 @@
                 <h:form>
                      <p:growl id="growl" life="2000" />
                     <h:panelGrid columns="2">
-                       <p:dataTable value="#{sisEventosBean.listaUsuario}" var="usuario">
+                       <p:dataTable value="#{sisEventosBean.listaUsuarios}" var="usuario">
                 <p:column headerText="Nome">
-                  #{usuario.nomeUusario}
+                  #{usuario.nome} 
                    </p:column>
                 <p:column headerText="Email">
-                #{usuario.emailUsuario}
+                #{usuario.email}
                 </p:column>
                <p:column headerText="Instituição Ensino">
-               #{usuario.instEnsino}
+               #{usuario.instituicao}
             </p:column>
             <p:column headerText="Telefone">
                 #{usuario.telefone}
             </p:column>
                </p:dataTable>       
                     </h:panelGrid>   
-                    <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                    <p:button outcome="usuario" value="Voltar" icon="ui-icon-star"/>
                 </h:form>
             </div>
          </p:panel>

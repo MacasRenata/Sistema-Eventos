@@ -72,8 +72,7 @@ public class SisEventosBean {
      
     public String consultarEvento(int id) {
         evento = evtDao.carregar(id);//idEvento
-        return "consultaEvento";
-    
+        return "listaEvento2"; 
     }
     
     //Para ir para a página de alteração do Evento selecionado à partir de Editar, em detalhes do Evento// 
@@ -97,6 +96,8 @@ public class SisEventosBean {
         return "listarEvento";
         
     }
+    
+    //usuario
     public String incluirUsuario() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
@@ -131,6 +132,11 @@ public class SisEventosBean {
         usuario = new Usuario();
         context.addMessage(null, msg);
         return null;
+    }
+       
+        public String consultaUsuario(int id) {
+        usuario = usuarioDao.carregar(id);//idUsuario = email?
+        return "listarUsuario"; 
     }
     
 }

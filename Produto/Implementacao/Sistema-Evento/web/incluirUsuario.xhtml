@@ -17,32 +17,32 @@
                     <p:growl id="growl" life="2000" />
                       <h:panelGrid columns="2">
                         <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtNomeUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.nomeUsuario}"/>
+                        <p:inputText id="txtNomeUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.nome}"/>
                         
                         <h:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
                         <h:inputText id="txtEmail" maxlength="60" size="50" value="#{sisEventosBean.usuario.email}"/>
                         
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senhaUsuario}"/>
+                        <p:inputText id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}"/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.dataNasc}" />
+                        <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" />
                         
                         <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuario.genero}"/>
+                        <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuario.sexo}"/>
                         
                         <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.enderecoUsuario}"/>
+                        <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.endereco}"/>
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtCep" maxlength="8" size="50" value="#{sisEventosBean.usuario.cepUsuario}"/>
+                        <p:inputText id="txtCep" maxlength="8" size="50" value="#{sisEventosBean.usuario.cep}"/>
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}"/>
                         
                           </h:panelGrid>
                        <h:panelGroup> 
-                    <p:commandButton value="cadastro" id="cadastro" actionListener="#{sisEventosBean.incluirUsuario}" update="growl" icon="ui-icon-disk" />
+                    <p:commandButton value="cadastro" id="cadastro" actionListener="#{sisEventosBean.incluirUsuario}" ajax="false" icon="ui-icon-disk" />
                     <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>

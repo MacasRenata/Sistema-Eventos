@@ -10,10 +10,7 @@ import modelo.Usuario;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author sergio
- */
+
 public class UsuarioDAO {
 
     private Session sessao;

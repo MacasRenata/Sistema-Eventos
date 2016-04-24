@@ -86,8 +86,8 @@
                          </p:selectOneRadio>
                        </h:panelGrid>
                        <h:panelGroup> 
-                    <p:commandButton value="cadastro" id="cadastro" actionListener="#{sisEventosBean.incluirEvento}" update="growl" icon="ui-icon-disk" />
-                    <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                    <p:commandButton value="cadastro" id="cadastro" actionListener="#{sisEventosBean.incluirEvento}" ajax="false"  icon="ui-icon-disk" />
+                    <p:button outcome="administrador" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>
             </div>

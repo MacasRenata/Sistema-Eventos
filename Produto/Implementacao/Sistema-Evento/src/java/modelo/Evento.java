@@ -34,7 +34,8 @@ public class Evento implements Serializable {
     private int limite_inscricoes;//limitar o num de participantes no evento
     private Boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
     private String nome_organizador;
-    private String email_organizador;  
+    private String email_organizador;
+    private String senha_organizador;
 
     
 
@@ -165,5 +166,20 @@ public class Evento implements Serializable {
     public void setId_evento(int id_evento) {
         this.id_evento = id_evento;
     }
+
+    /**
+     * @return the senha_organizador
+     */
+    public String getSenha_organizador() {
+        return senha_organizador;
+    }
+
+    /**
+     * @param senha_organizador the senha_organizador to set
+     */
+    public void setSenha_organizador(String senha_organizador) {
+        this.senha_organizador = senha_organizador;
+    }
+    
     
 }

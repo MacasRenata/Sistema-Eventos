@@ -17,33 +17,33 @@
                     <p:growl id="growl" life="2000" />
                       <h:panelGrid columns="2">
                         <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtNomeUsuario" value="#{sisEventosBean.usuario.nomeUsuario}"/>
+                        <h:outputText id="txtNomeUsuario" value="#{sisEventosBean.usuario.nome}"/>
                         
                         <h:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtEmail" value="#{sisEventosBean.usuario.email}"/>
                         
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtSenhaUsuario" value="#{sisEventosBean.usuario.senhaUsuario}"/>
+                        <h:outputText id="txtSenhaUsuario" value="#{sisEventosBean.usuario.senha}"/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
-                        <h:outputText id="dataNasc" value="#{sisEventosBean.usuario.dataNasc}" />
+                        <h:outputText id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" />
                         
                         <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtGenero" value="#{sisEventosBean.usuario.genero}"/>
+                        <h:outputText id="txtGenero" value="#{sisEventosBean.usuario.sexo}"/>
                         
                         <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtEndUsuario" value="#{sisEventosBean.usuario.enderecoUsuario}"/>
+                        <h:outputText id="txtEndUsuario" value="#{sisEventosBean.usuario.endereco}"/>
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtCep" value="#{sisEventosBean.usuario.cepUsuario}"/>
+                        <h:outputText id="txtCep" value="#{sisEventosBean.usuario.cep}"/>
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtTelefone" value="#{sisEventosBean.usuario.telefone}"/>
                         
                           </h:panelGrid>
                        <h:panelGroup> 
-                    <p:commandButton value="Alterar" id="Alterar" actionListener="#{sisEventosBean.iniciarAlteracaoUsuario}" update="growl" icon="ui-icon-disk" />
-                    <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                    <p:commandButton value="Alterar" id="Alterar" actionListener="#{sisEventosBean.alterarUsuario}" update="growl" icon="ui-icon-disk" />
+                    <p:button outcome="usuario" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>
             </div>

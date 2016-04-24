@@ -14,10 +14,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- *
- * @author sergio
- */
+
 
 @Entity
 @Table(name="Usuario")
@@ -205,8 +202,6 @@ public class Usuario implements Serializable{
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-      
-    
-    
+   
     
 }
