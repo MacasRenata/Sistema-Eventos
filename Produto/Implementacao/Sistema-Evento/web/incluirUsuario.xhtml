@@ -4,8 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  
-      xmlns:f="http://xmlns.jcp.org/jsf/core" 
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <ui:composition template="templates/padrao.xhtml">
          <ui:define name="conteudo">
@@ -41,10 +40,16 @@
                         <p:inputText id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}"/>
                         
                           </h:panelGrid>
-                       <h:panelGroup> 
-                    <p:commandButton value="cadastro" id="cadastro" actionListener="#{sisEventosBean.incluirUsuario}" ajax="false" icon="ui-icon-disk" />
-                    <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
-                      </h:panelGroup>
+                    
+                      <p:toolbar>
+                        <f:facet name="left"> 
+                            <p:commandButton value="Cadastrar" actionListener="#{sisEventosBean.incluirUsuario}" style="margin-right:20px;" />
+                        </f:facet>
+                        <f:facet name="right">
+                            <p:button outcome="administrador" value="Voltar" icon="ui-icon-star" style="margin-right:20px;"/>
+                            <p:commandButton value="Limpar" ajax="true" immediate="true" type="reset" style="margin-right:20px;"/>     
+                        </f:facet>
+                     </p:toolbar>
                 </h:form>
             </div>
          </p:panel>
