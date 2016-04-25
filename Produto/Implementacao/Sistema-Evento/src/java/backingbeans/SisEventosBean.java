@@ -79,7 +79,7 @@ public class SisEventosBean {
     
       public String iniciaAlteracaoEvento(int id) {    
      evento = evtDao.carregar(id);
-     return "alterarEvento";
+     return "alterarEvento2";
       }
     
     public String alterarEvento() {             
@@ -110,6 +110,12 @@ public class SisEventosBean {
         return null;
     }
     
+      public String iniciaAlteracaoUsuario(int id) {    
+     usuario = usuarioDao.carregar(id);
+     return "alterarUsuario2";
+      }
+      
+      
      public String alterarUsuario() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;

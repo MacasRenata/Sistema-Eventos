@@ -29,6 +29,11 @@
             <p:column headerText="Telefone">
                 #{usuario.telefone}
             </p:column>
+            <p:column headerText="Detalhes do Evento">
+                <p:commandLink id="Ajax" action="listaUsuario2" >
+                     <h:outputText value="Detalhes" />
+               </p:commandLink>
+            </p:column>
                </p:dataTable>       
                     </h:panelGrid>   
                     <p:button outcome="usuario" value="Voltar" icon="ui-icon-star"/>

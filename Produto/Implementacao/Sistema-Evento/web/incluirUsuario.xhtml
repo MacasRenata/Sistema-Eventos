@@ -18,11 +18,14 @@
                         <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtNomeUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.nome}"/>
                         
-                        <h:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
-                        <h:inputText id="txtEmail" maxlength="60" size="50" value="#{sisEventosBean.usuario.email}"/>
+                        <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtEmail" maxlength="60" size="50" value="#{sisEventosBean.usuario.email}"/>
                         
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}"/>
+                        
+                        <p:outputLabel for="txtInstEnsino" value="Endereço: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtInstEnsino" maxlength="60" size="50" value="#{sisEventosBean.usuario.instituicao}"/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
                         <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" />
@@ -32,6 +35,12 @@
                         
                         <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.endereco}"/>
+                        
+                        <p:outputLabel for="txtCidade" value="Cidade: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtCidade" maxlength="60" size="50" value="#{sisEventosBean.usuario.cidade}"/>
+                        
+                        <p:outputLabel for="txtEstado" value="Estado: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtEstado" maxlength="60" size="50" value="#{sisEventosBean.usuario.estado}"/>
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtCep" maxlength="8" size="50" value="#{sisEventosBean.usuario.cep}"/>
@@ -43,11 +52,13 @@
                     
                       <p:toolbar>
                         <f:facet name="left"> 
-                            <p:commandButton value="Cadastrar" actionListener="#{sisEventosBean.incluirUsuario}" style="margin-right:20px;" />
+                            <p:commandButton value="Cadastrar" ajax="false" actionListener="#{sisEventosBean.incluirUsuario}" style="margin-right:20px;" >
+                                </p:commandButton>
                         </f:facet>
                         <f:facet name="right">
                             <p:button outcome="administrador" value="Voltar" icon="ui-icon-star" style="margin-right:20px;"/>
-                            <p:commandButton value="Limpar" ajax="true" immediate="true" type="reset" style="margin-right:20px;"/>     
+                            <p:commandButton value="Limpar" ajax="true" immediate="true" type="reset" style="margin-right:20px;" >
+                             </p:commandButton>
                         </f:facet>
                      </p:toolbar>
                 </h:form>

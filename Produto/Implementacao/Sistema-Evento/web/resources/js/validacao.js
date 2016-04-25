@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/*
 
     if (txtTitulo.length < 2) {
       alert('Digite um Títulopara o evento');
@@ -40,6 +40,7 @@
         x-- significa que há um decremento no valor x, é algo como:
         x = 1, x= 0 e pára pois x não pode ser -1.
         */
+       /*
         if(frm.inscricoes[x].checked) { //checked quer dizer selecionado,
            //então verifica se o primeiro (0) ou o
            //segundo (1) radio button foi selecionado (checked).
@@ -55,16 +56,6 @@
     }
     /* valida a categoria:
     */
-    if(frm.categoria.value == "" || from.categoria.value == "Todas") {
-        alert("É necessário escolher uma das categorias");
-        frm.categoria.focus();
-        return false;
-    }
-    //Valida a textArea, que é como validar um campo de texto simples.
-    if(frm.descricao.value == "" || frm.descricao.value == null) {
-        alert("Por favor, escreva sobre o evento.");
-        frm.descricao.focus();
-        return false;
-    }
-}
+   
+    
 

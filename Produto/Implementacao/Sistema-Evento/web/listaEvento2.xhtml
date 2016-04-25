@@ -14,14 +14,52 @@
             <div id= "formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
-                     <p:growl id="growl" life="2000" />
+                  <p:growl id="growl" life="2000" />
                     <h:panelGrid columns="2">
-                      <h:outputLabel for="txtDesricao" value="Descrição do evento: "/>
-                        <h:outputText id="txtDescricao"
-                                      value="#{sisEventosBean.evento.descricao_evento}"/>
-                        <h:outputLabel for="txtInicioEvento" value="Data de Inicio: "/>
-                        <h:outputText id="inicioEvento"
-                                      value="#{sisEventosBean.evento.data_inicial}"/>
+                      <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="txtTitulo" value="#{sisEventosBean.evento.titulo}"/>
+                        
+                        <h:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local}"/>
+                        
+                        <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
+                        <h:outputText id="inicioEvento" value="#{sisEventosBean.evento.data_inicial}" />
+                        
+                        <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold" />
+                        <h:outputText id="fimEvento" value="#{sisEventosBean.evento.data_final}" />
+                        
+                        <p:outputLabel for="categoriaEvento" value="Categoria:" />
+                        <h:outputText id="categoriaEvento" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
+                                     
+                        <p:outputLabel for="areaEvento" value="Área de conhecimento:" />
+                        <h:outputText id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px">
+                                             
+                        <p:outputLabel for="inscricaoEvento" value="Inscrições:" />
+                        <h:outputText id="inscricaoEvento" value="#{sisEventosBean.evento.inscricoes}">
+                                                       
+                        <p:outputLabel for="inicioIncricao" value="Período Inscrição:" style="color:gray;font-weight:bold"/>
+                        <h:outputText id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}" />
+                        
+                        <p:outputLabel for="fimInscricao" value="Até:" style="color:gray;font-weight:bold" />
+                        <h:outputText id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}" />
+                                               
+                        <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:" />
+                        <h:outputText id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}">
+                                                        
+                        <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="qntidadeIncritos" value="#{sisEventosBean.evento.limite_inscricoes}"/>
+                        
+                        <p:outputLabel for="txtArea" value="Descrição do Evento: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="txtArea" value="#{sisEventosBean.evento.descricao_evento}"/>
+                        
+                        <p:outputLabel for="txtOrganizador" value="Organizador: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="txtOrganizador" value="#{sisEventosBean.evento.nome_organizador}"/>
+                        
+                        <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="emailOrganizador" value="#{sisEventosBean.evento.email_organizador}"/>
+                        
+                        <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
+                        <h:outputText id="subTrab" value="#{sisEventosBean.evento.submissao}">
                     </h:panelGrid>
                     
 
