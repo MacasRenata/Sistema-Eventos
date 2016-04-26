@@ -105,7 +105,7 @@ public class SisEventosBean {
         listaUsuarios = usuarioDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario cadastrado com Sucesso!", "");
-        usuario = new Usuario();
+        //usuario = new Usuario();
         context.addMessage(null, msg);
         return null;
     }
@@ -123,7 +123,7 @@ public class SisEventosBean {
         listaUsuarios = usuarioDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario alterado com Sucesso!", "");
-        usuario = new Usuario();
+        //usuario = new Usuario();
         context.addMessage(null, msg);
         return null;
     }
