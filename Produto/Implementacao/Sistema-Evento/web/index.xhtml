@@ -11,9 +11,8 @@
         <ui:define name="conteudo">
        
      <div class="jumbotron"  align="center">
-        <h1>Inscreva-se no Evento</h1>
+        <h1>Participe dos Eventos</h1>
         <p> Um Sistema desenvolvido para a Criação e Particiapção em Eventos. </p>
-        <b:button class="btn btn-primary btn-lg"  value="Listar Todos os Eventos" outcome="listarEvento"/>
         <b:button class="btn btn-primary btn-lg"  value="Administrador" outcome="administrador"/>
         <b:button class="btn btn-primary btn-lg"  value="Usuario" outcome="usuario"/>
       </div>
@@ -35,6 +34,38 @@
         </p:panelGrid>  
     </p:carousel>
             </h:form>
+         
+          <p:panel id="basic" header="Informações Eventos" style="margin-bottom:20px">
+            <div id="formDados">
+                <h:messages infoClass="msgInfo" errorClass="msgErro"/>
+                <h:form>
+                     <p:growl id="growl" life="2000" />
+                    <h:panelGrid columns="2">
+                       <p:dataTable value="#{sisEventosBean.listaEventos}" var="evento">
+                <p:column headerText="Título">
+                  #{evento.titulo}
+                   </p:column>
+                <p:column headerText="Local">
+                #{evento.local}
+                </p:column>
+               <p:column headerText="Categoria">
+               #{evento.categoria_evento}
+            </p:column>
+            <p:column headerText="Detalhes do Evento">
+               <p:commandLink ajax="false" actionListener="#{sisEventosBean.consultarEvento(id)}" >
+                     <h:outputText value="Detalhes" />
+               </p:commandLink>
+            </p:column>
+              <p:column headerText="Inscrição no Evento">
+                <p:commandLink id="ajax" action="inscricaoEvento" >
+                     <h:outputText value="Insrição" />
+               </p:commandLink>
+            </p:column>
+               </p:dataTable>       
+                    </h:panelGrid>   
+                </h:form>
+            </div>
+         </p:panel>
    
       <p:spacer height="20" />
          <p:separator />

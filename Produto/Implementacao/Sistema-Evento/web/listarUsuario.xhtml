@@ -10,7 +10,7 @@
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
       
-      <p:panel id="basic" header="Informações Eventos" style="margin-bottom:20px">
+      <p:panel id="basic" header="Informações Usuarios" style="margin-bottom:20px">
             <div id="formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
@@ -29,9 +29,12 @@
             <p:column headerText="Telefone">
                 #{usuario.telefone}
             </p:column>
-            <p:column headerText="Detalhes do Evento">
-                <p:commandLink id="Ajax" action="listaUsuario2" >
-                     <h:outputText value="Detalhes" />
+            <p:column headerText="Detalhes do Usuario">
+                <p:commandLink ajax="false" value="Detalhes" action="#{sisEventosBean.consultarUsuario(id)}" >
+               </p:commandLink>
+            </p:column>
+             <p:column headerText="Editar Usuario">
+                 <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoUsuario(id)}" >
                </p:commandLink>
             </p:column>
                </p:dataTable>       

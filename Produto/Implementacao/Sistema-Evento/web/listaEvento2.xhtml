@@ -59,21 +59,14 @@
                         <h:outputText id="emailOrganizador" value="#{sisEventosBean.evento.email_organizador}"/>
                         
                         <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
-                        <h:outputText id="subTrab" value="#{sisEventosBean.evento.submissao}">
-                    </h:panelGrid>
-                    
-
-                    <p:dataTable id="tabIncricoes" value="#{sisEventosBean.evento.inscricoes}"
-                            var="inscritos">
-                    <p:column headerText="Total de Inscritos">
-                            #{usuario.inscritos}
-                    </p:column>
-                    <p:column headerText="Submissão de trabalhos">
-                            #{usuario.subTrab}
-                    </p:column>
-                    </p:dataTable>
+                        <h:outputText id="subTrab" value="#{sisEventosBean.evento.submissao}"/>
+                       
+                    </h:panelGrid>    
+                  
                       <h:panelGroup> 
-                   <p:button outcome="listarEvento" value="Voltar" icon="ui-icon-star"/>
+                  <p:commandButton value="alterar" id="Alterar" actionListener="#{sisEventosBean.iniciaAlteracaoEvento}" update="growl" icon="ui-icon-disk" >
+                </p:commandButton>
+                   <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>
             </div>

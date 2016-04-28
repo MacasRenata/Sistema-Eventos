@@ -51,7 +51,9 @@
                     </h:panelGrid>
                     
                       <h:panelGroup> 
-                   <p:button outcome="listarUsuario" value="Voltar" icon="ui-icon-star"/>
+                          <p:commandButton value="alterar" ajax="false" actionListener="#{sisEventosBean.iniciaAlteracaoUsuario(id)}" update="growl" icon="ui-icon-disk" >
+                </p:commandButton>
+                   <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>
             </div>

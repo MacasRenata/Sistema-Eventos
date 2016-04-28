@@ -89,9 +89,7 @@ public class SisEventosBean {
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento alterado com sucesso!", "");
- 
-    
-        evento = new Evento();
+        //evento = new Evento();
         context.addMessage(null, msg);
         return "listarEvento";
         
@@ -105,7 +103,7 @@ public class SisEventosBean {
         listaUsuarios = usuarioDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario cadastrado com Sucesso!", "");
-        //usuario = new Usuario();
+        usuario = new Usuario();
         context.addMessage(null, msg);
         return null;
     }
@@ -135,14 +133,14 @@ public class SisEventosBean {
         listaUsuarios = usuarioDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario removido com Sucesso!", "");
-        usuario = new Usuario();
+        //usuario = new Usuario();
         context.addMessage(null, msg);
         return null;
     }
        
-        public String consultaUsuario(int id) {
-        usuario = usuarioDao.carregar(id);//idUsuario = email?
-        return "listarUsuario"; 
+        public String consultarUsuario(int id) {
+        usuario = usuarioDao.carregar(id);//idUsuario
+        return "listaUsuario2"; 
     }
-    
+   
 }

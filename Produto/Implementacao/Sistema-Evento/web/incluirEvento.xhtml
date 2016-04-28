@@ -18,8 +18,8 @@
                         <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtTitulo" maxlength="60" size="50" value="#{sisEventosBean.evento.titulo}"/>
                         
-                        <h:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
-                        <h:inputText id="txtLocal" maxlength="60" size="50" value="#{sisEventosBean.evento.local}"/>
+                        <p:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtLocal" maxlength="60" size="50" value="#{sisEventosBean.evento.local}"/>
                         
                         <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
                         <p:calendar id="inicioEvento" value="#{sisEventosBean.evento.data_inicial}" />
@@ -91,8 +91,9 @@
                         </f:facet>
                         <f:facet name="right">
                             <p:button outcome="administrador" value="Voltar" icon="ui-icon-star" style="margin-right:20px;"/>
-                            <p:commandButton value="Limpar" ajax="true" immediate="true" type="reset" style="margin-right:20px;" >  
-                              </p:commandButton>
+                           <p:commandButton value="Limpar" update="basic" process="@this" style="margin-right:20px;" >
+                              <p:resetInput target="basic" />
+                            </p:commandButton>
                         </f:facet>
                      </p:toolbar>
                      
