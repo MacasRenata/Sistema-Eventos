@@ -29,7 +29,10 @@
                         <h:outputText id="txtInstEnsino" value="#{sisEventosBean.usuario.instituicao}" />
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
-                        <h:outputText id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" />
+                        <h:outputText id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}">
+                         <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
+                            
                         
                         <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtGenero" value="#{sisEventosBean.usuario.sexo}"/>

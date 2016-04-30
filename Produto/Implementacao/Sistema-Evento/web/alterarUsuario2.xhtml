@@ -17,29 +17,31 @@
                    <p:growl id="growl" life="2000" />   
                     <h:panelGrid columns="2">
                         <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtNomeUsuario" value="#{sisEventosBean.usuario.nome}"/>
+                        <p:inputText id="txtNomeUsuario" maxlength="60" size="50"  required="true" requiredMessage="Digite o seu nome" value="#{sisEventosBean.usuario.nome}"/>
                         
-                        <h:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
-                        <h:outputLabel id="txtEmail"  value="#{sisEventosBean.usuario.email}"/>
+                        <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtEmail" maxlength="60" size="50" required="true" validatorMessage="Email inválido!" value="#{sisEventosBean.usuario.email}">
+                             <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
+                            </p:inputText>
                         
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtSenhaUsuario"  value="#{sisEventosBean.usuario.senha}"/>
+                        <p:inputText id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}"/>
                         
-                        <p:outputLabel for="txtInstEnsino" value="Genêro: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtInstEnsino"  value="#{sisEventosBean.usuario.instituicao}"/>
+                        <p:outputLabel for="txtInstEnsino" value="Endereço: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtInstEnsino" maxlength="60" size="50" value="#{sisEventosBean.usuario.instituicao}"/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" />
+                        <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" />
                         
                         <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtGenero"  value="#{sisEventosBean.usuario.sexo}"/>
+                        <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuario.sexo}"/>
                         
                         <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtEndUsuario"  value="#{sisEventosBean.usuario.endereco}"/>
+                        <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.endereco}"/>
                         
                         <p:outputLabel for="txtCidade" value="Cidade: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtCidade" value="#{sisEventosBean.usuario.cidade}"/>
-                       
+                        <p:inputText id="txtCidade" maxlength="60" size="50" value="#{sisEventosBean.usuario.cidade}"/>
+                        
                         <p:outputLabel for="txtEstado" style="color:gray;font-weight:bold" value="Estado:" />
                         <p:selectOneMenu id="txtEstado" value="#{sisEventosBean.usuario.estado}" style="width:120px">
                             <f:selectItem itemLabel="Selecione" itemValue="" />
@@ -72,14 +74,14 @@
                             <f:selectItem itemLabel="Tocantins" itemValue="TO" />
                         </p:selectOneMenu>
                         
-                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtCep"  value="#{sisEventosBean.usuario.cep}"/>
+                        <p:inputText id="txtCep" maxlength="8" size="50" value="#{sisEventosBean.usuario.cep}"/>
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
-                        <p:outputLabel id="txtTelefone"  value="#{sisEventosBean.usuario.telefone}"/>
+                        <p:inputText id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}"/>
                         
                           </h:panelGrid>
+                    
                        <h:panelGroup> 
                            <p:commandButton value="Alterar" ajax="false" actionListener="#{sisEventosBean.alterarUsuario()}"  icon="ui-icon-disk" >
                         </p:commandButton>

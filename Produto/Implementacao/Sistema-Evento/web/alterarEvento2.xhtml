@@ -17,20 +17,20 @@
                    <p:growl id="growl" life="2000" />
                     <h:panelGrid columns="2">
                         <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtTitulo" maxlength="60" size="50" value="#{sisEventosBean.evento.titulo}"/>
+                        <p:inputText id="txtTitulo" maxlength="60" size="50" required="true" requiredMessage="Digite o nome do Evento" value="#{sisEventosBean.evento.titulo}"/>
                         
-                        <h:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
-                        <h:inputText id="txtLocal" maxlength="60" size="50" value="#{sisEventosBean.evento.local}"/>
+                        <p:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
+                        <p:inputText id="txtLocal" maxlength="60" size="50" required="true" requiredMessage="Digite o Local do Evento" value="#{sisEventosBean.evento.local}"/>
                         
                         <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="inicioEvento" value="#{sisEventosBean.evento.data_inicial}" />
+                        <p:calendar id="inicioEvento" required="true" requiredMessage="Selecione a data inicial" value="#{sisEventosBean.evento.data_inicial}" />
                         
                         <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold" />
-                        <p:calendar id="fimEvento" value="#{sisEventosBean.evento.data_final}" />
+                        <p:calendar id="fimEvento" required="true" requiredMessage="Selecione a data inicial" value="#{sisEventosBean.evento.data_final}" />
                         
                         
                                <p:outputLabel for="categoriaEvento" value="Categoria:" />
-                               <p:selectOneMenu id="categoriaEvento" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
+                               <p:selectOneMenu id="categoriaEvento" required="true" requiredMessage="Selecione uma Categoria" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
                                      <f:selectItem itemLabel="Selecione" itemValue="" />
                                      <f:selectItem itemLabel="Mostra Científica" itemValue="Mostra Científica" />
                                      <f:selectItem itemLabel="Seminario" itemValue="Seminario" />
@@ -39,7 +39,7 @@
                                 </p:selectOneMenu>
                                
                                <p:outputLabel for="areaEvento" value="Área de conhecimento:" />
-                               <p:selectOneMenu id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px">
+                               <p:selectOneMenu id="areaEvento" required="true" requiredMessage="Selecione uma Área" value="#{sisEventosBean.evento.area_evento}" style="width:125px">
                                      <f:selectItem itemLabel="Selecione" itemValue="" />
                                      <f:selectItem itemLabel="Ciêncas Humanas" itemValue="Ciêncas Humanas" />
                                      <f:selectItem itemLabel="Ciências Exatas" itemValue="Ciências Exatas" />
@@ -71,19 +71,19 @@
                         <p:inputText id="qntidadeIncritos" maxlength="60" size="50" value="#{sisEventosBean.evento.limite_inscricoes}"/>
                         
                         <p:outputLabel for="txtArea" value="Descrição do Evento: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtArea" maxlength="200" size="200" value="#{sisEventosBean.evento.descricao_evento}"/>
+                        <p:inputTextarea id="txtArea" maxlength="200" value="#{sisEventosBean.evento.descricao_evento}"/>
                         
                         <p:outputLabel for="txtOrganizador" value="Organizador: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtOrganizador" maxlength="50" size="50" value="#{sisEventosBean.evento.nome_organizador}"/>
+                        <p:inputText id="txtOrganizador" maxlength="50" size="50" required="true" requiredMessage="Digite um nome" value="#{sisEventosBean.evento.nome_organizador}"/>
                         
                         <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="emailOrganizador" maxlength="50" size="50" value="#{sisEventosBean.evento.email_organizador}"/>
+                        <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
                         
                         <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
                         <p:selectOneRadio id="subTrab" value="#{sisEventosBean.evento.submissao}">
                                  <f:selectItem itemLabel="Sim" itemValue="Sim" />
                                  <f:selectItem itemLabel="Não" itemValue="Não" />
-                        </p:selectOneRadio>
+                         </p:selectOneRadio>
                        </h:panelGrid>
                        <h:panelGroup> 
                            <p:commandButton value="alterar" id="AlterarEvento" actionListener="#{sisEventosBean.alterarEvento()}"  icon="ui-icon-disk" >

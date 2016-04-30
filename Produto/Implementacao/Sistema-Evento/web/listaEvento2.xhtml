@@ -14,8 +14,11 @@
             <div id= "formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
-                  <p:growl id="growl" life="2000" />
+                  <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="2">
+                         <p:outputLabel for="txtId" value="Id: " style="color:gray;font-weight:bold"/>
+                         <h:outputText id="txtId" value="#{sisEventosBean.evento.id_evento}"/>
+                        
                       <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtTitulo" value="#{sisEventosBean.evento.titulo}"/>
                         
@@ -23,28 +26,36 @@
                         <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local}"/>
                         
                         <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
-                        <h:outputText id="inicioEvento" value="#{sisEventosBean.evento.data_inicial}" />
+                        <h:outputText id="inicioEvento" value="#{sisEventosBean.evento.data_inicial}">
+                             <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
                         
-                        <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold" />
-                        <h:outputText id="fimEvento" value="#{sisEventosBean.evento.data_final}" />
+                        <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold"/>
+                        <h:outputText id="fimEvento" value="#{sisEventosBean.evento.data_final}">
+                             <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
                         
-                        <p:outputLabel for="categoriaEvento" value="Categoria:" />
-                        <h:outputText id="categoriaEvento" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
+                        <p:outputLabel for="categoriaEvento" value="Categoria:"/>
+                        <h:outputText id="categoriaEvento" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px"/>
                                      
-                        <p:outputLabel for="areaEvento" value="Área de conhecimento:" />
-                        <h:outputText id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px">
+                        <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
+                        <h:outputText id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px"/>
                                              
-                        <p:outputLabel for="inscricaoEvento" value="Inscrições:" />
-                        <h:outputText id="inscricaoEvento" value="#{sisEventosBean.evento.inscricoes}">
+                        <p:outputLabel for="inscricaoEvento" value="Inscrições:"/>
+                        <h:outputText id="inscricaoEvento" value="#{sisEventosBean.evento.inscricoes}"/>
                                                        
                         <p:outputLabel for="inicioIncricao" value="Período Inscrição:" style="color:gray;font-weight:bold"/>
-                        <h:outputText id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}" />
+                        <h:outputText id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}">
+                             <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
                         
                         <p:outputLabel for="fimInscricao" value="Até:" style="color:gray;font-weight:bold" />
-                        <h:outputText id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}" />
+                        <h:outputText id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}">
+                             <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
                                                
-                        <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:" />
-                        <h:outputText id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}">
+                        <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:"/>
+                        <h:outputText id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}"/>
                                                         
                         <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="qntidadeIncritos" value="#{sisEventosBean.evento.limite_inscricoes}"/>
@@ -58,7 +69,7 @@
                         <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="emailOrganizador" value="#{sisEventosBean.evento.email_organizador}"/>
                         
-                        <p:outputLabel for="subTrab" value="Submissão de Arquivos:" />
+                        <p:outputLabel for="subTrab" value="Submissão de Arquivos:"/>
                         <h:outputText id="subTrab" value="#{sisEventosBean.evento.submissao}"/>
                        
                     </h:panelGrid>    
