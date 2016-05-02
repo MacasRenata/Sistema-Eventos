@@ -1,10 +1,10 @@
 package backingbeans;
 
+
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import modelo.Evento;
 import modelo.Usuario;
@@ -13,7 +13,7 @@ import persistencia.UsuarioDAO;
 
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 
 public class SisEventosBean {
 

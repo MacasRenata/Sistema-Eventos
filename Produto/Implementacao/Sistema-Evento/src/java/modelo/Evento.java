@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-@Table(name="Eventos")
+@Table(name="eventos")  //alteração para ficar igual a tabela sql
 public class Evento implements Serializable {
     @Id
     @GeneratedValue
@@ -31,11 +31,12 @@ public class Evento implements Serializable {
     private Date data_inicial_inscricao;
     @Temporal(TemporalType.DATE)
     private Date data_final_inscricao;
-    private int limite_inscricoes;//limitar o num de participantes no evento
+    private Boolean limite_inscricoes;//limitar o num de participantes no evento - Alterado para Booleano
     private Boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
     private String nome_organizador;
     private String email_organizador;
     private String senha_organizador;
+    private int quantidade_inscritos;
 
     
 
@@ -111,13 +112,6 @@ public class Evento implements Serializable {
         this.data_final_inscricao = data_final_inscricao;
     }
 
-    public int getLimite_inscricoes() {
-        return limite_inscricoes;
-    }
-
-    public void setLimite_inscricoes(int limite_inscricoes) {
-        this.limite_inscricoes = limite_inscricoes;
-    }
 
     public Boolean getSubmissao() {
         return submissao;
@@ -179,6 +173,34 @@ public class Evento implements Serializable {
      */
     public void setSenha_organizador(String senha_organizador) {
         this.senha_organizador = senha_organizador;
+    }
+
+    /**
+     * @return the limite_inscricoes
+     */
+    public Boolean getLimite_inscricoes() {
+        return limite_inscricoes;
+    }
+
+    /**
+     * @param limite_inscricoes the limite_inscricoes to set
+     */
+    public void setLimite_inscricoes(Boolean limite_inscricoes) {
+        this.limite_inscricoes = limite_inscricoes;
+    }
+
+    /**
+     * @return the quantidade_inscritos
+     */
+    public int getQuantidade_inscritos() {
+        return quantidade_inscritos;
+    }
+
+    /**
+     * @param quantidade_inscritos the quantidade_inscritos to set
+     */
+    public void setQuantidade_inscritos(int quantidade_inscritos) {
+        this.quantidade_inscritos = quantidade_inscritos;
     }
     
     

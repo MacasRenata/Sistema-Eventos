@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-@Table(name="Usuario")
+@Table(name="usuario")  //mudança para conectar com a tabela correta
 public class Usuario implements Serializable{
     @Id
     @GeneratedValue
