@@ -13,36 +13,36 @@
      <div class="jumbotron"  align="center">
         <h1>Participe dos Eventos</h1>
         <p> Um Sistema desenvolvido para a Criação e Particiapção em Eventos. </p>
-        <b:button class="btn btn-primary btn-lg"  value="Administrador" outcome="administrador"/>
+        <b:button class="btn btn-primary btn-lg"  value="Administrador" outcome="indexAdmin"/>
         <b:button class="btn btn-primary btn-lg"  value="Usuario" outcome="usuario"/>
       </div>
-       <p:spacer height="20" />
-         <p:separator />
+       <p:spacer height="20"/>
+         <p:separator/>
          
           <p:panel id="basic" header="Informações Eventos" style="margin-bottom:20px">
             <div id="formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
-                     <p:growl id="growl" life="2000" />
+                     <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="2">
                        <p:dataTable value="#{sisEventosBean.listaEventos}" var="evento">
                 <p:column headerText="Título">
                   #{evento.titulo}
                    </p:column>
                 <p:column headerText="Local">
-                #{evento.local}
+                #{evento.local_evento}
                 </p:column>
                <p:column headerText="Categoria">
                #{evento.categoria_evento}
             </p:column>
             <p:column headerText="Detalhes do Evento">
                 <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
-                     <h:outputText value="Detalhes" />
+                     <h:outputText value="Detalhes"/>
                </p:commandLink>
             </p:column>
               <p:column headerText="Inscrição no Evento">
-                <p:commandLink id="ajax" action="inscricaoEvento" >
-                     <h:outputText value="Inscrição" />
+                <p:commandLink id="ajax" action="inscricaoEvento">
+                     <h:outputText value="Inscrição"/>
                </p:commandLink>
             </p:column>
                </p:dataTable>       
@@ -51,8 +51,8 @@
             </div>
          </p:panel>
    
-      <p:spacer height="20" />
-         <p:separator />
+      <p:spacer height="20"/>
+         <p:separator/>
              <div class="container">
            <div class="footer">
       <footer class="container-fluid text-center">

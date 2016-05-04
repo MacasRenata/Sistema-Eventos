@@ -18,7 +18,7 @@ public class Evento implements Serializable {
     @GeneratedValue
     private int id_evento;//mudar para idEvento
     private String titulo;
-    private String local; //mudar nome do atributo
+    private String local_evento; //local palavra reservada do SQL - mudar nome do atributo
     @Temporal(TemporalType.DATE)
     private Date data_inicial;
     @Temporal(TemporalType.DATE)
@@ -48,12 +48,12 @@ public class Evento implements Serializable {
         this.titulo = titulo;
     }
 
-    public String getLocal() {
-        return local;
+    public String getLocal_evento() {
+        return local_evento;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setLocal_evento(String local_evento) {
+        this.local_evento = local_evento;
     }
 
     public Date getData_inicial() {

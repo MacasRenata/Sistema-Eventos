@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="templates/padrao.xhtml">
+        <ui:define name="conteudo">
+
+            <p:panel id="basic" header="Detalhes do Evento" style="margin-bottom:20px">
+                <div id= "formDados">
+             
+                    <h:form>
+                        <p:growl id="growl" life="2000"/>
+                        <h:panelGrid columns="2">
+                            <p:outputLabel for="txtId" value="Id: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="txtId" value="#{sisEventosBean.evento.id_evento}"/>
+
+                            <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="txtTitulo" value="#{sisEventosBean.evento.titulo}"/>
+
+                            <h:outputLabel for="txtLocal" value="Local: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local_evento}"/>
+
+                            <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
+                            <h:outputText id="inicioEvento" value="#{sisEventosBean.evento.data_inicial}">
+                                <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
+
+                            <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold"/>
+                            <h:outputText id="fimEvento" value="#{sisEventosBean.evento.data_final}">
+                                <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
+
+                            <p:outputLabel for="categoriaEvento" value="Categoria:"/>
+                            <h:outputText id="categoriaEvento" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px"/>
+
+                            <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
+                            <h:outputText id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px"/>
+
+                            <p:outputLabel for="inscricaoEvento" value="Inscrições:"/>
+                            <h:outputText id="inscricaoEvento" value="#{sisEventosBean.evento.inscricoes}"/>
+
+                            <p:outputLabel for="inicioIncricao" value="Período Inscrição:" style="color:gray;font-weight:bold"/>
+                            <h:outputText id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}">
+                                <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
+
+                            <p:outputLabel for="fimInscricao" value="Até:" style="color:gray;font-weight:bold"/>
+                            <h:outputText id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}">
+                                <f:convertDateTime type="date" dateStyle="full"/>
+                            </h:outputText>
+
+                            <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:"/>
+                            <h:outputText id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}"/>
+
+                            <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="qntidadeIncritos" value="#{sisEventosBean.evento.limite_inscricoes}"/>
+
+                            <p:outputLabel for="txtArea" value="Descrição do Evento: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="txtArea" value="#{sisEventosBean.evento.descricao_evento}"/>
+
+                            <p:outputLabel for="txtOrganizador" value="Organizador: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="txtOrganizador" value="#{sisEventosBean.evento.nome_organizador}"/>
+
+                            <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
+                            <h:outputText id="emailOrganizador" value="#{sisEventosBean.evento.email_organizador}"/>
+
+                            <p:outputLabel for="subTrab" value="Submissão de Arquivos:"/>
+                            <h:outputText id="subTrab" value="#{sisEventosBean.evento.submissao}"/>
+                            
+                        <h:panelGroup>
+                            <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
+                        </h:panelGroup>
+                            
+                     </h:panelGrid> 
+                    </h:form>
+                </div>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</html>

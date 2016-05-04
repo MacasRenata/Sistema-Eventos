@@ -12,9 +12,9 @@
            
       <p:panel id="basic" header="Detalhes do Usuario" style="margin-bottom:20px">
             <div id= "formDados">
-                <h:messages infoClass="msgInfo" errorClass="msgErro"/>
+             
                 <h:form>
-                  <p:growl id="growl" life="2000" />
+                  <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="2">
                       <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtNomeUsuario" value="#{sisEventosBean.usuario.nome}"/>
@@ -26,7 +26,7 @@
                         <h:outputText id="txtSenhaUsuario" value="#{sisEventosBean.usuario.senha}"/>
                         
                         <p:outputLabel for="txtInstEnsino" value="Instituição de Ensino:" style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtInstEnsino" value="#{sisEventosBean.usuario.instituicao}" />
+                        <h:outputText id="txtInstEnsino" value="#{sisEventosBean.usuario.instituicao}"/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
                         <h:outputText id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}">
@@ -51,11 +51,10 @@
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtTelefone" value="#{sisEventosBean.usuario.telefone}"/>
-                    </h:panelGrid> 
-                    <h:panelGroup> 
-                          <p:commandButton value="alterar" ajax="false" actionListener="#{sisEventosBean.iniciaAlteracaoUsuario(id)}" update="growl" icon="ui-icon-disk" >
-                         </p:commandButton>
-                          <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                    </h:panelGrid>
+                    
+                      <h:panelGroup> 
+                   <p:button outcome="listaUsuarios" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>
                 </h:form>
             </div>

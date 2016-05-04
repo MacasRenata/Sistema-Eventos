@@ -12,9 +12,9 @@
       
       <p:panel id="basic" header="Informações Usuarios" style="margin-bottom:20px">
             <div id="formDados">
-                <h:messages infoClass="msgInfo" errorClass="msgErro"/>
+                
                 <h:form>
-                     <p:growl id="growl" life="2000" />
+                     <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="2">
                        <p:dataTable value="#{sisEventosBean.listaUsuarios}" var="usuario">
                 <p:column headerText="Nome">
@@ -35,6 +35,10 @@
             </p:column>
              <p:column headerText="Editar Usuario">
                  <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoUsuario(usuario.id_user)}" >
+               </p:commandLink>
+            </p:column>
+            <p:column headerText="Excluir Usuario">
+                <p:commandLink ajax="false" value="Excluir" action="#{sisEventosBean.excluirUsuario(usuario.id_user)}" >
                </p:commandLink>
             </p:column>
                </p:dataTable>       

@@ -10,7 +10,6 @@ import modelo.Usuario;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-
 public class UsuarioDAO {
 
     private Session sessao;
@@ -28,15 +27,16 @@ public class UsuarioDAO {
 
     public void alterar(Usuario usr) {
         Transaction t = sessao.beginTransaction();
+        sessao.clear();
         sessao.update(usr);
         t.commit();
         sessao.flush();
 
     }
 
-    public void excluir(Usuario usr) {
+    public void excluir(int id_usuario) {
         Transaction t = sessao.beginTransaction();
-        sessao.delete(usr);
+        sessao.delete(carregar(id_usuario));
         t.commit();
 
     }

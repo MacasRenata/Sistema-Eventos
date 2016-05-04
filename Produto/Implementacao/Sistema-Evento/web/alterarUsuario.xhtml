@@ -4,17 +4,21 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
     
     <ui:composition template="templates/padrao.xhtml">
-         <ui:define name="conteudo">
+        <ui:define name="conteudo">
            
-      <p:panel id="basic" header="Cadastro de Usuario" style="margin-bottom:20px">
+        <p:panel id="basic" header="Cadastro de Usuário" style="margin-bottom:20px">
             <div id="formDados">
-            
-                <h:form enctype="multipart/form-data">
-                    <p:growl id="growl" life="2000"/>
-                      <h:panelGrid columns="2">
+              
+                <h:form>
+                   <p:growl id="growl" life="2000"/>   
+                    <h:panelGrid columns="2">
+                         <p:outputLabel for="txtId" value="Id"  style="color:gray;font-weight:bold"/>
+                         <p:inputText id="txtId" maxlength="60" size="50" value="#{sisEventosBean.usuario.id_user}"/>
+
                         <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtNomeUsuario" maxlength="60" size="50"  required="true" requiredMessage="Digite o seu nome" value="#{sisEventosBean.usuario.nome}"/>
                         
@@ -74,31 +78,24 @@
                         </p:selectOneMenu>
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtCep" maxlength="9" size="50" value="#{sisEventosBean.usuario.cep}"/>
+                        <p:inputText id="txtCep" maxlength="8" size="50" value="#{sisEventosBean.usuario.cep}"/>
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}">
-                         <f:validateRegex pattern="^\([0-9]{2}\)\s*[0-9]{4}[\-\.]{0,1}[0-9]{4}$"/>
+                        <f:validateRegex pattern="^\([0-9]{2}\)\s*[0-9]{4}[\-\.]{0,1}[0-9]{4}$"/>
                     </p:inputText>
                           </h:panelGrid>
                     
-                      <p:toolbar>
-                        <f:facet name="left"> 
-                            <p:commandButton value="Cadastrar" ajax="false" action="#{sisEventosBean.incluirUsuario}" style="margin-right:20px;">
-                                </p:commandButton>
-                        </f:facet>
-                        <f:facet name="right">
-                            <p:button outcome="usuario" value="Voltar" icon="ui-icon-star" style="margin-right:20px;"/>
-                           <p:commandButton value="Limpar" update="basic" process="@this" style="margin-right:20px;">
-                              <p:resetInput target="basic"/>
-                            </p:commandButton>
-                        </f:facet>
-                     </p:toolbar>
+                       <h:panelGroup>                                                
+                                                                              <!--Se usar actionListener Não Funciona!!! -->
+                           <p:commandButton value="alterar" ajax="false" action="#{sisEventosBean.alterarUsuario}"  icon="ui-icon-disk" >
+                        </p:commandButton>
+                   
+                    <p:button outcome="listaUsuarios" value="Voltar" icon="ui-icon-star"/>
+                      </h:panelGroup>
                 </h:form>
             </div>
          </p:panel>
         </ui:define>
     </ui:composition>
 </html>
-
-
