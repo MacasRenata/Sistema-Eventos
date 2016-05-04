@@ -30,11 +30,11 @@
                 #{usuario.telefone}
             </p:column>
             <p:column headerText="Detalhes do Usuario">
-                <p:commandLink ajax="false" value="Detalhes" action="#{sisEventosBean.consultarUsuario(id)}" >
+                <p:commandLink ajax="false" value="Detalhes" action="#{sisEventosBean.consultarUsuario(usuario.id_user)}" >
                </p:commandLink>
             </p:column>
              <p:column headerText="Editar Usuario">
-                 <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoUsuario(id)}" >
+                 <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoUsuario(usuario.id_user)}" >
                </p:commandLink>
             </p:column>
                </p:dataTable>       

@@ -15,40 +15,18 @@
     <h:body>
         <p:layout fullPage="true">
            <p:layoutUnit position="north">  
-         <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <span> <h1> Sistema de Eventos </h1></span>
-          <h:form > 
-           <p:menubar>
-        <p:submenu label="Eventos" icon="ui-icon-document">
-            <p:submenu label="Informações" icon="ui-icon-contact">
-                <p:menuitem value="Lista" url="listarEvento" />
-            </p:submenu>
-            <p:menuitem value="Detalhes" url="listarEvento" />
-            <p:separator />
-            <p:menuitem value="Inscrições Abertas" url="listarEvento" />
-        </p:submenu>
- 
-        <p:submenu label="Atualizar" icon="ui-icon-pencil">
-            <p:menuitem value="Home" url="index" icon="ui-icon-arrowreturnthick-1-w" />
-            <p:menuitem value="Perfil" url="index" icon="ui-icon-arrowreturnthick-1-e" />
-        </p:submenu>
- 
-        <f:facet name="options">
-             <p:outputLabel for="email" value="Email:" />
-             <p:inputText style="margin-right:10px" id="email" value="#{sisEventosBean.usuario.email}" required="true" />
-             <p:outputLabel for="pwd1" value="Senha:" />
-             <p:password style="margin-right:10px" id="pwd1" value="#{sisEventosBean.usuario.senha}" required="true" />
-            <p:commandButton type="Entrar"  value="Entrar" icon="ui-icon-extlink" />
-        </f:facet>
-    </p:menubar>
-          </h:form>  
-            </div>
-           </nav>
-            </p:layoutUnit>    
-            <p:layoutUnit id="conteudo" position="center">
+                <span> <h1> Sistema de Eventos </h1></span>  
+                 <h:form> 
+                    <p:breadCrumb>               
+                         <p:menuitem value="Home" action="index"/>          
+                         <p:menuitem value="Administrador" action="administrador" />  
+                         <p:menuitem value="Usuario" action="usuario"  />  
+                    </p:breadCrumb>     
+                 </h:form>     
+             </p:layoutUnit>    
+             <p:layoutUnit id="conteudo" position="center">
                 <ui:insert name="conteudo"/>
-            </p:layoutUnit>
+             </p:layoutUnit>
         </p:layout>
     </h:body>
 </html>

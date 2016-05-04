@@ -75,20 +75,19 @@
                         </p:selectOneMenu>
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtCep" maxlength="8" size="50" value="#{sisEventosBean.usuario.cep}"/>
+                        <p:inputText id="txtCep" maxlength="9" size="50" value="#{sisEventosBean.usuario.cep}"/>
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}"/>
                         
-                          </h:panelGrid>
-                    
-                       <h:panelGroup> 
-                           <p:commandButton value="Alterar" ajax="false" actionListener="#{sisEventosBean.alterarUsuario()}"  icon="ui-icon-disk" >
-                        </p:commandButton>
-                           <p:commandButton value="Remover" ajax="false" actionListener="#{sisEventosBean.excluirUsuario()}"  icon="ui-icon-remove" >
-                        </p:commandButton>
-                    <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
-                      </h:panelGroup>
+                   </h:panelGrid>  
+                    <h:panelGroup> 
+                        <p:commandButton value="Alterar" ajax="false" actionListener="#{sisEventosBean.alterarUsuario()}"  icon="ui-icon-disk" >
+                         </p:commandButton>
+                        <p:commandButton value="Remover" ajax="false" actionListener="#{sisEventosBean.excluirUsuario()}"  icon="ui-icon-remove" >
+                         </p:commandButton>
+                           <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                    </h:panelGroup>
                 </h:form>
             </div>
          </p:panel>

@@ -55,10 +55,10 @@
                             </h:outputText>
                                                
                         <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:"/>
-                        <h:outputText id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}"/>
+                        <h:outputText id="inscricaoLimite" value="#{sisEventosBean.evento.limite_inscricoes}"/>
                                                         
                         <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="qntidadeIncritos" value="#{sisEventosBean.evento.limite_inscricoes}"/>
+                        <h:outputText id="qntidadeIncritos" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
                         
                         <p:outputLabel for="txtArea" value="Descrição do Evento: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtArea" value="#{sisEventosBean.evento.descricao_evento}"/>
@@ -75,7 +75,7 @@
                     </h:panelGrid>    
                   
                       <h:panelGroup> 
-                  <p:commandButton value="alterar" id="Alterar" actionListener="#{sisEventosBean.iniciaAlteracaoEvento}" update="growl" icon="ui-icon-disk" >
+                          <p:commandButton value="alterar" id="Alterar" actionListener="#{sisEventosBean.iniciaAlteracaoEvento(evento.id)}" update="growl" icon="ui-icon-disk" >
                 </p:commandButton>
                    <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
                       </h:panelGroup>

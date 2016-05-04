@@ -91,7 +91,7 @@ public class SisEventosBean {
                 "Evento alterado com sucesso!", "");
         //evento = new Evento();
         context.addMessage(null, msg);
-        return "listarEvento";
+        return "listarEvento2";
         
     }
     

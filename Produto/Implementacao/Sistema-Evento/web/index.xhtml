@@ -18,22 +18,6 @@
       </div>
        <p:spacer height="20" />
          <p:separator />
-            <h:form id="form">
-                <p:carousel value="#{sisEventosBean.listaEventos}" headerText="Eventos" var="evento" itemStyle="text-align:center" responsive="true">
-        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
-            <f:facet name="header">
-                <p:graphicImage value="templates/images/cookies" /> 
-            </f:facet>
-            
-            <h:outputText value="Titulo" />
-            <h:outputText value="#{sisEventosBean.evento.titulo}" />
- 
-            <h:outputText value="Data:" />
-            <h:outputText value="#{sisEventosBean.evento.data_inicial}" style="color:#{sisEventosBean.evento.data_final}"/>
-
-        </p:panelGrid>  
-    </p:carousel>
-            </h:form>
          
           <p:panel id="basic" header="Informações Eventos" style="margin-bottom:20px">
             <div id="formDados">

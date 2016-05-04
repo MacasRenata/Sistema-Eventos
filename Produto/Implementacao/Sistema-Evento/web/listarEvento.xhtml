@@ -27,12 +27,12 @@
                #{evento.categoria_evento}
             </p:column>
               <p:column headerText="Detalhes do Evento">
-                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(id)}" >
+                  <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
                      <h:outputText value="Detalhes" />
                </p:commandLink>
             </p:column>
               <p:column headerText="Editar Evento">
-                  <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoEvento(id)}" >
+                  <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoEvento(evento.id_evento)}" >
                </p:commandLink>
             </p:column>
                </p:dataTable>       
