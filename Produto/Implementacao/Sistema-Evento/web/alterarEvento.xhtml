@@ -16,8 +16,8 @@
                 <h:form>
                    <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="2">
-                        <p:outputLabel for="txtId" value="Id " style="color:gray;font-weight:bold"/>
-                        <p:inputText id="txtId" maxlength="60" size="50" required="true"  value="#{sisEventosBean.evento.id_evento}"/>
+                        <p:outputLabel for="txtId" value="" style="color:gray;font-weight:bold"/>
+                        <h:inputHidden id="txtId" value="#{sisEventosBean.evento.id_evento}"/>
                         
                         <p:outputLabel for="txtTitulo" value="Título: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtTitulo" maxlength="60" size="50" required="true" requiredMessage="Digite o nome do Evento" value="#{sisEventosBean.evento.titulo}"/>
