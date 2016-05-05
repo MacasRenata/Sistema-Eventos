@@ -51,11 +51,10 @@
                                 </p:selectOneMenu>
                       
                         
-                        <p:outputLabel for="inscricaoEvento" value="Inscrições:"/>
-                        <p:selectOneRadio id="inscricaoEvento" value="#{sisEventosBean.evento.inscricoes}">
-                                 <f:selectItem itemLabel="Sim" itemValue="Sim"/>
-                                 <f:selectItem itemLabel="Não" itemValue="Não"/>
-                             </p:selectOneRadio>
+                        <p:outputLabel  value="Inscrições:"/>
+                        <p:selectBooleanCheckbox value="#{sisEventosBean.evento.inscricoes}">
+                            <p:ajax  listener="#{sisEventosBean.evento.inscricoes.booleanValue()}"/>
+                        </p:selectBooleanCheckbox>
                         
                         <p:outputLabel for="inicioIncricao" value="Período Inscrição:" style="color:gray;font-weight:bold"/>
                         <p:calendar id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}"/>
@@ -64,11 +63,10 @@
                         <p:calendar id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}"/>
                         
                         
-                        <p:outputLabel for="inscricaoLimite" value="Limite de Inscrições:"/>
-                        <p:selectOneRadio id="inscricaoLimite" value="#{sisEventosBean.evento.inscricoes}">
-                                 <f:selectItem itemLabel="Sim" itemValue="Sim"/>
-                                 <f:selectItem itemLabel="Não" itemValue="Não"/>
-                             </p:selectOneRadio>
+                        <p:outputLabel  value="Limite de Inscrições:"/>
+                        <p:selectBooleanCheckbox value="#{sisEventosBean.evento.limite_inscricoes}">
+                             <p:ajax  listener="#{sisEventosBean.evento.limite_inscricoes.booleanValue()}"/>
+                        </p:selectBooleanCheckbox>
                         
                         <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="qntidadeIncritos" maxlength="60" size="50" value="#{sisEventosBean.evento.limite_inscricoes}"/>
@@ -82,11 +80,11 @@
                         <p:outputLabel for="emailOrganizador" value="Email do Organizador: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
                         
-                        <p:outputLabel for="subTrab" value="Submissão de Arquivos:"/>
-                        <p:selectOneRadio id="subTrab" value="#{sisEventosBean.evento.submissao}">
-                                 <f:selectItem itemLabel="Sim" itemValue="Sim"/>
-                                 <f:selectItem itemLabel="Não" itemValue="Não"/>
-                         </p:selectOneRadio>
+                        <p:outputLabel  value="Submissão de Arquivos:"/>
+                         <p:selectBooleanCheckbox value="#{sisEventosBean.evento.submissao}">
+                             <p:ajax  listener="#{sisEventosBean.evento.submissao.booleanValue()}"/>
+                        </p:selectBooleanCheckbox>
+                        
                        </h:panelGrid>
                        <h:panelGroup> 
                                                                                               <!--Se usar actionListener Não Funciona!!! -->
