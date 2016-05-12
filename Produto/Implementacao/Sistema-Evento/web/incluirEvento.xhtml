@@ -5,11 +5,11 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
+      
     <ui:composition template="templates/padrao.xhtml">
          <ui:define name="conteudo">
            
-      <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">
+      <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">                      
             <div id="formDados">
       
                 <h:form>
@@ -22,11 +22,13 @@
                         <p:inputText id="txtLocal" maxlength="60" size="50" required="true" requiredMessage="Digite o Local do Evento" value="#{sisEventosBean.evento.local_evento}"/>
                         
                         <p:outputLabel for="inicioEvento" value="Período Evento:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="inicioEvento" required="true" requiredMessage="Selecione a data inicial" value="#{sisEventosBean.evento.data_inicial}"/>
+                        <p:calendar binding="#{startDateComponent1}" requiredMessage="Selecione a data inicial" id="inicioEvento" required="true" value="#{sisEventosBean.evento.data_inicial}" pattern="dd/MM/yyyy"/>
                         
-                        <p:outputLabel for="fimEvento" value="Até:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="fimEvento" required="true" requiredMessage="Selecione a data inicial" value="#{sisEventosBean.evento.data_final}"/>
-                  
+                        <p:outputLabel for="fimEvento"  value="Até:" style="color:gray;font-weight:bold"/>
+                        <p:calendar id="fimEvento" binding="#{endDateComponent1}" required="true" requiredMessage="Selecione a data inicial" value="#{sisEventosBean.evento.data_final}" pattern="dd/MM/yyyy">
+                            <f:validator validatorId="dataEventoValidator" />
+                            <f:attribute name="startDateComponent1" value="#{startDateComponent1}" />
+                        </p:calendar>   
                                <p:outputLabel for="categoriaEvento" value="Categoria:"/>
                                <p:selectOneMenu id="categoriaEvento" required="true" requiredMessage="Selecione uma Categoria" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
                                      <f:selectItem itemLabel="Selecione" itemValue=""/>
@@ -51,10 +53,14 @@
                         </p:selectBooleanCheckbox>
                         
                         <p:outputLabel for="inicioIncricao" value="Período Inscrição:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}"/>
+                        <p:calendar id="inicioIncricao" binding="#{startDateComponent2}" value="#{sisEventosBean.evento.data_inicial_inscricao}" pattern="dd/MM/yyyy"/>
                         
                         <p:outputLabel for="fimInscricao" value="Até:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}"/>
+                        <p:calendar id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}" pattern="dd/MM/yyyy">
+                            <f:validator validatorId="dataInscricaoValidator" />
+                            <f:attribute name="startDateComponent2" value="#{startDateComponent2}" />
+                            <f:attribute name="endDateComponent1" value="#{endDateComponent1}" />
+                        </p:calendar>
                         
                         <p:outputLabel  value="Limite de Inscrições:"/>
                          <p:selectBooleanCheckbox value="#{sisEventosBean.evento.limite_inscricoes}">
