@@ -9,6 +9,7 @@ import modelo.Evento;
 import modelo.Usuario;
 import persistencia.EventoDAO;
 import persistencia.UsuarioDAO;
+import org.primefaces.event.ToggleEvent;
 
 @ManagedBean
 @RequestScoped
@@ -134,5 +135,12 @@ public class SisEventosBean {
         context.addMessage(null, msg);
         return null;
     }
+    
+      public void aoAtivar(ToggleEvent event) {
+        event.getVisibility().name();
 
+    }
+   
+                       
+     
 }

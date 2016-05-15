@@ -16,29 +16,41 @@ import javax.persistence.TemporalType;
 public class Evento implements Serializable {
     @Id
     @GeneratedValue
-    private int id_evento;//mudar para idEvento
+    private int id_evento;
     private String titulo;
-    private String local_evento; //local palavra reservada do SQL - mudar nome do atributo
+    private String local_evento;
     @Temporal(TemporalType.DATE)
     private Date data_inicial;
     @Temporal(TemporalType.DATE)
     private Date data_final;
+    @Temporal(TemporalType.TIME)
+    private Date horario_inicio; 
+    @Temporal(TemporalType.TIME)
+    private Date horario_fim;
     private String categoria_evento;
     private String area_evento; 
-    private Boolean inscricoes;
+    private boolean inscricoes;
     private String descricao_evento;
     @Temporal(TemporalType.DATE)
     private Date data_inicial_inscricao;
     @Temporal(TemporalType.DATE)
     private Date data_final_inscricao;
-    private Boolean limite_inscricoes;//limitar o num de participantes no evento - Alterado para Booleano
-    private Boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
+    private boolean limite_inscricoes;//limitar o num de participantes no evento - Alterado para Booleano
+    private boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
     private String nome_organizador;
     private String email_organizador;
     private String senha_organizador;
     private int quantidade_inscritos;
 
-    
+       public int getId_evento() {
+        return id_evento;
+    }
+
+  
+    public void setId_evento(int id_evento) {
+        this.id_evento = id_evento;
+    }
+
 
     public String getTitulo() {
         return titulo;
@@ -71,6 +83,21 @@ public class Evento implements Serializable {
     public void setData_final(Date data_final) {
         this.data_final = data_final;
     }
+    
+    public Date getHorario_inicio() {
+        return horario_inicio;
+    }
+
+    public void setHorario_inicio(Date horario_inicio) {
+        this.horario_inicio = horario_inicio;
+    }
+     public Date getHorario_fim() {
+        return horario_fim;
+    }
+
+    public void setHorario_fim(Date horario_fim) {
+        this.horario_fim = horario_fim;
+    }
 
     public String getCategoria_evento() {
         return categoria_evento;
@@ -88,11 +115,11 @@ public class Evento implements Serializable {
         this.area_evento = area_evento;
     }
 
-    public Boolean getInscricoes() {
+    public boolean isInscricoes() {
         return inscricoes;
     }
 
-    public void setInscricoes(Boolean inscricoes) {
+    public void setInscricoes(boolean inscricoes) {
         this.inscricoes = inscricoes;
     }
 
@@ -113,11 +140,11 @@ public class Evento implements Serializable {
     }
 
 
-    public Boolean getSubmissao() {
+    public boolean isSubmissao() {
         return submissao;
     }
 
-    public void setSubmissao(Boolean submissao) {
+    public void setSubmissao(boolean submissao) {
         this.submissao = submissao;
     }
 
@@ -147,58 +174,31 @@ public class Evento implements Serializable {
         this.descricao_evento = descricao_evento;
     }
 
-    /**
-     * @return the id_evento
-     */
-    public int getId_evento() {
-        return id_evento;
-    }
-
-    /**
-     * @param id_evento the id_evento to set
-     */
-    public void setId_evento(int id_evento) {
-        this.id_evento = id_evento;
-    }
-
-    /**
-     * @return the senha_organizador
-     */
+  
     public String getSenha_organizador() {
         return senha_organizador;
     }
 
-    /**
-     * @param senha_organizador the senha_organizador to set
-     */
+ 
     public void setSenha_organizador(String senha_organizador) {
         this.senha_organizador = senha_organizador;
     }
 
-    /**
-     * @return the limite_inscricoes
-     */
-    public Boolean getLimite_inscricoes() {
+   
+    public boolean isLimite_inscricoes() {
         return limite_inscricoes;
     }
 
-    /**
-     * @param limite_inscricoes the limite_inscricoes to set
-     */
-    public void setLimite_inscricoes(Boolean limite_inscricoes) {
+    public void setLimite_inscricoes(boolean limite_inscricoes) {
         this.limite_inscricoes = limite_inscricoes;
     }
 
-    /**
-     * @return the quantidade_inscritos
-     */
+  
     public int getQuantidade_inscritos() {
         return quantidade_inscritos;
     }
 
-    /**
-     * @param quantidade_inscritos the quantidade_inscritos to set
-     */
+  
     public void setQuantidade_inscritos(int quantidade_inscritos) {
         this.quantidade_inscritos = quantidade_inscritos;
     }

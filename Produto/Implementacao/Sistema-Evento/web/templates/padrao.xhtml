@@ -8,9 +8,11 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Sistema de Eventos</title>
-        <h:outputStylesheet  name="resources/css/estilos.css"/>
-        <h:outputStylesheet  name="resources/js/validacao.js"/>   
-        <h:outputStylesheet  name="resources/images/cookies.gif"/>   
+        <h:outputStylesheet name="resources/css/estilos.css"/>
+        <h:outputStylesheet name="resources/js/validacao.js"/>   
+        <h:outputStylesheet name="resources/images/cookies.gif"/>  
+        <h:outputScript library="js" name="locale-primefaces.js"/>  
+     
     </h:head>
     <h:body>
         <p:layout fullPage="true">
@@ -19,7 +21,7 @@
                  <h:form> 
                     <p:breadCrumb>               
                          <p:menuitem value="Home" action="index"/>          
-                         <p:menuitem value="Administrador" action="administrador" />  
+                         <p:menuitem value="Administrador" action="indexAdmin" />  
                          <p:menuitem value="Usuario" action="usuario"  />  
                     </p:breadCrumb>     
                  </h:form>     
