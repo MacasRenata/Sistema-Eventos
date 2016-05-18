@@ -4,15 +4,17 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import modelo.Evento;
 import modelo.Usuario;
+import org.apache.commons.codec.digest.DigestUtils;
 import persistencia.EventoDAO;
 import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 
 public class SisEventosBean {
 
@@ -93,7 +95,14 @@ public class SisEventosBean {
     public String incluirUsuario() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        usuarioDao.incluir(usuario);
+        UsuarioDAO usuDAO = new UsuarioDAO();
+        // Enviando a encriptacao
+        //String encript = DigestUtils.md5Hex(this.usuario.getNombre());
+        String encript = DigestUtils.shaHex(this.usuario.getSenha());
+        //String encript = DigestUtils.sha1Hex(this.usuario.getClave());
+        this.usuario.setSenha(encript);
+        usuDAO.incluir(this.usuario);
+        //usuarioDao.incluir(usuario);
         listaUsuarios = usuarioDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario cadastrado com Sucesso!", "");
@@ -136,6 +145,59 @@ public class SisEventosBean {
         return null;
     }
     
+    public String verificarLogin() throws Exception {
+                FacesContext context = FacesContext.getCurrentInstance();
+                FacesMessage msg;
+		UsuarioDAO usuDAO = new UsuarioDAO();
+		Usuario us;
+		String resultado;
+
+		try {
+			// Enviando la encriptacion
+			//String encript = DigestUtils.md5Hex(this.usuario.getNombre());
+                        String encript = DigestUtils.shaHex(this.usuario.getSenha());
+			//String encript = DigestUtils.sha1Hex(this.usuario.getClave());
+			this.usuario.setSenha(encript);
+                        
+			us = usuDAO.verificarLogin(this.usuario);
+			if (us != null) {
+
+				FacesContext.getCurrentInstance().getExternalContext()
+						.getSessionMap().put("usuario", us);
+
+				resultado = "indexAdmin";
+                                
+			} else {
+                            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                            "Erro de login!", "");
+                            context.addMessage(null, msg);
+                            return null;
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return resultado;
+	}
+    
+    	public boolean verificarSessao() {
+		boolean estado;
+
+		if (FacesContext.getCurrentInstance().getExternalContext()
+				.getSessionMap().get("usuario") == null) {
+			estado = false;
+		} else {
+			estado = true;
+		}
+
+		return estado;
+	}
+    
+        public String fecharSessao() {
+		FacesContext.getCurrentInstance().getExternalContext()
+				.invalidateSession();
+		return "index";
+	}
       public void aoAtivar(ToggleEvent event) {
         event.getVisibility().name();
 

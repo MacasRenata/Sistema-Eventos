@@ -9,11 +9,11 @@
 
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-
+            	
             <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">
                 <div id="formDados">
-
-                    <h:form>
+                    <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+                    <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="2000"/>
                         <h:panelGrid columns="2">
                             <p:outputLabel for="txtId" value=""/>

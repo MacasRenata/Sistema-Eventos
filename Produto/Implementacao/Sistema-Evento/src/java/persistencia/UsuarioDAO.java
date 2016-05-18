@@ -7,6 +7,7 @@ package persistencia;
 
 import java.util.ArrayList;
 import modelo.Usuario;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -40,7 +41,23 @@ public class UsuarioDAO {
         t.commit();
 
     }
+    
+    public Usuario verificarLogin(Usuario usuario) throws Exception {
+		Usuario us = null;
+		try {
+			sessao = HibernateUtil.getSessionFactory().openSession();
+			String hql = "FROM Usuario WHERE email = '" + usuario.getEmail()
+					+ "' and senha = '" + usuario.getSenha() + "'";
+			Query query = sessao.createQuery(hql);
 
+			if (!query.list().isEmpty()) {
+				us = (Usuario) query.list().get(0);
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+		return us;
+	}
     public ArrayList<Usuario> listar() {
         return (ArrayList<Usuario>) sessao.createCriteria(Usuario.class).list();
     }

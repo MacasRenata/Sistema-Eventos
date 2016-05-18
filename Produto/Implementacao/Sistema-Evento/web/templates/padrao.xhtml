@@ -17,9 +17,30 @@
     <h:body>
         <p:layout fullPage="true">
            <p:layoutUnit position="north">  
-                <span> <h1> Sistema de Eventos </h1></span>  
+               <span> <h1> Sistema de Eventos </h1></span>
+               <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
+                                <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
+                                <p:inputText id="txtEmail" maxlength="60" size="20" validatorMessage="Email inválido!" value="#{sisEventosBean.usuario.email}">
+                                     <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
+                                    </p:inputText>
+                                <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
+                                <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuario.senha}"/>
+                                <p:commandButton value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:20px;"/>
+                                <p:commandButton value="Cadastrar-se" ajax="false" action="#{sisEventosBean.incluirUsuario}" style="margin-left:20px;"/>
+                </h:form>
+                <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
+                    <h:panelGrid  columns="4" style=" align-content:right"  >
+			<h:outputLabel value="Bemvindo " />
+			<h:outputLabel value="#{usuarioBean.usuario.nombre}" />
+                        <h:outputLabel value="#{sisEventosBean.usuario.email}" />
+                        <h:commandButton value="Sair" action="#{sisEventosBean.fecharSessao()}" />
+                    </h:panelGrid>
+                    
+                    
+                    
+                </h:form>
                  <h:form> 
-                    <p:breadCrumb>               
+                    <p:breadCrumb>   
                          <p:menuitem value="Home" action="index"/>          
                          <p:menuitem value="Administrador" action="indexAdmin" />  
                          <p:menuitem value="Usuario" action="usuario"  />  

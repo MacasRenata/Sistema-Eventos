@@ -12,8 +12,8 @@
      
             <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">                      
                 <div id="formDados">
-
-                    <h:form>
+                    <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+                    <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="4000"/>
                         <p:panelGrid columns="1" layout="grid" >
 

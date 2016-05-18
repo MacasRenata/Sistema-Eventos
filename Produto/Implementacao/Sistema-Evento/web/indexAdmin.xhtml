@@ -8,7 +8,7 @@
     
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-       
+     <h:outputLabel value="USTED NO HA INICIADO SESIÓN" rendered="#{sisEventosBean.verificarSessao() eq false}" />
      <div class="jumbotron"  align="center">
         <h1>Crie seu Evento</h1>
         <p> Um Sistema desenvolvido para a Criação e participação em Eventos. </p>
