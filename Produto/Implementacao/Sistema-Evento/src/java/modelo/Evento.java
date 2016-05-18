@@ -9,10 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 
 @Entity
 @Table(name="eventos")  //alteração para ficar igual a tabela sql
+@SQLDelete(sql = "update Evento set ativo = 0 where id_evento = ?")
+@Where(clause = "ativo = 1")
 public class Evento implements Serializable {
     @Id
     @GeneratedValue
@@ -41,6 +45,7 @@ public class Evento implements Serializable {
     private String email_organizador;
     private String senha_organizador;
     private int quantidade_inscritos;
+    private Boolean ativo;
 
        public int getId_evento() {
         return id_evento;
@@ -201,6 +206,20 @@ public class Evento implements Serializable {
   
     public void setQuantidade_inscritos(int quantidade_inscritos) {
         this.quantidade_inscritos = quantidade_inscritos;
+    }
+
+    /**
+     * @return the ativo
+     */
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    /**
+     * @param ativo the ativo to set
+     */
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
     
     

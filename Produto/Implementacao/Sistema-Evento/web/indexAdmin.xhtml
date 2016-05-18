@@ -8,12 +8,13 @@
     
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-     <h:outputLabel value="USTED NO HA INICIADO SESIÓN" rendered="#{sisEventosBean.verificarSessao() eq false}" />
-     <div class="jumbotron"  align="center">
+     <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+                   
+     <div class="jumbotron" align="center">
         <h1>Crie seu Evento</h1>
         <p> Um Sistema desenvolvido para a Criação e participação em Eventos. </p>
         <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
-      </div>    
+      </div>
               <div class="container">
             <div class="row">
          <div class="col-md-6">

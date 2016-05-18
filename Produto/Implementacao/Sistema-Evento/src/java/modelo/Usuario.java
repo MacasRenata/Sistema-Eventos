@@ -13,11 +13,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 
 
 @Entity
 @Table(name="usuario")  //mudança para conectar com a tabela correta
+@SQLDelete(sql = "update Usuario set ativo = 0 where id_user = ?")
+@Where(clause = "ativo = 1")
 public class Usuario implements Serializable{
     @Id
     @GeneratedValue
@@ -34,6 +38,7 @@ public class Usuario implements Serializable{
     private String estado;
     private String instituicao;
     private String telefone;
+    private Boolean ativo;
 
     /**
      * @return the id_user
@@ -201,6 +206,20 @@ public class Usuario implements Serializable{
      */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    /**
+     * @return the ativo
+     */
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    /**
+     * @param ativo the ativo to set
+     */
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
    
     
