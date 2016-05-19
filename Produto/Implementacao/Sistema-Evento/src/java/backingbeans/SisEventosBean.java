@@ -1,5 +1,8 @@
 package backingbeans;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -55,7 +58,7 @@ public class SisEventosBean {
         return listaUsuarios;
     }
 
-    public String incluirEvento() {
+    public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         evtDao.incluir(evento);
@@ -65,6 +68,12 @@ public class SisEventosBean {
        // evento = new Evento();
         context.addMessage(null, msg);
         return "listaEventos";
+    
+    
+    //File file = new File("C:\\user\\Desktop\\dir1\\dir2\\filename.html");
+       // file.getParentFile().mkdirs();
+       // FileWriter writer = new FileWriter(file);
+    
     }
 
     public String consultarEvento(int id) {
