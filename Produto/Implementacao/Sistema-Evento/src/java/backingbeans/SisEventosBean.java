@@ -134,12 +134,19 @@ public class SisEventosBean {
     public String alterarUsuario() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
+        
+        // Enviando a encriptacao
+        //String encript = DigestUtils.md5Hex(this.usuario.getNombre());
+        String encript = DigestUtils.shaHex(this.usuario.getSenha());
+        //String encript = DigestUtils.sha1Hex(this.usuario.getClave());
+        this.usuario.setSenha(encript);
         usuarioDao.alterar(usuario);
         listaUsuarios = usuarioDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario alterado com Sucesso!", "");
         //usuario = new Usuario();
         context.addMessage(null, msg);
+        usuario = new Usuario(); 
         return "listaUsuarios";
     }
 
