@@ -108,6 +108,7 @@ public class SisEventosBean {
                 "Usuario cadastrado com Sucesso!", "");
         // usuario = new Usuario();
         context.addMessage(null, msg);
+        usuario = new Usuario(); 
         return "usuario";
     }
 
@@ -164,13 +165,14 @@ public class SisEventosBean {
 
 				FacesContext.getCurrentInstance().getExternalContext()
 						.getSessionMap().put("usuario", us);
-
+                                usuario = new Usuario();
 				resultado = "indexAdmin";
                                 
 			} else {
                             msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                             "Erro de login!", "");
                             context.addMessage(null, msg);
+                            usuario = new Usuario();
                             return null;
 			}
 		} catch (Exception e) {
@@ -194,12 +196,11 @@ public class SisEventosBean {
 	}
     
         public String fecharSessao() {
-		FacesContext.getCurrentInstance().getExternalContext()
-				.invalidateSession();
-		return "index";
+            FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+            return "index";
 	}
-      public void aoAtivar(ToggleEvent event) {
-        event.getVisibility().name();
+        public void aoAtivar(ToggleEvent event) {
+            event.getVisibility().name();
 
     }
    

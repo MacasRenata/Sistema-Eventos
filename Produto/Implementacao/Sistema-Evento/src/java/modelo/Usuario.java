@@ -38,7 +38,7 @@ public class Usuario implements Serializable{
     private String estado;
     private String instituicao;
     private String telefone;
-    private Boolean ativo;
+    private Boolean ativo = true;
 
     /**
      * @return the id_user
