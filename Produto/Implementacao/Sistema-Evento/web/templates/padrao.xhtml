@@ -18,24 +18,29 @@
         <p:layout fullPage="true">
            <p:layoutUnit position="north">  
                <span> <h1> Sistema de Eventos </h1></span>
-               <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
-                                <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
-                                <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}"/>
-                                <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
-                                <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuario.senha}"/>
-                                <p:commandButton value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:20px;"/>
-                                <p:commandButton value="Cadastrar-se" ajax="false" action="#{sisEventosBean.incluirUsuario}" style="margin-left:20px;"/>
-                </h:form>
-                <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
-                    <h:panelGrid  columns="4" style=" align-content:right"  >
-			<h:outputLabel value="Bemvindo "/>
-			<h:outputLabel value="#{sisEventosBean.usuario.email}" />
-                        <h:commandButton value="Sair" action="#{sisEventosBean.fecharSessao()}" />
-                    </h:panelGrid>
-                    
-                    
-                    
-                </h:form>
+               <div class="loginform" align="right">
+                    <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
+                            <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold;margin-rght:10px"/>
+                            <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}" style="color:gray;font-weight:bold;margin-rght:10px"/>
+                            
+                            <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold;margin-left:10px"/>
+                            <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuario.senha}" style="margin-rght:10px"/>
+                            
+                            <b:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-rght:10px"/>
+                            <b:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-rght:10px" outcome="incluirUsuario"/>
+                            
+                            <p> <a href="enviarSenha.xhtml">Esqueci a senha</a></p>
+                    </h:form>
+                    <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
+                       
+                            <h:outputLabel value="Bemvindo" style="margin-left:20px;margin-rght:20px"/>
+                            
+                            <b:commandButton value="Meus Dados" action="#{sisEventosBean.iniciaMeusDados(usuario.id_user)}" />
+                         
+                            <b:button value="Trocar Senha" outcome="alterarSenha"/>
+                            <b:commandButton value="Sair" action="#{sisEventosBean.fecharSessao()}"/>
+                    </h:form>
+                </div> 
                  <h:form> 
                     <p:breadCrumb>   
                          <p:menuitem value="Home" action="index"/>          

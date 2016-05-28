@@ -46,7 +46,7 @@ public class DataEventoValidator implements Validator {
         if (startDate1.after(endDate1)) {
             startDateComponent.setValid(false);
             throw new ValidatorException(new FacesMessage(
-                FacesMessage.SEVERITY_ERROR, "Start date may not be after end date.", null));
+                FacesMessage.SEVERITY_ERROR, "Data Inicial precisa ser depois da data final.", null));
         }
     }
  

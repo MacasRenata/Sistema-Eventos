@@ -14,32 +14,53 @@
             
                 <h:form enctype="multipart/form-data">
                     <p:growl id="growl" life="2000"/>
-                      <h:panelGrid columns="2">
+                      <h:panelGrid columns="3">
+                        
                         <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtNomeUsuario" maxlength="60" size="50"  required="true" requiredMessage="Digite o seu nome" value="#{sisEventosBean.usuario.nome}"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtEmail" maxlength="60" size="50" required="true" validatorMessage="Email inválido!" value="#{sisEventosBean.usuario.email}">
                              <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
-                            </p:inputText>
-                        
-                        <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
-                        <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}"/>
+                        </p:inputText>
+                        <p:outputLabel value= ""/>
+   
+                        <p:outputLabel for="txtSenhaUsuario" style="color:gray;font-weight:bold" value="Senha:" />
+                        <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true">
+                            <f:validator validatorId="confirmaSenhaValidator" />
+                            <f:validateLength minimum="5" />
+                            <f:attribute name="confirma" value="#{confirmaSenha.submittedValue}" />
+                            <f:ajax event="blur" execute="senha confirma" render="m_senha" />
+                        </p:password>
+                        <p:message id="m_senha" for="txtSenhaUsuario" />
+
+                        <p:outputLabel style="color:gray;font-weight:bold" for="confirma" value="Repetir a Senha:" />
+                        <p:password id="confirma" maxlength="60" size="50" binding="#{confirmaSenha}" required="true">
+                            <f:validateLength minimum="5" />
+                            <f:ajax event="blur" execute="senha confirma" render="m_senha m_confirma" />
+                        </p:password>
+                        <p:message id="m_confirma" for="confirma" />
                         
                         <p:outputLabel for="txtInstEnsino" value="Endereço: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtInstEnsino" maxlength="60" size="50" value="#{sisEventosBean.usuario.instituicao}"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
                         <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuario.sexo}"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.endereco}"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtCidade" value="Cidade: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtCidade" maxlength="60" size="50" value="#{sisEventosBean.usuario.cidade}"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtEstado" style="color:gray;font-weight:bold" value="Estado:"/>
                         <p:selectOneMenu id="txtEstado" value="#{sisEventosBean.usuario.estado}" style="width:120px">
@@ -72,13 +93,17 @@
                             <f:selectItem itemLabel="Sergipe" itemValue="SE"/>
                             <f:selectItem itemLabel="Tocantins" itemValue="TO"/>
                         </p:selectOneMenu>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
                         <p:inputMask id="txtCep" maxlength="9" size="50" value="#{sisEventosBean.usuario.cep}" mask="99999-999"/>
+                        <p:outputLabel value= ""/>
                         
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <p:inputMask id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}" mask="(99) 9999-9999?">
                         <f:validateRegex pattern="^\([0-9]{2}\)\s*[0-9]{4}[\-\.]{0,1}[0-9]{4}$"/>
+                        <p:outputLabel value= ""/>
+                        
                         </p:inputMask>
                         </h:panelGrid>
                     

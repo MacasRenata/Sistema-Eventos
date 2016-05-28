@@ -29,6 +29,7 @@ public class Usuario implements Serializable{
     private String nome;
     private String email;
     private String senha;
+    private String senhaNova;
     private String sexo;
     @Temporal(TemporalType.DATE)
     private Date data_nascimento;
@@ -220,6 +221,21 @@ public class Usuario implements Serializable{
      */
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+
+    /**
+     * @return the senhaNova
+     */
+    public String getSenhaNova() {
+        return senhaNova;
+    }
+
+    /**
+     * @param senhaNova the senhaNova to set
+     */
+    public void setSenhaNova(String senhaNova) {
+        this.senhaNova = senhaNova;
     }
    
     

@@ -25,14 +25,8 @@
                         <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtEmail" maxlength="60" size="50" required="true" validatorMessage="Email inválido!" value="#{sisEventosBean.usuario.email}">
                              <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
-                        </p:inputText>
+                            </p:inputText>
                         
-                        <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
-                        <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}">
-                            <f:validateLength minimum="5" />
-                        </p:password>
-                        <p:message for="txtSenhaUsuario" />
-                            
                         <p:outputLabel for="txtInstEnsino" value="Endereço: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtInstEnsino" maxlength="60" size="50" value="#{sisEventosBean.usuario.instituicao}"/>
                         
@@ -95,7 +89,7 @@
                     
                        <h:panelGroup>                                                
                                                                               <!--Se usar actionListener Não Funciona!!! -->
-                           <p:commandButton value="alterar" ajax="false" action="#{sisEventosBean.alterarUsuario}"  icon="ui-icon-disk" >
+                           <p:commandButton value="alterar" ajax="false" action="#{sisEventosBean.alterarMeusDados}"  icon="ui-icon-disk" >
                         </p:commandButton>
                    
                     <p:button outcome="listaUsuarios" value="Voltar" icon="ui-icon-star"/>
