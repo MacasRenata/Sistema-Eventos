@@ -39,7 +39,7 @@
                             <h:outputText id="horarioInicial" value="#{sisEventosBean.evento.horario_inicio}">
                                 <f:convertDateTime pattern="HH:mm"/>
                             </h:outputText>
-                                                       
+
                             <h:outputLabel for="horarioFinal" value="Horário de Encerramento" />
                             <h:outputText id="horarioFinal" value="#{sisEventosBean.evento.horario_fim}">
                                 <f:convertDateTime pattern="HH:mm"/>
@@ -53,8 +53,10 @@
 
                             <p:outputLabel for="inscricaoEvento" value="Inscrições:"/>
                             <h:outputText id="inscricaoEvento" value="Não" rendered="#{sisEventosBean.evento.inscricoes eq false}"/>                      
-                            <h:outputText value="Sim" rendered="#{sisEventosBean.evento.inscricoes}"/>                                                     
-                          
+                            <h:outputText value="Sim" rendered="#{sisEventosBean.evento.inscricoes}"/>  
+                        </h:panelGrid>
+
+                        <h:panelGrid  columns="2" id="painel_inscricoes" rendered="#{sisEventosBean.evento.inscricoes eq true}">
                             <p:outputLabel for="inicioIncricao" value="Período Inscrição:"/>
                             <h:outputText id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}">
                                 <f:convertDateTime type="date" dateStyle="full"/>
@@ -71,7 +73,9 @@
 
                             <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: "/>
                             <h:outputText id="qntidadeIncritos" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
+                        </h:panelGrid>
 
+                        <h:panelGrid columns="2">
                             <p:outputLabel for="txtArea" value="Descrição do Evento: "/>
                             <h:outputText id="txtArea" value="#{sisEventosBean.evento.descricao_evento}"/>
 
@@ -88,7 +92,6 @@
                             <h:panelGroup>
                                 <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
                             </h:panelGroup>
-
                         </h:panelGrid> 
                     </h:form>
                 </div>

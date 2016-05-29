@@ -5,43 +5,37 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:b="http://bootsfaces.net/ui">
-    
+
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-     <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
-                   
-     <div class="jumbotron" align="center">
-        <h1>Crie seu Evento</h1>
-        <p> Um Sistema desenvolvido para a Criação e participação em Eventos. </p>
-        <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
-      </div>
-              <div class="container">
-            <div class="row">
-         <div class="col-md-6">
-          <h2>Listar Eventos</h2>
-          <p> Visualiza dados do eventos com inscrições abertas. </p>
-          <b:button class="btn btn-primary btn-lg" value="Listar" outcome="listaEventos"/>
-         </div>
-          <div class="col-md-6">
-          <h2>Listar Usuarios</h2>
-          <p> Consulte maiores informações sobre os usuarios. </p>
-          <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listaUsuarios"/>
-        </div> 
-          </div> 
-             </div> 
-      
-      <p:spacer height="20"/>
-         <p:separator/>
-             <div class="container">
-           <div class="footer">
-      <footer class="container-fluid text-center">
-        <p> 2016 Equipe1 ADS, Inc.</p>
-         <p>
-         Este sistema foi desenvolvido na disciplina de Desenvolvimento de Sistemas II do curso de Análise e Desenvolvimento de Sistemas do Campus Restinga do IFRS.
-        </p>
-      </footer>
-    </div> 
-       </div> 
+            <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+
+            <div class="jumbotron" align="center">
+                <h1>Crie seu Evento</h1>
+                <p> Um Sistema desenvolvido para a Criação e participação em Eventos. </p>
+                <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
+
+                <h2>Listar Eventos</h2>
+                <p> Visualiza dados do eventos com inscrições abertas. </p>
+                <b:button class="btn btn-primary btn-lg" value="Listar" outcome="listaEventos"/>
+
+                <h2>Listar Usuarios</h2>
+                <p> Consulte maiores informações sobre os usuarios. </p>
+                <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listaUsuarios"/>
+            </div> 
+
+            <p:spacer height="20"/>
+            <p:separator/>
+            <div class="container">
+                <div class="footer">
+                    <footer class="container-fluid text-center">
+                        <p> 2016 Equipe1 ADS, Inc.</p>
+                        <p>
+                            Este sistema foi desenvolvido na disciplina de Desenvolvimento de Sistemas II do curso de Análise e Desenvolvimento de Sistemas do Campus Restinga do IFRS.
+                        </p>
+                    </footer>
+                </div> 
+            </div> 
         </ui:define>
     </ui:composition>
 </html>

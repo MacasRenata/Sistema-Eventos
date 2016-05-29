@@ -21,7 +21,7 @@ import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 
 public class SisEventosBean {
 

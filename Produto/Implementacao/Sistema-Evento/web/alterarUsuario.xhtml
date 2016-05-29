@@ -13,9 +13,9 @@
         <p:panel id="basic" header="Cadastro de Usuário" style="margin-bottom:20px">
             <div id="formDados">
               
-                <h:form>
+                <h:form >
                    <p:growl id="growl" life="2000"/>   
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1">
                         <p:outputLabel for="txtId" value=""  style="color:gray;font-weight:bold"/>
                         <h:inputHidden id="txtId" value="#{sisEventosBean.usuario.id_user}"/>
 
@@ -37,7 +37,7 @@
                         <p:inputText id="txtInstEnsino" maxlength="60" size="50" value="#{sisEventosBean.usuario.instituicao}"/>
                         
                         <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
-                        <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}"/>
+                        <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
                         
                         <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
                         <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuario.sexo}"/>

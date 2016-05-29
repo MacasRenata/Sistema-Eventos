@@ -10,48 +10,48 @@
         <title>Sistema de Eventos</title>
         <h:outputStylesheet name="resources/css/estilos.css"/>
         <h:outputStylesheet name="resources/js/validacao.js"/>   
-        <h:outputStylesheet name="resources/images/cookies.gif"/>  
+        <h:outputStylesheet name="resources/images/cookies.gif"/>  <!-- ? -->
         <h:outputScript library="js" name="locale-primefaces.js"/>  
-     
+
     </h:head>
     <h:body>
         <p:layout fullPage="true">
-           <p:layoutUnit position="north">  
-               <span> <h1> Sistema de Eventos </h1></span>
-               <div class="loginform" align="right">
+            <p:layoutUnit position="north">  
+                <span> <h1> Sistema de Eventos </h1></span>
+                <div class="loginform" align="right">
                     <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
-                            <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold;margin-rght:10px"/>
-                            <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}" style="color:gray;font-weight:bold;margin-rght:10px"/>
-                            
-                            <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold;margin-left:10px"/>
-                            <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuario.senha}" style="margin-rght:10px"/>
-                            
-                            <b:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-rght:10px"/>
-                            <b:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-rght:10px" outcome="incluirUsuario"/>
-                            
-                            <p> <a href="enviarSenha.xhtml">Esqueci a senha</a></p>
+                        <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold;margin-right:10px"/>
+                        <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}" style="color:gray;font-weight:bold;margin-right:10px"/>
+
+                        <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold;margin-left:10px"/>
+                        <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuario.senha}" style="margin-right:10px"/>
+
+                        <b:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-right:10px"/>
+                        <b:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-right:10px" outcome="incluirUsuario"/>
+
+                        <p> <a href="enviarSenha.xhtml">Esqueci a senha</a></p>
                     </h:form>
                     <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
-                       
-                            <h:outputLabel value="Bemvindo" style="margin-left:20px;margin-rght:20px"/>
-                            
-                            <b:commandButton value="Meus Dados" action="#{sisEventosBean.iniciaMeusDados(usuario.id_user)}" />
-                         
-                            <b:button value="Trocar Senha" outcome="alterarSenha"/>
-                            <b:commandButton value="Sair" action="#{sisEventosBean.fecharSessao()}"/>
+
+                        <h:outputLabel value="Bemvindo" style="margin-left:20px;margin-right:20px"/>
+
+                        <b:commandButton  ajax="false" value="Meus Dados" action="#{sisEventosBean.iniciaMeusDados(usuario.id_user)}"/>
+
+                        <b:button value="Trocar Senha" outcome="alterarSenha"/>
+                        <b:commandButton value="Sair"  ajax="false" action="#{sisEventosBean.fecharSessao()}"/>
                     </h:form>
                 </div> 
-                 <h:form> 
-                    <p:breadCrumb>   
-                         <p:menuitem value="Home" action="index"/>          
-                         <p:menuitem value="Administrador" action="indexAdmin" />  
-                         <p:menuitem value="Usuario" action="usuario"  />  
-                    </p:breadCrumb>     
-                 </h:form>     
-             </p:layoutUnit>    
-             <p:layoutUnit id="conteudo" position="center">
+                <h:form> 
+                    <p:menubar style="margin-top:6px; margin-bottom:10px;">   
+                        <p:menuitem value="Home" action="index"/>          
+                        <p:menuitem value="Administrador" action="indexAdmin"/>  
+                        <p:menuitem value="Usuario" action="usuario"/>  
+                    </p:menubar>    
+                </h:form>     
+            </p:layoutUnit>    
+            <p:layoutUnit id="conteudo" position="center">
                 <ui:insert name="conteudo"/>
-             </p:layoutUnit>
+            </p:layoutUnit>
         </p:layout>
     </h:body>
 </html>
