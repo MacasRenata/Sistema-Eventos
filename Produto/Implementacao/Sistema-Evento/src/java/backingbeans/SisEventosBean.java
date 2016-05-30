@@ -16,6 +16,8 @@ import modelo.Usuario;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
 import persistencia.EventoDAO;
 import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
@@ -27,6 +29,7 @@ public class SisEventosBean {
 
     private Evento evento = new Evento();
     private Usuario usuario = new Usuario();
+    private Usuario usuarioLogado = new Usuario();
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
 
@@ -57,6 +60,15 @@ public class SisEventosBean {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+     public Usuario getUsuarioLogado() {
+        return usuarioLogado;
+    }
+
+    public void setUsuarioLogado(Usuario usuarioLogado) {
+        this.usuarioLogado = usuarioLogado;
+    }
+
 
     public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
@@ -131,7 +143,7 @@ public class SisEventosBean {
     }
     
     public String iniciaMeusDados(int id) {
-        usuario = usuarioDao.carregar(id);
+        usuarioLogado = usuarioDao.carregar(id);
         return "meusDados";
     }
     
@@ -164,7 +176,7 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
 
-        usuarioDao.alterar(usuario);
+        usuarioDao.alterar(usuarioLogado);
 
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario alterado com Sucesso!", "");
@@ -194,17 +206,17 @@ public class SisEventosBean {
 		String resultado;
 
 		try {
-			// Enviando la encriptacion
-			//String encript = DigestUtils.md5Hex(this.usuario.getNombre());
-                        String encript = DigestUtils.shaHex(this.usuario.getSenha());
-			//String encript = DigestUtils.sha1Hex(this.usuario.getClave());
-			this.usuario.setSenha(encript);
+			// Enviando la encriptacao
                         
-			us = usuDAO.verificarLogin(this.usuario);
+                        String encript = DigestUtils.shaHex(this.getUsuarioLogado().getSenha());
+			
+			this.getUsuarioLogado().setSenha(encript);
+                        
+			us = usuDAO.verificarLogin(this.getUsuarioLogado());
 			if (us != null) {
 
 				FacesContext.getCurrentInstance().getExternalContext()
-						.getSessionMap().put("usuario", us);
+						.getSessionMap().put("usuarioLogado", us);
                                 //usuario = new Usuario();
 				resultado = "indexAdmin";
                                 
@@ -212,7 +224,7 @@ public class SisEventosBean {
                             msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                             "Erro de login!", "");
                             context.addMessage(null, msg);
-                            usuario = new Usuario();
+                            usuarioLogado = new Usuario();
                             return null;
 			}
 		} catch (Exception e) {
@@ -226,7 +238,7 @@ public class SisEventosBean {
 		boolean estado;
 
 		if (FacesContext.getCurrentInstance().getExternalContext()
-				.getSessionMap().get("usuario") == null) {
+				.getSessionMap().get("usuarioLogado") == null) {
 			estado = false;
 		} else {
 			estado = true;
@@ -242,31 +254,68 @@ public class SisEventosBean {
         
         
         
-            public void EnviarSenha() {
-                UsuarioDAO udao = new UsuarioDAO();
-                Usuario u = udao.carregar(0);
-                //usuario = usuarioDao.verificarEmail(usuario);
-                
-                
-                if (u != null) {
-                    Usuario usr = u;
-                    SimpleEmail simplemail = new SimpleEmail();
-
+            public String EnviarSenha() throws Exception {
+                FacesContext context = FacesContext.getCurrentInstance();
+                FacesMessage msg;
+		UsuarioDAO usuDAO = new UsuarioDAO();
+		Usuario us;
+		String resultado;
                     try {
-                        simplemail.setDebug(true);
-                        simplemail.setSmtpPort(465);
-                        simplemail.setHostName("smtp.gmail.com");
-                        simplemail.setAuthentication("eventos@gambarra.com.br", "eventos10");//email e senha do setorVeículos
-                        simplemail.setSSL(true);
-                        simplemail.addTo(usr.getEmail());  
-                        simplemail.setFrom("eventos@gambarra.com.br"); //repita o email aqui (email irá enviar  a senha ao email cadastrado do servidor)
-                        simplemail.setSubject("Senha do sistema de eventos");
-                        simplemail.setMsg("Sua senha é: " + usr.getSenha());
-                        simplemail.send();
+                        us = usuDAO.verificarEmail(this.usuario);
+                        if (us != null) {
+                            
+                        Usuario usr = us;
 
-                    } catch (EmailException e) {
+                        Email email = new SimpleEmail();
+                        
+                        
+                        email.setHostName( "smtp.gmail.com" );
+                        //email.setSmtpPort(465);
+                        email.setSslSmtpPort( "587" );
+                        
+                        email.setStartTLSRequired(true);
+                        email.setSSLOnConnect(true);
+                        email.setSSLCheckServerIdentity(true);
+                        
+                        
+
+
+                        email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos1@"));
+                        
+                        
+                        try {
+                            email.setFrom("eventos@gambarra.com.br");
+                            email.setDebug(true);
+                            //email.setSmtpPort(465);
+                            //email.setHostName("smtp.gmail.com");
+                            //email.setAuthentication("eventos@gambarra.com.br", "eventos1@");//email e senha do sistema
+                            //email.setSSL(true);
+                            // //repita o email aqui (email irá enviar  a senha ao email cadastrado do usuario)
+                            email.setSubject("Senha do sistema de eventos");
+                            email.setMsg("Sua senha é: " + usr.getSenha());
+                            email.addTo("sergio@gambarra.com.br"); 
+                            email.send();
+
+                        } catch (EmailException e) {
+                            e.printStackTrace();
+                        }
+
+                            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                                    "Senha enviada com Sucesso!", "");
+                            context.addMessage(null, msg);
+                            resultado = "index";
+
+                        } else {
+                            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                            "Email incorreto", "");
+                            context.addMessage(null, msg);
+                            return null;
+                        }
+                    } catch (Exception e) {
+                        throw e;
                     }
-                }
+
+		return resultado;
     }
             
             public String verificarSenha() throws Exception {
@@ -279,15 +328,15 @@ public class SisEventosBean {
                             
                             try {
                                 // Enviando a encriptacao
-                                //String encript = DigestUtils.md5Hex(this.usuario.getNombre());
-                                String encript = DigestUtils.shaHex(this.usuario.getSenha());
-                                String encript1 = DigestUtils.shaHex(this.usuario.getSenhaNova());
+                               
+                                String encript = DigestUtils.shaHex(this.usuarioLogado.getSenha());
+                                String encript1 = DigestUtils.shaHex(this.usuarioLogado.getSenhaNova());
                                 
-                                //String encript = DigestUtils.sha1Hex(this.usuario.getClave());
-                                this.usuario.setSenha(encript);
-                                this.usuario.setSenhaNova(encript1);
+                                
+                                this.usuarioLogado.setSenha(encript);
+                                this.usuarioLogado.setSenhaNova(encript1);
 
-                                us = usuDAO.verificarSenha(this.usuario);
+                                us = usuDAO.verificarSenha(this.usuarioLogado);
                             	if (us != null) {     
                                     msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                                             "Senha alterada com Sucesso!", "");

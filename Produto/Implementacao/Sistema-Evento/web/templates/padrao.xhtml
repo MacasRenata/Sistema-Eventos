@@ -21,21 +21,26 @@
                 <div class="loginform" align="right">
                     <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
                         <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold;margin-right:10px"/>
-                        <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}" style="color:gray;font-weight:bold;margin-right:10px"/>
+                        <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.email}" style="color:gray;font-weight:bold;margin-right:10px"/>
 
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold;margin-left:10px"/>
-                        <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuario.senha}" style="margin-right:10px"/>
+                        <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.senha}" style="margin-right:10px"/>
 
                         <b:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-right:10px"/>
                         <b:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-right:10px" outcome="incluirUsuario"/>
-
-                        <p> <a href="enviarSenha.xhtml">Esqueci a senha</a></p>
+                        <br></br>
+                        <p:commandLink id="ajax" action="enviarSenha">
+                            <h:outputText value="Esqueci a senha"/>
+                        </p:commandLink>
+                        
                     </h:form>
                     <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
 
-                        <h:outputLabel value="Bemvindo" style="margin-left:20px;margin-right:20px"/>
+                        <h:outputLabel value="Bemvindo"/>
+                        
+                        <h:outputLabel value="#{sisEventosBean.usuarioLogado.email}" style="margin-left:10px;margin-right:10px"/>
 
-                        <b:commandButton  ajax="false" value="Meus Dados" action="#{sisEventosBean.iniciaMeusDados(usuario.id_user)}"/>
+                        <b:commandButton  ajax="false" value="Meus Dados" action="#{sisEventosBean.iniciaMeusDados(usuarioLogado.id_user)}"/>
 
                         <b:button value="Trocar Senha" outcome="alterarSenha"/>
                         <b:commandButton value="Sair"  ajax="false" action="#{sisEventosBean.fecharSessao()}"/>

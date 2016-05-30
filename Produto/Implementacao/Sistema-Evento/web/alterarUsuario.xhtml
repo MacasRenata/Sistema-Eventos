@@ -29,7 +29,7 @@
                         
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold"/>
                         <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}">
-                            <f:validateLength minimum="5" />
+                            <f:validateLength minimum="6" />
                         </p:password>
                         <p:message for="txtSenhaUsuario" />
                             

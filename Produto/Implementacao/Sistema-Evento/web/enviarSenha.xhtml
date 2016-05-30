@@ -11,26 +11,13 @@
         
                <span> <h1> Recuperar senha </h1></span>
                <div class="loginform" align="center">
-                    <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
+                    <h:form>
                         <p:growl id="growl" life="2000"/>   
                         <h:panelGrid columns="2">
-                            <p:outputLabel for="txtEmail" value="Digite seu email " style="color:gray;font-weight:bold;margin-rght:20px"/>
+                            <p:outputLabel for="txtEmail" value="Digite seu email " style="color:gray;font-weight:bold;margin-right:20px"/>
                             <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}" style="color:gray;font-weight:bold;margin-left:10px"/>
-                            
-                            <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
-                            <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}"/>
-                            
                         </h:panelGrid>
-                        <b:commandButton class="btn btn-primary btn-lg" value="Receber Senha" ajax="false" action="#{sisEventosBean.EnviarSenha}" style="margin-left:10px;margin-rght:10px"/>
-                    </h:form>
-                    <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
-                       
-                            <h:outputLabel value="Voce ja esta logado" style="margin-left:20px;margin-rght:20px"/>
-                            <h:outputLabel value="#{sisEventosBean.usuario.email}" style="margin-left:20px;margin-rght:20px" />
-                            <b:commandButton value="Meus Dados" action="#{sisEventosBean.fecharSessao()}" />
-                            <b:commandButton value="Trocar Senha" action="#{sisEventosBean.fecharSessao()}"/>
-                            <b:commandButton value="Sair" action="#{sisEventosBean.fecharSessao()}"/>
-                    </h:form>
+                        <b:commandButton class="btn btn-primary btn-lg" value="Receber Senha" ajax="false" action="#{sisEventosBean.EnviarSenha}" style="margin-left:10px;margin-right:10px"/>
                 </div> 
                       
            </ui:define>

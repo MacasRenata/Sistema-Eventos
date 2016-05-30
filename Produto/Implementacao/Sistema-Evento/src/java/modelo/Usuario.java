@@ -39,6 +39,7 @@ public class Usuario implements Serializable{
     private String estado;
     private String instituicao;
     private String telefone;
+    private Boolean admin = false;
     private Boolean ativo = true;
 
     /**
@@ -238,5 +239,17 @@ public class Usuario implements Serializable{
         this.senhaNova = senhaNova;
     }
    
-    
+    /**
+     * @return the admin
+     */
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    /**
+     * @param admin the admin to set
+     */
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
 }

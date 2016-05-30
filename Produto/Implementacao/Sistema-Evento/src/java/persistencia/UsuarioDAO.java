@@ -43,12 +43,12 @@ public class UsuarioDAO {
 
     }
     
-    public Usuario verificarLogin(Usuario usuario) throws Exception {
+    public Usuario verificarLogin(Usuario usuarioLogado) throws Exception {
 		Usuario us = null;
 		try {
 			sessao = HibernateUtil.getSessionFactory().openSession();
-			String hql = "FROM Usuario WHERE email = '" + usuario.getEmail()
-					+ "' and senha = '" + usuario.getSenha() + "'";
+			String hql = "FROM Usuario WHERE email = '" + usuarioLogado.getEmail()
+					+ "' and senha = '" + usuarioLogado.getSenha() + "'";
 			Query query = sessao.createQuery(hql);
 
 			if (!query.list().isEmpty()) {
@@ -67,11 +67,16 @@ public class UsuarioDAO {
         return (Usuario) sessao.get(Usuario.class, id);
     }
     
-        public Usuario verificarSenha(Usuario usuario) throws Exception {
+    public Usuario carregarMeusDados(int id) {
+        return (Usuario) sessao.get(Usuario.class, id);
+    }
+    
+    
+        public Usuario verificarSenha(Usuario usuarioLogado) throws Exception {
 		Usuario us = null;
 		try {
 			sessao = HibernateUtil.getSessionFactory().openSession();
-			String hql = "FROM Usuario WHERE senha = '" + usuario.getSenha() + "'";
+			String hql = "FROM Usuario WHERE senha = '" + usuarioLogado.getSenha() + "'";
 			Query query = sessao.createQuery(hql);
 
 			if (!query.list().isEmpty()) {
@@ -81,8 +86,8 @@ public class UsuarioDAO {
                                     String sql = "update Usuario set senha = :senha where email = :email";
                                     Query query1 = sessao.createQuery(sql);
 
-                                    query1.setString("senha", usuario.getSenhaNova());
-                                    query1.setString("email", usuario.getEmail());
+                                    query1.setString("senha", usuarioLogado.getSenhaNova());
+                                    query1.setString("email", usuarioLogado.getEmail());
 
                                     rowCount = query1.executeUpdate();
                                     tx.commit();

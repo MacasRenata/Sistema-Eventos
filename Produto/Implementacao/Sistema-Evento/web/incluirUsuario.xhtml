@@ -29,7 +29,7 @@
                         <p:outputLabel for="txtSenhaUsuario" style="color:gray;font-weight:bold" value="Senha:" />
                         <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true">
                             <f:validator validatorId="confirmaSenhaValidator" />
-                            <f:validateLength minimum="5" />
+                            <f:validateLength minimum="6" />
                             <f:attribute name="confirma" value="#{confirmaSenha.submittedValue}" />
                             <f:ajax event="blur" execute="senha confirma" render="m_senha" />
                         </p:password>
@@ -37,7 +37,7 @@
 
                         <p:outputLabel style="color:gray;font-weight:bold" for="confirma" value="Repetir a Senha:" />
                         <p:password id="confirma" maxlength="60" size="50" binding="#{confirmaSenha}" required="true">
-                            <f:validateLength minimum="5" />
+                            <f:validateLength minimum="6" />
                             <f:ajax event="blur" execute="senha confirma" render="m_senha m_confirma" />
                         </p:password>
                         <p:message id="m_confirma" for="confirma" />
