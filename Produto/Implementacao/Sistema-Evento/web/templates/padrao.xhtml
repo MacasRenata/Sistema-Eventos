@@ -29,10 +29,10 @@
                         <b:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-right:10px"/>
                         <b:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-right:10px" outcome="incluirUsuario"/>
                         <br></br>
-                        <p:commandLink id="ajax" action="enviarSenha">
-                            <h:outputText value="Esqueci a senha"/>
-                        </p:commandLink>
                         
+                        
+                        <p:commandLink ajax="false" value="Esqueci a senha" action="enviarSenha" style="margin-left:10px;margin-right:10px" />
+
                     </h:form>
                     <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
 

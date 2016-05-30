@@ -105,8 +105,7 @@ public class UsuarioDAO {
 		Usuario us = null;
 		try {
 			sessao = HibernateUtil.getSessionFactory().openSession();
-                        String hql = "FROM Usuario WHERE email = '" + usuario.getEmail()
-					+ "' and data_nascimento = '" + usuario.getData_nascimento() + "'";
+                        String hql = "FROM Usuario WHERE email = '" + usuario.getEmail() + "'";
 			Query query = sessao.createQuery(hql);
 
 			if (!query.list().isEmpty()) {

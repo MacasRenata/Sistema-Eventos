@@ -17,8 +17,11 @@
                             <p:outputLabel for="txtEmail" value="Digite seu email " style="color:gray;font-weight:bold;margin-right:20px"/>
                             <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuario.email}" style="color:gray;font-weight:bold;margin-left:10px"/>
                         </h:panelGrid>
+                        <br></br>
+                        <br></br>
                         <b:commandButton class="btn btn-primary btn-lg" value="Receber Senha" ajax="false" action="#{sisEventosBean.EnviarSenha}" style="margin-left:10px;margin-right:10px"/>
-                </div> 
+                    </h:form>
+               </div> 
                       
            </ui:define>
     </ui:composition>

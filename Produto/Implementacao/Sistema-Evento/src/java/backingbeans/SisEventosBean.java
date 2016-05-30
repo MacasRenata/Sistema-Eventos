@@ -23,7 +23,7 @@ import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 
 public class SisEventosBean {
 
@@ -263,37 +263,27 @@ public class SisEventosBean {
                     try {
                         us = usuDAO.verificarEmail(this.usuario);
                         if (us != null) {
-                            
+  
                         Usuario usr = us;
 
                         Email email = new SimpleEmail();
                         
-                        
                         email.setHostName( "smtp.gmail.com" );
                         //email.setSmtpPort(465);
                         email.setSslSmtpPort( "587" );
-                        
                         email.setStartTLSRequired(true);
                         email.setSSLOnConnect(true);
                         email.setSSLCheckServerIdentity(true);
-                        
-                        
-
 
                         email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos1@"));
-                        
+
                         
                         try {
                             email.setFrom("eventos@gambarra.com.br");
-                            email.setDebug(true);
-                            //email.setSmtpPort(465);
-                            //email.setHostName("smtp.gmail.com");
-                            //email.setAuthentication("eventos@gambarra.com.br", "eventos1@");//email e senha do sistema
-                            //email.setSSL(true);
-                            // //repita o email aqui (email irá enviar  a senha ao email cadastrado do usuario)
+                            email.setDebug(true); 
                             email.setSubject("Senha do sistema de eventos");
                             email.setMsg("Sua senha é: " + usr.getSenha());
-                            email.addTo("sergio@gambarra.com.br"); 
+                            email.addTo(usr.getEmail()); 
                             email.send();
 
                         } catch (EmailException e) {
@@ -307,7 +297,7 @@ public class SisEventosBean {
 
                         } else {
                             msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                            "Email incorreto", "");
+                            "Email não cadastrado", "");
                             context.addMessage(null, msg);
                             return null;
                         }
