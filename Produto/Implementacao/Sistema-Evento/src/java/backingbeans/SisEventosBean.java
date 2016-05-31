@@ -4,6 +4,7 @@ import static com.sun.codemodel.JExpr.component;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -18,6 +19,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
+import org.apache.commons.mail.HtmlEmail;
 import persistencia.EventoDAO;
 import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
@@ -260,13 +262,15 @@ public class SisEventosBean {
 		UsuarioDAO usuDAO = new UsuarioDAO();
 		Usuario us;
 		String resultado;
+                InetAddress ia = null;
                     try {
+                        ia = InetAddress.getLocalHost();
                         us = usuDAO.verificarEmail(this.usuario);
                         if (us != null) {
   
                         Usuario usr = us;
 
-                        Email email = new SimpleEmail();
+                        HtmlEmail email = new HtmlEmail();
                         
                         email.setHostName( "smtp.gmail.com" );
                         //email.setSmtpPort(465);
@@ -282,8 +286,24 @@ public class SisEventosBean {
                             email.setFrom("eventos@gambarra.com.br");
                             email.setDebug(true); 
                             email.setSubject("Senha do sistema de eventos");
-                            email.setMsg("Sua senha é: " + usr.getSenha());
-                            email.addTo(usr.getEmail()); 
+                            //email.setMsg("Sua senha é: " + usr.getSenha());
+
+                            email.setHtmlMsg( "<html>"
+                            + "<head>"
+                            + "<title>Recuperação de Senha</title>"
+                            + "</head>"
+                            + "<body>"
+                            + "<div style='font-size: 14px'>"
+                            + "<p>Olá " + usr.getNome() + " para alterar sua senha clique no link "
+                            + "<a href=\"http://" + ia.getHostAddress() + ":8080/Sistema-Evento/alterarSenha.xhtml?parametro=" + usr.getSenha() + "\">Nova Senha</a>"
+                            + "</p>"
+                            + "<p>Sua senha é: " + usr.getSenha()
+                            + "</p>"
+                            + "</div>"
+                            + "<p> Antenciosamente <br/> Sistema de Eventos </p> "
+                            + "</body>"
+                            + "</html>");
+                            email.addTo(usr.getEmail(), usr.getNome()); 
                             email.send();
 
                         } catch (EmailException e) {
