@@ -50,13 +50,10 @@
 
                             <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
                             <h:outputText id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px"/>
-
-                            <p:outputLabel for="inscricaoEvento" value="Inscrições:"/>
-                            <h:outputText id="inscricaoEvento" value="Não" rendered="#{sisEventosBean.evento.inscricoes eq false}"/>                      
-                            <h:outputText value="Sim" rendered="#{sisEventosBean.evento.inscricoes}"/>  
+                            
                         </h:panelGrid>
 
-                        <h:panelGrid  columns="2" id="painel_inscricoes" rendered="#{sisEventosBean.evento.inscricoes eq true}">
+                        <h:panelGrid  columns="2" id="painel_inscricoes"  rendered="#{sisEventosBean.evento.inscricoes eq true}">
                             <p:outputLabel for="inicioIncricao" value="Período Inscrição:"/>
                             <h:outputText id="inicioIncricao" value="#{sisEventosBean.evento.data_inicial_inscricao}">
                                 <f:convertDateTime type="date" dateStyle="full"/>

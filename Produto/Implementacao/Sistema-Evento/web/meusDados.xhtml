@@ -10,39 +10,39 @@
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
            
-        <p:panel id="basic" header="CMeus Dados" style="margin-bottom:20px">
+        <p:panel id="basic" header="Meus Dados" style="margin-bottom:20px">
             <div id="formDados">
               
                 <h:form>
-                   <p:growl id="growl" life="2000"/>   
+                   <p:growl id="growl" life="4000"/>   
                     <h:panelGrid columns="2">
-                        <p:outputLabel for="txtId" value=""  style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtId" value="" />
                         <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
 
-                        <p:outputLabel for="txtNomeUsuario" value="Nome Completo: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtNomeUsuario" value="Nome Completo: "/>
                         <p:inputText id="txtNomeUsuario" maxlength="60" size="50"  required="true" requiredMessage="Digite o seu nome" value="#{sisEventosBean.usuarioLogado.nome}"/>
                         
-                        <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtEmail" value="Email: "/>
                         <p:inputText id="txtEmail" maxlength="60" size="50" required="true" validatorMessage="Email inválido!" value="#{sisEventosBean.usuarioLogado.email}">
                              <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
                             </p:inputText>
                         
-                        <p:outputLabel for="txtInstEnsino" value="Endereço: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtInstEnsino" value="Instituição: "/>
                         <p:inputText id="txtInstEnsino" maxlength="60" size="50" value="#{sisEventosBean.usuarioLogado.instituicao}"/>
                         
-                        <p:outputLabel for="dataNasc" value="Data de Nascimento:" style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="dataNasc" value="Data de Nascimento:"/>
                         <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
                         
-                        <p:outputLabel for="txtGenero" value="Genêro: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtGenero" value="Genêro: "/>
                         <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuarioLogado.sexo}"/>
                         
-                        <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtEndUsuario" value="Endereço: "/>
                         <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuarioLogado.endereco}"/>
                         
-                        <p:outputLabel for="txtCidade" value="Cidade: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtCidade" value="Cidade: "/>
                         <p:inputText id="txtCidade" maxlength="60" size="50" value="#{sisEventosBean.usuarioLogado.cidade}"/>
                         
-                        <p:outputLabel for="txtEstado" style="color:gray;font-weight:bold" value="Estado:"/>
+                        <p:outputLabel for="txtEstado" value="Estado:"/>
                         <p:selectOneMenu id="txtEstado" value="#{sisEventosBean.usuarioLogado.estado}" style="width:120px">
                             <f:selectItem itemLabel="Selecione" itemValue=""/>
                             <f:selectItem itemLabel="Acre" itemValue="AC"/>
@@ -76,11 +76,11 @@
                         
                          
                         
-                        <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtCep" value="CEP: "/>
                         <p:inputMask id="txtCep" maxlength="9" size="50" value="#{sisEventosBean.usuarioLogado.cep}" mask="99999-999"/>
                         
                         
-                        <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
+                        <p:outputLabel for="txtTelefone" value="Telefone: "/>
                         <p:inputMask id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuarioLogado.telefone}" mask="(99) 9999-9999?">
                         <f:validateRegex pattern="^\([0-9]{2}\)\s*[0-9]{4}[\-\.]{0,1}[0-9]{4}$"/>
                         </p:inputMask>
