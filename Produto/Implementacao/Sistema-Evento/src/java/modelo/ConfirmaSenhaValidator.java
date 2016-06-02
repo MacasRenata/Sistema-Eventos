@@ -28,8 +28,9 @@ public class ConfirmaSenhaValidator implements Validator {
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         String senha = (String) value;
         String confirma = (String) component.getAttributes().get("confirma");
+        String confirma1 = (String) component.getAttributes().get("confirma1");
 
-        if (senha == null || confirma == null) {
+        if (senha == null || confirma == null || confirma1 == null) {
             return; // Just ignore and let required="true" do its job.
         }
 

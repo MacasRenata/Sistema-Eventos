@@ -71,6 +71,14 @@ public class UsuarioDAO {
         return (Usuario) sessao.get(Usuario.class, id);
     }
     
+    public Usuario buscarUsuario(String email) {
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        Query query = sessao.createQuery("from Usuario u where u.email = :email");
+        Usuario u = (Usuario) query.setString("email", email).uniqueResult();
+
+        return u;
+    }
+    
     
         public Usuario verificarSenha(Usuario usuarioLogado) throws Exception {
 		Usuario us = null;
@@ -88,6 +96,7 @@ public class UsuarioDAO {
 
                                     query1.setString("senha", usuarioLogado.getSenhaNova());
                                     query1.setString("email", usuarioLogado.getEmail());
+                                    //query1.setBoolean("trocasenha", usuarioLogado.getTrocasenha());
 
                                     rowCount = query1.executeUpdate();
                                     tx.commit();
@@ -116,6 +125,31 @@ public class UsuarioDAO {
 		}
 		return us;
 	}
+        
+        public Usuario recuperarSenha(Usuario usuarioLogado) throws Exception {
+            Usuario us = null;
+            try {
+			sessao = HibernateUtil.getSessionFactory().openSession();
+                                    int rowCount = 0;
+                                    Transaction tx = sessao.beginTransaction();
+                                    String sql = "update Usuario set trocasenha = :trocasenha where email = :email";
+                                    Query query1 = sessao.createQuery(sql);
+
+                                    query1.setBoolean("trocasenha", usuarioLogado.getTrocasenha());
+                                    query1.setString("email", usuarioLogado.getEmail());
+                                    
+                                    
+
+                                    rowCount = query1.executeUpdate();
+                                    tx.commit();
+
+                                    sessao.close();
+                                    
+            } catch (Exception e) {
+			throw e;
+            }
+            return us; 
+       }
 }
     
     

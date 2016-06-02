@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Past;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -32,6 +33,7 @@ public class Usuario implements Serializable{
     private String senhaNova;
     private String sexo;
     @Temporal(TemporalType.DATE)
+    @Past
     private Date data_nascimento;
     private String cep;
     private String endereco; 
@@ -41,6 +43,7 @@ public class Usuario implements Serializable{
     private String telefone;
     private Boolean admin = false;
     private Boolean ativo = true;
+    private Boolean trocasenha = false;
 
     /**
      * @return the id_user
@@ -251,5 +254,19 @@ public class Usuario implements Serializable{
      */
     public void setAdmin(Boolean admin) {
         this.admin = admin;
+    }
+
+    /**
+     * @return the trocasenha
+     */
+    public Boolean getTrocasenha() {
+        return trocasenha;
+    }
+
+    /**
+     * @param trocasenha the trocasenha to set
+     */
+    public void setTrocasenha(Boolean trocasenha) {
+        this.trocasenha = trocasenha;
     }
 }

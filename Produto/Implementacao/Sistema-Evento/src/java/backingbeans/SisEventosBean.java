@@ -208,7 +208,7 @@ public class SisEventosBean {
 		String resultado;
 
 		try {
-			// Enviando la encriptacao
+			// Enviando a encriptacao
                         
                         String encript = DigestUtils.shaHex(this.getUsuarioLogado().getSenha());
 			
@@ -260,12 +260,15 @@ public class SisEventosBean {
                 FacesContext context = FacesContext.getCurrentInstance();
                 FacesMessage msg;
 		UsuarioDAO usuDAO = new UsuarioDAO();
+                usuDAO.carregar(0);
+                this.usuarioLogado.setTrocasenha(true);
+                usuDAO.recuperarSenha(usuarioLogado);
 		Usuario us;
 		String resultado;
                 InetAddress ia = null;
                     try {
                         ia = InetAddress.getLocalHost();
-                        us = usuDAO.verificarEmail(this.usuario);
+                        us = usuDAO.verificarEmail(this.usuarioLogado);
                         if (us != null) {
   
                         Usuario usr = us;
@@ -279,7 +282,7 @@ public class SisEventosBean {
                         email.setSSLOnConnect(true);
                         email.setSSLCheckServerIdentity(true);
 
-                        email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos1@"));
+                        email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "xxxxxxx"));
 
                         
                         try {
@@ -294,16 +297,18 @@ public class SisEventosBean {
                             + "</head>"
                             + "<body>"
                             + "<div style='font-size: 14px'>"
-                            + "<p>Olá " + usr.getNome() + " para alterar sua senha clique no link "
-                            + "<a href=\"http://" + ia.getHostAddress() + ":8080/Sistema-Evento/alterarSenha.xhtml?parametro=" + usr.getSenha() + "\">Nova Senha</a>"
+                            + "<p>Olá " + usr.getNome()
                             + "</p>"
-                            + "<p>Sua senha é: " + usr.getSenha()
+                            + "<p>Sua senha provisoria é: " + usr.getSenha()
+                            + "</p>"
+                            + "<p>Para alterar sua senha clique no link "
+                            + "<a href=\"http://" + ia.getHostAddress() + ":8080/Sistema-Evento/faces/alterarSenha.xhtml?parametro=" + usr.getSenha() + "\">Nova Senha</a>"
                             + "</p>"
                             + "</div>"
                             + "<p> Antenciosamente <br/> Sistema de Eventos </p> "
                             + "</body>"
                             + "</html>");
-                            email.addTo(usr.getEmail(), usr.getNome()); 
+                            email.addTo(usr.getEmail()); 
                             email.send();
 
                         } catch (EmailException e) {
@@ -332,22 +337,25 @@ public class SisEventosBean {
                 FacesContext context = FacesContext.getCurrentInstance();
                 FacesMessage msg;
 		UsuarioDAO usuDAO = new UsuarioDAO();
-		Usuario us;
+		
+                Usuario u = usuDAO.buscarUsuario(usuarioLogado.getEmail());
+                usuarioLogado.setTrocasenha(u.getTrocasenha());
 		String resultado;
-                
                             
                             try {
                                 // Enviando a encriptacao
-                               
-                                String encript = DigestUtils.shaHex(this.usuarioLogado.getSenha());
+                                
+                                if (this.usuarioLogado.getTrocasenha() == false){
+                                    String encript = DigestUtils.shaHex(this.usuarioLogado.getSenha());
+                                    this.usuarioLogado.setSenha(encript);
+                                }
+                                
                                 String encript1 = DigestUtils.shaHex(this.usuarioLogado.getSenhaNova());
-                                
-                                
-                                this.usuarioLogado.setSenha(encript);
                                 this.usuarioLogado.setSenhaNova(encript1);
-
-                                us = usuDAO.verificarSenha(this.usuarioLogado);
-                            	if (us != null) {     
+                                u = usuDAO.verificarSenha(this.usuarioLogado);
+                            	if (u != null) {
+                                    this.usuarioLogado.setTrocasenha(false);
+                                    u = usuDAO.recuperarSenha(usuarioLogado);
                                     msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                                             "Senha alterada com Sucesso!", "");
                                     context.addMessage(null, msg);
