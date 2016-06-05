@@ -1,24 +1,20 @@
 package backingbeans;
 
-import static com.sun.codemodel.JExpr.component;
-import java.io.File;
-import java.io.FileWriter;
+
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.validator.Validator;
+import javax.servlet.annotation.WebServlet;
 import modelo.Evento;
 import modelo.Usuario;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.SimpleEmail;
 import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.Email;
 import org.apache.commons.mail.HtmlEmail;
 import persistencia.EventoDAO;
 import persistencia.UsuarioDAO;
@@ -26,6 +22,8 @@ import org.primefaces.event.ToggleEvent;
 
 @ManagedBean
 @SessionScoped
+@WebServlet("/index")
+
 
 public class SisEventosBean {
 
@@ -85,13 +83,25 @@ public class SisEventosBean {
                 "Evento criado com sucesso!", "");
        // evento = new Evento();
         context.addMessage(null, msg);
-        return "listaEventos";
+         
+     PrintWriter writer;
+   
+            writer = new PrintWriter("C:\\a\\evento.html", "UTF-8");
+            writer.println("<html>");
+            writer.println("<body>");
+            writer.println("Evento " + evento.getTitulo() + "/n" );
+            writer.println("Local " + evento.getLocal_evento()+ "" );
+            writer.println("Data Inicío " + evento.getData_inicial()+ "" );
+            writer.println("Periodo de Inscrições " + evento.getData_inicial_inscricao()+ "" );
+            writer.println("Horário " + evento.getHorario_inicio()+ "" );
+            writer.println("Area " + evento.getArea_evento()+ "" );
+            writer.println("Categoria " + evento.getCategoria_evento()+ "" );
+            writer.println("Local " + evento.getLocal_evento()+ "" );
+            writer.println("</body>");
+            writer.println("</html>");
+            writer.close();
     
-    
-    //File file = new File("C:\\user\\Desktop\\dir1\\dir2\\filename.html");
-       // file.getParentFile().mkdirs();
-       // FileWriter writer = new FileWriter(file);
-    
+      return "listaEventos";
     }
 
     public String consultarEvento(int id) {
