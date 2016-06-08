@@ -3,9 +3,11 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,6 +24,10 @@ public class Evento implements Serializable {
     @GeneratedValue
     private int id_evento;
     private String titulo;
+    
+    @OneToMany(mappedBy="evento")
+    private List<Inscricao> inscricoesEvt;
+            
     private String local_evento;
     @Temporal(TemporalType.DATE)
     private Date data_inicial;
@@ -127,7 +133,7 @@ public class Evento implements Serializable {
     public void setInscricoes(boolean inscricoes) {
         this.inscricoes = inscricoes;
     }
-
+    
     public Date getData_inicial_inscricao() {
         return data_inicial_inscricao;
     }
@@ -220,6 +226,14 @@ public class Evento implements Serializable {
      */
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public List<Inscricao> getInscricoesEvt() {
+        return inscricoesEvt;
+    }
+
+    public void setInscricoesEvt(List<Inscricao> inscricoesEvt) {
+        this.inscricoesEvt = inscricoesEvt;
     }
     
     

@@ -7,9 +7,12 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,13 +27,15 @@ import org.hibernate.annotations.Where;
 @SQLDelete(sql = "update Usuario set ativo = 0 where id_user = ?")
 @Where(clause = "ativo = 1")
 public class Usuario implements Serializable{
+
+  
     @Id
     @GeneratedValue
     private int id_user;
     private String nome;
     private String email;
     private String senha;
-    private String senhaNova;
+    private String senhaNova; 
     private String sexo;
     @Temporal(TemporalType.DATE)
     @Past
@@ -45,6 +50,9 @@ public class Usuario implements Serializable{
     private Boolean ativo = true;
     private Boolean trocasenha = false;
 
+    @OneToMany(mappedBy="usuario")
+    private List<Inscricao> inscricoesEvt;
+    
     /**
      * @return the id_user
      */
@@ -269,4 +277,14 @@ public class Usuario implements Serializable{
     public void setTrocasenha(Boolean trocasenha) {
         this.trocasenha = trocasenha;
     }
+
+    public List<Inscricao> getInscricoesEvt() {
+        return inscricoesEvt;
+    }
+
+    public void setInscricoesEvt(List<Inscricao> inscricoesEvt) {
+        this.inscricoesEvt = inscricoesEvt;
+    }
+
+
 }

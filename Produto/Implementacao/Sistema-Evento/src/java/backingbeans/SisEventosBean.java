@@ -11,6 +11,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.annotation.WebServlet;
 import modelo.Evento;
+import modelo.Inscricao;
 import modelo.Usuario;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.mail.EmailException;
@@ -19,6 +20,7 @@ import org.apache.commons.mail.HtmlEmail;
 import persistencia.EventoDAO;
 import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
+import persistencia.InscricaoDAO;
 
 @ManagedBean
 @SessionScoped
@@ -35,6 +37,9 @@ public class SisEventosBean {
 
     private final EventoDAO evtDao = new EventoDAO();
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
+    private int usuarioSelecionado;
+    
+    private int eventoSelecionado;
 
     public SisEventosBean() {
         listaEventos = evtDao.listar();
@@ -388,7 +393,26 @@ public class SisEventosBean {
             event.getVisibility().name();
 
     }
+        
+        public String realizarInscricao() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        
+            int id = eventoSelecionado;
+            Evento e = evtDao.carregar(id);
+            Inscricao inscr = new Inscricao();//Não consigo carregar os Ids do usuário e do evento
+             inscr.setUsuario(usuarioLogado);
+                inscr.setEvento(e); 
+                evento.setInscricoesEvt((List<Inscricao>)inscr); //  Erro java.lang.ClassCastException: modelo.Inscricao cannot be cast to java.util.List
+                evtDao.alterar(evento);
+                msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
+                                "Inscrição realizada com sucesso!", "");
+            
+            context.addMessage(null, msg);
+        
+      return null;
+    }
    
-                       
+     
      
 }
