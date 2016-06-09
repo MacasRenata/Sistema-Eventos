@@ -44,7 +44,7 @@
                </p:commandLink>
             </p:column>
               <p:column headerText="Inscrição no Evento">
-                <p:commandLink id="ajax" action="inscricaoEvento">
+                <p:commandLink id="ajax" action="#{sisEventosBean.iniciaInscricaoEvento(usuarioLogado.id_user, evento.id_evento)}">
                      <h:outputText value="Inscrição"/>
                </p:commandLink>
             </p:column>

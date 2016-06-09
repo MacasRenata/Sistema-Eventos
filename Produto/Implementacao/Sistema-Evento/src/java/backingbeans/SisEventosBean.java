@@ -37,6 +37,7 @@ public class SisEventosBean {
 
     private final EventoDAO evtDao = new EventoDAO();
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
+    private InscricaoDAO inscricaoDao = new InscricaoDAO();
     private int usuarioSelecionado;
     
     private int eventoSelecionado;
@@ -119,7 +120,7 @@ public class SisEventosBean {
         evento = evtDao.carregar(id);
         return "alterarEvento";
     }
-
+    
     public String alterarEvento() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
@@ -164,7 +165,15 @@ public class SisEventosBean {
         return "meusDados";
     }
     
-    
+    public String iniciaInscricaoEvento(int id_user, int id_evt) {
+        //System.out.println(id_user);
+        //System.out.println(id_evt);
+        usuarioLogado = usuarioDao.carregar(id_user);
+        evento = evtDao.carregar(id_evt);
+        return "inscricaoEvento";
+        
+    }
+  
     public String consultarUsuario(int id) {
         usuario = usuarioDao.carregar(id);//idUsuario
         return "consultaUsuario";
@@ -215,6 +224,7 @@ public class SisEventosBean {
         return null;
     }
     
+    
     public String verificarLogin() throws Exception {
                 FacesContext context = FacesContext.getCurrentInstance();
                 FacesMessage msg;
@@ -250,6 +260,20 @@ public class SisEventosBean {
 
 		return resultado;
 	}
+    
+    public boolean verificarSessaoAdmin() {
+		boolean estado;
+
+			if (FacesContext.getCurrentInstance().getExternalContext()
+					.getSessionMap().get("usuarioLogado") == null) {
+				estado = false;
+			} else {
+				estado = true;
+			}
+
+		return estado;
+    }
+    
     
     	public boolean verificarSessao() {
 		boolean estado;
@@ -398,21 +422,20 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         
-            int id = eventoSelecionado;
-            Evento e = evtDao.carregar(id);
+            //int id = eventoSelecionado;
+            //Evento e = evtDao.carregar(id);
             Inscricao inscr = new Inscricao();//Não consigo carregar os Ids do usuário e do evento
-             inscr.setUsuario(usuarioLogado);
-                inscr.setEvento(e); 
-                evento.setInscricoesEvt((List<Inscricao>)inscr); //  Erro java.lang.ClassCastException: modelo.Inscricao cannot be cast to java.util.List
-                evtDao.alterar(evento);
-                msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
+            inscr.setUsuario(usuarioLogado);
+            inscr.setEvento(evento); 
+            //evento.setInscricoesEvt((List<Inscricao>)inscr); //  Erro java.lang.ClassCastException: modelo.Inscricao cannot be cast to java.util.List
+            inscricaoDao.incluir(inscr);
+            
+            msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
                                 "Inscrição realizada com sucesso!", "");
             
-            context.addMessage(null, msg);
         
       return null;
     }
-   
-     
-     
+
+    
 }

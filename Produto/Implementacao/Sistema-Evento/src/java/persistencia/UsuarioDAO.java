@@ -126,6 +126,22 @@ public class UsuarioDAO {
 		return us;
 	}
         
+        	    public Usuario verificarAdmin(Usuario usuario) throws Exception {
+		Usuario us = null;
+		try {
+			sessao = HibernateUtil.getSessionFactory().openSession();
+                        String hql = "FROM Usuario WHERE admin = '" + usuario.getAdmin() + "'";
+			Query query = sessao.createQuery(hql);
+
+			if (!query.list().isEmpty()) {
+				us = (Usuario) query.list().get(0);
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+		return us;
+	}
+        
         public Usuario recuperarSenha(Usuario usuarioLogado) throws Exception {
             Usuario us = null;
             try {
