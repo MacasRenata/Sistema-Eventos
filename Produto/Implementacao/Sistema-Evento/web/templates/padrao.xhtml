@@ -41,6 +41,7 @@
                         <h:outputLabel value="#{sisEventosBean.usuarioLogado.email}" style="margin-left:10px;margin-right:10px"/>
 
                         <b:commandButton  ajax="false" value="Meus Dados" action="#{sisEventosBean.iniciaMeusDados(usuarioLogado.id_user)}"/>
+                        <b:commandButton  ajax="false" value="Meus Eventos" action="#{sisEventosBean.iniciaMeusEventos(usuarioLogado.id_user)}"/>
 
                         <b:button value="Trocar Senha" outcome="alterarSenha"/>
                         <b:commandButton value="Sair"  ajax="false" action="#{sisEventosBean.fecharSessao()}"/>

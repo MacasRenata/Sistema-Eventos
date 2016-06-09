@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="templates/padrao.xhtml">
+        <ui:define name="conteudo">
+
+            <p:panel id="basic" header="Minhas inscrições em eventos" style="margin-bottom:20px">
+                <div id="formDados">
+                 
+                    <h:form>
+                        <p:growl id="growl" life="2000"/>
+                        <h:panelGrid columns="2">
+                            <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao">
+                                <p:column headerText="Título">
+                                    #{inscricao.evento.titulo}
+                                </p:column>
+                                <p:column headerText="Local">
+                                    #{inscricao.evento.local_evento}
+                                </p:column>
+                                <p:column headerText="Nome">
+                                    #{inscricao.usuario.nome}
+                                </p:column>
+                                
+                                <p:column headerText="Desfazer Minha Inscrição">
+                                    <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}">
+                                        <h:outputText value="Desfazer"/> 
+                                    </p:commandLink>
+
+                                </p:column>
+                                <p:column headerText="Editar Minha Inscrição">
+                                    <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoEvento(evento.id_evento)}">
+                                    </p:commandLink>
+                                </p:column>
+                                
+                            </p:dataTable>       
+                        </h:panelGrid>   
+                        <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                    </h:form>
+                </div>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</html>
+
