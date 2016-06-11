@@ -15,22 +15,27 @@
 
                     <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
-                        <p:growl id="growl" life="4000"/>   
+                        <p:growl id="growl" life="5000"/>   
                         <h:panelGrid columns="2">
+
+                            <p:outputLabel for="txtId" value="" />
+                            <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
+
+                            <p:outputLabel for="txtIdEvento" value=""/>
+                            <h:inputHidden id="txtIdEvento" value="#{sisEventosBean.evento.id_evento}"/>   
                             
-                        <p:outputLabel for="txtId" value="" />
-                        <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
+                            <h:form enctype="multipart/form-data">
+                            <p:fileUpload fileUploadListener="#{sisEventosBean.subirArquivo}" label="Escolher Arquivo" auto="true"/>
+                            </h:form>        
+                            <p:messages  severity="info" escape="false" showDetail="true"  autoUpdate="true" closable="true"/>                            
+                            
+                            <h:panelGroup> 
+                                <p:commandButton ajax="false" value="Inscrição" id="inscricaoEvento"  action="#{sisEventosBean.realizarInscricao}"  icon="ui-icon-disk" >
+                                </p:commandButton>
+                                <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
+                            </h:panelGroup>
 
-                        <p:outputLabel for="txtIdEvento" value=""/>
-                        <h:inputHidden id="txtIdEvento" value="#{sisEventosBean.evento.id_evento}"/>                           
-
-                        <h:panelGroup> 
-                            <p:commandButton ajax="false" value="Inscrição" id="inscricaoEvento"  action="#{sisEventosBean.realizarInscricao}"  icon="ui-icon-disk" >
-                            </p:commandButton>
-                            <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
-                        </h:panelGroup>
-
-                    </h:panelGrid>
+                        </h:panelGrid>
 
                     </h:form>
                 </div>
