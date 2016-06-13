@@ -10,5 +10,6 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="modelo.Evento"/>
     <mapping class="modelo.Usuario"/>
+    <mapping class="modelo.Inscricao"/>
   </session-factory>
 </hibernate-configuration>

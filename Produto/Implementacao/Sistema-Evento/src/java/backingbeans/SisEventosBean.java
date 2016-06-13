@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.io.Writer;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.net.InetAddress;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -90,18 +94,38 @@ public class SisEventosBean {
         context.addMessage(null, msg);
 
         PrintWriter writer;
-
-        writer = new PrintWriter("C:\\a\\evento.html", "UTF-8");
+        
+        writer = new PrintWriter("C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");  // alterar caminho para cada maquina ateh ter um servidor
         writer.println("<html>");
+        writer.println("<head>");
+        writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
+        writer.println("<link rel=\'stylesheet' type=\'text/css' href=\'style.css'>");
+        writer.println("<title>Sistema Evento</title>");
+        writer.println("</head>");
         writer.println("<body>");
-        writer.println("Evento " + evento.getTitulo() + "/n");
-        writer.println("Local " + evento.getLocal_evento() + "");
-        writer.println("Data Inicío " + evento.getData_inicial() + "");
-        writer.println("Periodo de Inscrições " + evento.getData_inicial_inscricao() + "");
-        writer.println("Horário " + evento.getHorario_inicio() + "");
-        writer.println("Area " + evento.getArea_evento() + "");
-        writer.println("Categoria " + evento.getCategoria_evento() + "");
-        writer.println("Local " + evento.getLocal_evento() + "");
+        writer.println("<div id='header'>");
+        writer.println("<h1>Sistema de Eventos");
+        writer.println("</h1>");
+        writer.println("</div>");
+        writer.println("<div id=\"nav\">");
+        writer.println("<br>Inscições " + evento.getInscricoesEvt()+"");  // inscrições
+        writer.println("<br>Informações " + evento.getDescricao_evento()+"");  // detalhes sobre o evento
+        writer.println("</div>");
+        writer.println("<div id=\"section\">");
+        writer.println("<h1> Evento");
+        writer.println("</h1>");
+        writer.println("<p><br>Evento: " + evento.getTitulo() +"");
+        writer.println("<br>Local: " + evento.getLocal_evento() + "");
+        writer.println("<br>Data Inicío: " + evento.getData_inicial() + "");
+        writer.println("<br>Periodo de Inscrições: " + evento.getData_inicial_inscricao() + "");
+        writer.println("<br>Horário: " + evento.getHorario_inicio() + "");
+        writer.println("<br>Area: " + evento.getArea_evento() + "");
+        writer.println("<br>Categoria: " + evento.getCategoria_evento() + "");
+        writer.println("<br>Local: " + evento.getLocal_evento() + "");
+        writer.println("</p></div>");
+        writer.println("<div id=\"footer\">");
+        writer.println("Copyright © sistemaeventos.com");
+        writer.println("</div>");
         writer.println("</body>");
         writer.println("</html>");
         writer.close();
