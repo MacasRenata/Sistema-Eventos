@@ -28,13 +28,13 @@
                                 </p:column>
                                 
                                 <p:column headerText="Desfazer Minha Inscrição">
-                                    <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}">
+                                    <p:commandLink ajax="false" action="#{sisEventosBean.desfazerInscricao(inscricao.id)}">
                                         <h:outputText value="Desfazer"/> 
                                     </p:commandLink>
 
                                 </p:column>
                                 <p:column headerText="Editar Minha Inscrição">
-                                    <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaAlteracaoEvento(evento.id_evento)}">
+                                    <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.editarInscricao(inscricao.id)}">
                                     </p:commandLink>
                                 </p:column>
                                 

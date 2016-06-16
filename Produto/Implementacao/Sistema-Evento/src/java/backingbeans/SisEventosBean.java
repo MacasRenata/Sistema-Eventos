@@ -41,16 +41,18 @@ public class SisEventosBean {
     private Usuario usuarioLogado = new Usuario();
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
+    private List<Inscricao> listaInscricao;
 
     private final EventoDAO evtDao = new EventoDAO();
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
     private InscricaoDAO inscricaoDao = new InscricaoDAO();
-
+    
     public SisEventosBean() {
         listaEventos = evtDao.listar();
         listaUsuarios = usuarioDao.listar();
+        listaInscricao = inscricaoDao.listar();
     }
-
+    
     public Evento getEvento() {
         return evento;
     }
@@ -187,9 +189,43 @@ public class SisEventosBean {
         usuarioLogado = usuarioDao.carregar(id);
         return "meusDados";
     }
-
+         
+    public String iniciaMeusEventos(int id) {
+        usuarioLogado = usuarioDao.carregar(id);
+        return "meusEventos";
+    }
+    
+    public List<Inscricao> getListaInscricoesUsuario() {
+        Usuario u = usuarioDao.carregar(usuarioLogado.getId_user());
+        return u.getInscricoesEvt();
+    }
+    
+    public String desfazerInscricao(int id_inscricao) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg = null;
+        InscricaoDAO dao = new InscricaoDAO();
+        dao.excluir(dao.carregar(id_inscricao));
+        listaUsuarios = usuarioDao.listar();
+        listaInscricao = inscricaoDao.listar();
+        //private List<Inscricao> listaInscricao;
+        
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
+                                "Inscrição desfeita com sucesso!", "");
+        context.addMessage(null, msg);
+        return null;
+    }
+    public String editarInscricao(int id_inscricao) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg = null;
+        InscricaoDAO dao = new InscricaoDAO();
+        dao.carregar(id_inscricao);
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
+                                "Inscrição desfeita com sucesso!", "");
+        context.addMessage(null, msg);
+        return null;
+    }
     public String iniciaInscricaoEvento(int id_user, int id_evt) {
-        //System.out.println(id_user);
+        //System.out.println(id_user); // sout + tab
         //System.out.println(id_evt);
         usuarioLogado = usuarioDao.carregar(id_user);
         evento = evtDao.carregar(id_evt);
@@ -450,7 +486,7 @@ public class SisEventosBean {
         context.addMessage(null, msg);
         return null;
     }
-
+    
     public void subirArquivo(FileUploadEvent event) {
 
         try {
@@ -476,4 +512,4 @@ public class SisEventosBean {
 
     }
 
-}
+} 

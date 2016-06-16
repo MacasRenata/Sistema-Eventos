@@ -20,6 +20,9 @@ public class Inscricao implements Serializable {
     @Id
     @GeneratedValue
     private int id;
+    
+    private String arquivo;
+    private String caminho;
 
     @ManyToOne
     @JoinColumn(name="id_usuario")
@@ -51,5 +54,33 @@ public class Inscricao implements Serializable {
 
     public void setEvento(Evento evento) {
         this.evento = evento;
+    }
+
+    /**
+     * @return the arquivo
+     */
+    public String getArquivo() {
+        return arquivo;
+    }
+
+    /**
+     * @param arquivo the arquivo to set
+     */
+    public void setArquivo(String arquivo) {
+        this.arquivo = arquivo;
+    }
+
+    /**
+     * @return the caminho
+     */
+    public String getCaminho() {
+        return caminho;
+    }
+
+    /**
+     * @param caminho the caminho to set
+     */
+    public void setCaminho(String caminho) {
+        this.caminho = caminho;
     }
 }
