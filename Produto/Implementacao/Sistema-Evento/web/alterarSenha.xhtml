@@ -4,7 +4,6 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui" 
-      xmlns:b="http://bootsfaces.net/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
@@ -43,7 +42,7 @@
                         </h:panelGrid>
                         <br></br>
                         
-                        <b:commandButton value="Trocar Senha" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha()}" />
+                       <p:commandButton value="Trocar Senha" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha()}" />
                         
                     </h:form>
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
@@ -73,7 +72,7 @@
                         </h:panelGrid>
                         <br></br>
                         
-                        <b:commandButton value="Trocar Senha" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha}" />
+                       <p:commandButton value="Trocar Senha" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha}" />
                         
                     </h:form>
                     

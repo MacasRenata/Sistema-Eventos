@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:p="http://primefaces.org/ui">
+
 
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
@@ -13,15 +13,15 @@
             <div class="jumbotron" align="center">
                 <h1>Crie seu Evento</h1>
                 <p> Um Sistema desenvolvido para a Criação e participação em Eventos. </p>
-                <b:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
+               <p:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
 
                 <h2>Listar Eventos</h2>
                 <p> Visualiza dados do eventos com inscrições abertas. </p>
-                <b:button class="btn btn-primary btn-lg" value="Listar" outcome="listaEventos"/>
+               <p:button class="btn btn-primary btn-lg" value="Listar" outcome="listaEventos"/>
 
                 <h2>Listar Usuarios</h2>
                 <p> Consulte maiores informações sobre os usuarios. </p>
-                <b:button class="btn btn-primary btn-lg"  value="Listar" outcome="listaUsuarios"/>
+               <p:button class="btn btn-primary btn-lg"  value="Listar" outcome="listaUsuarios"/>
             </div> 
 
             <p:spacer height="20"/>

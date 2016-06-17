@@ -5,9 +5,9 @@ and open the template in the editor.
 */
 
     #body {
-    background-color: gray;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
+      background-color: gray;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
     }
 
     .navbar {
@@ -37,11 +37,18 @@ and open the template in the editor.
 
 #conteudo {
     background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: graytext;
     padding: 10px;
     margin-top: 5px;
     height: 430px;
 }
 
+.loginform {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
 
 #formDados {
     margin: 0 auto;

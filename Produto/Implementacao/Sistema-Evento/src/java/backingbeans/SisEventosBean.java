@@ -10,12 +10,18 @@ import java.io.Writer;
 import java.lang.ProcessBuilder.Redirect.Type;
 import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.annotation.WebServlet;
+import modelo.Categoria;
+import modelo.ConversorCategoria;
 import modelo.Evento;
 import modelo.Inscricao;
 import modelo.Usuario;
@@ -29,6 +35,7 @@ import org.primefaces.event.ToggleEvent;
 import persistencia.InscricaoDAO;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
+import persistencia.CategoriaDAO;
 
 @ManagedBean
 @SessionScoped
@@ -42,17 +49,36 @@ public class SisEventosBean {
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
     private List<Inscricao> listaInscricao;
-
+    
+    private Long idCategoria;
+    private String categoriaEvt;
+    private List<Categoria> categorias;
+    private Categoria categoria = new Categoria();
+ 
+    
     private final EventoDAO evtDao = new EventoDAO();
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
     private InscricaoDAO inscricaoDao = new InscricaoDAO();
-    
+
     public SisEventosBean() {
         listaEventos = evtDao.listar();
         listaUsuarios = usuarioDao.listar();
         listaInscricao = inscricaoDao.listar();
     }
     
+    /*
+//////Isto é apenas para testar//////////////
+    @PostConstruct
+    public void init() {
+      CategoriaDAO categoriaDao = new CategoriaDAO();
+    
+      categoriaDao.incluir(new Categoria(0,"Mostra"));
+      categoriaDao.incluir(new Categoria(1,"Feira"));
+      categoriaDao.incluir(new Categoria(2,"Congresso"));
+   
+      categorias = categoriaDao.listar();
+    }
+*/
     public Evento getEvento() {
         return evento;
     }
@@ -84,10 +110,24 @@ public class SisEventosBean {
     public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
+    /*
+    public int idCategoria() {
+        return idCategoria;
+    }
+    */
+     public Long getIdCategoria() {
+        return idCategoria;
+    }
+    
+    public void setIdCategoria(Long idCategoria) {
+        this.idCategoria = idCategoria;
+    }
 
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
+        CategoriaDAO categoriaDao = new CategoriaDAO();
+        evento.setCategoria(categoriaDao.carregar(idCategoria));
         evtDao.incluir(evento);
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -96,8 +136,8 @@ public class SisEventosBean {
         context.addMessage(null, msg);
 
         PrintWriter writer;
-        
-        writer = new PrintWriter("C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");  // alterar caminho para cada maquina ateh ter um servidor
+
+        writer = new PrintWriter("C:\\a\\evento.html", "UTF-8");
         writer.println("<html>");
         writer.println("<head>");
         writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
@@ -110,19 +150,19 @@ public class SisEventosBean {
         writer.println("</h1>");
         writer.println("</div>");
         writer.println("<div id=\"nav\">");
-        writer.println("<br>Inscições " + evento.getInscricoesEvt()+"");  // inscrições
+        writer.println("Evento " + evento.getTitulo() + "/n");
         writer.println("<br>Informações " + evento.getDescricao_evento()+"");  // detalhes sobre o evento
         writer.println("</div>");
         writer.println("<div id=\"section\">");
         writer.println("<h1> Evento");
         writer.println("</h1>");
-        writer.println("<p><br>Evento: " + evento.getTitulo() +"");
-        writer.println("<br>Local: " + evento.getLocal_evento() + "");
-        writer.println("<br>Data Inicío: " + evento.getData_inicial() + "");
-        writer.println("<br>Periodo de Inscrições: " + evento.getData_inicial_inscricao() + "");
-        writer.println("<br>Horário: " + evento.getHorario_inicio() + "");
-        writer.println("<br>Area: " + evento.getArea_evento() + "");
-        writer.println("<br>Categoria: " + evento.getCategoria_evento() + "");
+        writer.println("Local " + evento.getLocal_evento() + "");
+        writer.println("Data Inicío " + evento.getData_inicial() + "");
+        writer.println("Periodo de Inscrições " + evento.getData_inicial_inscricao() + "");
+        writer.println("Horário " + evento.getHorario_inicio() + "");
+        writer.println("Area " + evento.getArea_evento() + "");
+        writer.println("Categoria " + evento.getCategoria_evento() + "");
+        writer.println("Local " + evento.getLocal_evento() + "");
         writer.println("<br>Local: " + evento.getLocal_evento() + "");
         writer.println("</p></div>");
         writer.println("<div id=\"footer\">");
@@ -143,6 +183,7 @@ public class SisEventosBean {
     //Para ir para a página de alteração do Evento selecionado à partir de Editar, em detalhes do Evento// 
     public String iniciaAlteracaoEvento(int id) {
         evento = evtDao.carregar(id);
+     //   idCategoria = evento.getCategoria().getId();
         return "alterarEvento";
     }
 
@@ -189,7 +230,7 @@ public class SisEventosBean {
         usuarioLogado = usuarioDao.carregar(id);
         return "meusDados";
     }
-         
+
     public String iniciaMeusEventos(int id) {
         usuarioLogado = usuarioDao.carregar(id);
         return "meusEventos";
@@ -213,8 +254,9 @@ public class SisEventosBean {
                                 "Inscrição desfeita com sucesso!", "");
         context.addMessage(null, msg);
         return null;
-    }
-    public String editarInscricao(int id_inscricao) {
+}
+   
+      public String editarInscricao(int id_inscricao) {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg = null;
         InscricaoDAO dao = new InscricaoDAO();
@@ -223,9 +265,10 @@ public class SisEventosBean {
                                 "Inscrição desfeita com sucesso!", "");
         context.addMessage(null, msg);
         return null;
-    }
+}
+      
     public String iniciaInscricaoEvento(int id_user, int id_evt) {
-        //System.out.println(id_user); // sout + tab
+        //System.out.println(id_user);
         //System.out.println(id_evt);
         usuarioLogado = usuarioDao.carregar(id_user);
         evento = evtDao.carregar(id_evt);
@@ -500,7 +543,6 @@ public class SisEventosBean {
             FileOutputStream fileOS = new FileOutputStream(caminho);
             fileOS.write(arquivo);
             fileOS.close();
-            String pathFile = caminho;
             // Salva neste local: /home/luis/Documentos/Dev/Sistema-Eventos/Produto/Implementacao/Sistema-Evento/build/web//arquivos/
             System.out.println("caminho do arquivo: " + caminho);
 
@@ -511,5 +553,30 @@ public class SisEventosBean {
         }
 
     }
+    
+     public ArrayList<Categoria> getListaCategorias() {
+        CategoriaDAO dao = new CategoriaDAO();
+        return dao.listar();
+    }
 
-} 
+    public String getCategoriaEvt() {
+        return categoriaEvt;
+    }
+
+    public void setCategoriaEvt(String categoriaEvt) {
+        this.categoriaEvt = categoriaEvt;
+    }
+    
+     public void setCategorias(List<Categoria> categorias){
+        this.categorias = categorias;
+    }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+    
+    
+}
+   
+
+

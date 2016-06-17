@@ -39,14 +39,11 @@
                             <p:outputLabel for="horarioFinal" value="Horário de Encerramento:"/>
                             <p:calendar id="horarioFinal" required="true" requiredMessage="Selecione o horário final" value="#{sisEventosBean.evento.horario_fim}" locale="pt" pattern="HH:mm" timeOnly="true"/>
 
-                            <p:outputLabel for="categoriaEvento" value="Categoria:"/>
-                            <p:selectOneMenu id="categoriaEvento" required="true" requiredMessage="Selecione uma Categoria" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
-                                <f:selectItem itemLabel="Selecione" itemValue=""/>
-                                <f:selectItem itemLabel="Mostra Científica" itemValue="Mostra Científica"/>
-                                <f:selectItem itemLabel="Seminario" itemValue="Seminario"/>
-                                <f:selectItem itemLabel="Fórum" itemValue="Fórum"/>
-                                <f:selectItem itemLabel="Outros" itemValue="Outros"/>
-                            </p:selectOneMenu>
+                              <p:outputLabel for="categoriaEvt" value="Categoria:"/>
+                              <p:selectOneMenu id="categoriaEvt" value="#{sisEventosBean.idCategoria}"  required="true" requiredMessage="Selecione uma Categoria">
+                                  <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
+                               
+                              </p:selectOneMenu>
 
                             <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
                             <p:selectOneMenu id="areaEvento" required="true" requiredMessage="Selecione uma Área" value="#{sisEventosBean.evento.area_evento}" style="width:125px">

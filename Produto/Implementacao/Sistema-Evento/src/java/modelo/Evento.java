@@ -7,6 +7,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -24,6 +26,10 @@ public class Evento implements Serializable {
     @GeneratedValue
     private int id_evento;
     private String titulo;
+    
+    @ManyToOne
+    @JoinColumn(name="id_categoria")
+    private Categoria categoria;
     
     @OneToMany(mappedBy="evento")
     private List<Inscricao> inscricoesEvt;
@@ -213,6 +219,14 @@ public class Evento implements Serializable {
     public void setQuantidade_inscritos(int quantidade_inscritos) {
         this.quantidade_inscritos = quantidade_inscritos;
     }
+    
+      public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     /**
      * @return the ativo
@@ -236,5 +250,9 @@ public class Evento implements Serializable {
         this.inscricoesEvt = inscricoesEvt;
     }
     
+    public String getNomeCategoria() {
+        return categoria.getId() + " - " + categoria.getNome();
+    }
+                
     
 }
