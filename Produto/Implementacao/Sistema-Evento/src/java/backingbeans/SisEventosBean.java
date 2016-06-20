@@ -46,6 +46,7 @@ public class SisEventosBean {
     private Evento evento = new Evento();
     private Usuario usuario = new Usuario();
     private Usuario usuarioLogado = new Usuario();
+    private Inscricao inscricao = new Inscricao();
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
     private List<Inscricao> listaInscricao;
@@ -54,11 +55,10 @@ public class SisEventosBean {
     private String categoriaEvt;
     private List<Categoria> categorias;
     private Categoria categoria = new Categoria();
- 
     
     private final EventoDAO evtDao = new EventoDAO();
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
-    private InscricaoDAO inscricaoDao = new InscricaoDAO();
+    private final InscricaoDAO inscricaoDao = new InscricaoDAO();
 
     public SisEventosBean() {
         listaEventos = evtDao.listar();
@@ -236,7 +236,13 @@ public class SisEventosBean {
         return "meusEventos";
     }
     
+    public List<Usuario> getListaUsuariaos() {
+        return listaUsuarios;
+    }
+    
     public List<Inscricao> getListaInscricoesUsuario() {
+        //List<Inscricao> lista = new List<InscricaoDao>();
+        listaInscricao = inscricaoDao.listar();
         Usuario u = usuarioDao.carregar(usuarioLogado.getId_user());
         return u.getInscricoesEvt();
     }
@@ -256,13 +262,17 @@ public class SisEventosBean {
         return null;
 }
    
-      public String editarInscricao(int id_inscricao) {
+      public String editarInscricao() {
         FacesContext context = FacesContext.getCurrentInstance();
-        FacesMessage msg = null;
-        InscricaoDAO dao = new InscricaoDAO();
-        dao.carregar(id_inscricao);
-        msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
-                                "Inscrição desfeita com sucesso!", "");
+        FacesMessage msg;
+
+        Inscricao inscr = new Inscricao();
+        inscr.setArquivo(this.getInscricao().getArquivo());
+        inscr.setCaminho(this.getInscricao().getCaminho());
+        inscricaoDao.incluir(inscr);
+
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Inscrição atualizada com sucesso!", "");
         context.addMessage(null, msg);
         return null;
 }
@@ -273,6 +283,12 @@ public class SisEventosBean {
         usuarioLogado = usuarioDao.carregar(id_user);
         evento = evtDao.carregar(id_evt);
         return "inscricaoEvento";
+
+    }
+    
+    public String iniciaEditarInscricaoEvento(int id) {
+        inscricao = inscricaoDao.carregar(id);
+        return "editarInscricao";
 
     }
 
@@ -520,6 +536,8 @@ public class SisEventosBean {
         FacesMessage msg;
 
         Inscricao inscr = new Inscricao();
+        inscr.setArquivo(this.getInscricao().getArquivo());
+        inscr.setCaminho(this.getInscricao().getCaminho());
         inscr.setUsuario(usuarioLogado);
         inscr.setEvento(evento);
         inscricaoDao.incluir(inscr);
@@ -529,7 +547,7 @@ public class SisEventosBean {
         context.addMessage(null, msg);
         return null;
     }
-    
+   
     public void subirArquivo(FileUploadEvent event) {
 
         try {
@@ -540,12 +558,15 @@ public class SisEventosBean {
             byte[] arquivo = event.getFile().getContents();
             String caminho = realPath + "/arquivos/"
                     + event.getFile().getFileName();
+            //Inscricao inscr = new Inscricao();
+            this.getInscricao().setCaminho(caminho);
+            this.getInscricao().setArquivo(event.getFile().getFileName());
             FileOutputStream fileOS = new FileOutputStream(caminho);
             fileOS.write(arquivo);
             fileOS.close();
             // Salva neste local: /home/luis/Documentos/Dev/Sistema-Eventos/Produto/Implementacao/Sistema-Evento/build/web//arquivos/
             System.out.println("caminho do arquivo: " + caminho);
-
+            
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -574,9 +595,21 @@ public class SisEventosBean {
     public List<Categoria> getCategorias() {
         return categorias;
     }
-    
-    
+
+    /**
+     * @return the inscricao
+     */
+    public Inscricao getInscricao() {
+        return inscricao;
+    }
+
+    /**
+     * @param inscricao the inscricao to set
+     */
+    public void setInscricao(Inscricao inscricao) {
+        this.inscricao = inscricao;
+    }
+
 }
-   
 
 

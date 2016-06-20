@@ -5,25 +5,21 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  
       xmlns:f="http://xmlns.jcp.org/jsf/core">
- 
-
-    <ui:composition template="templates/padrao.xhtml">
+      <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-
-            <p:panel id="basic" header="Inscrição" style="margin-bottom:20px">
+            <p:panel id="basic" header="Editar Inscrição" style="margin-bottom:20px">
                 <div id="formDados">
 
-                    <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+                    <h:outputLabel value="Voce não esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="5000"/>   
                         <h:panelGrid columns="2">
 
-                            <p:outputLabel for="txtId" value="" />
-                            <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
-
-                            <p:outputLabel for="txtIdEvento" value=""/>
-                            <h:inputHidden id="txtIdEvento" value="#{sisEventosBean.evento.id_evento}"/>   
-
+                            <h:outputLabel value="Arquivo enviado:"/>
+                            <br></br>
+                            <h:outputLabel value="#{sisEventosBean.inscricao.arquivo}"/>
+                            <br></br>
+                            
                             <h:form enctype="multipart/form-data">
                                 <p:fileUpload fileUploadListener="#{sisEventosBean.subirArquivo}" sizeLimit="12000000" 
                                               invalidSizeMessage="O arquivo deve ter o tamanho máximo de 12MB."
@@ -34,7 +30,7 @@
                       <!--      <p:messages  severity="info" escape="false" showDetail="true" autoUpdate="true"/>   -->                        
 
                             <h:panelGroup> 
-                                <p:commandButton ajax="false" value="Inscrição" id="inscricaoEvento"  action="#{sisEventosBean.realizarInscricao}"  icon="ui-icon-disk" >
+                                <p:commandButton ajax="false" value="Inscrição" id="inscricaoEvento"  action="#{sisEventosBean.editarInscricao}"  icon="ui-icon-disk" >
                                 </p:commandButton>
                                 <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
                             </h:panelGroup>
@@ -45,6 +41,6 @@
                 </div>
             </p:panel>
         </ui:define>
-    </ui:composition>
+      </ui:composition>
 </html>
 
