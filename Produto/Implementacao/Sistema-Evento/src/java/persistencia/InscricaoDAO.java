@@ -3,8 +3,11 @@ package persistencia;
 
 import java.util.List;
 import modelo.Inscricao;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -35,6 +38,19 @@ public class InscricaoDAO {
     
     public List<Inscricao> listar() {
         return sessao.createCriteria(Inscricao.class).list();
+    }
+    
+    public List<Inscricao> listarPorUsuario(int id_usuario) {
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        Query query = sessao.createQuery("FROM inscricoes WHERE id_usuario = '"+ id_usuario + "'");
+        //String hql = "FROM Inscricoes WHERE id_usuario = '"+ id_usuario + "'";
+        //Query query = sessao.createQuery(hql);
+        List results = query.list();
+        //Criteria criteria = sessao.createCriteria(Inscricao.class);
+        //criteria.add(Restrictions.eq("usuario", id_usuario));
+        return results;
+        
+        
     }
 }
 

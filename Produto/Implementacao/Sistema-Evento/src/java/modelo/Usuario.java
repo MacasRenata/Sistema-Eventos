@@ -286,5 +286,5 @@ public class Usuario implements Serializable{
         this.inscricoesEvt = inscricoesEvt;
     }
 
-
+    
 }

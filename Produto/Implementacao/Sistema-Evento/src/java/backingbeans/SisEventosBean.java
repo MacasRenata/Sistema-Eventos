@@ -254,6 +254,7 @@ public class SisEventosBean {
         dao.excluir(dao.carregar(id_inscricao));
         listaUsuarios = usuarioDao.listar();
         listaInscricao = inscricaoDao.listar();
+        
         //private List<Inscricao> listaInscricao;
         
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
@@ -280,9 +281,13 @@ public class SisEventosBean {
     public String iniciaInscricaoEvento(int id_user, int id_evt) {
         //System.out.println(id_user);
         //System.out.println(id_evt);
+        String retorno = "inscricaoEvento";
         usuarioLogado = usuarioDao.carregar(id_user);
         evento = evtDao.carregar(id_evt);
-        return "inscricaoEvento";
+        if (evento.isSubmissao()){
+            retorno = "inscricaoEventoAnexo";
+        }
+        return retorno;
 
     }
     

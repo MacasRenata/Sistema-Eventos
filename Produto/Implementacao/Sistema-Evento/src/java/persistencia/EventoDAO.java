@@ -35,7 +35,7 @@ public class EventoDAO {
             t.commit();
             sessao.flush();
         } else {
-            FacesContext.getCurrentInstance().addMessage("alterarEvento", new FacesMessage("Data final do evento inferir a inicial"));
+            FacesContext.getCurrentInstance().addMessage("alterarEvento", new FacesMessage("Data final do evento inferior a inicial"));
         }
 
     }
