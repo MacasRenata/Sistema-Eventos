@@ -33,7 +33,7 @@
                 #{evento.local_evento}
                 </p:column>
                <p:column headerText="Categoria">
-               #{evento.categoria_evento}
+               #{evento.categoria.nome}
             </p:column>
             <p:column headerText="Detalhes do Evento">
                 <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >

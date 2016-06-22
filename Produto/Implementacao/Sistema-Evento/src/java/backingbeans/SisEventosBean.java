@@ -4,24 +4,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.lang.ProcessBuilder.Redirect.Type;
 import java.net.InetAddress;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.annotation.WebServlet;
 import modelo.Categoria;
-import modelo.ConversorCategoria;
 import modelo.Evento;
 import modelo.Inscricao;
 import modelo.Usuario;
@@ -34,7 +27,6 @@ import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
 import persistencia.InscricaoDAO;
 import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.UploadedFile;
 import persistencia.CategoriaDAO;
 
 @ManagedBean
@@ -53,7 +45,6 @@ public class SisEventosBean {
     private List<Writer> listaPagina;
     
     private Long idCategoria;
-    private String categoriaEvt;
     private List<Categoria> categorias;
     private Categoria categoria = new Categoria();
     
@@ -67,19 +58,6 @@ public class SisEventosBean {
         listaInscricao = inscricaoDao.listar();
     }
     
-    /*
-//////Isto é apenas para testar//////////////
-    @PostConstruct
-    public void init() {
-      CategoriaDAO categoriaDao = new CategoriaDAO();
-    
-      categoriaDao.incluir(new Categoria(0,"Mostra"));
-      categoriaDao.incluir(new Categoria(1,"Feira"));
-      categoriaDao.incluir(new Categoria(2,"Congresso"));
-   
-      categorias = categoriaDao.listar();
-    }
-*/
     public Evento getEvento() {
         return evento;
     }
@@ -111,11 +89,7 @@ public class SisEventosBean {
     public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
-    /*
-    public int idCategoria() {
-        return idCategoria;
-    }
-    */
+
      public Long getIdCategoria() {
         return idCategoria;
     }
@@ -581,20 +555,12 @@ public class SisEventosBean {
         }
       
     }
-    
+   
      public ArrayList<Categoria> getListaCategorias() {
         CategoriaDAO dao = new CategoriaDAO();
         return dao.listar();
     }
 
-    public String getCategoriaEvt() {
-        return categoriaEvt;
-    }
-
-    public void setCategoriaEvt(String categoriaEvt) {
-        this.categoriaEvt = categoriaEvt;
-    }
-    
      public void setCategorias(List<Categoria> categorias){
         this.categorias = categorias;
     }

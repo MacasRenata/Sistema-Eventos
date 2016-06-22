@@ -12,11 +12,10 @@
 
             <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">                      
                 <div id="formDados">
-                    <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+                    <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}"/>
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="4000"/>
-                        <h:panelGrid columns="2">
-
+                        <h:panelGrid columns="1">
 
                             <p:outputLabel for="txtTitulo" value="Título: "/>
                             <p:inputText id="txtTitulo" maxlength="60" size="50" required="true" requiredMessage="Digite o nome do Evento" value="#{sisEventosBean.evento.titulo}"/>
@@ -39,19 +38,10 @@
                             <p:outputLabel for="horarioFinal" value="Horário de Encerramento:"/>
                             <p:calendar id="horarioFinal" required="true" requiredMessage="Selecione o horário final" value="#{sisEventosBean.evento.horario_fim}" locale="pt" pattern="HH:mm" timeOnly="true"/>
 
-                              
-                              
-                              <h:outputLabel for="menu" value="Categoria:" />
-                                   <p:selectCheckboxMenu id="menu" value="#{sisEventosBean.idCategoria}" label="Categoria"
-                                    filter="true" filterMatchMode="startsWith" panelStyle="width:250px">
-                                       <f:selectItems value="#{sisEventosBean.categorias}" />
-                                  </p:selectCheckboxMenu>
-                                       <p:commandLink value="Incluir" update="display" />
-                                 <p:outputPanel id="display" style="width:250px;padding-left:5px;margin-top:10px">
-                                     <p:dataList value="#{sisEventosBean.categoriaEvt}" var="cat" emptyMessage="Nenhuma categoria selecionada">
-                                         #{city}
-                                      </p:dataList>
-                               </p:outputPanel>
+                            <p:outputLabel for="categoriaEvt" value="Categoria:"/>
+                            <p:selectOneMenu id="categoriaEvt" value="#{sisEventosBean.idCategoria}"  required="true" requiredMessage="Selecione uma Categoria">
+                                <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
+                            </p:selectOneMenu>
 
                             <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
                             <p:selectOneMenu id="areaEvento" required="true" requiredMessage="Selecione uma Área" value="#{sisEventosBean.evento.area_evento}" style="width:125px">
@@ -62,84 +52,84 @@
                                 <f:selectItem itemLabel="Outros" itemValue="Outros"/>
                             </p:selectOneMenu>
 
-                          
-                            
-                            <h:outputLink id="track" value="#">
-                               <h:outputText value="Inscrição em Eventos" />
+                            <h:outputLink id="track1" value="#">
+                                <h:outputText value="Inscrição em Eventos"/>
                             </h:outputLink>
-                               <p:tooltip id="toolTipTrack" for="track" value="Se deseja habilitar inscrições para seu evento" trackMouse="true" />
-                        <h:panelGroup id="painelInscricoes" >
-                            <p:panel id="painelInsc"   header="Inscrições" toggleable="true" closeSpeed="500" widgetVar="panel" collapsed="true" style="max-width:320px;">
-                                <p:ajax event="toggle" listener="#{sisEventosBean.aoAtivar(event)}"/>
-
-                                <h:panelGrid  columns="2">
-
-                                    <p:outputLabel for="inicioIncricao" value="De:"/>
-                                    <p:calendar id="inicioIncricao" binding="#{startDateComponent2}" value="#{sisEventosBean.evento.data_inicial_inscricao}"  locale="pt" pattern="dd/MM/yyyy"/>
-
-                                    <p:outputLabel for="fimInscricao" value="Até:"/>
-                                    <p:calendar id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}" locale="pt" pattern="dd/MM/yyyy">
-                                        <f:validator validatorId="dataInscricaoValidator" />
-                                        <f:attribute name="startDateComponent2" value="#{startDateComponent2}" />
-                                        <f:attribute name="endDateComponent1" value="#{endDateComponent1}" />
-                                    </p:calendar>
-
-                                    
-                                      <h:outputLink id="track" value="#">
-                                         <p:outputLabel  value="Limite de Inscrições:"/>
-                                      </h:outputLink>
-                                      <p:tooltip id="toolTipTrack" for="track" value="Atribui um número limite de participantes na inscrição do Evento" trackMouse="true" />
-                                    <p:selectBooleanCheckbox value="#{sisEventosBean.evento.limite_inscricoes}"/>                                                              
-
-                                    
-                                    <h:outputLink id="track" value="#">
-                                    <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " />
-                                    </h:outputLink>
-                                    <p:tooltip id="toolTipTrack" for="track" value="Quantidade limite de participantes na inscrição do Evento" trackMouse="true" />
-                                    <p:inputText id="qntidadeIncritos" maxlength="60" size="10" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
-
-
-                                </h:panelGrid>
-
-                            </p:panel>
-                        </h:panelGroup>
-
-                        <h:panelGrid columns="2">
-                              <h:outputLink id="track" value="#">
-                            <p:outputLabel for="txtArea" value="Descrição do Evento: "/>
-                            </h:outputLink>
-                                    <p:tooltip id="toolTipTrack" for="track" value="Descreva sobre seu Evento" trackMouse="true" />
-                            <p:inputTextarea id="txtArea" maxlength="200" value="#{sisEventosBean.evento.descricao_evento}"/>
-
-                            <p:outputLabel for="txtOrganizador" value="Organizador: "/>
-                            <p:inputText id="txtOrganizador" maxlength="50" size="50" required="true" requiredMessage="Digite um nome" value="#{sisEventosBean.evento.nome_organizador}"/>
-
-                            <p:outputLabel for="emailOrganizador" value="Email do Organizador: "/>
-                            <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
-
-                            <p:outputLabel for="imagem" value="Adicionar imagem ao Evento: "/>
-                            <p:fileUpload value="#{sisEventosBean.evento.imagem}" mode="simple" skinSimple="true"/>
-                            
-                            <h:outputLink id="track" value="#">
-                            <p:outputLabel for="submissao" value="Submissão de Arquivos:"/>
-                            </h:outputLink>
-                                    <p:tooltip id="toolTipTrack" for="track" value="Habilitar submissão de arquivo dentro do periodo de Inscrições no Evento" trackMouse="true" />
-                            <p:selectBooleanCheckbox id="submissao" value="#{sisEventosBean.evento.submissao}"/>                                               
-
+                            <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"/>
+                           
                         </h:panelGrid>
-                        <p:toolbar>
-                            <f:facet name="left"> 
-                                <p:commandButton value="Cadastrar" ajax="false" action="#{sisEventosBean.incluirEvento}" style="margin-right:20px;">
-                                </p:commandButton>
-                            </f:facet>
-                            <f:facet name="right">
-                                <p:button outcome="indexAdmin" value="Voltar" icon="ui-icon-star" style="margin-right:20px;"/>
-                                <p:commandButton value="Limpar" update="basic" process="@this" style="margin-right:20px;" > 
-                                    <p:resetInput target="basic"/>
-                                </p:commandButton>
-                            </f:facet>
-                        </p:toolbar>
+                        
+                            <h:panelGroup id="painelInscricoes">
+                                <p:panel id="painelInsc"   header="Inscrições" toggleable="true" closeSpeed="500" widgetVar="panel" collapsed="true" style="max-width:320px;">
+                                    <p:ajax event="toggle" listener="#{sisEventosBean.aoAtivar(event)}"/>
+                             
+                                
+                                    <h:panelGrid  columns="1">
 
+                                        <p:outputLabel for="inicioIncricao" value="De:"/>
+                                        <p:calendar id="inicioIncricao" binding="#{startDateComponent2}" value="#{sisEventosBean.evento.data_inicial_inscricao}"  locale="pt" pattern="dd/MM/yyyy"/>
+
+                                        <p:outputLabel for="fimInscricao" value="Até:"/>
+                                        <p:calendar id="fimInscricao" value="#{sisEventosBean.evento.data_final_inscricao}" locale="pt" pattern="dd/MM/yyyy">
+                                            <f:validator validatorId="dataInscricaoValidator" />
+                                            <f:attribute name="startDateComponent2" value="#{startDateComponent2}"/>
+                                            <f:attribute name="endDateComponent1" value="#{endDateComponent1}"/>
+                                        </p:calendar>
+
+                                        <h:outputLink id="track2" value="#">
+                                            <p:outputLabel  value="Limite de Inscrições:"/>
+                                        </h:outputLink>
+                                        <p:tooltip id="toolTipTrack2" for="track2" value="Atribui um número limite de participantes na inscrição do Evento" trackMouse="true"/>
+                                        <p:selectBooleanCheckbox value="#{sisEventosBean.evento.limite_inscricoes}"/>                                                              
+
+                                        <h:outputLink id="track3" value="#">
+                                            <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " />
+                                        </h:outputLink>
+                                        <p:tooltip id="toolTipTrack3" for="track3" value="Quantidade limite de participantes na inscrição do Evento" trackMouse="true"/>
+                                        <p:inputText id="qntidadeIncritos" maxlength="60" size="10" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
+
+                                    </h:panelGrid>
+                                </p:panel>
+                          
+                            </h:panelGroup>
+
+                            <h:panelGrid columns="1">
+                                <h:outputLink id="track4" value="#">
+                                    <p:outputLabel for="txtArea" value="Descrição do Evento: "/>
+                                </h:outputLink>
+                                <p:tooltip id="toolTipTrack4" for="track4" value="Descreva sobre seu Evento" trackMouse="true" />
+                                <p:inputTextarea id="txtArea" maxlength="200" value="#{sisEventosBean.evento.descricao_evento}"/>
+
+                                <p:outputLabel for="txtOrganizador" value="Organizador: "/>
+                                <p:inputText id="txtOrganizador" maxlength="50" size="50" required="true" requiredMessage="Digite um nome" value="#{sisEventosBean.evento.nome_organizador}"/>
+
+                                <p:outputLabel for="emailOrganizador" value="Email do Organizador: "/>
+                                <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
+
+                                <p:outputLabel for="imagem" value="Adicionar imagem ao Evento: "/>
+                                <p:fileUpload  id="imagem" value="#{sisEventosBean.evento.imagem}" mode="simple" skinSimple="true"/>
+
+                                <h:outputLink id="track5" value="#">
+                                    <p:outputLabel for="submissao" value="Submissão de Arquivos:"/>
+                                </h:outputLink>
+                                <p:tooltip id="toolTipTrack5" for="track5" value="Habilitar submissão de arquivo dentro do periodo de Inscrições no Evento" trackMouse="true"/>
+                                <p:selectBooleanCheckbox id="submissao" value="#{sisEventosBean.evento.submissao}"/>                                               
+
+                            </h:panelGrid>
+                        
+                            <p:toolbar>
+                                <f:facet name="left"> 
+                                    <p:commandButton value="Cadastrar" ajax="false" action="#{sisEventosBean.incluirEvento}" style="margin-right:20px;">
+                                    </p:commandButton>
+                                </f:facet>
+                                <f:facet name="right">
+                                    <p:button outcome="indexAdmin" value="Voltar" icon="ui-icon-star" style="margin-right:20px;"/>
+                                    <p:commandButton value="Limpar" update="basic" process="@this" style="margin-right:20px;"> 
+                                        <p:resetInput target="basic"/>
+                                    </p:commandButton>
+                                </f:facet>
+                            </p:toolbar>
+                    
                     </h:form>
                 </div> 
             </p:panel>

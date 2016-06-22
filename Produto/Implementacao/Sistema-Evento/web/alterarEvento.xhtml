@@ -9,7 +9,7 @@
 
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-            	
+
             <p:panel id="basic" header="Cadastro de Evento" style="margin-bottom:20px">
                 <div id="formDados">
                     <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
@@ -36,17 +36,13 @@
 
                             <p:outputLabel for="horarioInicial" value="Horário de Início:"/>
                             <p:calendar id="horarioInicial" required="true" requiredMessage="Selecione o horário inicial" value="#{sisEventosBean.evento.horario_inicio}" locale="pt" pattern="HH:mm" timeOnly="true"/>
-                         
+
                             <p:outputLabel for="horarioFinal" value="Horário de Encerramento:"/>
                             <p:calendar id="horarioFinal" required="true" requiredMessage="Selecione o horário final" value="#{sisEventosBean.evento.horario_fim}" locale="pt" pattern="HH:mm" timeOnly="true"/>
-
-                            <p:outputLabel for="categoriaEvento" value="Categoria:"/>
-                            <p:selectOneMenu id="categoriaEvento" required="true" requiredMessage="Selecione uma Categoria" value="#{sisEventosBean.evento.categoria_evento}" style="width:125px">
-                                <f:selectItem itemLabel="Selecione" itemValue=""/>
-                                <f:selectItem itemLabel="Mostra Científica" itemValue="Mostra Científica"/>
-                                <f:selectItem itemLabel="Seminario" itemValue="Seminario"/>
-                                <f:selectItem itemLabel="Fórum" itemValue="Fórum"/>
-                                <f:selectItem itemLabel="Outros" itemValue="Outros"/>
+                            
+                            <p:outputLabel for="categoriaEvt" value="Categoria:"/>
+                            <p:selectOneMenu id="categoriaEvt" value="#{sisEventosBean.idCategoria}"  required="true" requiredMessage="Selecione uma Categoria">
+                                <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
                             </p:selectOneMenu>
 
                             <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
@@ -58,10 +54,9 @@
                                 <f:selectItem itemLabel="Outros" itemValue="Outros"/>
                             </p:selectOneMenu>
 
-
                             <p:outputLabel  value="Inscrições:"/>
                             <p:selectBooleanCheckbox value="#{sisEventosBean.evento.inscricoes}"/>                            
-                    
+
                             <p:outputLabel for="inicioIncricao" value="Período Inscrição:"/>
                             <p:calendar id="inicioIncricao" binding="#{startDateComponent2}" value="#{sisEventosBean.evento.data_inicial_inscricao}" pattern="dd/MM/yyyy"/>
 
@@ -71,7 +66,6 @@
                                 <f:attribute name="startDateComponent2" value="#{startDateComponent2}" />
                                 <f:attribute name="endDateComponent1" value="#{endDateComponent1}" />
                             </p:calendar>
-
 
                             <p:outputLabel  value="Limite de Inscrições:"/>
                             <p:selectBooleanCheckbox value="#{sisEventosBean.evento.limite_inscricoes}"/>                             
@@ -90,7 +84,7 @@
 
                             <p:outputLabel  value="Submissão de Arquivos:"/>
                             <p:selectBooleanCheckbox value="#{sisEventosBean.evento.submissao}"/>                   
-                      
+
                         </h:panelGrid>
 
                         <h:panelGroup> 

@@ -21,12 +21,12 @@
                             <title>Inscreva-se no Evento </title>
                             
                             <p:outputLabel> Sobre o Evento </p:outputLabel>
-                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.descricao_evento}"/>
+                            <h:outputText id="txtDescript" value="#{sisEventosBean.evento.descricao_evento}"/>
                             
-                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.imagem}"/>
+                            <h:outputText id="txtLocalImg" value="#{sisEventosBean.evento.imagem}"/>
                             
                             <p:outputLabel> Inscrições até: </p:outputLabel>
-                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.descricao_evento}"/>
+                            <h:outputText id="txtInscAte" value="#{sisEventosBean.evento.data_final_inscricao}"/>
  
                             <p:outputLabel for="txtId" value="" />
                             <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
@@ -44,7 +44,7 @@
                       <!--      <p:messages  severity="info" escape="false" showDetail="true" autoUpdate="true"/>   -->                        
 
                             <h:panelGroup> 
-                                <p:commandButton ajax="false" value="Inscrição" id="inscricaoEvento"  action="#{sisEventosBean.realizarInscricao}"  icon="ui-icon-disk" >
+                                <p:commandButton ajax="false" value="Inscrição" id="inscricaoEvento"  action="#{sisEventosBean.realizarInscricao}"  icon="ui-icon-disk">
                                 </p:commandButton>
                                 <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
                             </h:panelGroup>

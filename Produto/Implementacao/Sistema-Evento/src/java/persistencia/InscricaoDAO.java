@@ -9,7 +9,6 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -23,13 +22,10 @@ public class InscricaoDAO {
     }
     
       public void incluir(Inscricao inscricao) {
-    if (inscricao.getEvento().getData_final_inscricao().equals(inscricao.getEvento().getData_final_inscricao()) ) {
             Transaction t = sessao.beginTransaction();
             sessao.save(inscricao);
             t.commit();
-        } else {
-            FacesContext.getCurrentInstance().addMessage("inscricaoEvento", new FacesMessage("Evento já encerrado"));
-        }
+       
       }
       
     
