@@ -1,31 +1,31 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 
-    #body {
-      background-color: gray;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-    }
 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    .footer {
-      background-color: #d4d4d4;
-      color: white;
-      padding: 15px;
-    }
-    
-    
-    .span {
+#body {
+    background-color: gray;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+ui-widget, .ui-widget .ui-widget {
+    font-size: 95% !important;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+.footer {
+    background-color: #d4d4d4;
+    color: white;
+    padding: 15px;
+}
+
+
+.span {
     display: table-cell;
     vertical-align: middle;
     font-size: 40px;
@@ -54,6 +54,51 @@ and open the template in the editor.
     margin: 0 auto;
 }
 
+
+.ui-button-text-only {
+    font-size: 16px;
+    font-weight: normal; 
+    margin-top: 5px;
+    min-width: 200px;
+    min-height: 40px;
+    background-color: #6ea2ee; 
+
+}
+
+.ui-button {
+    font-size: 16px;
+    font-weight: normal; 
+    margin-top: 5px;
+    min-width: 200px;
+    min-height: 40px;
+    background-color: #6ea2ee; 
+
+}
+
+/*botoes login*/
+#j_idt12\:j_idt15 {
+    font-size: 16px;
+    font-weight: normal; 
+    margin-top: 5px;
+    min-width: 100px;
+    min-height: 40px;
+    background-color: #6ea2ee; 
+}
+
+.ui-datepicker {
+    font-size: 90%;
+    font-weight: normal; 
+}
+.ui-timepicker-div {
+    font-size: 90%;
+    font-weight: normal;
+}
+
+.ui-selectonemenu-items-wrapper {
+    font-size: 80%;
+    font-weight: normal; 
+}
+
 .msgInfo {
     color: blue;
 }
@@ -65,6 +110,5 @@ and open the template in the editor.
 .info {
     font-weight: normal;
 }
-
 
 
