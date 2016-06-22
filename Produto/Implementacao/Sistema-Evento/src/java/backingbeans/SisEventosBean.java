@@ -50,6 +50,7 @@ public class SisEventosBean {
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
     private List<Inscricao> listaInscricao;
+    private List<Writer> listaPagina;
     
     private Long idCategoria;
     private String categoriaEvt;
@@ -137,11 +138,11 @@ public class SisEventosBean {
 
         PrintWriter writer;
 
-        writer = new PrintWriter("C:\\a\\evento.html", "UTF-8");
+        writer = new PrintWriter("C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");
         writer.println("<html>");
         writer.println("<head>");
-        writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
-        writer.println("<link rel=\'stylesheet' type=\'text/css' href=\'style.css'>");
+        writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8>");
+        writer.println("<link rel=\'stylesheet' type=\'text/css' href=\'../resources/css/style.css'>");
         writer.println("<title>Sistema Evento</title>");
         writer.println("</head>");
         writer.println("<body>");
@@ -170,6 +171,7 @@ public class SisEventosBean {
         writer.println("</div>");
         writer.println("</body>");
         writer.println("</html>");
+      //falta colocar mais código aqui
         writer.close();
 
         return "listaEventos";
@@ -577,7 +579,7 @@ public class SisEventosBean {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
+      
     }
     
      public ArrayList<Categoria> getListaCategorias() {
@@ -615,6 +617,7 @@ public class SisEventosBean {
         this.inscricao = inscricao;
     }
 
+   
 }
 
 

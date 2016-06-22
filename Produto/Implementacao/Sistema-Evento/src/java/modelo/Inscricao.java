@@ -8,11 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import modelo.Evento;
 
-/**
- *
- * @author luis
- */
+
 @Entity
 @Table(name="inscricoes")
 public class Inscricao implements Serializable {

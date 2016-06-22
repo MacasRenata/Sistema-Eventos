@@ -25,12 +25,7 @@
 
                         <p:outputLabel for="txtSenhaUsuario" value="Senha: " style="color:gray;font-weight:bold;margin-left:10px"/>
                         <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.senha}" style="margin-right:10px"/>
-
                         <p:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-right:10px"/>
-                        <p:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-right:10px" outcome="incluirUsuario"/>
-                        <br></br>
-                        
-                        
                         <p:commandLink ajax="false" value="Esqueci a senha" action="enviarSenha" style="margin-left:10px;margin-right:10px" />
 
                     </h:form>

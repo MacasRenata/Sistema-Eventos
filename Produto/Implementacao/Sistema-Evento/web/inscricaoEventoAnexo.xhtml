@@ -17,7 +17,17 @@
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="5000"/>   
                         <h:panelGrid columns="2">
-
+                            
+                            <title>Inscreva-se no Evento </title>
+                            
+                            <p:outputLabel> Sobre o Evento </p:outputLabel>
+                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.descricao_evento}"/>
+                            
+                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.imagem}"/>
+                            
+                            <p:outputLabel> Inscrições até: </p:outputLabel>
+                            <h:outputText id="txtLocal" value="#{sisEventosBean.evento.descricao_evento}"/>
+ 
                             <p:outputLabel for="txtId" value="" />
                             <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
 

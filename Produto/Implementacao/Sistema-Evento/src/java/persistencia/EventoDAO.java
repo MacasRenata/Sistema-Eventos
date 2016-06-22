@@ -22,7 +22,7 @@ public class EventoDAO {
             sessao.save(evt);
             t.commit();
         } else {
-            FacesContext.getCurrentInstance().addMessage("incluirEvento", new FacesMessage("Data final do evento inferir a inicial"));
+            FacesContext.getCurrentInstance().addMessage("incluirEvento", new FacesMessage("Data final do evento não pode ser antes do inicío do evento"));
         }
 
     }

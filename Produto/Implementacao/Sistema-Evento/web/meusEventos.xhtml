@@ -27,6 +27,7 @@
                                     #{inscricao.usuario.nome}
                                 </p:column>
                                 
+                                
                                 <p:column headerText="Desfazer Minha Inscrição">
                                     <p:commandLink ajax="false" action="#{sisEventosBean.desfazerInscricao(inscricao.id)}">
                                         <h:outputText value="Desfazer"/> 
@@ -37,6 +38,8 @@
                                     <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaEditarInscricaoEvento(inscricao.id)}">
                                     </p:commandLink>
                                 </p:column>
+                                
+                                
                                 
                             </p:dataTable>       
                         </h:panelGrid>   

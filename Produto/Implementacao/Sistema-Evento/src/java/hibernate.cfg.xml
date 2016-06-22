@@ -11,5 +11,6 @@
     <mapping class="modelo.Evento"/>
     <mapping class="modelo.Usuario"/>
     <mapping class="modelo.Inscricao"/>
+    <mapping class="modelo.Categoria"/>
   </session-factory>
 </hibernate-configuration>

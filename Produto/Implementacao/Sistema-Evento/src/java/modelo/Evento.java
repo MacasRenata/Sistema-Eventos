@@ -57,6 +57,7 @@ public class Evento implements Serializable {
     private String email_organizador;
     private String senha_organizador;
     private int quantidade_inscritos;
+    private String imagem;
     private Boolean ativo = true;
 
        public int getId_evento() {
@@ -252,6 +253,20 @@ public class Evento implements Serializable {
     
     public String getNomeCategoria() {
         return categoria.getId() + " - " + categoria.getNome();
+    }
+
+    /**
+     * @return the imagem
+     */
+    public String getImagem() {
+        return imagem;
+    }
+
+    /**
+     * @param imagem the imagem to set
+     */
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
                 
     

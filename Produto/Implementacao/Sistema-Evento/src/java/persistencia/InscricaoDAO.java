@@ -2,6 +2,8 @@
 package persistencia;
 
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import modelo.Inscricao;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -20,11 +22,16 @@ public class InscricaoDAO {
         sessao = HibernateUtil.getSessionFactory().openSession();
     }
     
-    public void incluir(Inscricao inscricao) {
-        Transaction t = sessao.beginTransaction();
-        sessao.save(inscricao);
-        t.commit();
-    }
+      public void incluir(Inscricao inscricao) {
+    if (inscricao.getEvento().getData_final_inscricao().equals(inscricao.getEvento().getData_final_inscricao()) ) {
+            Transaction t = sessao.beginTransaction();
+            sessao.save(inscricao);
+            t.commit();
+        } else {
+            FacesContext.getCurrentInstance().addMessage("inscricaoEvento", new FacesMessage("Evento já encerrado"));
+        }
+      }
+      
     
     public void excluir(Inscricao inscricao) {
         Transaction t = sessao.beginTransaction();
