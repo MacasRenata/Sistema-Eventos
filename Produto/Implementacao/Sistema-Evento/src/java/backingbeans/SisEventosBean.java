@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -260,9 +261,9 @@ public class SisEventosBean {
         String retorno = "inscricaoEvento";
         usuarioLogado = usuarioDao.carregar(id_user);
         evento = evtDao.carregar(id_evt);
-        if (evento.isSubmissao()){
-            retorno = "inscricaoEventoAnexo";
-        }
+            if (evento.isSubmissao()){
+                retorno = "inscricaoEventoAnexo";
+            }
         return retorno;
 
     }
@@ -515,17 +516,23 @@ public class SisEventosBean {
     public String realizarInscricao() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
+        Date date = new Date();
+        if (date.before(evento.getData_inicial_inscricao()) || date.after(evento.getData_final_inscricao()) ){
+            msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
+                "Fora do período de inscrição!", "");
+            context.addMessage(null, msg);
+        } else{
+            Inscricao inscr = new Inscricao();
+            inscr.setArquivo(this.getInscricao().getArquivo());
+            inscr.setCaminho(this.getInscricao().getCaminho());
+            inscr.setUsuario(usuarioLogado);
+            inscr.setEvento(evento);
+            inscricaoDao.incluir(inscr);
 
-        Inscricao inscr = new Inscricao();
-        inscr.setArquivo(this.getInscricao().getArquivo());
-        inscr.setCaminho(this.getInscricao().getCaminho());
-        inscr.setUsuario(usuarioLogado);
-        inscr.setEvento(evento);
-        inscricaoDao.incluir(inscr);
-
-        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                "Inscrição realizada com sucesso!", "");
-        context.addMessage(null, msg);
+            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                    "Inscrição realizada com sucesso!", "");
+            context.addMessage(null, msg);
+        }
         return null;
     }
    
