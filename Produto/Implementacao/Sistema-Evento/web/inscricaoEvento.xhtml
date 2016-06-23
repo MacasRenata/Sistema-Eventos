@@ -18,8 +18,8 @@
                         <p:growl id="growl" life="5000"/>   
                         
                         <p:fieldset legend="Informações sobre o Evento" style="margin-bottom:20px">
-                      <h:panelGrid columns="2" cellpadding="5">
-                          <p:graphicImage id="txtLocalImg" value="#{sisEventosBean.evento.imagem}" />
+                          <p:graphicImage id="txtLocalImg" value="#{sisEventosBean.evento.imagem}"/>
+                          <h:panelGrid columns="2" cellpadding="5">
                           <p:outputLabel> Descrição </p:outputLabel>
                           <h:outputText id="txtDescricao" value="#{sisEventosBean.evento.descricao_evento}"/>
                           <p:outputLabel> Inscrições até: </p:outputLabel>

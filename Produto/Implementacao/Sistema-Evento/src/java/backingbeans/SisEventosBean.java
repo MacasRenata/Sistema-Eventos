@@ -1,15 +1,20 @@
 package backingbeans;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -114,16 +119,18 @@ public class SisEventosBean {
         context.addMessage(null, msg);
 
         PrintWriter writer;
+        //FileOutputStream fos = new FileOutputStream("t.tmp");
+        //ObjectOutputStream oos = new ObjectOutputStream(fos);
 
         writer = new PrintWriter("C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");
         writer.println("<html>");
         writer.println("<head>");
         writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8>");
-        writer.println("<link rel=\'stylesheet' type=\'text/css' href=\'../resources/css/style.css'>");
+        writer.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../resources/css/style.css\">");
         writer.println("<title>Sistema Evento</title>");
         writer.println("</head>");
         writer.println("<body>");
-        writer.println("<div id='header'>");
+        writer.println("<div id=\"header\">");
         writer.println("<h1>Sistema de Eventos");
         writer.println("</h1>");
         writer.println("</div>");
@@ -148,8 +155,19 @@ public class SisEventosBean {
         writer.println("</div>");
         writer.println("</body>");
         writer.println("</html>");
-      //falta colocar mais código aqui
+        
+        //oos.writeObject(evento);
+        //oos.close();  
         writer.close();
+        /*
+        FileInputStream fis = new FileInputStream("t.tmp");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        try {
+            List<Evento> evento = (List<Evento>) ois.readObject();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SisEventosBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ois.close();*/
 
         return "listaEventos";
     }

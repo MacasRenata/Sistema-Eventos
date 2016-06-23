@@ -107,6 +107,7 @@
                                 <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
 
                                 <h:form enctype="multipart/form-data">
+                                    <h:outputText value="Imagem:"/>
                                     <p:fileUpload fileUploadListener="#{sisEventosBean.upload}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
                                          cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
                                          invalidFileMessage="Somente arquivos .jpg, .png ou .gif"

@@ -18,8 +18,8 @@
                         <p:growl id="growl" life="5000"/>  
                         
                         <p:fieldset legend="Informações sobre o Evento" style="margin-bottom:20px">
-                      <h:panelGrid columns="2" cellpadding="5">
-                          <p:graphicImage id="txtLocalImg" value="#{sisEventosBean.evento.imagem}" />
+                            <p:graphicImage id="txtLocalImg" value="#{sisEventosBean.evento.imagem}"/>
+                          <h:panelGrid columns="2" cellpadding="5">
                           <p:outputLabel> Descrição </p:outputLabel>
                           <h:outputText id="txtDescricao" value="#{sisEventosBean.evento.descricao_evento}"/>
                           <p:outputLabel> Inscrições até: </p:outputLabel>
@@ -33,9 +33,11 @@
                             <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
 
                             <p:outputLabel for="txtIdEvento" value=""/>
-                            <h:inputHidden id="txtIdEvento" value="#{sisEventosBean.evento.id_evento}"/>   
-
-                            <h:form enctype="multipart/form-data">
+                            <h:inputHidden id="txtIdEvento" value="#{sisEventosBean.evento.id_evento}"/>
+                            
+                             
+                            <h:form enctype="multipart/form-data">  
+                                <p:outputLabel value="Submissão de Arquivos:"/>
                                 <p:fileUpload fileUploadListener="#{sisEventosBean.subirArquivo}" sizeLimit="12000000" 
                                               invalidSizeMessage="O arquivo deve ter o tamanho máximo de 12MB."
                                               allowTypes="/(\.|\/)(doc?x|txt|pdf)$/" invalidFileMessage="O arquivo deve ser .doc, .txt, ou pdf."                                           
