@@ -28,6 +28,7 @@ import persistencia.UsuarioDAO;
 import org.primefaces.event.ToggleEvent;
 import persistencia.InscricaoDAO;
 import org.primefaces.event.FileUploadEvent;
+import org.primefaces.model.UploadedFile;
 import persistencia.CategoriaDAO;
 
 @ManagedBean
@@ -44,6 +45,7 @@ public class SisEventosBean {
     private List<Usuario> listaUsuarios;
     private List<Inscricao> listaInscricao;
     private List<Writer> listaPagina;
+    private UploadedFile file;
     
     private Long idCategoria;
     private List<Categoria> categorias;
@@ -590,7 +592,36 @@ public class SisEventosBean {
         this.inscricao = inscricao;
     }
 
-   
+   public UploadedFile getFile() {
+        return file;
+    }
+
+    public void setFile(UploadedFile file) {
+        this.file = file;
+    }
+    
+    public void upload(FileUploadEvent event) {
+        file = event.getFile();
+
+        if (file != null) {
+
+            File imagem = new File("Caminho que voce deseja salvar a imagem", file.getFileName()); 
+            try {
+                FileOutputStream fos = new FileOutputStream(imagem);
+                fos.write(event.getFile().getContents());
+                fos.close();
+
+                FacesContext instance = FacesContext.getCurrentInstance();
+                instance.addMessage("mensagens", new FacesMessage(
+                        FacesMessage.SEVERITY_ERROR,
+                        file.getFileName() + " anexado com sucesso", null));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } 
+      }
+  }
+    
 }
-
-

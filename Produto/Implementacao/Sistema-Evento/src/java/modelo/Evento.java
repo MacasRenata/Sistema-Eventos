@@ -58,6 +58,7 @@ public class Evento implements Serializable {
     private String senha_organizador;
     private int quantidade_inscritos;
     private String imagem;
+    private String file;
     private Boolean ativo = true;
 
        public int getId_evento() {
@@ -268,6 +269,22 @@ public class Evento implements Serializable {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-                
+
+    /**
+     * @return the file
+     */
+    public String getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(String file) {
+        this.file = file;
+    }
+
     
+
+ 
 }

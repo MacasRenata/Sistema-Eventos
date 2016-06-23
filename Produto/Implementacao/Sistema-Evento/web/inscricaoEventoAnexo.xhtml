@@ -15,18 +15,19 @@
 
                     <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
-                        <p:growl id="growl" life="5000"/>   
-                        <h:panelGrid columns="2">
-                            
-                            <title>Inscreva-se no Evento </title>
-                            
-                            <p:outputLabel> Sobre o Evento </p:outputLabel>
-                            <h:outputText id="txtDescript" value="#{sisEventosBean.evento.descricao_evento}"/>
-                            
-                            <h:outputText id="txtLocalImg" value="#{sisEventosBean.evento.imagem}"/>
-                            
-                            <p:outputLabel> Inscrições até: </p:outputLabel>
-                            <h:outputText id="txtInscAte" value="#{sisEventosBean.evento.data_final_inscricao}"/>
+                        <p:growl id="growl" life="5000"/>  
+                        
+                        <p:fieldset legend="Informações sobre o Evento" style="margin-bottom:20px">
+                      <h:panelGrid columns="2" cellpadding="5">
+                          <p:graphicImage id="txtLocalImg" value="#{sisEventosBean.evento.imagem}" />
+                          <p:outputLabel> Descrição </p:outputLabel>
+                          <h:outputText id="txtDescricao" value="#{sisEventosBean.evento.descricao_evento}"/>
+                          <p:outputLabel> Inscrições até: </p:outputLabel>
+                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_final_inscricao}"/>
+                       </h:panelGrid>
+                           </p:fieldset>
+                        
+                        <h:panelGrid columns="2">                                                     
  
                             <p:outputLabel for="txtId" value="" />
                             <h:inputHidden id="txtId" value="#{sisEventosBean.usuarioLogado.id_user}"/>
