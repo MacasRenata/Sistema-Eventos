@@ -23,29 +23,49 @@
             <div id="formDados">
                 <h:messages infoClass="msgInfo" errorClass="msgErro"/>
                 <h:form>
-                     <p:growl id="growl" life="2000"/>
-                    <h:panelGrid columns="2">
-                       <p:dataTable value="#{sisEventosBean.listaEventos}" var="evento">
-                <p:column headerText="Título">
-                  #{evento.titulo}
-                   </p:column>
-                <p:column headerText="Local">
-                #{evento.local_evento}
-                </p:column>
-               <p:column headerText="Categoria">
-               #{evento.categoria.nome}
-            </p:column>
-            <p:column headerText="Detalhes do Evento">
-                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
-                     <h:outputText value="Detalhes"/>
-               </p:commandLink>
-            </p:column>
-              <p:column headerText="Inscrição no Evento">
-                  <p:commandLink ajax="false" action="#{sisEventosBean.iniciaInscricaoEvento(usuarioLogado.id_user, evento.id_evento)}">
-                     <h:outputText value="Inscrição"/>
-               </p:commandLink>
-            </p:column>
-               </p:dataTable>       
+                    <p:growl id="growl" life="2000"/>
+                    <h:panelGrid columns="1">
+                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricao}" var="evento">
+                            <p:column headerText="Título">
+                            #{evento.titulo}
+                            </p:column>
+                            <p:column headerText="Local">
+                            #{evento.local_evento}
+                            </p:column>
+                            <p:column headerText="Categoria">
+                            #{evento.categoria.nome}
+                            </p:column>
+                            <p:column headerText="Detalhes do Evento">
+                                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
+                                    <h:outputText value="Detalhes"/>
+                                </p:commandLink>
+                            </p:column>
+                            <p:column headerText="Inscrição no Evento">
+                                <p:commandLink ajax="false" action="#{sisEventosBean.iniciaInscricaoEvento(usuarioLogado.id_user, evento.id_evento)}">
+                                    <h:outputText value="Inscrição"/>
+                                </p:commandLink>
+                            </p:column>
+                        </p:dataTable>
+                        <p:dataTable value="#{sisEventosBean.listaEventosSemInscricao}" var="evento">
+                            <p:column>
+                            #{evento.titulo}
+                            </p:column>
+                            <p:column>
+                            #{evento.local_evento}
+                            </p:column>
+                            <p:column>
+                            #{evento.categoria.nome}
+                            </p:column>
+                            <p:column>
+                                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
+                                    <h:outputText value="Detalhes"/>
+                                </p:commandLink>
+                            </p:column>
+                            <p:column>
+                                <p:commandLink ajax="false">
+                                </p:commandLink>
+                            </p:column>
+                        </p:dataTable> 
                     </h:panelGrid>   
                 </h:form>
             </div>

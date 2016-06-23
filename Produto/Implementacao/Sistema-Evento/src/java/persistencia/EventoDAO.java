@@ -1,9 +1,11 @@
 package persistencia;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import modelo.Evento;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -46,6 +48,20 @@ public class EventoDAO {
 
     public Evento carregar(int id) {
         return (Evento) sessao.get(Evento.class, id);
+    }
+    
+    public List<Evento> listarComInscricao() {
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        Query query = sessao.createQuery("FROM Evento WHERE inscricoes = '1'");
+        List results = query.list();
+        return results;
+    }
+    
+    public List<Evento> listarSemInscricao() {
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        Query query = sessao.createQuery("FROM Evento WHERE inscricoes = '0'");
+        List results = query.list();
+        return results;
     }
 
 }

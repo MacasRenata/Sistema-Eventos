@@ -156,7 +156,7 @@ public class Usuario implements Serializable{
     public String getEndereco() {
         return endereco;
     }
-
+    
     /**
      * @param endereco the endereco to set
      */
@@ -285,5 +285,5 @@ public class Usuario implements Serializable{
         this.inscricoesEvt = inscricoesEvt;
     }
 
-    
-}
+
+    }

@@ -2,17 +2,14 @@
 
 
 $(document).ready(function () {
-
+    $("#txtNumero").val("");
     //alert('oi');
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
         $("#txtLogradouro").val("");
         $("#txtBairro").val("");
         $("#txtCidade").val("");
-        //$txtUF = $("select[name='skill_input'] option:selected").val();
-        $("#txtUF").val("#txtUF");
-        PF('selectWV').getSelectedValue();//gets the value
-        PF('selectWV').getSelectedLabel();//gets the label
+        $("#txtUF").val("");
     }
 
     //Quando o campo cep perde o foco.

@@ -58,12 +58,15 @@
                             <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"></p:tooltip>
                            
                         </h:panelGrid>
-                        
+                        <p:outputLabel for="inscrições" value="Inscrições:"/>  
+                        <p:selectBooleanCheckbox id="inscrições" value="#{sisEventosBean.evento.inscricoes}"/>   
+
+                            
                             <h:panelGroup id="painelInscricoes">
                                 <p:panel id="painelInsc"   header="Inscrições" toggleable="true" closeSpeed="500" widgetVar="panel" collapsed="true" style="max-width:320px;">
                                     <p:ajax event="toggle" listener="#{sisEventosBean.aoAtivar(event)}"/>
                              
-                                
+                                    
                                     <h:panelGrid  columns="1">
 
                                         <p:outputLabel for="inicioIncricao" value="De:"/>

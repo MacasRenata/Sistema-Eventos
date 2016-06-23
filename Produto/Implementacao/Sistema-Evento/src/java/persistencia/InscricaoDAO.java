@@ -45,15 +45,22 @@ public class InscricaoDAO {
     
     public List<Inscricao> listarPorUsuario(int id_usuario) {
         sessao = HibernateUtil.getSessionFactory().openSession();
-        Query query = sessao.createQuery("FROM inscricoes WHERE id_usuario = '"+ id_usuario + "'");
+        Query query = sessao.createQuery("FROM Inscricao WHERE id_usuario = '"+ id_usuario + "'");
         //String hql = "FROM Inscricoes WHERE id_usuario = '"+ id_usuario + "'";
         //Query query = sessao.createQuery(hql);
         List results = query.list();
         //Criteria criteria = sessao.createCriteria(Inscricao.class);
         //criteria.add(Restrictions.eq("usuario", id_usuario));
         return results;
-        
-        
+    }
+    
+    public int qtdInscritosPorEvento(int id) {
+        int qtd = 0;	
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        String hql = "FROM Inscricao WHERE id_evento = '" + id + "'";
+        Query query = sessao.createQuery(hql);
+        qtd = query.list().size();
+        return qtd;
     }
 }
 

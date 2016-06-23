@@ -77,7 +77,17 @@ public class SisEventosBean {
     public List<Evento> getListaEventos() {
         return listaEventos;
     }
-
+    
+    public List<Evento> getListaEventosComInscricao() {
+        listaEventos = evtDao.listarComInscricao();
+        return listaEventos;
+    }
+    
+    public List<Evento> getListaEventosSemInscricao() {
+        listaEventos = evtDao.listarSemInscricao();
+        return listaEventos;
+    }
+    
     public Usuario getUsuario() {
         return usuario;
     }
@@ -122,7 +132,7 @@ public class SisEventosBean {
         //FileOutputStream fos = new FileOutputStream("t.tmp");
         //ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        writer = new PrintWriter("C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");
+        writer = new PrintWriter("C:\\Users\\sergio\\Documents\\NetBeansProjects\\novo\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");
         writer.println("<html>");
         writer.println("<head>");
         writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8>");
@@ -239,9 +249,9 @@ public class SisEventosBean {
     
     public List<Inscricao> getListaInscricoesUsuario() {
         //List<Inscricao> lista = new List<InscricaoDao>();
-        listaInscricao = inscricaoDao.listar();
         Usuario u = usuarioDao.carregar(usuarioLogado.getId_user());
-        return u.getInscricoesEvt();
+        listaInscricao = inscricaoDao.listarPorUsuario(usuarioLogado.getId_user());
+        return listaInscricao;
     }
     
     public String desfazerInscricao(int id_inscricao) {
@@ -537,11 +547,17 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         Date date = new Date();
-        if (date.before(evento.getData_inicial_inscricao()) || date.after(evento.getData_final_inscricao()) ){
+        int qtd = inscricaoDao.qtdInscritosPorEvento(evento.getId_evento());
+        
+        if (evento.isLimite_inscricoes() && evento.getQuantidade_inscritos()<=qtd){
+            msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
+                "Capacidade máxima de inscrições atingida!", "");
+            context.addMessage(null, msg);
+        } else if (date.before(evento.getData_inicial_inscricao()) || date.after(evento.getData_final_inscricao()) ){
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
                 "Fora do período de inscrição!", "");
             context.addMessage(null, msg);
-        } else{
+        } else {
             Inscricao inscr = new Inscricao();
             inscr.setArquivo(this.getInscricao().getArquivo());
             inscr.setCaminho(this.getInscricao().getCaminho());
@@ -549,9 +565,14 @@ public class SisEventosBean {
             inscr.setEvento(evento);
             inscricaoDao.incluir(inscr);
 
-            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+            msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
                     "Inscrição realizada com sucesso!", "");
             context.addMessage(null, msg);
+            if (evento.isSubmissao() && this.getInscricao().getArquivo() == null){
+                msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
+                    "Voce tem ate " + evento.getData_final_inscricao() + " para enviar seu arquivo" , "");
+            context.addMessage(null, msg);
+            }
         }
         return null;
     }
