@@ -287,18 +287,20 @@ public class SisEventosBean {
 }
       
     public String iniciaInscricaoEvento(int id_user, int id_evt) {
-        //System.out.println(id_user);
-        //System.out.println(id_evt);
-        String retorno = "inscricaoEvento";
-        usuarioLogado = usuarioDao.carregar(id_user);
-        evento = evtDao.carregar(id_evt);
+        System.out.println(id_user);
+        System.out.println(id_evt);
+        String retorno = "incluirUsuario";
+        if (id_user != 0){
+            retorno = "inscricaoEvento";
+            usuarioLogado = usuarioDao.carregar(id_user);
+            evento = evtDao.carregar(id_evt);
             if (evento.isSubmissao()){
                 retorno = "inscricaoEventoAnexo";
             }
-        return retorno;
-
+        }
+        return retorno;  
     }
-    
+        
     public String iniciaEditarInscricaoEvento(int id) {
         inscricao = inscricaoDao.carregar(id);
         return "editarInscricao";
