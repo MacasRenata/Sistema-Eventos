@@ -12,8 +12,13 @@
      <div class="jumbotron"  align="center">
         <h1>Participe dos Eventos</h1>
         <p> Um Sistema desenvolvido para a Criação e Participação em Eventos. </p>
+        
+        <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao() eq false}">
+            <h1>Cadastre-se</h1>
+            <p:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-right:10px" outcome="incluirUsuario"/>
+        </h:form>
        
-        <p:button class="btn btn-primary btn-lg"  value="Cadastrar" style="margin-left:10px;margin-right:10px" outcome="incluirUsuario"/>
+        
       <br></br>
       </div>
             <p:spacer height="20"/>

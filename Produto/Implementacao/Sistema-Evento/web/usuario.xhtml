@@ -8,15 +8,21 @@
 
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-          <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
-            <div class="jumbotron"  align="center">
-                <h1>Cadastre-se</h1>
-                <p> Um Sistema desenvolvido para participação em Eventos. </p>
-               <p:button class="btn btn-primary btn-lg"  value="Cadastrar" outcome="incluirUsuario"/>
-
-                <h2>Listar Eventos</h2>
-                <p> Listar todos os eventos com inscrições abertas. </p>
-               <p:button class="btn btn-primary btn-lg"  value="Listar" outcome="index" />
+          
+            <div class="jumbotron"  align="center" >
+                
+                <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao() eq false}">
+                    <h1>Cadastre-se</h1>
+                    <p> Um Sistema desenvolvido para participação em Eventos. </p>
+                    <p:button class="btn btn-primary btn-lg"  value="Cadastrar" outcome="incluirUsuario"/>
+                </h:form>
+                <h:form enctype="multipart/form-data">
+                    <h2>Listar Eventos</h2>
+                    <p> Listar todos os eventos com inscrições abertas. </p>
+                    <p:button class="btn btn-primary btn-lg"  value="Listar" outcome="index" />
+                    
+                </h:form>
+                
             </div>
 
 

@@ -27,7 +27,7 @@
                         <p:password id="txtSenhaUsuario" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.senha}" style="margin-right:10px"/>
                         <p:commandButton class="btn btn-primary btn-lg" value="Login" ajax="false" action="#{sisEventosBean.verificarLogin()}" style="margin-left:10px;margin-right:10px"/>
                         <p:commandLink ajax="false" value="Esqueci a senha" action="enviarSenha" style="margin-left:10px;margin-right:10px" />
-
+                        
                     </h:form>
                     <h:form enctype="multipart/form-data" rendered="#{sisEventosBean.verificarSessao()}">
 
@@ -41,13 +41,19 @@
                        <p:button value="Trocar Senha" outcome="alterarSenha"/>
                        <p:commandButton value="Sair"  ajax="false" action="#{sisEventosBean.fecharSessao()}"/>
                     </h:form>
-                </div> 
-                <h:form> 
+                </div>
+                <h:form enctype="multipart/form-data"  rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}"> 
+                    <p:menubar style="margin-top:6px; margin-bottom:10px;">   
+                        <p:menuitem value="Home" action="index"/>          
+                        <p:menuitem value="Usuario" action="usuario"/>  
+                    </p:menubar>  
+                </h:form>     
+                <h:form enctype="multipart/form-data"  rendered="#{sisEventosBean.verificarSessaoAdmin()}"> 
                     <p:menubar style="margin-top:6px; margin-bottom:10px;">   
                         <p:menuitem value="Home" action="index"/>          
                         <p:menuitem value="Administrador" action="indexAdmin"/>  
                         <p:menuitem value="Usuario" action="usuario"/>  
-                    </p:menubar>    
+                    </p:menubar>  
                 </h:form>     
             </p:layoutUnit>    
             <p:layoutUnit id="conteudo" position="center">

@@ -12,8 +12,9 @@
       
       <p:panel id="basic" header="Informações Usuarios" style="margin-bottom:20px">
             <div id="formDados">
+            <h:outputLabel value="Voce não é administrador" rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}"/>
                 
-                <h:form>
+                <h:form rendered="#{sisEventosBean.verificarSessaoAdmin()}">
                      <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="2">
                        <p:dataTable value="#{sisEventosBean.listaUsuarios}" var="usuario">

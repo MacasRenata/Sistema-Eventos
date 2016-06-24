@@ -12,8 +12,9 @@
            
         <p:panel id="basic" header="Meus Dados" style="margin-bottom:20px">
             <div id="formDados">
-              
-                <h:form>
+                <h:outputLabel value="Você não está logado!" rendered="#{sisEventosBean.verificarSessao() eq false}"/>
+                
+                <h:form rendered="#{sisEventosBean.verificarSessao()}">
                    <p:growl id="growl" life="4000"/>   
                     <h:panelGrid columns="2">
                         <p:outputLabel for="txtId" value="" />

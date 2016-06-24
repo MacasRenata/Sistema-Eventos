@@ -13,7 +13,8 @@
             <p:panel id="basic" header="Minhas inscrições em eventos" style="margin-bottom:20px">
                 <div id="formDados">
                  
-                    <h:form>
+                <h:outputLabel value="Você não está logado!" rendered="#{sisEventosBean.verificarSessao() eq false}"/>
+                <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="2000"/>
                         <h:panelGrid columns="2">
                             <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao">

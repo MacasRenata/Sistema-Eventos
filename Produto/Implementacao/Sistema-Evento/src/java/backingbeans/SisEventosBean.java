@@ -75,6 +75,7 @@ public class SisEventosBean {
     }
 
     public List<Evento> getListaEventos() {
+        this.listaEventos = evtDao.listar();
         return listaEventos;
     }
     
@@ -373,8 +374,9 @@ public class SisEventosBean {
 
                 FacesContext.getCurrentInstance().getExternalContext()
                         .getSessionMap().put("usuarioLogado", us);
-                //usuario = new Usuario();
-                resultado = "indexAdmin";
+                this.usuarioLogado = us;
+                resultado = "index";
+                usuario = this.usuarioLogado;
 
             } else {
                 msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -393,11 +395,10 @@ public class SisEventosBean {
     public boolean verificarSessaoAdmin() {
         boolean estado;
 
-        if (FacesContext.getCurrentInstance().getExternalContext()
-                .getSessionMap().get("usuarioLogado") == null) {
-            estado = false;
-        } else {
+        if (this.usuarioLogado.getAdmin()) {
             estado = true;
+        } else {
+            estado = false;
         }
 
         return estado;
@@ -415,9 +416,10 @@ public class SisEventosBean {
 
         return estado;
     }
-
+    
     public String fecharSessao() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        usuarioLogado = new Usuario();
         return "index";
     }
 
