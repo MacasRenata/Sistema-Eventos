@@ -1,12 +1,9 @@
 package backingbeans;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.net.InetAddress;
@@ -209,7 +206,7 @@ public class SisEventosBean {
     }
 
     //usuario
-    public String incluirUsuario() {
+    public String incluirUsuario() throws Exception {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         UsuarioDAO usuDAO = new UsuarioDAO();
@@ -220,15 +217,61 @@ public class SisEventosBean {
         this.usuario.setSenha(encript);
         usuDAO.incluir(this.usuario);
         //usuarioDao.incluir(usuario);
-        listaUsuarios = usuarioDao.listar();
+        InetAddress ia = null;
+        try {
+            ia = InetAddress.getLocalHost();
+            HtmlEmail email = new HtmlEmail();
+        
+                email.setHostName("smtp.gmail.com");
+                //email.setSmtpPort(465);
+                email.setSslSmtpPort("587");
+                email.setStartTLSRequired(true);
+                email.setSSLOnConnect(true);
+                email.setSSLCheckServerIdentity(true);
+
+                email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos2016"));
+
+                try {
+                    email.setFrom("eventos@gambarra.com.br");
+                    email.setDebug(true);
+                    email.setSubject("Senha do sistema de eventos");
+                    //email.setMsg("Sua senha é: " + usr.getSenha());
+
+                    email.setHtmlMsg("<html>"
+                            + "<head>"
+                            + "<title>Recuperação de Senha</title>"
+                            + "</head>"
+                            + "<body>"
+                            + "<div style='font-size: 14px'>"
+                            + "<p>Olá " + this.usuario.getNome()
+                            + "</p>"
+                            + "<p>Bem Vindo ao Sistema de Eventos - DEV2"
+                            + "</p>"
+                            + "<p>Para acessar o sistema clique no link "
+                            + "<a href=\"http://" + ia.getHostAddress() + ":8080/Sistema-Evento/"
+                            + "</p>"
+                            + "</div>"
+                            + "<p> Antenciosamente <br/> Sistema de Eventos </p> "
+                            + "</body>"
+                            + "</html>");
+                    email.addTo(this.usuario.getEmail());
+                    email.send();
+
+                } catch (EmailException e) {
+                    e.printStackTrace();
+                }
+        
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario cadastrado com Sucesso!", "");
         // usuario = new Usuario();
         context.addMessage(null, msg);
         usuario = new Usuario();
         return "usuario";
+        } catch (Exception e) {
+            throw e;
+        }
     }
-
+        
     public String iniciaAlteracaoUsuario(int id) {
         usuario = usuarioDao.carregar(id);
         return "alterarUsuario";
@@ -451,7 +494,7 @@ public class SisEventosBean {
                 email.setSSLOnConnect(true);
                 email.setSSLCheckServerIdentity(true);
 
-                email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "xxxxxxx"));
+                email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos2016"));
 
                 try {
                     email.setFrom("eventos@gambarra.com.br");

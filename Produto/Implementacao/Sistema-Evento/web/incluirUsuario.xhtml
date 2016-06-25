@@ -12,9 +12,9 @@
             <p:panel id="basic" header="Cadastro de Usuario" style="margin-bottom:20px">
                 <div id="formDados">
 
-                    <h:form enctype="multipart/form-data">
+                    <h:form prependId="false">
                         <p:growl id="growl" life="2000"/>
-                        <h:panelGrid columns="3">
+                        <p:panelGrid columns="3" id="formulario" layout="grid" columnClasses="label , inputs">
 
                             <p:outputLabel for="txtNomeUsuario" value="Nome Completo: "/>
                             <p:inputText id="txtNomeUsuario" maxlength="60" size="50"  required="true" requiredMessage="Digite o seu nome" value="#{sisEventosBean.usuario.nome}"/>
@@ -43,65 +43,48 @@
                             <p:message id="m_confirma" for="confirma"/>
 
                             <p:outputLabel for="dataNasc" value="Data de Nascimento:"/>
-                            <p:calendar id="dataNasc" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
+                            <p:calendar id="dataNasc" size="50" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
                             <p:outputLabel value= ""/>
 
                             <p:outputLabel for="txtGenero" value="Genêro: "/>
                             <p:inputText id="txtGenero" maxlength="60" size="50" value="#{sisEventosBean.usuario.sexo}"/>
                             <p:outputLabel value= ""/>
                             
-                            <p:outputLabel for="txtEndUsuario" value="Endereço: "/>
-                            <p:inputText id="txtEndUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.endereco}"/>
+                            <p:outputLabel value="CEP:" for="txtCEP"/>
+                            <p:inputMask id="txtCEP" maxlength="9" size="50" value="#{sisEventosBean.usuario.cep}" mask="99999-999"/>
                             <p:outputLabel value= ""/>
                             
-                            <p:outputLabel for="txtCidade" value="Cidade: "/>
-                            <p:inputText id="txtCidade" maxlength="60" size="50" value="#{sisEventosBean.usuario.cidade}"/>
+                            <p:outputLabel value="Logradouro: " for="txtLogradouro"/>
+                            <p:inputText id="txtLogradouro" size="50" maxlength="100" value="#{sisEventosBean.usuario.logradouro}"/> 
                             <p:outputLabel value= ""/>
                             
-                            <p:outputLabel for="txtEstado"  value="Estado:"/>
-                            <p:selectOneMenu id="txtEstado" value="#{sisEventosBean.usuario.estado}" style="width:120px">
-                                <f:selectItem itemLabel="Selecione" itemValue=""/>
-                                <f:selectItem itemLabel="Acre" itemValue="AC"/>
-                                <f:selectItem itemLabel="Alagoas" itemValue="AL"/>
-                                <f:selectItem itemLabel="Amapá" itemValue="AP"/>
-                                <f:selectItem itemLabel="Amazonas" itemValue="AM"/>
-                                <f:selectItem itemLabel="Bahia" itemValue="BA"/>
-                                <f:selectItem itemLabel="Ceará" itemValue="CE"/>
-                                <f:selectItem itemLabel="Distrito Federal" itemValue="DF"/>
-                                <f:selectItem itemLabel="Espirito Santo" itemValue="ES"/>
-                                <f:selectItem itemLabel="Goiás" itemValue="GO"/>
-                                <f:selectItem itemLabel="Maranhão" itemValue="MA"/>
-                                <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="MS"/>
-                                <f:selectItem itemLabel="Mato Grosso" itemValue="MT"/>
-                                <f:selectItem itemLabel="Minas Gerais" itemValue="MG"/>
-                                <f:selectItem itemLabel="Pará" itemValue="PA"/>
-                                <f:selectItem itemLabel="Paraíba" itemValue="PB"/>
-                                <f:selectItem itemLabel="Paraná" itemValue="PR"/>
-                                <f:selectItem itemLabel="Pernambuco" itemValue="PE"/>
-                                <f:selectItem itemLabel="Piauí" itemValue="PI"/>
-                                <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ"/>
-                                <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN"/>
-                                <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS"/>
-                                <f:selectItem itemLabel="Rondônia" itemValue="RO"/>
-                                <f:selectItem itemLabel="Roraima" itemValue="RR"/>
-                                <f:selectItem itemLabel="Santa Catarina" itemValue="SC"/>
-                                <f:selectItem itemLabel="São Paulo" itemValue="SP"/>
-                                <f:selectItem itemLabel="Sergipe" itemValue="SE"/>
-                                <f:selectItem itemLabel="Tocantins" itemValue="TO"/>
-                            </p:selectOneMenu>
+                            <p:outputLabel value="Nº: " for="txtNumero"/>
+                            <p:inputText id="txtNumero" maxlength="5" size="20" value="#{sisEventosBean.usuario.numero}" />
+                            <p:outputLabel value= ""/>
+                            
+                            <p:outputLabel value="Complemento: "  for="txtComplemento"/>
+                            <p:inputText id="txtComplemento" size="50" maxlength="20" value="#{sisEventosBean.usuario.complemento}"/> 
+                            <p:outputLabel value= ""/>
+                            
+                            <p:outputLabel value="Bairro: " for="txtBairro"/>
+                            <p:inputText id="txtBairro" maxlength="30" size="50" value="#{sisEventosBean.usuario.bairro}" />
                             <p:outputLabel value= ""/>
 
-                            <p:outputLabel for="txtCep" value="CEP: "/>
-                            <p:inputMask id="txtCep" maxlength="9" size="50" value="#{sisEventosBean.usuario.cep}" mask="99999-999"/>
+                            <p:outputLabel value="Cidade: " for="txtCidade" />
+                            <p:inputText id="txtCidade" maxlength="30" size="50" value="#{sisEventosBean.usuario.cidade}" />
                             <p:outputLabel value= ""/>
-
+                            
+                            <p:outputLabel value="Estado:" for="txtUF"/>
+                            <p:inputText id="txtUF" size="50" maxlength="30" value="#{sisEventosBean.usuario.estado}" /> 
+                            <p:outputLabel value= ""/>
+                            
                             <p:outputLabel for="txtTelefone" value="Telefone: "/>
                             <p:inputMask id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}" mask="(99) 9999-9999?">
                                 <f:validateRegex pattern="^\([0-9]{2}\)\s*[0-9]{4}[\-\.]{0,1}[0-9]{4}$"/>
                                 <p:outputLabel value= ""/>
 
                             </p:inputMask>
-                        </h:panelGrid>
+                        </p:panelGrid>
 
                         <p:toolbar>
                             <f:facet name="left"> 

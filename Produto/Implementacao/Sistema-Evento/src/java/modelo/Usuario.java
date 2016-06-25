@@ -15,9 +15,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.hibernate.validator.constraints.Length;
 
 
 
@@ -39,8 +41,16 @@ public class Usuario implements Serializable{
     @Temporal(TemporalType.DATE)
     @Past
     private Date data_nascimento;
+    @Length(min = 9, max = 9)
     private String cep;
-    private String endereco; 
+    @Length(min = 6, max = 40)
+    private String logradouro;
+    @NotNull
+    private int numero;
+    private String complemento = "";
+    @Length(min = 3, max = 40)
+    private String bairro;
+    @Length(min = 6, max = 40)
     private String cidade;
     private String estado;
     private String instituicao;
@@ -148,20 +158,6 @@ public class Usuario implements Serializable{
      */
     public void setCep(String cep) {
         this.cep = cep;
-    }
-
-    /**
-     * @return the endereco
-     */
-    public String getEndereco() {
-        return endereco;
-    }
-    
-    /**
-     * @param endereco the endereco to set
-     */
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     /**
@@ -283,6 +279,62 @@ public class Usuario implements Serializable{
 
     public void setInscricoesEvt(List<Inscricao> inscricoesEvt) {
         this.inscricoesEvt = inscricoesEvt;
+    }
+
+    /**
+     * @return the logradouro
+     */
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    /**
+     * @param logradouro the logradouro to set
+     */
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    /**
+     * @return the numero
+     */
+    public int getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    /**
+     * @return the complemento
+     */
+    public String getComplemento() {
+        return complemento;
+    }
+
+    /**
+     * @param complemento the complemento to set
+     */
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    /**
+     * @return the bairro
+     */
+    public String getBairro() {
+        return bairro;
+    }
+
+    /**
+     * @param bairro the bairro to set
+     */
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
 
