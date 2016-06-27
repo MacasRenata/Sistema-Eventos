@@ -28,20 +28,23 @@ public class UnicoEmailValidator implements Validator {
 
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
+        String email = (String) value;
+        Usuario usr = usuarioDao.verificarEmail(email);
         if (value == null) {
             return; // Let required="true" handle, if any.
         }
+        if (usr == null){
+            return;
+        }
 
-        String email = (String) value;
-        Usuario usr = usuarioDao.verificarEmail(email);
-        String emailBD = usr.getEmail();
-        if (emailBD != null){
-            if (emailBD.equals(email)) {
+        //String emailBD = usr.getEmail();
+        if (usr.getEmail() != null){
+            if (usr.getEmail().equals(email)) {
                 throw new ValidatorException(new FacesMessage(
                     FacesMessage.SEVERITY_ERROR, "Email ja cadastrado.", null));
             }
         }
-            
+        
     }
 
 }

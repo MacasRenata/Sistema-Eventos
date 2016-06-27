@@ -22,7 +22,6 @@
 
                             <p:outputLabel for="txtEmail" value="Email: "/>
                             <p:inputText id="txtEmail" value="#{sisEventosBean.usuario.email}">
-                                
                                 <f:validator validatorId="unicoEmailValidator" />
                                 <f:ajax event="blur" render="m_email" />
                             </p:inputText>
