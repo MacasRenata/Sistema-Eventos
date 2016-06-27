@@ -110,19 +110,17 @@ public class UsuarioDAO {
 		return us;
     }
         
-        public Usuario verificarEmail(Usuario usuario) throws Exception {
+        public Usuario verificarEmail(String email) {
 		Usuario us = null;
-		try {
+		
 			sessao = HibernateUtil.getSessionFactory().openSession();
-                        String hql = "FROM Usuario WHERE email = '" + usuario.getEmail() + "'";
+                        String hql = "FROM Usuario WHERE email = '" + email + "'";
 			Query query = sessao.createQuery(hql);
 
 			if (!query.list().isEmpty()) {
 				us = (Usuario) query.list().get(0);
-			}
-		} catch (Exception e) {
-			throw e;
-		}
+			
+                        }
 		return us;
 	}
         

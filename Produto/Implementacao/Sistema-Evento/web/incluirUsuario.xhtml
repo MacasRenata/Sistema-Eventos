@@ -21,10 +21,12 @@
                             <p:outputLabel value= ""/>
 
                             <p:outputLabel for="txtEmail" value="Email: "/>
-                            <p:inputText id="txtEmail" maxlength="60" size="50" required="true" validatorMessage="Email inválido!" value="#{sisEventosBean.usuario.email}">
-                                <f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
+                            <p:inputText id="txtEmail" value="#{sisEventosBean.usuario.email}">
+                                
+                                <f:validator validatorId="unicoEmailValidator" />
+                                <f:ajax event="blur" render="m_email" />
                             </p:inputText>
-                            <p:outputLabel value= ""/>
+                            <h:message id="m_email" for="email" />
 
                             <p:outputLabel for="txtSenhaUsuario"  value="Senha:"/>
                             <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true">

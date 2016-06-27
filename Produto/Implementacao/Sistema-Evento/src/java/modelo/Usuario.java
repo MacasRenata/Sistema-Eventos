@@ -19,7 +19,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
+
+
 
 
 
@@ -34,6 +37,7 @@ public class Usuario implements Serializable{
     @GeneratedValue
     private int id_user;
     private String nome;
+    @Email
     private String email;
     private String senha;
     private String senhaNova; 

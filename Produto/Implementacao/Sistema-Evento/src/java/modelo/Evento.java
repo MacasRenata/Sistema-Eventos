@@ -15,6 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.hibernate.validator.constraints.Email;
 
 
 @Entity
@@ -54,6 +55,7 @@ public class Evento implements Serializable {
     private boolean limite_inscricoes;//limitar o num de participantes no evento - Alterado para Booleano
     private boolean submissao;//para permitir o upload de arquivo na inscrição do usuário no evento
     private String nome_organizador;
+    @Email
     private String email_organizador;
     private String senha_organizador;
     private int quantidade_inscritos;

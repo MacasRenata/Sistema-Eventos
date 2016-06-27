@@ -215,13 +215,12 @@ public class SisEventosBean {
         String encript = DigestUtils.shaHex(this.usuario.getSenha());
         //String encript = DigestUtils.sha1Hex(this.usuario.getClave());
         this.usuario.setSenha(encript);
-        usuDAO.incluir(this.usuario);
-        //usuarioDao.incluir(usuario);
-        InetAddress ia = null;
-        try {
-            ia = InetAddress.getLocalHost();
-            HtmlEmail email = new HtmlEmail();
-        
+            usuDAO.incluir(this.usuario);
+            InetAddress ia = null;
+            try {
+                ia = InetAddress.getLocalHost();
+                HtmlEmail email = new HtmlEmail();
+
                 email.setHostName("smtp.gmail.com");
                 //email.setSmtpPort(465);
                 email.setSslSmtpPort("587");
@@ -260,18 +259,18 @@ public class SisEventosBean {
                 } catch (EmailException e) {
                     e.printStackTrace();
                 }
-        
-        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                "Usuario cadastrado com Sucesso!", "");
-        // usuario = new Usuario();
-        context.addMessage(null, msg);
-        usuario = new Usuario();
-        return "usuario";
-        } catch (Exception e) {
-            throw e;
+
+                msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                        "Usuario cadastrado com Sucesso!", "");
+                // usuario = new Usuario();
+                context.addMessage(null, msg);
+                usuario = new Usuario();
+                return "usuario";
+            } catch (Exception e) {
+                throw e;
+            }
         }
-    }
-        
+    
     public String iniciaAlteracaoUsuario(int id) {
         usuario = usuarioDao.carregar(id);
         return "alterarUsuario";
@@ -480,7 +479,7 @@ public class SisEventosBean {
         InetAddress ia = null;
         try {
             ia = InetAddress.getLocalHost();
-            us = usuDAO.verificarEmail(this.usuarioLogado);
+            us = usuDAO.verificarEmail(this.usuarioLogado.getEmail());
             if (us != null) {
 
                 Usuario usr = us;
