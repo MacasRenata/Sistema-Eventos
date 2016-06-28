@@ -25,18 +25,19 @@ import persistencia.UsuarioDAO;
 public class UnicoEmailValidator implements Validator {
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
     private Usuario usuario = new Usuario();
-
+    
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
+        int id_user = (int) component.getAttributes().get("txtId");
         String email = (String) value;
         Usuario usr = usuarioDao.verificarEmail(email);
         if (value == null) {
             return; // Let required="true" handle, if any.
         }
-        if (usr == null){
+        if (usr == null || usr.getId_user() == id_user){
             return;
         }
-
+        
         //String emailBD = usr.getEmail();
         if (usr.getEmail() != null){
             if (usr.getEmail().equals(email)) {

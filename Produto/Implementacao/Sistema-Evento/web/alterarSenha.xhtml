@@ -64,7 +64,7 @@
 
                             <p:outputLabel for="confirma" value="Senha nova (repetir):" style="color:gray;font-weight:bold;margin-right:10px"/>
                             <p:password id="confirma" binding="#{confirmaSenha}" maxlength="60" size="20"  required="true">
-                                <f:validateLength minimum="5" />
+                                <f:validateLength minimum="6" />
                                 <f:ajax event="blur" execute="confirma senha" render="m_senha m_confirma" />
                             </p:password>
                             <p:message id="m_confirma" for="confirma" />

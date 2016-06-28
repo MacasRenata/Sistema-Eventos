@@ -29,13 +29,15 @@ public class ConfirmaSenhaValidator implements Validator {
         String senha = (String) value;
         String confirma = (String) component.getAttributes().get("confirma");
         String confirma1 = (String) component.getAttributes().get("confirma1");
-
-        if (senha == null || confirma == null || confirma1 == null) {
-            return; // Just ignore and let required="true" do its job.
-        }
+        
+        //if (senha == null || confirma == null || confirma1 == null) {
+        //    return; // Just ignore and let required="true" do its job.
+        //}
 
         if (!senha.equals(confirma)) {
             throw new ValidatorException(new FacesMessage("Senhas não estão iguais"));
+        } else{
+            return;
         }
     }
 

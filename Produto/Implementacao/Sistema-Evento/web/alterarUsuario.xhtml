@@ -24,12 +24,13 @@
                             <p:outputLabel value= ""/>
 
                             <p:outputLabel for="txtEmail" value="Email: "/>
-                            <p:inputText id="txtEmail" maxlength="60" size="50" required="true" value="#{sisEventosBean.usuario.email}">
+                            <p:inputText id="txtEmail" value="#{sisEventosBean.usuario.email}">
                                 <f:validator validatorId="unicoEmailValidator" />
-                                <f:ajax event="blur" render="m_email" />
+                                <f:attribute name="txtId" value="#{sisEventosBean.usuario.id_user}"/>
+                                <f:ajax event="blur" execute="unico email" render="m_email" />
                             </p:inputText>
                             <p:outputLabel value= ""/>
-
+                            
                             <p:outputLabel for="txtSenhaUsuario"  value="Senha:"/>
                             <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true">
                                 <f:validator validatorId="confirmaSenhaValidator"/>
