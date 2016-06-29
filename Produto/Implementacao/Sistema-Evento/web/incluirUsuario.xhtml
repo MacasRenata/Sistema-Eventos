@@ -31,17 +31,17 @@
                             <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true">
                                 <f:validator validatorId="confirmaSenhaValidator"/>
                                 <f:validateLength minimum="6"/>
-                                <f:attribute name="confirma" value="#{confirmaSenha.submittedValue}"/>
-                                <f:ajax event="blur" execute="senha confirma" render="m_senha"/>
+                                <f:attribute name="confirma1" value="#{confirmaSenha.submittedValue}"/>
+                                <f:ajax event="blur" render="m_senha"/>
                             </p:password>
-                            <p:message id="m_senha" for="txtSenhaUsuario"/>
+                            <h:message id="m_senha" for="txtSenhaUsuario" />
 
                             <p:outputLabel  for="confirma" value="Repetir a Senha:"/>
                             <p:password id="confirma" maxlength="60" size="50" binding="#{confirmaSenha}" required="true">
                                 <f:validateLength minimum="6"/>
-                                <f:ajax event="blur" execute="senha confirma" render="m_senha m_confirma"/>
+                                <f:ajax event="blur" render="m_senha m_confirma"/>
                             </p:password>
-                            <p:message id="m_confirma" for="confirma"/>
+                            <h:message id="m_confirma" for="confirma" />
 
                             <p:outputLabel for="dataNasc" value="Data de Nascimento:"/>
                             <p:calendar id="dataNasc" size="50" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
@@ -59,8 +59,8 @@
                             <p:inputText id="txtLogradouro" size="50" maxlength="100" value="#{sisEventosBean.usuario.logradouro}"/> 
                             <p:outputLabel value= ""/>
                             
-                            <p:outputLabel value="Nº: " for="txtNumero"/>
-                            <p:inputText id="txtNumero" maxlength="5" size="20" value="#{sisEventosBean.usuario.numero}" />
+                            <p:outputLabel value="Nº: " for="txtNumo"/>
+                            <p:inputText id="txtNumo" maxlength="5" size="20" value="#{sisEventosBean.usuario.numero}" />
                             <p:outputLabel value= ""/>
                             
                             <p:outputLabel value="Complemento: "  for="txtComplemento"/>

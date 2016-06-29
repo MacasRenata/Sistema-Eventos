@@ -27,17 +27,19 @@ public class ConfirmaSenhaValidator implements Validator {
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         String senha = (String) value;
-        String confirma = (String) component.getAttributes().get("confirma");
         String confirma1 = (String) component.getAttributes().get("confirma1");
+        String confirma2 = (String) component.getAttributes().get("confirma2");
+        String confirma;
         
-        //if (senha == null || confirma == null || confirma1 == null) {
-        //    return; // Just ignore and let required="true" do its job.
-        //}
+        if (confirma1 != null) {
+            confirma = confirma1;
+        } else {
+            confirma = confirma2;
+        }
 
         if (!senha.equals(confirma)) {
-            throw new ValidatorException(new FacesMessage("Senhas não estão iguais"));
-        } else{
-            return;
+            throw new ValidatorException(new FacesMessage
+                (FacesMessage.SEVERITY_ERROR, "Senhas não conferem.", null));
         }
     }
 

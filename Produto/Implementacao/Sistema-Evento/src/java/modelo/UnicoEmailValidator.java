@@ -28,7 +28,11 @@ public class UnicoEmailValidator implements Validator {
     
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-        int id_user = (int) component.getAttributes().get("txtId");
+        
+        int id_user = 0;
+        if (component.getAttributes().get("txtId") != null){
+            id_user = (int) component.getAttributes().get("txtId");
+        }
         String email = (String) value;
         Usuario usr = usuarioDao.verificarEmail(email);
         if (value == null) {

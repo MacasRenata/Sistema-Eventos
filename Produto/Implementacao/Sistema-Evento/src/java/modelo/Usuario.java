@@ -39,7 +39,9 @@ public class Usuario implements Serializable{
     private String nome;
     @Email
     private String email;
+    @Length(min = 6)
     private String senha;
+    @Length(min = 6)
     private String senhaNova; 
     private String sexo;
     @Temporal(TemporalType.DATE)
@@ -50,7 +52,7 @@ public class Usuario implements Serializable{
     @Length(min = 6, max = 40)
     private String logradouro;
     @NotNull
-    private int numero;
+    private String numero = "";
     private String complemento = "";
     @Length(min = 3, max = 40)
     private String bairro;
@@ -299,20 +301,8 @@ public class Usuario implements Serializable{
         this.logradouro = logradouro;
     }
 
-    /**
-     * @return the numero
-     */
-    public int getNumero() {
-        return numero;
-    }
 
-    /**
-     * @param numero the numero to set
-     */
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
+    
     /**
      * @return the complemento
      */
@@ -339,6 +329,20 @@ public class Usuario implements Serializable{
      */
     public void setBairro(String bairro) {
         this.bairro = bairro;
+    }
+
+    /**
+     * @return the numero
+     */
+    public String getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
 
