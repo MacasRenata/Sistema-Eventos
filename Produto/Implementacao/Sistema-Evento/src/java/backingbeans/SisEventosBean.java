@@ -210,11 +210,11 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         UsuarioDAO usuDAO = new UsuarioDAO();
-        // Enviando a encriptacao
-        //String encript = DigestUtils.md5Hex(this.usuario.getNombre());
+        
         String encript = DigestUtils.shaHex(this.usuario.getSenha());
-        //String encript = DigestUtils.sha1Hex(this.usuario.getClave());
+        
         this.usuario.setSenha(encript);
+        this.usuario.setSenhaNova(encript);
             usuDAO.incluir(this.usuario);
             InetAddress ia = null;
             try {
@@ -357,20 +357,43 @@ public class SisEventosBean {
     public String alterarUsuario() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-
-        // Enviando a encriptacao
-        //String encript = DigestUtils.md5Hex(this.usuario.getNombre());
-        String encript = DigestUtils.shaHex(this.usuario.getSenha());
-        //String encript = DigestUtils.sha1Hex(this.usuario.getClave());
-        this.usuario.setSenha(encript);
-        usuarioDao.alterar(usuario);
-        listaUsuarios = usuarioDao.listar();
-        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+            
+                usuarioDao.alterar(usuario);
+                listaUsuarios = usuarioDao.listar();
+                msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Usuario alterado com Sucesso!", "");
-        //usuario = new Usuario();
-        context.addMessage(null, msg);
-        //usuario = new Usuario(); 
-        return "listaUsuarios";
+        
+                context.addMessage(null, msg);
+        
+                return "listaUsuarios";
+            }
+            
+
+    
+    public String alterarSenhaUsuario() throws Exception {
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        try {
+            
+            if (!this.usuario.getSenhaNova().equals(this.usuario.getSenha())){
+                String encript = DigestUtils.shaHex(this.usuario.getSenhaNova());
+                this.usuario.setSenha(encript);
+                usuarioDao.alterar(usuario);
+                listaUsuarios = usuarioDao.listar();
+                msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                    "Senha do usuario alterada com Sucesso!", "");
+                context.addMessage(null, msg);
+                return "listaUsuarios";
+            } else {
+                msg = new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    "Senha do usuario nao alterada!", "");
+                context.addMessage(null, msg);
+                return null;
+            }
+            
+        } catch (Exception e) {
+                throw e;
+            }
     }
 
     public String alterarMeusDados() {

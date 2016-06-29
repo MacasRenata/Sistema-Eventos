@@ -51,7 +51,6 @@ public class Usuario implements Serializable{
     private String cep;
     @Length(min = 6, max = 40)
     private String logradouro;
-    @NotNull
     private String numero = "";
     private String complemento = "";
     @Length(min = 3, max = 40)
