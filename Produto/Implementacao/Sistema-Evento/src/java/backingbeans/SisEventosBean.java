@@ -82,8 +82,11 @@ public class SisEventosBean {
     public List<Evento> getListaEventosComInscricaoComVagas() {
         List<Evento> listaEventos1;
         Date date = new Date();
-        Date hora = new Date();
-        
+        //listaInscricao.clear();
+        if (this.verificarSessao()){
+            listaInscricao = inscricaoDao.listarPorUsuario(usuarioLogado.getId_user());
+        }
+
         
         listaEventos.clear();
         listaEventos1 = evtDao.listarComInscricao();
@@ -101,6 +104,13 @@ public class SisEventosBean {
                 }
             }
         }
+        
+        for (int index = 0; index < listaInscricao.size(); index++){
+                        if (listaEventos.get(index).getId_evento() == listaInscricao.get(index).getEvento().getId_evento()){
+                            this.listaEventos.remove(listaEventos1.get(index));
+            }
+        }
+        
             
         return listaEventos;
     }
@@ -388,7 +398,7 @@ public class SisEventosBean {
     
     public List<Inscricao> getListaInscricoesUsuario() {
         //List<Inscricao> lista = new List<InscricaoDao>();
-        Usuario u = usuarioDao.carregar(usuarioLogado.getId_user());
+        //Usuario u = usuarioDao.carregar(usuarioLogado.getId_user());
         listaInscricao = inscricaoDao.listarPorUsuario(usuarioLogado.getId_user());
         return listaInscricao;
     }
@@ -712,6 +722,15 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         Date date = new Date();
+        boolean jaInscrito = false;
+        
+        for (int index = 0 ; index < listaInscricao.size(); index++){
+            if (listaInscricao.get(index).getUsuario().getId_user() == usuarioLogado.getId_user() && listaInscricao.get(index).getEvento().getId_evento() == evento.getId_evento() ){
+                jaInscrito = true;
+            }
+            //qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
+        }
+        
         int qtd = inscricaoDao.qtdInscritosPorEvento(evento.getId_evento());
         
         if (evento.isLimite_inscricoes() && evento.getQuantidade_inscritos()<=qtd){
@@ -721,6 +740,10 @@ public class SisEventosBean {
         } else if (date.before(evento.getData_inicial_inscricao()) || date.after(evento.getData_final_inscricao()) ){
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
                 "Fora do período de inscrição!", "");
+            context.addMessage(null, msg);
+        } else if (jaInscrito){
+            msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
+                "Voce ja esta inscrito neste evento!", "");
             context.addMessage(null, msg);
         } else {
             Inscricao inscr = new Inscricao();

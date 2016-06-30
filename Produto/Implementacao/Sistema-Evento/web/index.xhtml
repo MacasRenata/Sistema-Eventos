@@ -30,6 +30,27 @@
                 <h:form>
                     <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="1">
+                        <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="evento">
+                            <p:column headerText="Título">
+                            #{inscricoes.evento.titulo}
+                            </p:column>
+                            <p:column headerText="Local">
+                            #{inscricoes.local_evento}
+                            </p:column>
+                            <p:column headerText="Categoria">
+                            #{inscricoes.categoria.nome}
+                            </p:column>
+                            <p:column headerText="Detalhes do Evento">
+                                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(inscricoes.evento.id_evento)}" >
+                                    <h:outputText value="Detalhes"/>
+                                </p:commandLink>
+                            </p:column>
+                            <p:column headerText="Editar Inscrição no Evento">
+                                <p:commandLink ajax="false" action="#{sisEventosBean.iniciaEditarInscricaoEvento(inscricao.id)}">
+                                    <h:outputText value="Inscrição"/>
+                                </p:commandLink>
+                            </p:column>
+                        </p:dataTable>
                         <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoComVagas}" var="evento">
                             <p:column headerText="Título">
                             #{evento.titulo}
