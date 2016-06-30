@@ -15,8 +15,10 @@
                         <p:growl id="growl" life="2000"/>
                         <h:panelGrid columns="1">
                             
-                            <p:outputLabel for="txtSenhaUsuario"  value="Digite a nova senha de #{sisEventosBean.usuario.nome}" style="color:gray;font-weight:bold;margin-right:10px"/>
-                            <p:password id="txtSenhaUsuario" required="true" maxlength="60" size="20" value="#{sisEventosBean.usuario.senhaNova}"/>
+                            <p:outputLabel for="txtSenhaUsuario"  value="Digite a nova senha de #{sisEventosBean.usuario.nome}" 
+                                           style="color:gray;font-weight:bold;margin-right:10px"/>
+                            <p:password id="txtSenhaUsuario" required="true" maxlength="60" size="20" 
+                                        value="#{sisEventosBean.usuario.senhaNova}"/>
                             
                             
                         </h:panelGrid>
