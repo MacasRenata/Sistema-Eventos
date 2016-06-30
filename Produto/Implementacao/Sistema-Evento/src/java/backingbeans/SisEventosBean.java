@@ -242,56 +242,106 @@ public class SisEventosBean {
         // evento = new Evento();
         context.addMessage(null, msg);
 
-        PrintWriter writer;
-        //FileOutputStream fos = new FileOutputStream("t.tmp");
-        //ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        writer = new PrintWriter("C:\\Users\\sergio\\Documents\\NetBeansProjects\\novo\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos\\evento.html", "UTF-8");
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8>");
-        writer.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../resources/css/style.css\">");
-        writer.println("<title>Sistema Evento</title>");
-        writer.println("</head>");
-        writer.println("<body>");
-        writer.println("<div id=\"header\">");
-        writer.println("<h1>Sistema de Eventos");
-        writer.println("</h1>");
-        writer.println("</div>");
-        writer.println("<div id=\"nav\">");
-        writer.println("Evento " + evento.getTitulo() + "/n");
-        writer.println("<br>Informações " + evento.getDescricao_evento()+"");  // detalhes sobre o evento
-        writer.println("</div>");
-        writer.println("<div id=\"section\">");
-        writer.println("<h1> Evento");
-        writer.println("</h1>");
-        writer.println("Local " + evento.getLocal_evento() + "");
-        writer.println("Data Inicío " + evento.getData_inicial() + "");
-        writer.println("Periodo de Inscrições " + evento.getData_inicial_inscricao() + "");
-        writer.println("Horário " + evento.getHorario_inicio() + "");
-        writer.println("Area " + evento.getArea_evento() + "");
-        writer.println("Categoria " + evento.getCategoria_evento() + "");
-        writer.println("Local " + evento.getLocal_evento() + "");
-        writer.println("<br>Local: " + evento.getLocal_evento() + "");
-        writer.println("</p></div>");
-        writer.println("<div id=\"footer\">");
-        writer.println("Copyright © sistemaeventos.com");
-        writer.println("</div>");
-        writer.println("</body>");
-        writer.println("</html>");
+       // Gravar arquivo html de evento criado dir\eventos
+        //trocar o diretorio
         
-        //oos.writeObject(evento);
-        //oos.close();  
-        writer.close();
-        /*
-        FileInputStream fis = new FileInputStream("t.tmp");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        try {
-            List<Evento> evento = (List<Evento>) ois.readObject();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SisEventosBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ois.close();*/
+        String caminho1 = "C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos/";
+        
+         //writer2 = new PrintWriter(new FileWriter(fileStem + ".html"));
+         
+         
+        File file = new File(caminho1 + getEvento().getTitulo() + ".html");
+           file.getParentFile().mkdirs();
+
+        PrintWriter printWriter = new PrintWriter(file);
+
+        //for (File files : File.listRoots()){
+        
+        printWriter.print("<html>");
+        printWriter.print("<head>");
+        printWriter.print("<div background-color:black;\n" +
+"    color:white;\n" +
+"    text-align:center;\n" +
+"    padding:5px>");
+        printWriter.print("<title>Sistema Evento</title>");
+        printWriter.print(evento.getImagem());
+        printWriter.print("</div>");
+        printWriter.print("</head>"); 
+        printWriter.print("<body>"); 
+        printWriter.print("<div line-height:30px;\n" +
+"    background-color:#eeeeee;\n" +
+"    height:300px;\n" +
+"    width:100px;\n" +
+"    float:left;\n" +
+"    padding:5px>");
+        printWriter.print(evento.getId_evento());
+        printWriter.print(evento.getTitulo());
+        printWriter.print("</div>");
+        printWriter.print("<div width:350px;\n" +
+"    float:left;\n" +
+"    padding:10px;>");
+        printWriter.print("<h1> Informações sobre o Evento </h1>");
+        printWriter.print("<p> Data Inicial:");
+        printWriter.print(evento.getData_inicial());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Inicio das inscrições:");
+        printWriter.print(evento.getData_inicial_inscricao());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Encerramento das inscrições:");
+        printWriter.print(evento.getData_final_inscricao());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Horario de inicio do evento:");
+        printWriter.print(evento.getHorario_inicio());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Horario do fim do evento");
+        printWriter.print(evento.getHorario_fim());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Descrição do Evento:");
+        printWriter.print(evento.getDescricao_evento());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Local do Evento:");
+        printWriter.print(evento.getLocal_evento());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Categoria:");
+        printWriter.print(evento.getCategoria());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("<p> Categoria:");
+        printWriter.print(evento.getArea_evento());
+        printWriter.print("</p>");
+        printWriter.print("</br>");
+        printWriter.print("</div>");
+        
+        printWriter.print("<div background-color:black;\n" +
+"    color:white;\n" +
+"    clear:both;\n" +
+"    text-align:center;\n" +
+"    padding:5px; >");
+        printWriter.print("Copyright © sistemaeventos.com");
+        printWriter.print("</div>");
+        
+        printWriter.print("</body>");
+        printWriter.print("</html>");
+        
+        //o método flush libera a escrita no arquivo
+            printWriter.flush();
+
+            //No final precisamos fechar o arquivo
+            printWriter.close();
+
+       
+     
+        //writer.close();
+     
+        //}
+
 
         return "listaEventos";
     }
