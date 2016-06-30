@@ -21,7 +21,7 @@
                             <p:outputLabel value= ""/>
 
                             <p:outputLabel for="txtEmail" value="Email: "/>
-                            <p:inputText id="txtEmail" value="#{sisEventosBean.usuario.email}">
+                            <p:inputText required="true" id="txtEmail" value="#{sisEventosBean.usuario.email}">
                                 <f:validator validatorId="unicoEmailValidator" />
                                 <f:ajax event="blur" render="m_email" />
                             </p:inputText>
@@ -44,7 +44,7 @@
                             <h:message id="m_confirma" for="confirma" />
 
                             <p:outputLabel for="dataNasc" value="Data de Nascimento:"/>
-                            <p:calendar id="dataNasc" size="50" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
+                            <p:calendar id="dataNasc" required="true" size="50" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt"/>
                             <p:outputLabel value= ""/>
                             
                             <p:outputLabel for="txtGenero" value="Genêro: "/>
@@ -60,7 +60,7 @@
                             <p:outputLabel value= ""/>
                             
                             <p:outputLabel value="Nº: " for="txtNumo"/>
-                            <p:inputText id="txtNumo" maxlength="5" size="20" value="#{sisEventosBean.usuario.numero}" />
+                            <p:inputText id="txtNumo" required="true" maxlength="5" size="20" value="#{sisEventosBean.usuario.numero}" />
                             <p:outputLabel value= ""/>
                             
                             <p:outputLabel value="Complemento: "  for="txtComplemento"/>
@@ -76,7 +76,7 @@
                             <p:outputLabel value= ""/>
                             
                             <p:outputLabel value="Estado:" for="txtUF"/>
-                            <p:inputText id="txtUF" size="50" maxlength="30" value="#{sisEventosBean.usuario.estado}" /> 
+                            <p:inputText id="txtUF" required="true" size="50" maxlength="30" value="#{sisEventosBean.usuario.estado}" /> 
                             <p:outputLabel value= ""/>
                             
                             <p:outputLabel for="txtTelefone" value="Telefone: "/>

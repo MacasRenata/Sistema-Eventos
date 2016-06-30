@@ -39,21 +39,14 @@
                        <p:commandButton  ajax="false" value="Meus Eventos" action="#{sisEventosBean.iniciaMeusEventos(usuarioLogado.id_user)}"/>
 
                        <p:button value="Trocar Senha" outcome="alterarSenha"/>
+                       <p:button value="Admin do Sistema" rendered="#{sisEventosBean.verificarSessaoAdmin()}" outcome="indexAdmin"/>
                        <p:commandButton value="Sair"  ajax="false" action="#{sisEventosBean.fecharSessao()}"/>
                     </h:form>
                 </div>
-                <h:form enctype="multipart/form-data"  rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}"> 
-                    <p:menubar style="margin-top:6px; margin-bottom:10px;">   
-                        <p:menuitem value="Home" action="index"/>          
-                        <p:menuitem value="Usuario" action="usuario"/>  
-                    </p:menubar>  
-                </h:form>     
-                <h:form enctype="multipart/form-data"  rendered="#{sisEventosBean.verificarSessaoAdmin()}"> 
-                    <p:menubar style="margin-top:6px; margin-bottom:10px;">   
-                        <p:menuitem value="Home" action="index"/>          
-                        <p:menuitem value="Administrador" action="indexAdmin"/>  
-                        <p:menuitem value="Usuario" action="usuario"/>  
-                    </p:menubar>  
+                <h:form enctype="multipart/form-data"> 
+                    <p:menubar style="margin-top:6px; margin-bottom:10px;">
+                        <p:menuitem value="Home" action="index"/>  
+                    </p:menubar>
                 </h:form>     
             </p:layoutUnit>    
             <p:layoutUnit id="conteudo" position="center">
