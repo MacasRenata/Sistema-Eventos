@@ -1,5 +1,4 @@
 
-
 #body {
     background-color: gray;
     font-family: Arial, sans-serif;
@@ -85,6 +84,42 @@ ui-widget, .ui-widget .ui-widget {
     background-color: #6ea2ee; 
 }
 
+#j_idt17\:j_idt20 {
+    font-size: 16px;
+    font-weight: normal; 
+    margin-top: 5px;
+    min-width: 60px;
+    min-height: 36px;
+    background-color: #6ea2ee; 
+}
+
+#j_idt17\:j_idt21 {
+    font-size: 16px;
+    font-weight: normal; 
+    margin-top: 5px;
+    min-width: 60px;
+    min-height: 36px;
+    background-color: #6ea2ee; 
+}
+
+#j_idt17\:j_idt22 {
+    font-size: 16px;
+    font-weight: normal; 
+    margin-top: 5px;
+    min-width: 60px;
+    min-height: 36px;
+    background-color: #6ea2ee; 
+}
+
+#j_idt17\:j_idt23 {
+    font-size: 16px;
+    font-weight: normal; 
+    text-shadow: 0px;
+    margin-top: 5px;
+    min-width: 60px;
+    min-height: 36px;
+    background-color: #6ea2ee; 
+}
 .ui-datepicker {
     font-size: 90%;
     font-weight: normal; 

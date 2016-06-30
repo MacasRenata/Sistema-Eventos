@@ -801,6 +801,46 @@ public class SisEventosBean {
         }
       
     }
+    
+    //Metodo alternativo
+      public void sobeArquivo(FileUploadEvent event) {
+      
+        String caminho;
+       
+        try {
+
+            if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
+                caminho = "/home/luis/Documentos/Dev/Sistema-Eventos/Arquivos/";
+            } else {
+                caminho = "c://files//Documentos/Dev/Sistema-Eventos/Arquivos//";
+            }
+
+            File file = new File(caminho);
+            file.mkdirs();
+
+            byte[] arquivo = event.getFile().getContents();
+            String arch = caminho + event.getFile().getFileName();
+
+            this.getInscricao().setCaminho(caminho);
+            this.getInscricao().setArquivo(event.getFile().getFileName());
+
+            FileOutputStream fos = new FileOutputStream(arch);
+            fos.write(arquivo);
+            fos.close();
+            
+            System.out.println("O caminho do arquivo: " + caminho);
+
+        FacesMessage message = new FacesMessage("O arquivo", file.getName() + " foi enviado.");
+        FacesContext.getCurrentInstance().addMessage(null, message);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
    
      public ArrayList<Categoria> getListaCategorias() {
         CategoriaDAO dao = new CategoriaDAO();
