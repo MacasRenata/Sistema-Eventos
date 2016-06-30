@@ -87,7 +87,6 @@ public class SisEventosBean {
             listaInscricao = inscricaoDao.listarPorUsuario(usuarioLogado.getId_user());
         }
 
-        
         listaEventos.clear();
         listaEventos1 = evtDao.listarComInscricao();
         
@@ -104,12 +103,14 @@ public class SisEventosBean {
                 }
             }
         }
-        
-        for (int index = 0; index < listaInscricao.size(); index++){
+        if (listaEventos.size()>0){
+            for (int index = 0; index < listaInscricao.size(); index++){
                         if (listaEventos.get(index).getId_evento() == listaInscricao.get(index).getEvento().getId_evento()){
-                            this.listaEventos.remove(listaEventos1.get(index));
+                            this.listaEventos.remove(listaEventos.get(index));
             }
         }
+        }
+        
         
             
         return listaEventos;
@@ -184,8 +185,8 @@ public class SisEventosBean {
         listaEventos1 = evtDao.listarSemInscricao();
         Date date = new Date();
         
-        for (int index = 0 ; index < listaEventos1.size(); index++){
-            if (date.after(listaEventos1.get(index).getData_final())){
+        for (int index = 0 ; index < listaEventos.size(); index++){
+            if (date.after(listaEventos.get(index).getData_final())){
                     this.listaEventos.remove(listaEventos.get(index));
             }
         }
