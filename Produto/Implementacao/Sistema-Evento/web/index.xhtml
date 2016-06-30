@@ -31,7 +31,9 @@
                     <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="1">
                         <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao" rendered="#{sisEventosBean.verificarSessao()}">
-                            
+                            <f:facet name="header">
+                                Meus Eventos
+                            </f:facet>
                             <p:column headerText="Título">
                             #{inscricao.evento.titulo}
                             </p:column>
@@ -54,6 +56,9 @@
                             </p:column>
                         </p:dataTable>
                         <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoComVagas}" var="evento">
+                            <f:facet name="header">
+                                Eventos com inscrições abertas
+                            </f:facet>
                             <p:column headerText="Título">
                             #{evento.titulo}
                             </p:column>
@@ -75,35 +80,41 @@
                             </p:column>
                         </p:dataTable>
                         <p:dataTable value="#{sisEventosBean.listaEventosSemInscricao}" var="evento">
-                            <p:column>
+                            <f:facet name="header">
+                                Eventos sem inscrição
+                            </f:facet>
+                            <p:column headerText="Título">
                             #{evento.titulo}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Local">
                             #{evento.local_evento}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Categoria">
                             #{evento.categoria.nome}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Detalhes do Evento">
                                 <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
                                     <h:outputText value="Detalhes"/>
                                 </p:commandLink>
                             </p:column>
                             <p:column>
-                                 Evento sem Inscrições
+                                    Evento sem Inscrições
                             </p:column>
                         </p:dataTable> 
                         <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoEsgotada}" var="evento">
-                            <p:column>
+                            <f:facet name="header">
+                                    Eventos com inscrições esgotadas
+                            </f:facet>
+                           <p:column headerText="Título">
                             #{evento.titulo}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Local">
                             #{evento.local_evento}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Categoria">
                             #{evento.categoria.nome}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Detalhes do Evento">
                                 <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
                                     <h:outputText value="Detalhes"/>
                                 </p:commandLink>
@@ -114,16 +125,19 @@
                             
                         </p:dataTable> 
                         <p:dataTable value="#{sisEventosBean.listaEventosForaDasInscricoes}" var="evento">
-                            <p:column>
+                            <f:facet name="header">
+                                    Eventos fora do período de inscrições
+                            </f:facet>
+                            <p:column headerText="Título">
                             #{evento.titulo}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Local">
                             #{evento.local_evento}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Categoria">
                             #{evento.categoria.nome}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Detalhes do Evento">
                                 <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
                                     <h:outputText value="Detalhes"/>
                                 </p:commandLink>
@@ -134,16 +148,19 @@
                             
                         </p:dataTable> 
                         <p:dataTable value="#{sisEventosBean.listaEventosJaRealizados}" var="evento">
-                            <p:column>
+                            <f:facet name="header">
+                                    Eventos já realizados
+                            </f:facet>
+                            <p:column headerText="Título">
                             #{evento.titulo}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Local">
                             #{evento.local_evento}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Categoria">
                             #{evento.categoria.nome}
                             </p:column>
-                            <p:column>
+                            <p:column headerText="Detalhes do Evento">
                                 <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
                                     <h:outputText value="Detalhes"/>
                                 </p:commandLink>

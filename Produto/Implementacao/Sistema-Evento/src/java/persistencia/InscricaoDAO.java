@@ -28,6 +28,17 @@ public class InscricaoDAO {
        
       }
       
+      public void alterar(Inscricao inscricao) {
+        
+            Transaction t = sessao.beginTransaction();
+            sessao.clear();
+            sessao.update(inscricao);
+            t.commit();
+            sessao.flush();
+        
+
+    }
+      
     
     public void excluir(Inscricao inscricao) {
         Transaction t = sessao.beginTransaction();
@@ -44,7 +55,7 @@ public class InscricaoDAO {
     }
     
     public List<Inscricao> listarPorUsuario(int id_usuario) {
-        //sessao = HibernateUtil.getSessionFactory().openSession();
+        sessao = HibernateUtil.getSessionFactory().openSession();
         Query query = sessao.createQuery("FROM Inscricao WHERE id_usuario = '"+ id_usuario + "'");
         //String hql = "FROM Inscricoes WHERE id_usuario = '"+ id_usuario + "'";
         //Query query = sessao.createQuery(hql);

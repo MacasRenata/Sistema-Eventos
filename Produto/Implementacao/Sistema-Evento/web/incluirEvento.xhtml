@@ -39,7 +39,7 @@
                             <p:calendar id="horarioFinal" required="true" requiredMessage="Selecione o horário final" value="#{sisEventosBean.evento.horario_fim}" locale="pt" pattern="HH:mm" timeOnly="true"/>
 
                             <p:outputLabel for="categoriaEvt" value="Categoria:"/>
-                            <p:selectOneMenu id="categoriaEvt" value="#{sisEventosBean.idCategoria}"  required="true" requiredMessage="Selecione uma Categoria">
+                            <p:selectOneMenu id="categoriaEvt" value="#{sisEventosBean.idCategoria}" editable="true" required="true" requiredMessage="Selecione uma Categoria">
                                 <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
                             </p:selectOneMenu>
 

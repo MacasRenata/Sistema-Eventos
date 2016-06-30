@@ -18,7 +18,17 @@
                             <h:outputLabel value="Arquivo enviado:"/>
                             <br></br>
                             <h:outputLabel value="#{sisEventosBean.inscricao.arquivo}"/>
+                            <br></br>
                             
+                            <h:form enctype="multipart/form-data">
+                                <p:fileUpload fileUploadListener="#{sisEventosBean.subirArquivo}" sizeLimit="12000000" 
+                                              invalidSizeMessage="O arquivo deve ter o tamanho máximo de 12MB."
+                                              allowTypes="/(\.|\/)(doc?x|DOC?X|TXT|txt|PDF|pdf)$/" invalidFileMessage="O arquivo deve ser .doc, .txt, ou pdf."                                 
+                                              fileLimit="1"  
+                                              label="Escolher Arquivo" auto="true"/>
+                            </h:form>        
+                      <!--      <p:messages  severity="info" escape="false" showDetail="true" autoUpdate="true"/>   -->                        
+
                             <h:panelGroup> 
                                 <p:commandButton ajax="false" value="Editar" id="inscricaoEvento"  action="#{sisEventosBean.editarInscricao}"  icon="ui-icon-disk" >
                                 </p:commandButton>

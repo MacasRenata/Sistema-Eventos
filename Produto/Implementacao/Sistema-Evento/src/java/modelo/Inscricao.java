@@ -24,6 +24,7 @@ public class Inscricao implements Serializable {
     
     private String arquivo;
     private String caminho;
+    private boolean ouvinte = false;
 
     @ManyToOne
     @JoinColumn(name="id_usuario")
@@ -83,5 +84,19 @@ public class Inscricao implements Serializable {
      */
     public void setCaminho(String caminho) {
         this.caminho = caminho;
+    }
+
+    /**
+     * @return the ouvinte
+     */
+    public boolean isOuvinte() {
+        return ouvinte;
+    }
+
+    /**
+     * @param ouvinte the ouvinte to set
+     */
+    public void setOuvinte(boolean ouvinte) {
+        this.ouvinte = ouvinte;
     }
 }

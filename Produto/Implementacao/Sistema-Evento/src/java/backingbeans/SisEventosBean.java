@@ -103,14 +103,16 @@ public class SisEventosBean {
                 }
             }
         }
-        
-        for (int index = 0; index < listaInscricao.size(); index++){
-            for (int x = 0; x < listaEventos.size();x++){
-                if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()){
-                        this.listaEventos.remove(listaEventos.get(x));
+        if (this.verificarSessao()){
+            for (int index = 0; index < listaInscricao.size(); index++){
+                for (int x = 0; x < listaEventos.size();x++){
+                    if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()){
+                            this.listaEventos.remove(listaEventos.get(x));
+                    }
                 }
             }
         }
+        
         
         
             
@@ -136,14 +138,15 @@ public class SisEventosBean {
                 }
             }
         }
-        
-        for (int index = 0; index < listaInscricao.size(); index++){
-            for (int x = 0; x < listaEventos.size();x++){
-                if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()){
-                        this.listaEventos.remove(listaEventos.get(x));
+        if (this.verificarSessao()){
+            for (int index = 0; index < listaInscricao.size(); index++){
+                for (int x = 0; x < listaEventos.size();x++){
+                    if (listaEventos.get(x).getId_evento() == listaInscricao.get(index).getEvento().getId_evento()){
+                            this.listaEventos.remove(listaEventos.get(x));
+                    }
                 }
             }
-        }
+        }        
             
         return listaEventos;
     }
@@ -433,15 +436,24 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
 
-        Inscricao inscr = new Inscricao();
+        Inscricao inscr = inscricao;
+        
         inscr.setArquivo(this.getInscricao().getArquivo());
         inscr.setCaminho(this.getInscricao().getCaminho());
-        inscricaoDao.incluir(inscr);
-
+        if (evento.isSubmissao() && this.getInscricao().getArquivo() == null){
+            msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
+                "Para garantir sua inscrição, você tem até " + evento.getData_final_inscricao() + " para enviar seu arquivo" , "");
+            inscr.setOuvinte(true);
+            context.addMessage(null, msg);
+        } else {
+            inscr.setOuvinte(false);
+            
+        }
+        inscricaoDao.alterar(inscr);
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Inscrição atualizada com sucesso!", "");
         context.addMessage(null, msg);
-        return null;
+        return "meusEventos";
 }
       
     public String iniciaInscricaoEvento(int id_user, int id_evt) {
@@ -461,7 +473,14 @@ public class SisEventosBean {
         
     public String iniciaEditarInscricaoEvento(int id) {
         inscricao = inscricaoDao.carregar(id);
-        return "editarInscricao";
+        String retorno = "editarInscricao";
+        if (id != 0){
+            retorno = "editarInscricao";
+            if (inscricao.getEvento().isSubmissao()){
+                retorno = "editarInscricaoAnexo";
+            }
+        }
+        return retorno;  
 
     }
 
@@ -761,18 +780,21 @@ public class SisEventosBean {
             inscr.setCaminho(this.getInscricao().getCaminho());
             inscr.setUsuario(usuarioLogado);
             inscr.setEvento(evento);
-            inscricaoDao.incluir(inscr);
-
-            msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                    "Inscrição realizada com sucesso!", "");
-            context.addMessage(null, msg);
             if (evento.isSubmissao() && this.getInscricao().getArquivo() == null){
                 msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                    "Voce tem ate " + evento.getData_final_inscricao() + " para enviar seu arquivo" , "");
-            context.addMessage(null, msg);
+                    "Para garantir sua inscrição, você tem até " + evento.getData_final_inscricao() + " para enviar seu arquivo" , "");
+                inscr.setOuvinte(true);
+                context.addMessage(null, msg);
             }
+            
+            inscricaoDao.incluir(inscr);
+
+            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                    "Inscrição realizada com sucesso!", "");
+            context.addMessage(null, msg);
+            
         }
-        return null;
+        return "meusEventos";
     }
    
     public void subirArquivo(FileUploadEvent event) {
