@@ -30,7 +30,7 @@
                 <h:form>
                     <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="1">
-                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricao}" var="evento">
+                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoComVagas}" var="evento">
                             <p:column headerText="Título">
                             #{evento.titulo}
                             </p:column>
@@ -67,9 +67,68 @@
                                 </p:commandLink>
                             </p:column>
                             <p:column>
-                                <p:commandLink ajax="false">
+                                 Evento sem Inscrições
+                            </p:column>
+                        </p:dataTable> 
+                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoEsgotada}" var="evento">
+                            <p:column>
+                            #{evento.titulo}
+                            </p:column>
+                            <p:column>
+                            #{evento.local_evento}
+                            </p:column>
+                            <p:column>
+                            #{evento.categoria.nome}
+                            </p:column>
+                            <p:column>
+                                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
+                                    <h:outputText value="Detalhes"/>
                                 </p:commandLink>
                             </p:column>
+                            <p:column>
+                                 Inscrição Esgotada
+                            </p:column>
+                            
+                        </p:dataTable> 
+                        <p:dataTable value="#{sisEventosBean.listaEventosForaDasInscricoes}" var="evento">
+                            <p:column>
+                            #{evento.titulo}
+                            </p:column>
+                            <p:column>
+                            #{evento.local_evento}
+                            </p:column>
+                            <p:column>
+                            #{evento.categoria.nome}
+                            </p:column>
+                            <p:column>
+                                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
+                                    <h:outputText value="Detalhes"/>
+                                </p:commandLink>
+                            </p:column>
+                            <p:column>
+                                 Fora do período de inscrições
+                            </p:column>
+                            
+                        </p:dataTable> 
+                        <p:dataTable value="#{sisEventosBean.listaEventosJaRealizados}" var="evento">
+                            <p:column>
+                            #{evento.titulo}
+                            </p:column>
+                            <p:column>
+                            #{evento.local_evento}
+                            </p:column>
+                            <p:column>
+                            #{evento.categoria.nome}
+                            </p:column>
+                            <p:column>
+                                <p:commandLink ajax="false" action="#{sisEventosBean.consultarEvento(evento.id_evento)}" >
+                                    <h:outputText value="Detalhes"/>
+                                </p:commandLink>
+                            </p:column>
+                            <p:column>
+                                 Evento já realizado
+                            </p:column>
+                            
                         </p:dataTable> 
                     </h:panelGrid>   
                 </h:form>

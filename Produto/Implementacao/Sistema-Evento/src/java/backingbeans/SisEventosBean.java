@@ -10,8 +10,6 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -81,8 +79,106 @@ public class SisEventosBean {
         return listaEventos;
     }
     
+    public List<Evento> getListaEventosComInscricaoComVagas() {
+        List<Evento> listaEventos1;
+        Date date = new Date();
+        Date hora = new Date();
+        
+        
+        listaEventos.clear();
+        listaEventos1 = evtDao.listarComInscricao();
+        
+        ArrayList<Integer> qtd = new ArrayList<Integer>();
+        
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
+        }
+       
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            if (date.before(listaEventos1.get(index).getData_final())){
+                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()> qtd.get(index) && date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())){
+                    this.listaEventos.add(listaEventos1.get(index));
+                }
+            }
+        }
+            
+        return listaEventos;
+    }
+    
+    public List<Evento> getListaEventosComInscricaoEsgotada() {
+        List<Evento> listaEventos1;
+        Date date = new Date();
+        listaEventos.clear();
+        listaEventos1 = evtDao.listarComInscricao();
+        
+        ArrayList<Integer> qtd = new ArrayList<Integer>();
+        
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
+        }
+       
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            if (date.before(listaEventos1.get(index).getData_final())){
+                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()<= qtd.get(index) ){
+                    this.listaEventos.add(listaEventos1.get(index));
+                }
+            }
+        }
+            
+        return listaEventos;
+    }
+    
+    public List<Evento> getListaEventosForaDasInscricoes() {
+        List<Evento> listaEventos1;
+        Date date = new Date();
+        listaEventos.clear();
+        listaEventos1 = evtDao.listarComInscricao();
+        
+        ArrayList<Integer> qtd = new ArrayList<Integer>();
+        
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
+        }
+       
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            if (date.before(listaEventos1.get(index).getData_final())){
+                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()> qtd.get(index)){
+                    if (date.before(listaEventos1.get(index).getData_inicial_inscricao()) || date.after(listaEventos1.get(index).getData_final_inscricao()) ){
+                        this.listaEventos.add(listaEventos1.get(index));
+                    }
+                }
+            }
+        }
+        return listaEventos;
+    }
+    
+    
+    public List<Evento> getListaEventosJaRealizados() {
+        List<Evento> listaEventos1;
+        Date date = new Date();
+        listaEventos.clear();
+        listaEventos1 = evtDao.listar();
+        
+       
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            if (date.after(listaEventos1.get(index).getData_final())){
+                this.listaEventos.add(listaEventos1.get(index));
+            }
+        }
+        return listaEventos;
+    }
+    
     public List<Evento> getListaEventosSemInscricao() {
         listaEventos = evtDao.listarSemInscricao();
+        List<Evento> listaEventos1;
+        listaEventos1 = evtDao.listarSemInscricao();
+        Date date = new Date();
+        
+        for (int index = 0 ; index < listaEventos1.size(); index++){
+            if (date.after(listaEventos1.get(index).getData_final())){
+                    this.listaEventos.remove(listaEventos.get(index));
+            }
+        }
         return listaEventos;
     }
     

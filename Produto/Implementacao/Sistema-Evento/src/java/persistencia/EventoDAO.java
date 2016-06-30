@@ -63,5 +63,12 @@ public class EventoDAO {
         List results = query.list();
         return results;
     }
+    
+    public List<Evento> listarComInscricaoEncerrada() {
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        Query query = sessao.createQuery("FROM Evento WHERE inscricoes = '1'");
+        List results = query.list();
+        return results;
+    }
 
 }
