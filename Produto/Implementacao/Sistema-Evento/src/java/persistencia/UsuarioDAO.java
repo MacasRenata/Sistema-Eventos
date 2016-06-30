@@ -46,7 +46,7 @@ public class UsuarioDAO {
     public Usuario verificarLogin(Usuario usuarioLogado) throws Exception {
 		Usuario us = null;
 		try {
-			sessao = HibernateUtil.getSessionFactory().openSession();
+			//sessao = HibernateUtil.getSessionFactory().openSession();
 			String hql = "FROM Usuario WHERE email = '" + usuarioLogado.getEmail()
 					+ "' and senha = '" + usuarioLogado.getSenha() + "'";
 			Query query = sessao.createQuery(hql);
@@ -72,7 +72,7 @@ public class UsuarioDAO {
     }
     
     public Usuario buscarUsuario(String email) {
-        sessao = HibernateUtil.getSessionFactory().openSession();
+        //sessao = HibernateUtil.getSessionFactory().openSession();
         Query query = sessao.createQuery("from Usuario u where u.email = :email");
         Usuario u = (Usuario) query.setString("email", email).uniqueResult();
 
@@ -83,7 +83,7 @@ public class UsuarioDAO {
         public Usuario verificarSenha(Usuario usuarioLogado) throws Exception {
 		Usuario us = null;
 		try {
-			sessao = HibernateUtil.getSessionFactory().openSession();
+			//sessao = HibernateUtil.getSessionFactory().openSession();
 			String hql = "FROM Usuario WHERE senha = '" + usuarioLogado.getSenha() + "'";
 			Query query = sessao.createQuery(hql);
 
@@ -113,7 +113,7 @@ public class UsuarioDAO {
         public Usuario verificarEmail(String email) {
 		Usuario us = null;
 		
-			sessao = HibernateUtil.getSessionFactory().openSession();
+			//sessao = HibernateUtil.getSessionFactory().openSession();
                         String hql = "FROM Usuario WHERE email = '" + email + "'";
 			Query query = sessao.createQuery(hql);
 
@@ -127,7 +127,7 @@ public class UsuarioDAO {
         	    public Usuario verificarAdmin(Usuario usuario) throws Exception {
 		Usuario us = null;
 		try {
-			sessao = HibernateUtil.getSessionFactory().openSession();
+			//sessao = HibernateUtil.getSessionFactory().openSession();
                         String hql = "FROM Usuario WHERE admin = '" + usuario.getAdmin() + "'";
 			Query query = sessao.createQuery(hql);
 
@@ -143,7 +143,7 @@ public class UsuarioDAO {
         public Usuario recuperarSenha(Usuario usuarioLogado) throws Exception {
             Usuario us = null;
             try {
-			sessao = HibernateUtil.getSessionFactory().openSession();
+			//sessao = HibernateUtil.getSessionFactory().openSession();
                                     int rowCount = 0;
                                     Transaction tx = sessao.beginTransaction();
                                     String sql = "update Usuario set trocasenha = :trocasenha where email = :email";
