@@ -17,9 +17,7 @@
                             
                             <p:outputLabel for="txtSenhaUsuario"  value="Digite a nova senha de #{sisEventosBean.usuario.nome}" style="color:gray;font-weight:bold;margin-right:10px"/>
                             <p:password id="txtSenhaUsuario" required="true" maxlength="60" size="20" value="#{sisEventosBean.usuario.senhaNova}"/>
-                            <f:validateLength minimum="6" />
-                            <f:ajax event="blur" render="m_senha"/>
-                            <h:message id="m_senha" for="txtSenhaUsuario" />
+                            
                             
                         </h:panelGrid>
                         <br></br>

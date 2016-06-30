@@ -103,12 +103,13 @@ public class SisEventosBean {
                 }
             }
         }
-        if (listaEventos.size()>0){
-            for (int index = 0; index < listaInscricao.size(); index++){
-                        if (listaEventos.get(index).getId_evento() == listaInscricao.get(index).getEvento().getId_evento()){
-                            this.listaEventos.remove(listaEventos.get(index));
+        
+        for (int index = 0; index < listaInscricao.size(); index++){
+            for (int x = 0; x < listaEventos.size();x++){
+                if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()){
+                        this.listaEventos.remove(listaEventos.get(x));
+                }
             }
-        }
         }
         
         
@@ -132,6 +133,14 @@ public class SisEventosBean {
             if (date.before(listaEventos1.get(index).getData_final())){
                 if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()<= qtd.get(index) ){
                     this.listaEventos.add(listaEventos1.get(index));
+                }
+            }
+        }
+        
+        for (int index = 0; index < listaInscricao.size(); index++){
+            for (int x = 0; x < listaEventos.size();x++){
+                if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()){
+                        this.listaEventos.remove(listaEventos.get(x));
                 }
             }
         }
