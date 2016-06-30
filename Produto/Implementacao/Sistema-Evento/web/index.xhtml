@@ -30,7 +30,7 @@
                 <h:form>
                     <p:growl id="growl" life="2000"/>
                     <h:panelGrid columns="1">
-                        <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao" rendered="#{sisEventosBean.verificarSessao()}">
+                        <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao" rendered="#{empty sisEventosBean.listaInscricoesUsuario eq false}">
                             <f:facet name="header">
                                 Meus Eventos
                             </f:facet>
@@ -55,7 +55,7 @@
                                 </p:commandLink>
                             </p:column>
                         </p:dataTable>
-                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoComVagas}" var="evento">
+                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoComVagas}" rendered="#{empty sisEventosBean.listaEventosComInscricaoComVagas eq false}" var="evento">
                             <f:facet name="header">
                                 Eventos com inscrições abertas
                             </f:facet>
@@ -79,7 +79,7 @@
                                 </p:commandLink>
                             </p:column>
                         </p:dataTable>
-                        <p:dataTable value="#{sisEventosBean.listaEventosSemInscricao}" var="evento">
+                        <p:dataTable value="#{sisEventosBean.listaEventosSemInscricao}" rendered="#{empty sisEventosBean.listaEventosSemInscricao eq false}" var="evento">
                             <f:facet name="header">
                                 Eventos sem inscrição
                             </f:facet>
@@ -101,7 +101,7 @@
                                     Evento sem Inscrições
                             </p:column>
                         </p:dataTable> 
-                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoEsgotada}" var="evento">
+                        <p:dataTable value="#{sisEventosBean.listaEventosComInscricaoEsgotada}" rendered="#{empty sisEventosBean.listaEventosComInscricaoEsgotada eq false}" var="evento">
                             <f:facet name="header">
                                     Eventos com inscrições esgotadas
                             </f:facet>
@@ -124,7 +124,7 @@
                             </p:column>
                             
                         </p:dataTable> 
-                        <p:dataTable value="#{sisEventosBean.listaEventosForaDasInscricoes}" var="evento">
+                        <p:dataTable value="#{sisEventosBean.listaEventosForaDasInscricoes}" rendered="#{empty sisEventosBean.listaEventosForaDasInscricoes eq false}" var="evento">
                             <f:facet name="header">
                                     Eventos fora do período de inscrições
                             </f:facet>
@@ -147,7 +147,7 @@
                             </p:column>
                             
                         </p:dataTable> 
-                        <p:dataTable value="#{sisEventosBean.listaEventosJaRealizados}" var="evento">
+                        <p:dataTable value="#{sisEventosBean.listaEventosJaRealizados}" rendered="#{empty sisEventosBean.listaEventosJaRealizados eq false}" var="evento">
                             <f:facet name="header">
                                     Eventos já realizados
                             </f:facet>

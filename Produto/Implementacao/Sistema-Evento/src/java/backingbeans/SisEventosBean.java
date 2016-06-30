@@ -113,9 +113,6 @@ public class SisEventosBean {
             }
         }
         
-        
-        
-            
         return listaEventos;
     }
     
@@ -146,7 +143,7 @@ public class SisEventosBean {
                     }
                 }
             }
-        }        
+        }
             
         return listaEventos;
     }

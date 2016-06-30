@@ -17,7 +17,7 @@
                 <h:form rendered="#{sisEventosBean.verificarSessao()}">
                         <p:growl id="growl" life="2000"/>
                         <h:panelGrid columns="2">
-                            <p:dataTable value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao">
+                            <p:dataTable emptyMessage="Você não está inscrito em nenhum evento!" value="#{sisEventosBean.listaInscricoesUsuario}" var="inscricao">
                                 <p:column headerText="Título">
                                     #{inscricao.evento.titulo}
                                 </p:column>
