@@ -47,9 +47,6 @@
                             <p:outputLabel for="categoriaEvento" value="Categoria:"/>
                             <h:outputText id="categoriaEvento" value="#{sisEventosBean.evento.categoria.nome}" style="width:125px"/>
 
-                            <p:outputLabel for="areaEvento" value="Área de conhecimento:"/>
-                            <h:outputText id="areaEvento" value="#{sisEventosBean.evento.area_evento}" style="width:125px"/>
-                            
                         </h:panelGrid>
 
                         <h:panelGrid  columns="2" id="painel_inscricoes"  rendered="#{sisEventosBean.evento.inscricoes eq true}">

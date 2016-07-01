@@ -15,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.annotation.WebServlet;
+import modelo.AreaConhecimento;
 import modelo.Categoria;
 import modelo.Evento;
 import modelo.Inscricao;
@@ -29,6 +30,7 @@ import org.primefaces.event.ToggleEvent;
 import persistencia.InscricaoDAO;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
+import persistencia.AreaConhecimentoDAO;
 import persistencia.CategoriaDAO;
 
 @ManagedBean
@@ -41,26 +43,37 @@ public class SisEventosBean {
     private Usuario usuario = new Usuario();
     private Usuario usuarioLogado = new Usuario();
     private Inscricao inscricao = new Inscricao();
+    private Categoria categoria = new Categoria();
+    private AreaConhecimento areaC = new AreaConhecimento();
+
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
     private List<Inscricao> listaInscricao;
-    private List<Writer> listaPagina;
-    private UploadedFile file;
-    
-    private Long idCategoria;
     private List<Categoria> categorias;
-    private Categoria categoria = new Categoria();
-    
+    private List<AreaConhecimento> listaAreasC;
+
+
+    private List<Writer> listaPagina;
+
+    private UploadedFile file;
+
+    private int idCategoria;
+  
+    private int[] idAreasC;
+
     private final EventoDAO evtDao = new EventoDAO();
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
     private final InscricaoDAO inscricaoDao = new InscricaoDAO();
+    private final CategoriaDAO categoriaDao = new CategoriaDAO();
+    private final AreaConhecimentoDAO areaConhecimentoDao = new AreaConhecimentoDAO();
 
     public SisEventosBean() {
         listaEventos = evtDao.listar();
         listaUsuarios = usuarioDao.listar();
         listaInscricao = inscricaoDao.listar();
+        listaAreasC = areaConhecimentoDao.listar();
     }
-    
+
     public Evento getEvento() {
         return evento;
     }
@@ -68,102 +81,107 @@ public class SisEventosBean {
     public void setEvento(Evento evento) {
         this.evento = evento;
     }
+   
+    public List<AreaConhecimento> getListaAreaConhecimentos() {
+        this.listaAreasC = areaConhecimentoDao.listar();
+        return listaAreasC;
+    }
 
     public List<Evento> getListaEventos() {
         this.listaEventos = evtDao.listar();
         return listaEventos;
     }
-    
+
     public List<Evento> getListaEventosComInscricao() {
         listaEventos = evtDao.listarComInscricao();
         return listaEventos;
     }
-    
+
     public List<Evento> getListaEventosComInscricaoComVagas() {
         List<Evento> listaEventos1;
         Date date = new Date();
         //listaInscricao.clear();
-        if (this.verificarSessao()){
+        if (this.verificarSessao()) {
             listaInscricao = inscricaoDao.listarPorUsuario(usuarioLogado.getId_user());
         }
 
         listaEventos.clear();
         listaEventos1 = evtDao.listarComInscricao();
-        
+
         ArrayList<Integer> qtd = new ArrayList<Integer>();
-        
-        for (int index = 0 ; index < listaEventos1.size(); index++){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
             qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
         }
-       
-        for (int index = 0 ; index < listaEventos1.size(); index++){
-            if (date.before(listaEventos1.get(index).getData_final())){
-                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()> qtd.get(index) && date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
+            if (date.before(listaEventos1.get(index).getData_final())) {
+                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos() > qtd.get(index) && date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())) {
                     this.listaEventos.add(listaEventos1.get(index));
                 }
             }
         }
-        if (this.verificarSessao()){
-            for (int index = 0; index < listaInscricao.size(); index++){
-                for (int x = 0; x < listaEventos.size();x++){
-                    if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()){
-                            this.listaEventos.remove(listaEventos.get(x));
+        if (this.verificarSessao()) {
+            for (int index = 0; index < listaInscricao.size(); index++) {
+                for (int x = 0; x < listaEventos.size(); x++) {
+                    if (listaEventos.get(x).getId_evento() == listaInscricao.get(x).getEvento().getId_evento()) {
+                        this.listaEventos.remove(listaEventos.get(x));
                     }
                 }
             }
         }
-        
+
         return listaEventos;
     }
-    
+
     public List<Evento> getListaEventosComInscricaoEsgotada() {
         List<Evento> listaEventos1;
         Date date = new Date();
         listaEventos.clear();
         listaEventos1 = evtDao.listarComInscricao();
-        
+
         ArrayList<Integer> qtd = new ArrayList<Integer>();
-        
-        for (int index = 0 ; index < listaEventos1.size(); index++){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
             qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
         }
-       
-        for (int index = 0 ; index < listaEventos1.size(); index++){
-            if (date.before(listaEventos1.get(index).getData_final())){
-                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()<= qtd.get(index) ){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
+            if (date.before(listaEventos1.get(index).getData_final())) {
+                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos() <= qtd.get(index)) {
                     this.listaEventos.add(listaEventos1.get(index));
                 }
             }
         }
-        if (this.verificarSessao()){
-            for (int index = 0; index < listaInscricao.size(); index++){
-                for (int x = 0; x < listaEventos.size();x++){
-                    if (listaEventos.get(x).getId_evento() == listaInscricao.get(index).getEvento().getId_evento()){
-                            this.listaEventos.remove(listaEventos.get(x));
+        if (this.verificarSessao()) {
+            for (int index = 0; index < listaInscricao.size(); index++) {
+                for (int x = 0; x < listaEventos.size(); x++) {
+                    if (listaEventos.get(x).getId_evento() == listaInscricao.get(index).getEvento().getId_evento()) {
+                        this.listaEventos.remove(listaEventos.get(x));
                     }
                 }
             }
         }
-            
+
         return listaEventos;
     }
-    
+
     public List<Evento> getListaEventosForaDasInscricoes() {
         List<Evento> listaEventos1;
         Date date = new Date();
         listaEventos.clear();
         listaEventos1 = evtDao.listarComInscricao();
-        
+
         ArrayList<Integer> qtd = new ArrayList<Integer>();
-        
-        for (int index = 0 ; index < listaEventos1.size(); index++){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
             qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
         }
-       
-        for (int index = 0 ; index < listaEventos1.size(); index++){
-            if (date.before(listaEventos1.get(index).getData_final())){
-                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos()> qtd.get(index)){
-                    if (date.before(listaEventos1.get(index).getData_inicial_inscricao()) || date.after(listaEventos1.get(index).getData_final_inscricao()) ){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
+            if (date.before(listaEventos1.get(index).getData_final())) {
+                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos() > qtd.get(index)) {
+                    if (date.before(listaEventos1.get(index).getData_inicial_inscricao()) || date.after(listaEventos1.get(index).getData_final_inscricao())) {
                         this.listaEventos.add(listaEventos1.get(index));
                     }
                 }
@@ -171,37 +189,35 @@ public class SisEventosBean {
         }
         return listaEventos;
     }
-    
-    
+
     public List<Evento> getListaEventosJaRealizados() {
         List<Evento> listaEventos1;
         Date date = new Date();
         listaEventos.clear();
         listaEventos1 = evtDao.listar();
-        
-       
-        for (int index = 0 ; index < listaEventos1.size(); index++){
-            if (date.after(listaEventos1.get(index).getData_final())){
+
+        for (int index = 0; index < listaEventos1.size(); index++) {
+            if (date.after(listaEventos1.get(index).getData_final())) {
                 this.listaEventos.add(listaEventos1.get(index));
             }
         }
         return listaEventos;
     }
-    
+
     public List<Evento> getListaEventosSemInscricao() {
         listaEventos = evtDao.listarSemInscricao();
         List<Evento> listaEventos1;
         listaEventos1 = evtDao.listarSemInscricao();
         Date date = new Date();
-        
-        for (int index = 0 ; index < listaEventos.size(); index++){
-            if (date.after(listaEventos.get(index).getData_final())){
-                    this.listaEventos.remove(listaEventos.get(index));
+
+        for (int index = 0; index < listaEventos.size(); index++) {
+            if (date.after(listaEventos.get(index).getData_final())) {
+                this.listaEventos.remove(listaEventos.get(index));
             }
         }
         return listaEventos;
     }
-    
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -222,19 +238,31 @@ public class SisEventosBean {
         return listaUsuarios;
     }
 
-     public Long getIdCategoria() {
+    public int getIdCategoria() {
         return idCategoria;
     }
-    
-    public void setIdCategoria(Long idCategoria) {
+
+    public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
+    }
+
+    public int[] getIdAreasC() {
+        return idAreasC;
+    }
+
+    public void setIdAreasC(int[] idAreasC) {
+        this.idAreasC = idAreasC;
     }
 
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        CategoriaDAO categoriaDao = new CategoriaDAO();
+        //  CategoriaDAO categoriaDao = new CategoriaDAO();
         evento.setCategoria(categoriaDao.carregar(idCategoria));
+        
+        for (int id : idAreasC) {
+            evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
+        }
         evtDao.incluir(evento);
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -242,44 +270,40 @@ public class SisEventosBean {
         // evento = new Evento();
         context.addMessage(null, msg);
 
-       // Gravar arquivo html de evento criado dir\eventos
+        // Gravar arquivo html de evento criado dir\eventos
         //trocar o diretorio
-        
         String caminho1 = "C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos/";
-        
-         //writer2 = new PrintWriter(new FileWriter(fileStem + ".html"));
-         
-         
+
+        //writer2 = new PrintWriter(new FileWriter(fileStem + ".html"));
         File file = new File(caminho1 + getEvento().getTitulo() + ".html");
-           file.getParentFile().mkdirs();
+        file.getParentFile().mkdirs();
 
         PrintWriter printWriter = new PrintWriter(file);
 
         //for (File files : File.listRoots()){
-        
         printWriter.print("<html>");
         printWriter.print("<head>");
-        printWriter.print("<div background-color:black;\n" +
-"    color:white;\n" +
-"    text-align:center;\n" +
-"    padding:5px>");
+        printWriter.print("<div background-color:black;\n"
+                + "    color:white;\n"
+                + "    text-align:center;\n"
+                + "    padding:5px>");
         printWriter.print("<title>Sistema Evento</title>");
         printWriter.print(evento.getImagem());
         printWriter.print("</div>");
-        printWriter.print("</head>"); 
-        printWriter.print("<body>"); 
-        printWriter.print("<div line-height:30px;\n" +
-"    background-color:#eeeeee;\n" +
-"    height:300px;\n" +
-"    width:100px;\n" +
-"    float:left;\n" +
-"    padding:5px>");
+        printWriter.print("</head>");
+        printWriter.print("<body>");
+        printWriter.print("<div line-height:30px;\n"
+                + "    background-color:#eeeeee;\n"
+                + "    height:300px;\n"
+                + "    width:100px;\n"
+                + "    float:left;\n"
+                + "    padding:5px>");
         printWriter.print(evento.getId_evento());
         printWriter.print(evento.getTitulo());
         printWriter.print("</div>");
-        printWriter.print("<div width:350px;\n" +
-"    float:left;\n" +
-"    padding:10px;>");
+        printWriter.print("<div width:350px;\n"
+                + "    float:left;\n"
+                + "    padding:10px;>");
         printWriter.print("<h1> Informações sobre o Evento </h1>");
         printWriter.print("<p> Data Inicial:");
         printWriter.print(evento.getData_inicial());
@@ -314,35 +338,30 @@ public class SisEventosBean {
         printWriter.print("</p>");
         printWriter.print("</br>");
         printWriter.print("<p> Categoria:");
-        printWriter.print(evento.getArea_evento());
+        //    printWriter.print(evento.getArea_evento());
         printWriter.print("</p>");
         printWriter.print("</br>");
         printWriter.print("</div>");
-        
-        printWriter.print("<div background-color:black;\n" +
-"    color:white;\n" +
-"    clear:both;\n" +
-"    text-align:center;\n" +
-"    padding:5px; >");
+
+        printWriter.print("<div background-color:black;\n"
+                + "    color:white;\n"
+                + "    clear:both;\n"
+                + "    text-align:center;\n"
+                + "    padding:5px; >");
         printWriter.print("Copyright © sistemaeventos.com");
         printWriter.print("</div>");
-        
+
         printWriter.print("</body>");
         printWriter.print("</html>");
-        
+
         //o método flush libera a escrita no arquivo
-            printWriter.flush();
+        printWriter.flush();
 
-            //No final precisamos fechar o arquivo
-            printWriter.close();
+        //No final precisamos fechar o arquivo
+        printWriter.close();
 
-       
-     
         //writer.close();
-     
         //}
-
-
         return "listaEventos";
     }
 
@@ -354,7 +373,7 @@ public class SisEventosBean {
     //Para ir para a página de alteração do Evento selecionado à partir de Editar, em detalhes do Evento// 
     public String iniciaAlteracaoEvento(int id) {
         evento = evtDao.carregar(id);
-     //   idCategoria = evento.getCategoria().getId();
+        //   idCategoria = evento.getCategoria().getId();
         return "alterarEvento";
     }
 
@@ -376,67 +395,67 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         UsuarioDAO usuDAO = new UsuarioDAO();
-        
+
         String encript = DigestUtils.shaHex(this.usuario.getSenha());
-        
+
         this.usuario.setSenha(encript);
         this.usuario.setSenhaNova(encript);
-            usuDAO.incluir(this.usuario);
-            InetAddress ia = null;
+        usuDAO.incluir(this.usuario);
+        InetAddress ia = null;
+        try {
+            ia = InetAddress.getLocalHost();
+            HtmlEmail email = new HtmlEmail();
+
+            email.setHostName("smtp.gmail.com");
+            //email.setSmtpPort(465);
+            email.setSslSmtpPort("587");
+            email.setStartTLSRequired(true);
+            email.setSSLOnConnect(true);
+            email.setSSLCheckServerIdentity(true);
+
+            email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos2016"));
+
             try {
-                ia = InetAddress.getLocalHost();
-                HtmlEmail email = new HtmlEmail();
+                email.setFrom("eventos@gambarra.com.br");
+                email.setDebug(true);
+                email.setSubject("Senha do sistema de eventos");
+                //email.setMsg("Sua senha é: " + usr.getSenha());
 
-                email.setHostName("smtp.gmail.com");
-                //email.setSmtpPort(465);
-                email.setSslSmtpPort("587");
-                email.setStartTLSRequired(true);
-                email.setSSLOnConnect(true);
-                email.setSSLCheckServerIdentity(true);
+                email.setHtmlMsg("<html>"
+                        + "<head>"
+                        + "<title>Recuperação de Senha</title>"
+                        + "</head>"
+                        + "<body>"
+                        + "<div style='font-size: 14px'>"
+                        + "<p>Olá " + this.usuario.getNome()
+                        + "</p>"
+                        + "<p>Bem Vindo ao Sistema de Eventos - DEV2"
+                        + "</p>"
+                        + "<p>Para acessar o sistema clique no link "
+                        + "<a href=\"http://" + ia.getHostAddress() + ":8080/Sistema-Evento/"
+                        + "</p>"
+                        + "</div>"
+                        + "<p> Antenciosamente <br/> Sistema de Eventos </p> "
+                        + "</body>"
+                        + "</html>");
+                email.addTo(this.usuario.getEmail());
+                email.send();
 
-                email.setAuthenticator(new DefaultAuthenticator("eventos@gambarra.com.br", "eventos2016"));
-
-                try {
-                    email.setFrom("eventos@gambarra.com.br");
-                    email.setDebug(true);
-                    email.setSubject("Senha do sistema de eventos");
-                    //email.setMsg("Sua senha é: " + usr.getSenha());
-
-                    email.setHtmlMsg("<html>"
-                            + "<head>"
-                            + "<title>Recuperação de Senha</title>"
-                            + "</head>"
-                            + "<body>"
-                            + "<div style='font-size: 14px'>"
-                            + "<p>Olá " + this.usuario.getNome()
-                            + "</p>"
-                            + "<p>Bem Vindo ao Sistema de Eventos - DEV2"
-                            + "</p>"
-                            + "<p>Para acessar o sistema clique no link "
-                            + "<a href=\"http://" + ia.getHostAddress() + ":8080/Sistema-Evento/"
-                            + "</p>"
-                            + "</div>"
-                            + "<p> Antenciosamente <br/> Sistema de Eventos </p> "
-                            + "</body>"
-                            + "</html>");
-                    email.addTo(this.usuario.getEmail());
-                    email.send();
-
-                } catch (EmailException e) {
-                    e.printStackTrace();
-                }
-
-                msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                        "Usuario cadastrado com Sucesso!", "");
-                // usuario = new Usuario();
-                context.addMessage(null, msg);
-                usuario = new Usuario();
-                return "usuario";
-            } catch (Exception e) {
-                throw e;
+            } catch (EmailException e) {
+                e.printStackTrace();
             }
+
+            msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                    "Usuario cadastrado com Sucesso!", "");
+            // usuario = new Usuario();
+            context.addMessage(null, msg);
+            usuario = new Usuario();
+            return "usuario";
+        } catch (Exception e) {
+            throw e;
         }
-    
+    }
+
     public String iniciaAlteracaoUsuario(int id) {
         usuario = usuarioDao.carregar(id);
         return "alterarUsuario";
@@ -451,18 +470,18 @@ public class SisEventosBean {
         usuarioLogado = usuarioDao.carregar(id);
         return "meusEventos";
     }
-    
+
     public List<Usuario> getListaUsuariaos() {
         return listaUsuarios;
     }
-    
+
     public List<Inscricao> getListaInscricoesUsuario() {
         //List<Inscricao> lista = new List<InscricaoDao>();
         //Usuario u = usuarioDao.carregar(usuarioLogado.getId_user());
         listaInscricao = inscricaoDao.listarPorUsuario(usuarioLogado.getId_user());
         return listaInscricao;
     }
-    
+
     public String desfazerInscricao(int id_inscricao) {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg = null;
@@ -470,64 +489,63 @@ public class SisEventosBean {
         dao.excluir(dao.carregar(id_inscricao));
         listaUsuarios = usuarioDao.listar();
         listaInscricao = inscricaoDao.listar();
-        
+
         //private List<Inscricao> listaInscricao;
-        
-        msg = new FacesMessage(FacesMessage.SEVERITY_INFO, 
-                                "Inscrição desfeita com sucesso!", "");
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Inscrição desfeita com sucesso!", "");
         context.addMessage(null, msg);
         return null;
-}
-   
-      public String editarInscricao() {
+    }
+
+    public String editarInscricao() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
 
         Inscricao inscr = inscricao;
-        
+
         inscr.setArquivo(this.getInscricao().getArquivo());
         inscr.setCaminho(this.getInscricao().getCaminho());
-        if (evento.isSubmissao() && this.getInscricao().getArquivo() == null){
+        if (evento.isSubmissao() && this.getInscricao().getArquivo() == null) {
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                "Para garantir sua inscrição, você tem até " + evento.getData_final_inscricao() + " para enviar seu arquivo" , "");
+                    "Para garantir sua inscrição, você tem até " + evento.getData_final_inscricao() + " para enviar seu arquivo", "");
             inscr.setOuvinte(true);
             context.addMessage(null, msg);
         } else {
             inscr.setOuvinte(false);
-            
+
         }
         inscricaoDao.alterar(inscr);
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Inscrição atualizada com sucesso!", "");
         context.addMessage(null, msg);
         return "meusEventos";
-}
-      
+    }
+
     public String iniciaInscricaoEvento(int id_user, int id_evt) {
         System.out.println(id_user);
         System.out.println(id_evt);
         String retorno = "incluirUsuario";
-        if (id_user != 0){
+        if (id_user != 0) {
             retorno = "inscricaoEvento";
             usuarioLogado = usuarioDao.carregar(id_user);
             evento = evtDao.carregar(id_evt);
-            if (evento.isSubmissao()){
+            if (evento.isSubmissao()) {
                 retorno = "inscricaoEventoAnexo";
             }
         }
-        return retorno;  
+        return retorno;
     }
-        
+
     public String iniciaEditarInscricaoEvento(int id) {
         inscricao = inscricaoDao.carregar(id);
         String retorno = "editarInscricao";
-        if (id != 0){
+        if (id != 0) {
             retorno = "editarInscricao";
-            if (inscricao.getEvento().isSubmissao()){
+            if (inscricao.getEvento().isSubmissao()) {
                 retorno = "editarInscricaoAnexo";
             }
         }
-        return retorno;  
+        return retorno;
 
     }
 
@@ -539,43 +557,41 @@ public class SisEventosBean {
     public String alterarUsuario() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-            
-                usuarioDao.alterar(usuario);
-                listaUsuarios = usuarioDao.listar();
-                msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                "Usuario alterado com Sucesso!", "");
-        
-                context.addMessage(null, msg);
-        
-                return "listaUsuarios";
-            }
-            
 
-    
+        usuarioDao.alterar(usuario);
+        listaUsuarios = usuarioDao.listar();
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Usuario alterado com Sucesso!", "");
+
+        context.addMessage(null, msg);
+
+        return "listaUsuarios";
+    }
+
     public String alterarSenhaUsuario() throws Exception {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         try {
-            
-            if (!this.usuario.getSenhaNova().equals(this.usuario.getSenha())){
+
+            if (!this.usuario.getSenhaNova().equals(this.usuario.getSenha())) {
                 String encript = DigestUtils.shaHex(this.usuario.getSenhaNova());
                 this.usuario.setSenha(encript);
                 usuarioDao.alterar(usuario);
                 listaUsuarios = usuarioDao.listar();
                 msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                    "Senha do usuario alterada com Sucesso!", "");
+                        "Senha do usuario alterada com Sucesso!", "");
                 context.addMessage(null, msg);
                 return "listaUsuarios";
             } else {
                 msg = new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                    "Senha do usuario nao alterada!", "");
+                        "Senha do usuario nao alterada!", "");
                 context.addMessage(null, msg);
                 return null;
             }
-            
+
         } catch (Exception e) {
-                throw e;
-            }
+            throw e;
+        }
     }
 
     public String alterarMeusDados() {
@@ -665,7 +681,7 @@ public class SisEventosBean {
 
         return estado;
     }
-    
+
     public String fecharSessao() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         usuarioLogado = new Usuario();
@@ -799,27 +815,27 @@ public class SisEventosBean {
         FacesMessage msg;
         Date date = new Date();
         boolean jaInscrito = false;
-        
-        for (int index = 0 ; index < listaInscricao.size(); index++){
-            if (listaInscricao.get(index).getUsuario().getId_user() == usuarioLogado.getId_user() && listaInscricao.get(index).getEvento().getId_evento() == evento.getId_evento() ){
+
+        for (int index = 0; index < listaInscricao.size(); index++) {
+            if (listaInscricao.get(index).getUsuario().getId_user() == usuarioLogado.getId_user() && listaInscricao.get(index).getEvento().getId_evento() == evento.getId_evento()) {
                 jaInscrito = true;
             }
             //qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
         }
-        
+
         int qtd = inscricaoDao.qtdInscritosPorEvento(evento.getId_evento());
-        
-        if (evento.isLimite_inscricoes() && evento.getQuantidade_inscritos()<=qtd){
+
+        if (evento.isLimite_inscricoes() && evento.getQuantidade_inscritos() <= qtd) {
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                "Capacidade máxima de inscrições atingida!", "");
+                    "Capacidade máxima de inscrições atingida!", "");
             context.addMessage(null, msg);
-        } else if (date.before(evento.getData_inicial_inscricao()) || date.after(evento.getData_final_inscricao()) ){
+        } else if (date.before(evento.getData_inicial_inscricao()) || date.after(evento.getData_final_inscricao())) {
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                "Fora do período de inscrição!", "");
+                    "Fora do período de inscrição!", "");
             context.addMessage(null, msg);
-        } else if (jaInscrito){
+        } else if (jaInscrito) {
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                "Voce ja esta inscrito neste evento!", "");
+                    "Voce ja esta inscrito neste evento!", "");
             context.addMessage(null, msg);
         } else {
             Inscricao inscr = new Inscricao();
@@ -827,23 +843,23 @@ public class SisEventosBean {
             inscr.setCaminho(this.getInscricao().getCaminho());
             inscr.setUsuario(usuarioLogado);
             inscr.setEvento(evento);
-            if (evento.isSubmissao() && this.getInscricao().getArquivo() == null){
+            if (evento.isSubmissao() && this.getInscricao().getArquivo() == null) {
                 msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                    "Para garantir sua inscrição, você tem até " + evento.getData_final_inscricao() + " para enviar seu arquivo" , "");
+                        "Para garantir sua inscrição, você tem até " + evento.getData_final_inscricao() + " para enviar seu arquivo", "");
                 inscr.setOuvinte(true);
                 context.addMessage(null, msg);
             }
-            
+
             inscricaoDao.incluir(inscr);
 
             msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                     "Inscrição realizada com sucesso!", "");
             context.addMessage(null, msg);
-            
+
         }
         return "meusEventos";
     }
-   
+
     public void subirArquivo(FileUploadEvent event) {
 
         try {
@@ -862,20 +878,20 @@ public class SisEventosBean {
             fileOS.close();
             // Salva neste local: /home/luis/Documentos/Dev/Sistema-Eventos/Produto/Implementacao/Sistema-Evento/build/web//arquivos/
             System.out.println("caminho do arquivo: " + caminho);
-            
+
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-      
+
     }
-    
+
     //Metodo alternativo
-      public void sobeArquivo(FileUploadEvent event) {
-      
+    public void sobeArquivo(FileUploadEvent event) {
+
         String caminho;
-       
+
         try {
 
             if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
@@ -896,11 +912,11 @@ public class SisEventosBean {
             FileOutputStream fos = new FileOutputStream(arch);
             fos.write(arquivo);
             fos.close();
-            
+
             System.out.println("O caminho do arquivo: " + caminho);
 
-        FacesMessage message = new FacesMessage("O arquivo", file.getName() + " foi enviado.");
-        FacesContext.getCurrentInstance().addMessage(null, message);
+            FacesMessage message = new FacesMessage("O arquivo", file.getName() + " foi enviado.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -910,13 +926,12 @@ public class SisEventosBean {
 
     }
 
-   
-     public ArrayList<Categoria> getListaCategorias() {
+    public ArrayList<Categoria> getListaCategorias() {
         CategoriaDAO dao = new CategoriaDAO();
         return dao.listar();
     }
 
-     public void setCategorias(List<Categoria> categorias){
+    public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }
 
@@ -938,20 +953,20 @@ public class SisEventosBean {
         this.inscricao = inscricao;
     }
 
-   public UploadedFile getFile() {
+    public UploadedFile getFile() {
         return file;
     }
 
     public void setFile(UploadedFile file) {
         this.file = file;
     }
-    
+
     public void upload(FileUploadEvent event) {
         file = event.getFile();
 
         if (file != null) {
 
-            File imagem = new File("Caminho que voce deseja salvar a imagem", file.getFileName()); 
+            File imagem = new File("Caminho que voce deseja salvar a imagem", file.getFileName());
             try {
                 FileOutputStream fos = new FileOutputStream(imagem);
                 fos.write(event.getFile().getContents());
@@ -966,8 +981,8 @@ public class SisEventosBean {
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            } 
-      }
-  }
-    
+            }
+        }
+    }
+
 }

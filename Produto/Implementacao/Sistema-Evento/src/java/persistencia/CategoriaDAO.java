@@ -16,7 +16,7 @@ public class CategoriaDAO {
         sessao = HibernateUtil.getSessionFactory().openSession();
     }
     
-    public Categoria carregar(Long id) {
+    public Categoria carregar(int id) {
         return (Categoria) sessao.get(Categoria.class, id);
     }
     

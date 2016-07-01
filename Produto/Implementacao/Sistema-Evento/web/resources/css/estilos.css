@@ -120,6 +120,16 @@ ui-widget, .ui-widget .ui-widget {
     min-height: 36px;
     background-color: #6ea2ee; 
 }
+
+#j_idt17\:j_idt24 {
+    font-size: 16px;
+    font-weight: normal; 
+    text-shadow: 0px;
+    margin-top: 5px;
+    min-width: 80px;
+    min-height: 36px;
+    
+}
 .ui-datepicker {
     font-size: 90%;
     font-weight: normal; 

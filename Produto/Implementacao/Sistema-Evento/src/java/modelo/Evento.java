@@ -3,11 +3,14 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -34,6 +37,14 @@ public class Evento implements Serializable {
     
     @OneToMany(mappedBy="evento")
     private List<Inscricao> inscricoesEvt;
+    
+      
+    @ManyToMany
+    private Set<AreaConhecimento> areasC;
+    
+    public Evento() {
+        this.areasC = new HashSet<>();
+    }
             
     private String local_evento;
     @Temporal(TemporalType.DATE)
@@ -44,8 +55,8 @@ public class Evento implements Serializable {
     private Date horario_inicio; 
     @Temporal(TemporalType.TIME)
     private Date horario_fim;
-    private String categoria_evento;
-    private String area_evento; 
+   // private String categoria_evento;
+  //  private String area_evento; 
     private boolean inscricoes;
     private String descricao_evento;
     @Temporal(TemporalType.DATE)
@@ -119,7 +130,7 @@ public class Evento implements Serializable {
     public void setHorario_fim(Date horario_fim) {
         this.horario_fim = horario_fim;
     }
-
+/*
     public String getCategoria_evento() {
         return categoria_evento;
     }
@@ -135,6 +146,7 @@ public class Evento implements Serializable {
     public void setArea_evento(String area_evento) {
         this.area_evento = area_evento;
     }
+*/
 
     public boolean isInscricoes() {
         return inscricoes;
@@ -286,7 +298,16 @@ public class Evento implements Serializable {
         this.file = file;
     }
 
-    
+    public Set<AreaConhecimento> getAreasC() {
+        return areasC;
+    }
 
+    public void setAreasC(Set<AreaConhecimento> areasC) {
+        this.areasC = areasC;
+    }
+    
+    public void adicionaAreasC(AreaConhecimento areaC) {
+        this.areasC.add(areaC);
+    }
  
 }
