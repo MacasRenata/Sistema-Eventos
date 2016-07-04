@@ -260,6 +260,7 @@ public class SisEventosBean {
         categoriaDao.incluir(getCategoria());
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Categoria criada com sucesso!", "");
+        categoria = new Categoria();
         return null;
     }
 
@@ -277,7 +278,7 @@ public class SisEventosBean {
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento criado com sucesso!", "");
-        // evento = new Evento();
+        evento = new Evento();
         context.addMessage(null, msg);
         
         // Gravar arquivo html de evento criado dir\eventos
