@@ -105,21 +105,22 @@
                             <p:outputLabel for="emailOrganizador" value="Email do Organizador: "/>
                             <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
 
-                            <h:form enctype="multipart/form-data">
-                                <h:outputText value="Imagem:"/>
-                                <p:fileUpload fileUploadListener="#{sisEventosBean.upload}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
-                                              cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
-                                              invalidFileMessage="Somente arquivos .jpg, .png ou .gif"
-                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" value="#{sisEventosBean.file}"
-                                              mode="advanced" skinSimple="true" />
-                                <p:commandButton value="Enviar" ajax="false" />
-                            </h:form>
-
                             <h:outputLink id="track5" value="#">
                                 <p:outputLabel for="submissao" value="Submissão de Arquivos:"/>
                             </h:outputLink>
                             <p:tooltip id="toolTipTrack5" for="track5" value="Habilitar submissão de arquivo dentro do periodo de Inscrições no Evento" trackMouse="true"> </p:tooltip>
-                            <p:selectBooleanCheckbox id="submissao" value="#{sisEventosBean.evento.submissao}"/>                                               
+                            <p:selectBooleanCheckbox id="submissao" value="#{sisEventosBean.evento.submissao}"/>     
+                            
+                             <h:form enctype="multipart/form-data" >
+                                <p:outputLabel for="imagem" value="Imagem:"/>
+                                <p:fileUpload fileUploadListener="#{sisEventosBean.uploadImagem}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
+                                              cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
+                                              invalidFileMessage="Somente arquivos .jpg, .png ou .gif"
+                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                              mode="advanced" skinSimple="true" id="imagem"/>
+                                <p:commandButton value="Enviar" ajax="false" />
+                                
+                            </h:form>
 
                         </h:panelGrid>
 

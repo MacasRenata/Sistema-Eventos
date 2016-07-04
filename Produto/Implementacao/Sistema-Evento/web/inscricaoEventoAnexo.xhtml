@@ -25,15 +25,15 @@
                           <p:outputLabel> Inscrições até: </p:outputLabel>
                           <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_final_inscricao}"/>
                           <p:outputLabel> Data do Evento: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_inicial}"/>
+                          <h:outputText id="txtData" value="#{sisEventosBean.evento.data_inicial}"/>
                           <p:outputLabel> Até: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_final}"/>
+                          <h:outputText id="txtFim" value="#{sisEventosBean.evento.data_final}"/>
                           <p:outputLabel> Horário do Evento: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.horario_inicio}"/>
+                          <h:outputText id="txtHora" value="#{sisEventosBean.evento.horario_inicio}"/>
                           <p:outputLabel> Até: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.horario_fim}"/>
+                          <h:outputText id="txtHfim" value="#{sisEventosBean.evento.horario_fim}"/>
                           <p:outputLabel> Local do Evento: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.local_evento}"/>
+                          <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local_evento}"/>
                        </h:panelGrid>
                            </p:fieldset>
                         
@@ -50,9 +50,12 @@
                                 <p:outputLabel value="Submissão de Arquivos:"/>
                                 <p:fileUpload fileUploadListener="#{sisEventosBean.subirArquivo}" sizeLimit="12000000" 
                                               invalidSizeMessage="O arquivo deve ter o tamanho máximo de 12MB."
-                                              allowTypes="/(\.|\/)(doc?x|DOC?X|TXT|txt|PDF|pdf)$/" invalidFileMessage="O arquivo deve ser .doc, .txt, ou pdf."                                           
+                                              allowTypes="/(\.|\/)(doc?x|DOC?X|TXT|txt|PDF|pdf)$/" 
+                                              invalidFileMessage="O arquivo deve ser .doc, .txt, ou pdf."                                           
                                               fileLimit="1"  
-                                              label="Escolher Arquivo" auto="true"/>
+                                              fileLimitMessage="Excedido Limite de arquivos"
+                                              cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
+                                              mode="advanced" skinSimple="true" />
                             </h:form>        
                       <!--      <p:messages  severity="info" escape="false" showDetail="true" autoUpdate="true"/>   -->                        
 

@@ -81,6 +81,9 @@
                             <p:outputLabel for="subTrab" value="Submissão de Trabalhos:"/>
                             <h:outputText id="subTrab" value="Não" rendered="#{sisEventosBean.evento.submissao eq false}"/>
                             <h:outputText value="Sim" rendered="#{sisEventosBean.evento.submissao}"/>
+                            
+                            <p:outputLabel for="imagem" value="Imagem:"/>
+                            <p:graphicImage id="imagem" value="#{sisEventosBean.evento.imagem}"/>
 
                             <h:panelGroup>
                                 <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>

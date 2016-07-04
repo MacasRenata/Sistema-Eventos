@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -70,9 +71,11 @@ public class Evento implements Serializable {
     private String email_organizador;
     private String senha_organizador;
     private int quantidade_inscritos;
-    private String imagem;
-    private String file;
+    @Column(name="arquivos")
+    public String imagem;
+    private String caminho3;
     private Boolean ativo = true;
+ 
 
        public int getId_evento() {
         return id_evento;
@@ -284,20 +287,6 @@ public class Evento implements Serializable {
         this.imagem = imagem;
     }
 
-    /**
-     * @return the file
-     */
-    public String getFile() {
-        return file;
-    }
-
-    /**
-     * @param file the file to set
-     */
-    public void setFile(String file) {
-        this.file = file;
-    }
-
     public Set<AreaConhecimento> getAreasC() {
         return areasC;
     }
@@ -309,5 +298,21 @@ public class Evento implements Serializable {
     public void adicionaAreasC(AreaConhecimento areaC) {
         this.areasC.add(areaC);
     }
+
+    /**
+     * @return the caminho3
+     */
+    public String getCaminho3() {
+        return caminho3;
+    }
+
+    /**
+     * @param caminho3 the caminho3 to set
+     */
+    public void setCaminho3(String caminho3) {
+        this.caminho3 = caminho3;
+    }
+    
+    
  
 }

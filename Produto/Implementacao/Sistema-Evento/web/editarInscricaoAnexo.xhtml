@@ -22,34 +22,39 @@
                           <p:outputLabel> Inscrições até: </p:outputLabel>
                           <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_final_inscricao}"/>
                           <p:outputLabel> Data do Evento: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_inicial}"/>
+                          <h:outputText id="txtData" value="#{sisEventosBean.evento.data_inicial}"/>
                           <p:outputLabel> Até: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.data_final}"/>
+                          <h:outputText id="txtFim" value="#{sisEventosBean.evento.data_final}"/>
                           <p:outputLabel> Horário do Evento: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.horario_inicio}"/>
+                          <h:outputText id="txtHora" value="#{sisEventosBean.evento.horario_inicio}"/>
                           <p:outputLabel> Até: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.horario_fim}"/>
+                          <h:outputText id="txtHfim" value="#{sisEventosBean.evento.horario_fim}"/>
                           <p:outputLabel> Local do Evento: </p:outputLabel>
-                          <h:outputText id="txtAte" value="#{sisEventosBean.evento.local_evento}"/>
+                          <h:outputText id="txtLocal" value="#{sisEventosBean.evento.local_evento}"/>
                        </h:panelGrid>
                            </p:fieldset>
                         
                         <h:panelGrid columns="2">
 
-                            <h:outputLabel value="Arquivo enviado:"/>
+                          <h:outputLabel value="Arquivo enviado:"/>
                             <br></br>
-                            <h:outputLabel value="#{sisEventosBean.inscricao.arquivo}"/>
+                            <p:commandLink action="#{sisEventosBean.inscricao.arquivo}" > 
+                                <h:outputText value="#{sisEventosBean.inscricao.arquivo}"> </h:outputText>
+                            </p:commandLink>
                             <br></br>
-                            
-                            <h:form enctype="multipart/form-data">
+                             <h:form enctype="multipart/form-data">  
+                                <p:outputLabel value="Submissão de Arquivos:"/>
                                 <p:fileUpload fileUploadListener="#{sisEventosBean.subirArquivo}" sizeLimit="12000000" 
                                               invalidSizeMessage="O arquivo deve ter o tamanho máximo de 12MB."
-                                              allowTypes="/(\.|\/)(doc?x|DOC?X|TXT|txt|PDF|pdf)$/" invalidFileMessage="O arquivo deve ser .doc, .txt, ou pdf."                                 
+                                              allowTypes="/(\.|\/)(doc?x|DOC?X|TXT|txt|PDF|pdf)$/" 
+                                              invalidFileMessage="O arquivo deve ser .doc, .txt, ou pdf."                                           
                                               fileLimit="1"  
-                                              label="Escolher Arquivo" auto="true"/>
-                            </h:form>        
-                      <!--      <p:messages  severity="info" escape="false" showDetail="true" autoUpdate="true"/>   -->                        
-
+                                              fileLimitMessage="Excedido Limite de arquivos"
+                                              cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
+                                              mode="advanced" skinSimple="true"
+                                              value="#{sisEventosBean.inscricao.arquivo}"/>
+                            </h:form>   
+                             <br></br>
                             <h:panelGroup> 
                                 <p:commandButton ajax="false" value="Editar" id="inscricaoEvento"  action="#{sisEventosBean.editarInscricao}"  icon="ui-icon-disk" >
                                 </p:commandButton>
