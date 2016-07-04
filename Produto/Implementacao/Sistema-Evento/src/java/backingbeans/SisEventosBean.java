@@ -253,12 +253,22 @@ public class SisEventosBean {
     public void setIdAreasC(int[] idAreasC) {
         this.idAreasC = idAreasC;
     }
+    
+    public String incluirCategoria(){
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        categoriaDao.incluir(getCategoria());
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Categoria criada com sucesso!", "");
+        return null;
+    }
 
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         //  CategoriaDAO categoriaDao = new CategoriaDAO();
         evento.setCategoria(categoriaDao.carregar(idCategoria));
+        
         
         for (int id : idAreasC) {
             evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
@@ -501,7 +511,7 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
 
-        Inscricao inscr = inscricao;
+        Inscricao inscr = getInscricao();
 
         inscr.setArquivo(this.getInscricao().getArquivo());
         inscr.setCaminho(this.getInscricao().getCaminho());
@@ -537,11 +547,11 @@ public class SisEventosBean {
     }
 
     public String iniciaEditarInscricaoEvento(int id) {
-        inscricao = inscricaoDao.carregar(id);
+        setInscricao(inscricaoDao.carregar(id));
         String retorno = "editarInscricao";
         if (id != 0) {
             retorno = "editarInscricao";
-            if (inscricao.getEvento().isSubmissao()) {
+            if (getInscricao().getEvento().isSubmissao()) {
                 retorno = "editarInscricaoAnexo";
             }
         }
@@ -1067,6 +1077,20 @@ public class SisEventosBean {
             e.printStackTrace();
         }
 
+    }
+
+    /**
+     * @return the categoria
+     */
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * @param categoria the categoria to set
+     */
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
     
     

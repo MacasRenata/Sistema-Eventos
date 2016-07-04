@@ -39,10 +39,28 @@
                             <p:calendar id="horarioFinal" required="true" requiredMessage="Selecione o horário final" value="#{sisEventosBean.evento.horario_fim}" locale="pt" pattern="HH:mm" timeOnly="true"/>
 
                             <p:outputLabel for="categoriaEvt" value="Categoria:"/>
-                            <p:selectOneMenu id="categoriaEvt" value="#{sisEventosBean.idCategoria}" required="true" requiredMessage="Selecione uma Categoria">
+                            <p:selectOneMenu id="categoriaEvt" binding="#{categoriaEvt}" value="#{sisEventosBean.categoria.nome}" required="true" requiredMessage="Selecione uma Categoria">
+                                <f:selectItem itemValue="" itemLabel="Selecione..." />
                                 <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
+                                <f:selectItem itemLabel="Novo" itemValue="0" />
+                                <p:ajax update="pnlContainer" />
                             </p:selectOneMenu>
+                            
+                            <h:panelGroup id="pnlContainer" layout="block">
+                                <h:panelGrid id="pnl1" rendered="#{categoriaEvt.value eq '0'}">
+                                    <p:inputText  id="txtNovaCat" value="#{sisEventosBean.categoria.nome}"/>
+                                    <p:commandButton value="Incluir" ajax="false" action="#{sisEventosBean.incluirCategoria}"/>
+                                </h:panelGrid>
 
+                                <h:panelGrid id="pnl2" rendered="#{sorPanelShow.value eq '1'}">
+                                    //More stuff here...
+                                </h:panelGrid>
+                            </h:panelGroup>
+                            
+                        </h:panelGrid>
+
+                            
+                        <h:panelGrid columns="1">
                             <p:outputLabel for="areasEvento" value="Áreas de Conhecimento:"/>
                             <h:selectManyListbox id="areasEvento" value="#{sisEventosBean.idAreasC}">
                                 <f:selectItems value="#{sisEventosBean.listaAreaConhecimentos}" var="areaC" itemLabel="#{areaC.nome}" itemValue="#{areaC.id}"/>
@@ -100,7 +118,7 @@
                             <p:inputTextarea id="txtArea" maxlength="200" value="#{sisEventosBean.evento.descricao_evento}"/>
 
                             <p:outputLabel for="txtOrganizador" value="Organizador: "/>
-                            <p:inputText id="txtOrganizador" maxlength="50" size="50" required="true" requiredMessage="Digite um nome" value="#{sisEventosBean.evento.nome_organizador}"/>
+                            <p:inputText id="txtOrganizador" maxlength="50" size="50" value="#{sisEventosBean.evento.nome_organizador}"/>
 
                             <p:outputLabel for="emailOrganizador" value="Email do Organizador: "/>
                             <p:inputText id="emailOrganizador" maxlength="50" size="50"  value="#{sisEventosBean.evento.email_organizador}"/>
