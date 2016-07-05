@@ -267,10 +267,10 @@ public class SisEventosBean {
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        //  CategoriaDAO categoriaDao = new CategoriaDAO();
+      
+        CategoriaDAO categoriaDao = new CategoriaDAO();
         evento.setCategoria(categoriaDao.carregar(idCategoria));
-        
-        
+                
         for (int id : idAreasC) {
             evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
         }
@@ -278,6 +278,7 @@ public class SisEventosBean {
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento criado com sucesso!", "");
+        
         evento = new Evento();
         context.addMessage(null, msg);
         
@@ -391,6 +392,12 @@ public class SisEventosBean {
     public String alterarEvento() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
+        
+         evento.setCategoria(categoriaDao.carregar(idCategoria));
+            
+        for (int id : idAreasC) {
+            evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
+        }
         evtDao.alterar(evento);
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,

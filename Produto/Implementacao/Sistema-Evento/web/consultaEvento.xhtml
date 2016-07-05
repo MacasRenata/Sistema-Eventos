@@ -47,6 +47,12 @@
                             <p:outputLabel for="categoriaEvento" value="Categoria:"/>
                             <h:outputText id="categoriaEvento" value="#{sisEventosBean.evento.categoria.nome}" style="width:125px"/>
 
+                            <p:dataTable value="#{sisEventosBean.evento.areasC}" var="a" style="max-width: 200px">
+                                <p:column headerText="Áreas de Conhecimento:">
+                                    #{a.nome}
+                                </p:column>
+                            </p:dataTable>
+
                         </h:panelGrid>
 
                         <h:panelGrid  columns="2" id="painel_inscricoes"  rendered="#{sisEventosBean.evento.inscricoes eq true}">
@@ -81,7 +87,7 @@
                             <p:outputLabel for="subTrab" value="Submissão de Trabalhos:"/>
                             <h:outputText id="subTrab" value="Não" rendered="#{sisEventosBean.evento.submissao eq false}"/>
                             <h:outputText value="Sim" rendered="#{sisEventosBean.evento.submissao}"/>
-                            
+
                             <p:outputLabel for="imagem" value="Imagem:"/>
                             <p:graphicImage id="imagem" value="#{sisEventosBean.evento.imagem}"/>
 
