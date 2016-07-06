@@ -58,18 +58,18 @@
                             </h:panelGroup>
                             
                         </h:panelGrid>
-
-                            
-                        <h:panelGrid columns="1">
-                            <p:outputLabel for="areasEvento" value="Áreas de Conhecimento:"/>
-                            <h:selectManyListbox id="areasEvento" value="#{sisEventosBean.idAreasC}">
-                                <f:selectItems value="#{sisEventosBean.listaAreaConhecimentos}" var="areaC" itemLabel="#{areaC.nome}" itemValue="#{areaC.id}"/>
-                            </h:selectManyListbox>
-
+                        <h:panelGrid>                    
+                          <p:outputLabel for="areasEvento" value="Áreas:"/>
+                          <p:selectManyMenu id="areasEvento"  value="#{sisEventosBean.idAreasC}" required="true" requiredMessage="Selecione as Areas" scrollHeight="50">
+                                <f:selectItem itemValue="" itemLabel="Selecione" />
+                                <f:selectItems value="#{sisEventosBean.listaAreaConhecimentos}"  var="area" itemLabel="#{area.nome}" itemValue="#{area.id}"/>
+                          </p:selectManyMenu>                                               
+                                                                                        
                             <h:outputLink id="track1" value="#">
                                 <h:outputText value="Inscrição em Eventos"/>
                             </h:outputLink>
-                            <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"></p:tooltip>
+                  
+                         <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"></p:tooltip>
 
                         </h:panelGrid>
                         <p:outputLabel for="inscrições" value="Inscrições:"/>  

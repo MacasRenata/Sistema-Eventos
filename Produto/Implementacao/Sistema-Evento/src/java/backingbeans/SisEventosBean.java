@@ -263,6 +263,16 @@ public class SisEventosBean {
         categoria = new Categoria();
         return null;
     }
+    
+      public String incluirAreaC(){
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
+        areaConhecimentoDao.incluir(getAreaConhecimento());
+        msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                "Área criada com sucesso!", "");
+        areaC = new AreaConhecimento();
+        return null;
+    }
 
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -385,7 +395,8 @@ public class SisEventosBean {
     //Para ir para a página de alteração do Evento selecionado à partir de Editar, em detalhes do Evento// 
     public String iniciaAlteracaoEvento(int id) {
         evento = evtDao.carregar(id);
-        //   idCategoria = evento.getCategoria().getId();
+        evento.limpaAreasC(areaC);
+     
         return "alterarEvento";
     }
 
@@ -1101,7 +1112,15 @@ public class SisEventosBean {
         this.categoria = categoria;
     }
     
-    
+     public AreaConhecimento getAreaConhecimento() {
+        return areaC;
+    }
+
+  
+    public void setAreaConhecimento(AreaConhecimento areaC) {
+        this.areaC = areaC;
+    }
+     
     
 }
     

@@ -46,9 +46,9 @@
                             </p:selectOneMenu>
                             
                             <p:outputLabel for="areasEvento" value="Áreas de Conhecimento:"/>
-                            <h:selectManyListbox id="areasEvento" value="#{sisEventosBean.idAreasC}">
+                            <p:selectManyMenu id="areasEvento" value="#{sisEventosBean.idAreasC}" scrollHeight="50">
                                 <f:selectItems value="#{sisEventosBean.listaAreaConhecimentos}" var="areaC" itemLabel="#{areaC.nome}" itemValue="#{areaC.id}"/>
-                            </h:selectManyListbox>
+                            </p:selectManyMenu>
 
                             <p:outputLabel  value="Inscrições:"/>
                             <p:selectBooleanCheckbox value="#{sisEventosBean.evento.inscricoes}"/>                            
