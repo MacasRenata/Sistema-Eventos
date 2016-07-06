@@ -19,6 +19,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.hibernate.metamodel.binding.CascadeType;
 import org.hibernate.validator.constraints.Email;
 
 
@@ -39,7 +40,7 @@ public class Evento implements Serializable {
     @OneToMany(mappedBy="evento")
     private List<Inscricao> inscricoesEvt;
     
-      
+     
     @ManyToMany
     private Set<AreaConhecimento> areasC;
     
@@ -297,6 +298,10 @@ public class Evento implements Serializable {
     
     public void adicionaAreasC(AreaConhecimento areaC) {
         this.areasC.add(areaC);
+    }
+    
+      public void limpaAreasC(AreaConhecimento areaC) {
+        this.areasC.removeAll(areasC);
     }
 
     /**
