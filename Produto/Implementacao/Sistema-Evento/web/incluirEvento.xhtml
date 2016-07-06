@@ -42,48 +42,47 @@
                             <p:selectOneMenu id="categoriaEvt" binding="#{categoriaEvt}" value="#{sisEventosBean.categoria.nome}" required="true" requiredMessage="Selecione uma Categoria">
                                 <f:selectItem itemValue="" itemLabel="Selecione..." />
                                 <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
-                                <f:selectItem itemLabel="Novo" itemValue="0" />
+                                <f:selectItem itemLabel="Novo" itemValue="digite..." />
                                 <p:ajax update="pnlContainer" />
                             </p:selectOneMenu>
-                            
+                            </h:panelGrid>
+                        
                             <h:panelGroup id="pnlContainer" layout="block">
-                                <h:panelGrid id="pnl1" rendered="#{categoriaEvt.value eq '0'}">
-                                    <p:inputText  id="txtNovaCat" value="#{sisEventosBean.categoria.nome}"/>
+                                <h:panelGrid id="pnl1" rendered="#{categoriaEvt.value eq 'digite...'}">
+                                    <p:inputText onfocus="this.setSelectionRange(0, this.value.length)" id="txtNovaCat" value="#{sisEventosBean.categoria.nome}"/>
                                     <p:commandButton value="Incluir" ajax="false" action="#{sisEventosBean.incluirCategoria}"/>
                                 </h:panelGrid>
-
-                                <h:panelGrid id="pnl2" rendered="#{sorPanelShow.value eq '1'}">
-                                    //More stuff here...
-                                </h:panelGrid>
                             </h:panelGroup>
+                        <h:panelGrid columns="1">
+                        <p:outputLabel for="areasEvento1" value="Áreas de Conhecimento:"/>
+                        <p:selectManyCheckbox id="areasEvento1"  required="true" requiredMessage="Selecione uma Área de Conhecimento" value="#{sisEventosBean.idAreasC}">
+                            <f:selectItems itemLabel="#{areaC.nome}" var="areaC" itemValue="#{areaC.id}" value="#{sisEventosBean.listaAreaConhecimentos}" />
+                            <p:ajax update="pnlContainer1" />
+                        </p:selectManyCheckbox>
+                        <p:selectBooleanCheckbox itemLabel="Nova" id="areasEvento2" binding="#{areasEvento2}">
+                            <p:ajax update="pnlContainer1" />
+                        </p:selectBooleanCheckbox>
+                        </h:panelGrid>
+                        <h:panelGroup id="pnlContainer1" layout="block">
+                                <h:panelGrid id="pnl2" rendered="#{areasEvento2.value eq true}">
+                                    <p:inputText onfocus="this.setSelectionRange(0, this.value.length)" id="txtNovaArea" value="#{sisEventosBean.areaC.nome}"/>
+                                </h:panelGrid>
+                        </h:panelGroup>
                             
+                        <h:panelGrid columns="1">
+                                                    
+                        <h:outputLink id="track1" value="#">
+                            <h:outputText value="Inscrições"/>
+                        </h:outputLink>
+                        <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"></p:tooltip>  
+                        <p:selectBooleanCheckbox id="inscricoes" binding="#{inscricoes}" value="#{sisEventosBean.evento.inscricoes}">
+                        <p:ajax update="painelInscricoes" />
+                        </p:selectBooleanCheckbox>
+                                
                         </h:panelGrid>
-                        <h:panelGrid>                    
-                          <p:outputLabel for="areasEvento" value="Áreas:"/>
-                          <p:selectManyMenu id="areasEvento"  value="#{sisEventosBean.idAreasC}" required="true" requiredMessage="Selecione as Areas" scrollHeight="50">
-                                <f:selectItem itemValue="" itemLabel="Selecione" />
-                                <f:selectItems value="#{sisEventosBean.listaAreaConhecimentos}"  var="area" itemLabel="#{area.nome}" itemValue="#{area.id}"/>
-                          </p:selectManyMenu>                                               
-                                                                                        
-                            <h:outputLink id="track1" value="#">
-                                <h:outputText value="Inscrição em Eventos"/>
-                            </h:outputLink>
-                  
-                         <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"></p:tooltip>
-
-                        </h:panelGrid>
-                        <p:outputLabel for="inscrições" value="Inscrições:"/>  
-                        <p:selectBooleanCheckbox id="inscrições" value="#{sisEventosBean.evento.inscricoes}"/>   
-
-
-                        <h:panelGroup id="painelInscricoes">
-                            <p:panel id="painelInsc"   header="Inscrições" toggleable="true" closeSpeed="500" widgetVar="panel" collapsed="true" style="max-width:320px;">
-                                <p:ajax event="toggle" listener="#{sisEventosBean.aoAtivar(event)}"/>
-
-
-                                <h:panelGrid  columns="1">
-
-                                    <p:outputLabel for="inicioIncricao" value="De:"/>
+                        <h:panelGroup id="painelInscricoes" layout="block">
+                            <h:panelGrid id="painelInsc" rendered="#{inscricoes.value eq true}">
+                                <p:outputLabel for="inicioIncricao" value="De:"/>
                                     <p:calendar id="inicioIncricao" binding="#{startDateComponent2}" value="#{sisEventosBean.evento.data_inicial_inscricao}"  locale="pt" pattern="dd/MM/yyyy"/>
 
                                     <p:outputLabel for="fimInscricao" value="Até:"/>
@@ -106,7 +105,7 @@
                                     <p:inputText id="qntidadeIncritos" maxlength="60" size="10" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
 
                                 </h:panelGrid>
-                            </p:panel>
+                            
 
                         </h:panelGroup>
 

@@ -45,10 +45,10 @@
                                 <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
                             </p:selectOneMenu>
                             
-                            <p:outputLabel for="areasEvento" value="Áreas de Conhecimento:"/>
-                            <p:selectManyMenu id="areasEvento" value="#{sisEventosBean.idAreasC}" scrollHeight="50">
-                                <f:selectItems value="#{sisEventosBean.listaAreaConhecimentos}" var="areaC" itemLabel="#{areaC.nome}" itemValue="#{areaC.id}"/>
-                            </p:selectManyMenu>
+                            <p:outputLabel for="areasEvento1" value="Áreas de Conhecimento:"/>
+                            <p:selectManyCheckbox id="areasEvento1"  required="true" requiredMessage="Selecione uma Área de Conhecimento" value="#{sisEventosBean.idAreasC}">
+                                <f:selectItems itemLabel="#{areaC.nome}" var="areaC" itemValue="#{areaC.id}" value="#{sisEventosBean.listaAreaConhecimentos}" />
+                            </p:selectManyCheckbox>
 
                             <p:outputLabel  value="Inscrições:"/>
                             <p:selectBooleanCheckbox value="#{sisEventosBean.evento.inscricoes}"/>                            
