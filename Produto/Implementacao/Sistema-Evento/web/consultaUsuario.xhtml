@@ -38,7 +38,7 @@
                         <h:outputText id="txtGenero" value="#{sisEventosBean.usuario.sexo}"/>
                         
                         <p:outputLabel for="txtEndUsuario" value="Endereço: " style="color:gray;font-weight:bold"/>
-                        <h:outputText id="txtEndUsuario" value="#{sisEventosBean.usuario.endereco}"/>
+                        <h:outputText id="txtEndUsuario" value="#{sisEventosBean.usuario.bairro}"/>
                         
                         <p:outputLabel for="txtCidade" value="Cidade: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtCidade" value="#{sisEventosBean.usuario.cidade}"/>
@@ -48,9 +48,16 @@
                         
                         <p:outputLabel for="txtCep" value="CEP: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtCep" value="#{sisEventosBean.usuario.cep}"/>
-                        
+
                         <p:outputLabel for="txtTelefone" value="Telefone: " style="color:gray;font-weight:bold"/>
                         <h:outputText id="txtTelefone" value="#{sisEventosBean.usuario.telefone}"/>
+                        
+                        <p:outputLabel for="txtEvento" value="Eventos Inscrito: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="txtEvento" value="#{sisEventosBean.usuario.inscricoesEvt}"/>
+                        
+                        <p:outputLabel for="txtArquivo" value="Arquivos submetidos: " style="color:gray;font-weight:bold"/>
+                        <h:outputText id="txtArquivo" value="#{sisEventosBean.inscricao.arquivo}"/> 
+                        
                     </h:panelGrid>
                     
                       <h:panelGroup> 
