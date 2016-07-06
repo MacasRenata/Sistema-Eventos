@@ -33,10 +33,16 @@
                                     <p:commandLink ajax="false" action="#{sisEventosBean.desfazerInscricao(inscricao.id)}">
                                         <h:outputText value="Desfazer"/> 
                                     </p:commandLink>
-
                                 </p:column>
+                                
                                 <p:column headerText="Editar Minha Inscrição">
                                     <p:commandLink ajax="false" value="Editar" action="#{sisEventosBean.iniciaEditarInscricaoEvento(inscricao.id)}">
+                                    </p:commandLink>
+                                </p:column>
+                                
+                          
+                                <p:column headerText="Remover arquivo submetido na Inscrição">
+                                    <p:commandLink ajax="false" value="Remover" action="#{sisEventosBean.removerArquivos(inscricao.arquivo)}">
                                     </p:commandLink>
                                 </p:column>
                                 
