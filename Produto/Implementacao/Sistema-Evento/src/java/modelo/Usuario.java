@@ -22,10 +22,6 @@ import org.hibernate.annotations.Where;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
-
-
-
-
 @Entity
 @Table(name="usuario")  //mudança para conectar com a tabela correta
 @SQLDelete(sql = "update Usuario set ativo = 0 where id_user = ?")
@@ -39,9 +35,9 @@ public class Usuario implements Serializable{
     private String nome;
     @Email
     private String email;
-    @Length(min = 6)
+    @Length(min = 6, message = "a senha deve ter no mínimo 6 caracteres.")
     private String senha;
-    @Length(min = 6)
+    @Length(min = 6, message = "a senha deve ter no mínimo 6 caracteres.")
     private String senhaNova; 
     private String sexo;
     @Temporal(TemporalType.DATE)

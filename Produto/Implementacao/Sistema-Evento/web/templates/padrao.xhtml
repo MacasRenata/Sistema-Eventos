@@ -19,7 +19,7 @@
                 <span> <h1> Sistema de Eventos </h1></span>
                 <div class="loginform" align="right">
                     <h:form rendered="#{sisEventosBean.verificarSessao() eq false}">
-                        <p:growl id="growl" life="5000"/>   
+                        <p:growl id="growl"/>   
                         <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold;margin-right:10px"/>
                         <p:inputText id="txtEmail" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.email}" style="color:gray;font-weight:bold;margin-right:10px"/>
 

@@ -10,9 +10,9 @@
             <p:panel id="basic" header="Editar Inscrição" style="margin-bottom:20px">
                 <div id="formDados">
 
-                    <h:outputLabel value="Voce não esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+                    <h:outputLabel value="Voce não está logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
                     <h:form rendered="#{sisEventosBean.verificarSessao()}">
-                        <p:growl id="growl" life="5000"/>  
+                        <p:growl id="growl"/>  
                         
                           <p:fieldset legend="Informações sobre o Evento" style="margin-bottom:20px">
                             <p:graphicImage id="txtLocalImg" value="#{sisEventosBean.evento.imagem}"/>

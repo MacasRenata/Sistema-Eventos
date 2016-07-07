@@ -27,7 +27,7 @@
                             <p:calendar binding="#{startDateComponent1}" requiredMessage="Selecione a data inicial" id="inicioEvento" required="true" value="#{sisEventosBean.evento.data_inicial}" locale="pt" pattern="dd/MM/yyyy"/>
 
                             <p:outputLabel for="fimEvento"  value="Até:"/>
-                            <p:calendar id="fimEvento" binding="#{endDateComponent1}" required="true" requiredMessage="Selecione a data inicial" value="#{sisEventosBean.evento.data_final}" locale="pt"  pattern="dd/MM/yyyy">
+                            <p:calendar id="fimEvento" binding="#{endDateComponent1}" required="true" requiredMessage="Selecione a data final" value="#{sisEventosBean.evento.data_final}" locale="pt"  pattern="dd/MM/yyyy">
                                 <f:validator validatorId="dataEventoValidator" />
                                 <f:attribute name="startDateComponent1" value="#{startDateComponent1}"/>
                             </p:calendar>   

@@ -66,7 +66,7 @@ public class SisEventosBean {
     private final InscricaoDAO inscricaoDao = new InscricaoDAO();
     private final CategoriaDAO categoriaDao = new CategoriaDAO();
     private final AreaConhecimentoDAO areaConhecimentoDao = new AreaConhecimentoDAO();
-
+    
     public SisEventosBean() {
         listaEventos = evtDao.listar();
         listaUsuarios = usuarioDao.listar();
@@ -261,6 +261,7 @@ public class SisEventosBean {
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Categoria criada com sucesso!", "");
         categoria = new Categoria();
+        context.addMessage(null, msg);
         return null;
     }
     
@@ -641,7 +642,7 @@ public class SisEventosBean {
         usuarioDao.alterar(usuarioLogado);
 
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                "Usuario alterado com Sucesso!", "");
+                "Dados do Usuario alterados com Sucesso!", "");
 
         context.addMessage(null, msg);
 
@@ -684,8 +685,8 @@ public class SisEventosBean {
                 usuario = this.usuarioLogado;
 
             } else {
-                msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                        "Erro de login!", "");
+                msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
+                        "Erro ao efetuar o login! Email incorreto!", "");
                 context.addMessage(null, msg);
                 usuarioLogado = new Usuario();
                 return null;
@@ -901,7 +902,8 @@ public class SisEventosBean {
     }
 
     public void subirArquivo(FileUploadEvent event) {
-
+        FacesContext context = FacesContext.getCurrentInstance();
+        FacesMessage msg;
         try {
             String realPath = FacesContext.getCurrentInstance()
                     .getExternalContext().getRealPath("/");

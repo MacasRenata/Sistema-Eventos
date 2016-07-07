@@ -48,14 +48,14 @@ public class DataInscricaoValidator extends DataEventoValidator implements Valid
         if (startDate.after(endDate2)) {
             startDateComponent.setValid(false);
             throw new ValidatorException(new FacesMessage(
-                FacesMessage.SEVERITY_ERROR, "Data de incricao errada.", null));
+                FacesMessage.SEVERITY_ERROR, "Data de início das inscrições deve ser anterior à data final.", null));
         }
         
         if (endDate3 != null){
             if (endDate2.after(endDate3)) {
                 startDateComponent.setValid(false);
                 throw new ValidatorException(new FacesMessage(
-                FacesMessage.SEVERITY_ERROR, "Data de incricao errada.", null));
+                FacesMessage.SEVERITY_ERROR, "Data de encerramento das inscrições posterior ao fim do evento.", null));
             }
         }
         

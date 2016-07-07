@@ -5,7 +5,6 @@
  */
 package modelo;
 
-
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -19,18 +18,17 @@ import persistencia.UsuarioDAO;
  *
  * @author sergio
  */
-
-
 @FacesValidator("unicoEmailValidator")
 public class UnicoEmailValidator implements Validator {
+    
     private final UsuarioDAO usuarioDao = new UsuarioDAO();
     private Usuario usuario = new Usuario();
-    
+
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-        
+
         int id_user = 0;
-        if (component.getAttributes().get("txtId") != null){
+        if (component.getAttributes().get("txtId") != null) {
             id_user = (int) component.getAttributes().get("txtId");
         }
         String email = (String) value;
@@ -38,20 +36,18 @@ public class UnicoEmailValidator implements Validator {
         if (value == null) {
             return; // Let required="true" handle, if any.
         }
-        if (usr == null || usr.getId_user() == id_user){
+        if (usr == null || usr.getId_user() == id_user) {
             return;
         }
-        
+
         //String emailBD = usr.getEmail();
-        if (usr.getEmail() != null){
+        if (usr.getEmail() != null) {
             if (usr.getEmail().equals(email)) {
                 throw new ValidatorException(new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR, "Email ja cadastrado.", null));
+                        FacesMessage.SEVERITY_ERROR, "Email já cadastrado.", null));
             }
         }
-        
+
     }
 
 }
-    
-

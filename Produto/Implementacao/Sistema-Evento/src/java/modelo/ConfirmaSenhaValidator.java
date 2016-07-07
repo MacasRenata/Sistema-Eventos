@@ -40,8 +40,11 @@ public class ConfirmaSenhaValidator implements Validator {
         if (!senha.equals(confirma)) {
             throw new ValidatorException(new FacesMessage
                 (FacesMessage.SEVERITY_ERROR, "Senhas não conferem.", null));
+            
         }
     }
 
     
 }
+  
+        
