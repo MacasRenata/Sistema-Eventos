@@ -12,8 +12,8 @@
                <div class="loginform" align="center">
                     
                     <h:form rendered="#{sisEventosBean.verificarSessaoAdmin()}">
-                        <p:growl id="growl"/>
-                        <h:panelGrid columns="1">
+                        <p:growl id="growl" life="4000"/> 
+                        <p:panelGrid columns="1" id="mudarsenhalogado2" layout="grid" columnClasses="label , inputs">
                             
                             <p:outputLabel for="txtSenhaUsuario"  value="Digite a nova senha de #{sisEventosBean.usuario.nome}" 
                                            style="color:gray;font-weight:bold;margin-right:10px"/>
@@ -21,10 +21,10 @@
                                         value="#{sisEventosBean.usuario.senhaNova}"/>
                             
                             
-                        </h:panelGrid>
+                        </p:panelGrid>
                         <br></br>
                         
-                        <p:commandButton value="Trocar Senha" class="btn btn-primary btn-lg" action="#{sisEventosBean.alterarSenhaUsuario()}" />
+                        <p:commandButton value="Trocar Senha" ajax="false" class="btn btn-primary btn-lg" action="#{sisEventosBean.alterarSenhaUsuario()}" />
                         
                     </h:form>
                     
