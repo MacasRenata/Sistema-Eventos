@@ -42,11 +42,11 @@
                         <p:outputLabel value= ""/>
 
                         <p:outputLabel value="CEP:" for="txtCEP"/>
-                        <p:inputMask id="txtCEP" maxlength="9" size="50" value="#{sisEventosBean.usuarioLogado.cep}" mask="99999-999" requiredMessage="Não é um cep válido!"/>
+                        <p:inputMask id="txtCEP" maxlength="9" size="50" value="#{sisEventosBean.usuarioLogado.cep}" mask="99999-999" required="true" requiredMessage="Não é um cep válido!"/>
                         <p:outputLabel value= ""/>
 
                         <p:outputLabel value="Logradouro: " for="txtLogradouro"/>
-                        <p:inputText id="txtLogradouro" size="50" maxlength="100" value="#{sisEventosBean.usuarioLogado.logradouro}"/> 
+                        <p:inputText id="txtLogradouro" size="50" maxlength="100" value="#{sisEventosBean.usuarioLogado.logradouro}" required="true" requiredMessage="Digite o seu endereço"/> 
                         <p:outputLabel value= ""/>
                         
                         <p:outputLabel value="Nº: " for="txtNumo"/>
@@ -58,11 +58,11 @@
                         <p:outputLabel value= ""/>
 
                         <p:outputLabel value="Bairro: " for="txtBairro"/>
-                        <p:inputText id="txtBairro" size="50" maxlength="30" value="#{sisEventosBean.usuarioLogado.bairro}" />
+                        <p:inputText id="txtBairro" size="50" maxlength="30" value="#{sisEventosBean.usuarioLogado.bairro}" required="true" requiredMessage="Digite o seu bairro"/>
                         <p:outputLabel value= ""/>
                         
                         <p:outputLabel value="Cidade: " for="txtCidade" />
-                        <p:inputText id="txtCidade" maxlength="30" size="50" value="#{sisEventosBean.usuarioLogado.cidade}" />
+                        <p:inputText id="txtCidade" maxlength="30" size="50" value="#{sisEventosBean.usuarioLogado.cidade}" required="true" requiredMessage="Digite sua cidade"/>
                         <p:outputLabel value= ""/>
 
                         <p:outputLabel for="txtEstado" value="Estado:"/>

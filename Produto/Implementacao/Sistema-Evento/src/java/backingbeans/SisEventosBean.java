@@ -876,7 +876,7 @@ public class SisEventosBean {
             context.addMessage(null, msg);
         } else if (jaInscrito) {
             msg = new FacesMessage(FacesMessage.SEVERITY_WARN,
-                    "Voce ja esta inscrito neste evento!", "");
+                    "Voce já está inscrito neste evento!", "");
             context.addMessage(null, msg);
         } else {
             Inscricao inscr = new Inscricao();
@@ -929,7 +929,7 @@ public class SisEventosBean {
 
     }
 
-    //Metodo alternativo
+    /*Metodo alternativo
     public void sobeArquivo(FileUploadEvent event) {
 
         String caminho;
@@ -967,6 +967,8 @@ public class SisEventosBean {
         }
 
     }
+    
+    */
     // rmeover arquivos do diretorio
     public void removerArquivos(File f) {
         // Se o arquivo passado for um diretório

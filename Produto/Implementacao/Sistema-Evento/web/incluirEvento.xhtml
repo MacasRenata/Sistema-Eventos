@@ -14,7 +14,7 @@
                 <div id="formDados">
                     <h:outputLabel value="Voce não é administrador" rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}"/>
                     <h:form rendered="#{sisEventosBean.verificarSessaoAdmin()}">
-                        <p:growl id="growl" life="4000"/>
+                        <p:growl id="growl"/>
                         <h:panelGrid columns="1">
 
                             <p:outputLabel for="txtTitulo" value="Título: "/>
