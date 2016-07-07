@@ -97,7 +97,7 @@
                             <p:outputLabel value= ""/>
 
                             <p:outputLabel for="txtTelefone" value="Telefone: "/>
-                            <p:inputMask id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}" mask="(99) 9999-9999?" required="true" requiredMessage="Não é um telefone válido"/>
+                            <p:inputMask id="txtTelefone" maxlength="60" size="50" value="#{sisEventosBean.usuario.telefone}" mask="(99) 9999-9999?" required="true" requiredMessage="Não é um telefone válido">
                             <f:validateRegex pattern="^\([0-9]{2}\)\s*[0-9]{4}[\-\.]{0,1}[0-9]{4}$"/>
                             </p:inputMask>
                             <p:outputLabel value= ""/>

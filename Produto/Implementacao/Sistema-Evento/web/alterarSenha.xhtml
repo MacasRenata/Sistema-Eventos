@@ -7,46 +7,73 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-         
-            <span> <center> <h1> Alteracao de Senha </h1> </center></span>
+            <p:panel id="basic" header="Alteração de Senha" style="margin-bottom:20px">
                <div class="loginform" align="center">
                     
-                    <h:form rendered="#{sisEventosBean.verificarSessao()}">
-
-                        <p:growl id="growl"/>
-                        <h:panelGrid columns="1">
-                            
-                            <p:outputLabel for="txtSenhaUsuario"  value="Digite a senha atual " style="color:gray;font-weight:bold;margin-right:10px"/>
-                            <p:password id="txtSenhaUsuario" required="true" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.senha}"/>
-                            
-                            
-                            <p:outputLabel for="senhaNova" value="Senha nova " style="color:gray;font-weight:bold;margin-right:10px"/>
-                            <p:password id="senhaNova" value="#{sisEventosBean.usuarioLogado.senhaNova}" maxlength="60" size="20"  required="true">
-                                <f:validator validatorId="confirmaSenhaValidator" />
-                                <f:validateLength minimum="6" />
-                                <f:attribute name="confirma2" value="#{confirmaSenha.submittedValue}" />
-                                <f:ajax event="blur" execute="confirma senha" render="m_senha" />
-                            </p:password>
-                            
-                            
-
-                            <p:outputLabel for="confirma" value="Senha nova (repetir):" style="color:gray;font-weight:bold;margin-right:10px"/>
-                            <p:password id="confirma" binding="#{confirmaSenha}" maxlength="60" size="20"  required="true">
-                                <f:validateLength minimum="6" />
-                                <f:ajax event="blur" execute="confirma senha" render="m_senha m_confirma" />
-                            </p:password>
-                            
-                            
-                        </h:panelGrid>
-                        <br></br>
+                    <h:form prependId="false" id="mudarsenha" rendered="#{sisEventosBean.verificarSessao() eq false}">
                         
-                       <p:commandButton value="Trocar Senha" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha}" />
+                        <p:panelGrid columns="1" id="mudarsenha3" layout="grid" columnClasses="label , inputs">
+                            <p:outputLabel for="txtEmail" value="Email: " style="color:gray;font-weight:bold;margin-right:10px"/>
+                            <p:inputText id="txtEmail" required="true" binding="#{txtEmailComponent}" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.email}" style="color:gray;font-weight:bold;margin-right:10px">
+                                <f:ajax event="blur" execute="memail" render="m_email" />
+                            </p:inputText>
+                                         
+                            <p:outputLabel for="txtSenhaUsuario1"  value="Digite a senha provisoria " style="color:gray;font-weight:bold;margin-right:10px"/>
+                            <p:password id="txtSenhaUsuario1" required="true" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.senha}"/>
+                            
+                            
+                            <p:outputLabel for="senhaNova1" value="Senha nova " style="color:gray;font-weight:bold;margin-right:10px"/>
+                            <p:password id="senhaNova1" binding="#{senhaNova1Component}" value="#{sisEventosBean.usuarioLogado.senhaNova}" maxlength="60" size="20"  required="true">
+                                <f:ajax event="blur" execute="msenhaNova1" render="m_senhaNova1" />
+                            </p:password>
+                            <h:message id="m_senhaNova1" for="msenhaNova1" />
+
+                            <p:outputLabel for="confirma1" value="Senha nova (repetir):" style="color:gray;font-weight:bold;margin-right:10px"/>
+                            <p:password id="confirma1"  maxlength="60" size="20"  required="true">
+                                <f:validator validatorId="confirmaSenhaValidator" />
+                                <f:attribute name="txtEmailComponent" value="#{txtEmailComponent}"/>
+                                <f:attribute name="senhaNova1Component" value="#{senhaNova1Component}" />
+                                <f:ajax event="blur" execute="mconfirmasenha1" render="m_mconfirmasenha1" />
+                            </p:password>
+                            <h:message for="mconfirmasenha1" />
+                            
+                        </p:panelGrid>
+                        
+                        <p:commandButton value="Trocar Senha" ajax="false" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha()}" style="margin-right:20px;" />
+                        
+                    </h:form>
+                    <h:form prependId="false" id="mudarsenhalogado"  rendered="#{sisEventosBean.verificarSessao()}">
+                        <p:growl id="growl" life="4000"/> 
+                            <p:panelGrid columns="1" id="mudarsenhalogado2" layout="grid" columnClasses="label , inputs">
+
+                                <p:outputLabel for="txtSenhaUsuario"  value="Digite a senha atual " style="color:gray;font-weight:bold;margin-right:10px"/>
+                                <p:password id="txtSenhaUsuario" required="true" maxlength="60" size="20" value="#{sisEventosBean.usuarioLogado.senha}"/>
+
+
+                                <p:outputLabel for="senhaNova2" value="Senha nova " style="color:gray;font-weight:bold;margin-right:10px"/>
+                                <p:password id="senhaNova2" binding="#{senhaNova2Component}" value="#{sisEventosBean.usuarioLogado.senhaNova}" maxlength="60" size="20" required="true">
+                                <f:ajax event="blur" execute="msenhaNova2" render="m_senhaNova2" />
+                                </p:password>
+                                <h:message id="m_senhaNova2" for="msenhaNova2" />
+
+                                <p:outputLabel for="confirma2" value="Senha nova (repetir):" style="color:gray;font-weight:bold;margin-right:10px"/>
+                                <p:password id="confirma2"  maxlength="60" size="20"  required="true">
+                                    <f:validator validatorId="confirmaSenhaValidator" />
+                                    <f:attribute name="senhaNova2Component" value="#{senhaNova2Component}" />
+                                    <f:ajax event="blur" execute="mconfirmasenha2" render="m_mconfirmasenha2" />
+                                </p:password>
+                                <h:message for="mconfirmasenha2" />
+
+                            </p:panelGrid>
+
+                        
+                        <p:commandButton value="Trocar Senha" ajax="false" class="btn btn-primary btn-lg" action="#{sisEventosBean.verificarSenha()}" style="margin-right:20px;" />
                         
                     </h:form>
                     
                 </div> 
              
-        
+            </p:panel>
         </ui:define>
     </ui:composition>
 </html>

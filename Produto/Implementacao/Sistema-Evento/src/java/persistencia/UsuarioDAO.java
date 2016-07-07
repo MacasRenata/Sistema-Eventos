@@ -143,7 +143,7 @@ public class UsuarioDAO {
         public Usuario recuperarSenha(Usuario usuarioLogado) throws Exception {
             Usuario us = null;
             try {
-			//sessao = HibernateUtil.getSessionFactory().openSession();
+			sessao = HibernateUtil.getSessionFactory().openSession();
                                     int rowCount = 0;
                                     Transaction tx = sessao.beginTransaction();
                                     String sql = "update Usuario set trocasenha = :trocasenha where email = :email";

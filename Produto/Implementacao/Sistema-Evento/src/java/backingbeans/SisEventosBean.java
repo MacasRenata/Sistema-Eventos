@@ -111,13 +111,19 @@ public class SisEventosBean {
         ArrayList<Integer> qtd = new ArrayList<Integer>();
 
         for (int index = 0; index < listaEventos1.size(); index++) {
-            qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
-        }
-
+                qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
+            }
+            
         for (int index = 0; index < listaEventos1.size(); index++) {
             if (date.before(listaEventos1.get(index).getData_final())) {
-                if (listaEventos1.get(index).isLimite_inscricoes() && listaEventos1.get(index).getQuantidade_inscritos() > qtd.get(index) && date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())) {
-                    this.listaEventos.add(listaEventos1.get(index));
+                if (listaEventos1.get(index).isLimite_inscricoes()){
+                    if (listaEventos1.get(index).getQuantidade_inscritos() > qtd.get(index) && date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())) {
+                        this.listaEventos.add(listaEventos1.get(index));
+                    }
+                } else {
+                    if (date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())) {
+                        this.listaEventos.add(listaEventos1.get(index));
+                    }    
                 }
             }
         }
@@ -817,7 +823,7 @@ public class SisEventosBean {
         try {
             // Enviando a encriptacao
 
-            if (this.usuarioLogado.getTrocasenha() == false) {
+            if (!this.usuarioLogado.getTrocasenha()) {
                 String encript = DigestUtils.shaHex(this.usuarioLogado.getSenha());
                 this.usuarioLogado.setSenha(encript);
             }
@@ -826,8 +832,11 @@ public class SisEventosBean {
             this.usuarioLogado.setSenhaNova(encript1);
             u = usuDAO.verificarSenha(this.usuarioLogado);
             if (u != null) {
-                this.usuarioLogado.setTrocasenha(false);
+                if (this.usuarioLogado.getTrocasenha()){
+                    this.usuarioLogado.setTrocasenha(false);
                 u = usuDAO.recuperarSenha(usuarioLogado);
+                }
+                
                 msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                         "Senha alterada com Sucesso!", "");
                 context.addMessage(null, msg);

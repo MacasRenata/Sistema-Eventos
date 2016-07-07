@@ -11,9 +11,9 @@
 
             <p:panel id="basic" header="Cadastro de Usuario" style="margin-bottom:20px">
                 <div id="formDados">
-
+                    
                     <h:form prependId="false">
-             
+
                         <p:panelGrid columns="3" id="formulario" layout="grid" columnClasses="label , inputs">
 
                             <p:outputLabel for="txtNomeUsuario" value="Nome Completo: "/>
@@ -25,22 +25,21 @@
                                 <f:validator validatorId="unicoEmailValidator" />
                                 <f:ajax event="blur" render="m_email" />
                             </p:inputText>
-                      <!--      <h:message id="m_email" for="email" /> -->
+                            <h:message id="m_email" for="email" /> 
 
                             <p:outputLabel for="txtSenhaUsuario"  value="Senha:"/>
-                            <p:password id="txtSenhaUsuario" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true" requiredMessage="Digite sua senha">
-                                <f:validator validatorId="confirmaSenhaValidator"/>
-                                <f:validateLength minimum="6"/>
-                                <f:attribute name="confirma1" value="#{confirmaSenha.submittedValue}"/>
+                            <p:password id="txtSenhaUsuario" binding="#{senhaNova1Component}" maxlength="60" size="50" value="#{sisEventosBean.usuario.senha}" required="true" requiredMessage="Digite sua senha">
                                 <f:ajax event="blur" render="m_senha"/>
                             </p:password>
-                         <!--        <h:message id="m_senha" for="txtSenhaUsuario" /> -->
+                                 <h:message id="m_senha" for="txtSenhaUsuario" /> 
 
                             <p:outputLabel  for="confirma" value="Repetir a Senha:"/>
-                            <p:password id="confirma" maxlength="60" size="50" binding="#{confirmaSenha}" required="true" requiredMessage="Repita sua senha">
+                            <p:password id="confirma" maxlength="60" size="50"  required="true" requiredMessage="Repita sua senha">
+                                <f:validator validatorId="confirmaSenhaValidator"/>
+                                <f:attribute name="senhaNova1Component" value="#{senhaNova1Component}"/>
                                 <f:ajax event="blur" render="m_senha m_confirma"/>
                             </p:password>
-                          <!--  <h:message id="m_confirma" for="confirma" />  -->
+                            <h:message id="m_confirma" for="confirma" />  
 
                             <p:outputLabel for="dataNasc" value="Data de Nascimento:"/>
                             <p:calendar id="dataNasc" required="true" size="50" value="#{sisEventosBean.usuario.data_nascimento}" locale="pt" requiredMessage="Insira sua data de nascimento"/>
