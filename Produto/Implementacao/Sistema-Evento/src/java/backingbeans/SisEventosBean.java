@@ -308,7 +308,7 @@ public class SisEventosBean {
         //trocar o diretorio
         String caminho1 = "C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos/";
 
-        //writer2 = new PrintWriter(new FileWriter(fileStem + ".html"));
+       
         File file = new File(caminho1 + getEvento().getTitulo() + ".html");
         file.getParentFile().mkdirs();
 
@@ -996,7 +996,7 @@ public class SisEventosBean {
     }
     
     */
-    // rmeover arquivos do diretorio
+    // remover arquivos do diretorio
     public void removerArquivos(File f) {
         // Se o arquivo passado for um diretório
         if (f.isDirectory()) {
@@ -1036,55 +1036,7 @@ public class SisEventosBean {
     public void setInscricao(Inscricao inscricao) {
         this.inscricao = inscricao;
     }
-/*
-    public UploadedFile getFile() {
-        return file;
-    }
 
-    public void setFile(UploadedFile file) {
-        this.file = file;
-    }
-
-    public void upload(FileUploadEvent event) {   // incluir imagem ao evento
-        
-         String caminhoImagem;
- 
-
-        try {
-
-            if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
-                caminhoImagem = "/home/usr/Documentos/Dev/Sistema-Eventos/IMG/";
-            } else {
-                caminhoImagem = "c://files//Documentos/Dev/Sistema-Eventos/IMG//";
-            }
-
-            File imagem = new File(caminhoImagem + getEvento().getTitulo());
-            imagem.mkdirs();
-
-            byte[] arquivo = event.getFile().getContents();
-            String arch = caminhoImagem + event.getFile().getFileName();
-
-            this.getEvento().setImagem(caminhoImagem);
-            this.getEvento().setImagem(event.getFile().getFileName());
-
-            FileOutputStream img = new FileOutputStream(arch);
-            img.write(arquivo);
-            img.close();
-
-            System.out.println("O caminho do arquivo: " + caminhoImagem + imagem);
-
-                FacesContext instance = FacesContext.getCurrentInstance();
-                instance.addMessage("mensagens", new FacesMessage(
-                        FacesMessage.SEVERITY_ERROR,
-                        imagem.getName() + " anexado com sucesso", null));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-    */
        // metodo para upload de imagem
   	     public void uploadImagem(FileUploadEvent event) {
     
@@ -1114,7 +1066,7 @@ public class SisEventosBean {
     }
 
     //Metodo alternativo upload de imagem Linux
-    public void uploadImagem2(FileUploadEvent event) {
+   /* public void uploadImagem2(FileUploadEvent event) {
 
         String caminho3;
 
@@ -1151,7 +1103,7 @@ public class SisEventosBean {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
     /**
      * @return the categoria
