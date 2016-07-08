@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -39,7 +41,6 @@ import persistencia.CategoriaDAO;
 @ManagedBean
 @SessionScoped
 
-
 public class SisEventosBean {
 
     private Evento evento = new Evento();
@@ -49,8 +50,6 @@ public class SisEventosBean {
     private Categoria categoria = new Categoria();
     private AreaConhecimento areaC = new AreaConhecimento();
 
-   
-
     private List<Evento> listaEventos;
     private List<Usuario> listaUsuarios;
     private List<Inscricao> listaInscricao;
@@ -58,7 +57,7 @@ public class SisEventosBean {
     private List<AreaConhecimento> listaAreasC;
 
     private int idCategoria;
-  
+
     private int[] idAreasC;
 
     private final EventoDAO evtDao = new EventoDAO();
@@ -66,7 +65,7 @@ public class SisEventosBean {
     private final InscricaoDAO inscricaoDao = new InscricaoDAO();
     private final CategoriaDAO categoriaDao = new CategoriaDAO();
     private final AreaConhecimentoDAO areaConhecimentoDao = new AreaConhecimentoDAO();
-    
+
     public SisEventosBean() {
         listaEventos = evtDao.listar();
         listaUsuarios = usuarioDao.listar();
@@ -81,7 +80,7 @@ public class SisEventosBean {
     public void setEvento(Evento evento) {
         this.evento = evento;
     }
-   
+
     public List<AreaConhecimento> getListaAreaConhecimentos() {
         this.listaAreasC = areaConhecimentoDao.listar();
         return listaAreasC;
@@ -111,19 +110,15 @@ public class SisEventosBean {
         ArrayList<Integer> qtd = new ArrayList<Integer>();
 
         for (int index = 0; index < listaEventos1.size(); index++) {
-                qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
-            }
-            
+            qtd.add(index, inscricaoDao.qtdInscritosPorEvento(listaEventos1.get(index).getId_evento()));
+        }
+
         for (int index = 0; index < listaEventos1.size(); index++) {
             if (date.before(listaEventos1.get(index).getData_final())) {
                 if (listaEventos1.get(index).isLimite_inscricoes()){
                     if (listaEventos1.get(index).getQuantidade_inscritos() > qtd.get(index) && date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())) {
                         this.listaEventos.add(listaEventos1.get(index));
-                    }
-                } else {
-                    if (date.after(listaEventos1.get(index).getData_inicial_inscricao()) && date.before(listaEventos1.get(index).getData_final_inscricao())) {
-                        this.listaEventos.add(listaEventos1.get(index));
-                    }    
+                } 
                 }
             }
         }
@@ -259,8 +254,8 @@ public class SisEventosBean {
     public void setIdAreasC(int[] idAreasC) {
         this.idAreasC = idAreasC;
     }
-    
-    public String incluirCategoria(){
+
+    public String incluirCategoria() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         categoriaDao.incluir(getCategoria());
@@ -270,8 +265,8 @@ public class SisEventosBean {
         context.addMessage(null, msg);
         return null;
     }
-    
-      public String incluirAreaC(){
+
+    public String incluirAreaC() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         areaConhecimentoDao.incluir(getAreaConhecimento());
@@ -284,15 +279,15 @@ public class SisEventosBean {
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        if (this.areaC.getNome() == null){
+        if (this.areaC.getNome() == null) {
         } else {
             areaConhecimentoDao.incluir(areaC);
-            evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
+            evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size() + 1));
         }
 
         CategoriaDAO categoriaDao = new CategoriaDAO();
         evento.setCategoria(categoriaDao.carregar(idCategoria));
-                
+
         for (int id : idAreasC) {
             evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
         }
@@ -300,15 +295,14 @@ public class SisEventosBean {
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento criado com sucesso!", "");
-        
+
         evento = new Evento();
         context.addMessage(null, msg);
-        
+
         // Gravar arquivo html de evento criado dir\eventos
         //trocar o diretorio
         String caminho1 = "C:\\Users\\Maçãs2\\Documents\\GitHub\\Sistema-Eventos\\Produto\\Implementacao\\Sistema-Evento\\web\\eventos/";
 
-       
         File file = new File(caminho1 + getEvento().getTitulo() + ".html");
         file.getParentFile().mkdirs();
 
@@ -394,8 +388,6 @@ public class SisEventosBean {
         //No final precisamos fechar o arquivo
         printWriter.close();
 
-        
-      
         return "listaEventos";
     }
 
@@ -411,7 +403,7 @@ public class SisEventosBean {
         listaAreasC.clear();
         listaAreasC.addAll(this.evento.getAreasC());
         this.idAreasC = new int[this.listaAreasC.size()];
-        for (int i=0;i<this.listaAreasC.size();i++){
+        for (int i = 0; i < this.listaAreasC.size(); i++) {
             System.out.println(listaAreasC.get(i).getId());
             idAreasC[i] = this.listaAreasC.get(i).getId();
         }
@@ -419,6 +411,7 @@ public class SisEventosBean {
         evento.limpaAreasC(getAreaC());
         return "alterarEvento";
     }
+
     public String iniciaIncluirEvento() {
         evento = new Evento();
         this.idAreasC = null;
@@ -428,17 +421,17 @@ public class SisEventosBean {
     public String alterarEvento() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        
-        if (this.areaC.getNome() == null){
+
+        if (this.areaC.getNome() == null) {
         } else {
             areaConhecimentoDao.incluir(areaC);
-            evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
+            evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size() + 1));
         }
-           
+
         CategoriaDAO categoriaDao = new CategoriaDAO();
         this.idCategoria = this.categoria.getId();
         evento.setCategoria(categoriaDao.carregar(idCategoria));
-           
+
         for (int id : idAreasC) {
             evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
         }
@@ -850,11 +843,11 @@ public class SisEventosBean {
             this.usuarioLogado.setSenhaNova(encript1);
             u = usuDAO.verificarSenha(this.usuarioLogado);
             if (u != null) {
-                if (this.usuarioLogado.getTrocasenha()){
+                if (this.usuarioLogado.getTrocasenha()) {
                     this.usuarioLogado.setTrocasenha(false);
-                u = usuDAO.recuperarSenha(usuarioLogado);
+                    u = usuDAO.recuperarSenha(usuarioLogado);
                 }
-                
+
                 msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                         "Senha alterada com Sucesso!", "");
                 context.addMessage(null, msg);
@@ -928,9 +921,14 @@ public class SisEventosBean {
         return "meusEventos";
     }
 
-    public void subirArquivo(FileUploadEvent event) {
+    public void subirArquivo(FileUploadEvent event) throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
+
+        if (!inscricao.getArquivo().isEmpty()) {
+            Path caminhoArq = Paths.get(inscricao.getCaminho());
+            Files.delete(caminhoArq);
+        }
         try {
             String realPath = FacesContext.getCurrentInstance()
                     .getExternalContext().getRealPath("/");
@@ -957,58 +955,58 @@ public class SisEventosBean {
     }
 
     /*Metodo alternativo
-    public void sobeArquivo(FileUploadEvent event) {
+     public void sobeArquivo(FileUploadEvent event) {
 
-        String caminho;
+     String caminho;
 
-        try {
+     try {
 
-            if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
-                caminho = "/home/luis/Documentos/Dev/Sistema-Eventos/Arquivos/";
-            } else {
-                caminho = "c://files//Documentos/Dev/Sistema-Eventos/Arquivos//";
-            }
+     if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
+     caminho = "/home/luis/Documentos/Dev/Sistema-Eventos/Arquivos/";
+     } else {
+     caminho = "c://files//Documentos/Dev/Sistema-Eventos/Arquivos//";
+     }
 
-            File file = new File(caminho);
-            file.mkdirs();
+     File file = new File(caminho);
+     file.mkdirs();
 
-            byte[] arquivo = event.getFile().getContents();
-            String arch = caminho + event.getFile().getFileName();
+     byte[] arquivo = event.getFile().getContents();
+     String arch = caminho + event.getFile().getFileName();
 
-            this.getInscricao().setCaminho(caminho);
-            this.getInscricao().setArquivo(event.getFile().getFileName());
+     this.getInscricao().setCaminho(caminho);
+     this.getInscricao().setArquivo(event.getFile().getFileName());
 
-            FileOutputStream fos = new FileOutputStream(arch);
-            fos.write(arquivo);
-            fos.close();
+     FileOutputStream fos = new FileOutputStream(arch);
+     fos.write(arquivo);
+     fos.close();
 
-            System.out.println("O caminho do arquivo: " + caminho);
+     System.out.println("O caminho do arquivo: " + caminho);
 
-            FacesMessage message = new FacesMessage("O arquivo", file.getName() + " foi enviado.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
+     FacesMessage message = new FacesMessage("O arquivo", file.getName() + " foi enviado.");
+     FacesContext.getCurrentInstance().addMessage(null, message);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+     } catch (FileNotFoundException e) {
+     e.printStackTrace();
+     } catch (IOException e) {
+     e.printStackTrace();
+     }
 
-    }
+     }
     
-    */
+     */
     // remover arquivos do diretorio
     public void removerArquivos(File f) {
         // Se o arquivo passado for um diretório
         if (f.isDirectory()) {
-                /* Lista todos os arquivos do diretório em um array 
-                   de objetos File */
-                File[] files = f.listFiles();
-                // Identa a lista (foreach) e deleta um por um
-                for (File file : files) {
-                        file.delete();
-                }
+            /* Lista todos os arquivos do diretório em um array 
+             de objetos File */
+            File[] files = f.listFiles();
+            // Identa a lista (foreach) e deleta um por um
+            for (File file : files) {
+                file.delete();
+            }
         }
-}
+    }
 
     public ArrayList<Categoria> getListaCategorias() {
         CategoriaDAO dao = new CategoriaDAO();
@@ -1037,9 +1035,14 @@ public class SisEventosBean {
         this.inscricao = inscricao;
     }
 
-       // metodo para upload de imagem
-  	     public void uploadImagem(FileUploadEvent event) {
-    
+    // metodo para upload de imagem
+    public void uploadImagem(FileUploadEvent event) throws IOException {
+ /*
+        if (!inscricao.getArquivo().isEmpty()) {
+            Path caminho3 = Paths.get(evento.getCaminho());
+            Files.delete(caminho3);
+        }
+        */
         try {
             String realPath = FacesContext.getCurrentInstance()
                     .getExternalContext().getRealPath("/");
@@ -1048,7 +1051,7 @@ public class SisEventosBean {
             byte[] imagem = event.getFile().getContents();
             String caminho3 = realPath + "/imagens/"
                     + event.getFile().getFileName();
-            
+
             this.getEvento().setImagem(caminho3);
             this.getEvento().setImagem(event.getFile().getFileName());
             FileOutputStream fileOS = new FileOutputStream(caminho3);
@@ -1062,49 +1065,48 @@ public class SisEventosBean {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-  
+
     }
 
     //Metodo alternativo upload de imagem Linux
    /* public void uploadImagem2(FileUploadEvent event) {
 
-        String caminho3;
+     String caminho3;
 
-        try {
+     try {
 
-            if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
-                caminho3 = "/home/usr/Documentos/Dev/Sistema-Eventos/Imagens/";
-            } else {
-                caminho3 = "c://files//Documentos/Dev/Sistema-Eventos/Imagens//";
-            }
+     if (System.getProperties().get("os.name").toString().trim().equalsIgnoreCase("Linux")) {
+     caminho3 = "/home/usr/Documentos/Dev/Sistema-Eventos/Imagens/";
+     } else {
+     caminho3 = "c://files//Documentos/Dev/Sistema-Eventos/Imagens//";
+     }
 
-            File file = new File(caminho3);
-            file.mkdirs();
+     File file = new File(caminho3);
+     file.mkdirs();
 
-            byte[] imagem = event.getFile().getContents();
-            String arch = caminho3 + event.getFile().getFileName();
+     byte[] imagem = event.getFile().getContents();
+     String arch = caminho3 + event.getFile().getFileName();
 
-            this.getEvento().setImagem(caminho3);
-            this.getEvento().setImagem(event.getFile().getFileName());
+     this.getEvento().setImagem(caminho3);
+     this.getEvento().setImagem(event.getFile().getFileName());
 
-            FileOutputStream fos = new FileOutputStream(arch);
-            fos.write(imagem);
-            fos.close();
+     FileOutputStream fos = new FileOutputStream(arch);
+     fos.write(imagem);
+     fos.close();
 
-            System.out.println("O caminho da Imagem: " + caminho3);
+     System.out.println("O caminho da Imagem: " + caminho3);
 
-            FacesMessage message = new FacesMessage("A imagem", file.getName() + " foi enviada.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
+     FacesMessage message = new FacesMessage("A imagem", file.getName() + " foi enviada.");
+     FacesContext.getCurrentInstance().addMessage(null, message);
             
          
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+     } catch (FileNotFoundException e) {
+     e.printStackTrace();
+     } catch (IOException e) {
+     e.printStackTrace();
+     }
 
-    }*/
-
+     }*/
     /**
      * @return the categoria
      */
@@ -1118,12 +1120,11 @@ public class SisEventosBean {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-    
-     public AreaConhecimento getAreaConhecimento() {
+
+    public AreaConhecimento getAreaConhecimento() {
         return getAreaC();
     }
 
-  
     public void setAreaConhecimento(AreaConhecimento areaC) {
         this.setAreaC(areaC);
     }
@@ -1141,9 +1142,5 @@ public class SisEventosBean {
     public void setAreaC(AreaConhecimento areaC) {
         this.areaC = areaC;
     }
-     
-    
+
 }
-    
-
-
