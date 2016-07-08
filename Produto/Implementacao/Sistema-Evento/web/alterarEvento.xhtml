@@ -39,7 +39,7 @@
                             <p:calendar id="horarioFinal" required="true" requiredMessage="Selecione o horário final" value="#{sisEventosBean.evento.horario_fim}" locale="pt" pattern="HH:mm" timeOnly="true"/>
 
                             <p:outputLabel for="categoriaEvt" value="Categoria:"/>
-                            <p:selectOneMenu id="categoriaEvt" binding="#{categoriaEvt}" value="#{sisEventosBean.categoria.nome}" required="true" requiredMessage="Selecione uma Categoria">
+                            <p:selectOneMenu id="categoriaEvt" binding="#{categoriaEvt}" value="#{sisEventosBean.categoria.id}" required="true" requiredMessage="Selecione uma Categoria">
                                 <f:selectItem itemValue="" itemLabel="Selecione..." />
                                 <f:selectItems value="#{sisEventosBean.listaCategorias}"  var="cat" itemLabel="#{cat.nome}" itemValue="#{cat.id}"/>
                                 <f:selectItem itemLabel="Novo" itemValue="digite..." />
@@ -133,18 +133,20 @@
                             </h:outputLink>
                             <p:tooltip id="toolTipTrack5" for="track5" value="Habilitar submissão de arquivo dentro do periodo de Inscrições no Evento" trackMouse="true"> </p:tooltip>
                             <p:selectBooleanCheckbox id="submissao" value="#{sisEventosBean.evento.submissao}"/>     
-                            
-                             <h:form enctype="multipart/form-data" >
-                                <p:outputLabel for="imagem" value="Imagem:"/>
-                                <p:fileUpload fileUploadListener="#{sisEventosBean.uploadImagem}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
-                                              cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
-                                              invalidFileMessage="Somente arquivos .jpg, .png ou .gif"
-                                              allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
-                                              mode="advanced" skinSimple="true" id="imagem"/>
+                            <p:selectBooleanCheckbox itemLabel="Imagem para pagina do evento" id="imagemPagina" binding="#{imagemPagina}">
+                                <p:ajax update="pnlContainer2" />
+                            </p:selectBooleanCheckbox>
+                            <h:panelGroup id="pnlContainer2" layout="block">
+                                <h:form id="img1" rendered="#{imagemPagina.value eq true}" enctype="multipart/form-data" >
+                                    <p:outputLabel for="imagem" value="Imagem:"/>
+                                    <p:fileUpload fileUploadListener="#{sisEventosBean.uploadImagem}" fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
+                                                  cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
+                                                  invalidFileMessage="Somente arquivos .jpg, .png ou .gif"
+                                                  allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                                  mode="advanced" skinSimple="true" id="imagem"/>
                                 <p:commandButton value="Enviar" ajax="false" />
-                                
-                            </h:form>
-
+                                </h:form>
+                            </h:panelGroup>
                         </h:panelGrid>
 
                         <p:toolbar>

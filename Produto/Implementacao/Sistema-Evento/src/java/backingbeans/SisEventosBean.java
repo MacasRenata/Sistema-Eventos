@@ -407,7 +407,7 @@ public class SisEventosBean {
     //Para ir para a página de alteração do Evento selecionado à partir de Editar, em detalhes do Evento// 
     public String iniciaAlteracaoEvento(int id) {
         evento = evtDao.carregar(id);
-        
+        this.categoria.setId(evento.getCategoria().getId());
         listaAreasC.clear();
         listaAreasC.addAll(this.evento.getAreasC());
         this.idAreasC = new int[this.listaAreasC.size()];
@@ -419,6 +419,11 @@ public class SisEventosBean {
         evento.limpaAreasC(getAreaC());
         return "alterarEvento";
     }
+    public String iniciaIncluirEvento() {
+        evento = new Evento();
+        this.idAreasC = null;
+        return "incluirEvento";
+    }
 
     public String alterarEvento() {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -429,13 +434,18 @@ public class SisEventosBean {
             areaConhecimentoDao.incluir(areaC);
             evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
         }
-        
-         evento.setCategoria(categoriaDao.carregar(idCategoria));
-            
+           
+        CategoriaDAO categoriaDao = new CategoriaDAO();
+        this.idCategoria = this.categoria.getId();
+        evento.setCategoria(categoriaDao.carregar(idCategoria));
+           
         for (int id : idAreasC) {
             evento.adicionaAreasC(areaConhecimentoDao.carregar(id));
         }
-        evtDao.alterar(evento);
+        Evento evento2;
+        evento2 = evento;
+        evento = new Evento();
+        evtDao.alterar(evento2);
         listaEventos = evtDao.listar();
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 "Evento alterado com sucesso!", "");
