@@ -8,19 +8,19 @@
 
     <ui:composition template="templates/padrao.xhtml">
         <ui:define name="conteudo">
-            <h:outputLabel value="Voce nao esta logado" rendered="#{sisEventosBean.verificarSessao() eq false}" />
+            <h:outputLabel value="Voce não é administrador" rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}" />
 
             <div class="jumbotron" align="center">
                 <h1>Criar Eventos</h1>
                 <p> Um Sistema desenvolvido para a Criação e participação em Eventos. </p>
                <p:button class="btn btn-primary btn-lg"  value="Criar" outcome="incluirEvento"/>
 
-                <h2>Listar Eventos</h2>
-                <p> Visualiza dados do eventos com inscrições abertas. </p>
+                <h2>Listar/Editar Eventos</h2>
+                <p> Visualiza e altera dados do eventos cadastrados no sistema </p>
                <p:button class="btn btn-primary btn-lg" value="Listar" outcome="listaEventos"/>
 
-                <h2>Informações Usuarios</h2>
-                <p> Consulte maiores informações sobre os usuarios. </p>
+                <h2>Informações/Alterações de Usuarios</h2>
+                <p> Consulta e altera informações dos usuarios cadastrados. </p>
                <p:button class="btn btn-primary btn-lg"  value="Informações" outcome="listaUsuarios"/>
             </div> 
 

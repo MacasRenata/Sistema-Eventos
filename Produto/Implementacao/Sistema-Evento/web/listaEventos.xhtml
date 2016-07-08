@@ -12,8 +12,8 @@
 
             <p:panel id="basic" header="Informações Eventos" style="margin-bottom:20px">
                 <div id="formDados">
-                 
-                    <h:form>
+                 <h:outputLabel value="Voce não é administrador" rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}"/>
+                    <h:form rendered="#{sisEventosBean.verificarSessaoAdmin()}">
                         <p:growl id="growl" life="2000"/>
                         <h:panelGrid columns="2">
                             <p:dataTable value="#{sisEventosBean.listaEventos}" var="evento">
@@ -40,7 +40,7 @@
                                 
                             </p:dataTable>       
                         </h:panelGrid>   
-                        <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                        <p:button outcome="indexAdmin" value="Voltar" icon="ui-icon-star"/>
                     </h:form>
                 </div>
             </p:panel>

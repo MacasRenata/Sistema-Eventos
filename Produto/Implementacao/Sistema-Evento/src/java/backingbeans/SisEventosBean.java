@@ -284,7 +284,8 @@ public class SisEventosBean {
     public String incluirEvento() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
-        if (!this.areaC.getNome().isEmpty()){
+        if (this.areaC.getNome() == null){
+        } else {
             areaConhecimentoDao.incluir(areaC);
             evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
         }
@@ -423,7 +424,8 @@ public class SisEventosBean {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
         
-        if (!this.areaC.getNome().isEmpty()){
+        if (this.areaC.getNome() == null){
+        } else {
             areaConhecimentoDao.incluir(areaC);
             evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
         }
