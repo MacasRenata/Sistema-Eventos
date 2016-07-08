@@ -76,7 +76,7 @@
                         </h:outputLink>
                         <p:tooltip id="toolTipTrack1" for="track1" value="Se deseja habilitar inscrições para seu evento" trackMouse="true"></p:tooltip>  
                         <p:selectBooleanCheckbox id="inscricoes" binding="#{inscricoes}" value="#{sisEventosBean.evento.inscricoes}">
-                        <p:ajax update="painelInscricoes" />
+                            <p:ajax update="painelInscricoes" />
                         </p:selectBooleanCheckbox>
                                 
                         </h:panelGrid>
@@ -94,17 +94,23 @@
 
                                     <h:outputLink id="track2" value="#">
                                         <p:outputLabel  value="Limite de Inscrições:"/>
-                                    </h:outputLink>
+                                    </h:outputLink>                         
                                     <p:tooltip id="toolTipTrack2" for="track2" value="Atribui um número limite de participantes na inscrição do Evento" trackMouse="true"></p:tooltip>
-                                    <p:selectBooleanCheckbox value="#{sisEventosBean.evento.limite_inscricoes}"/>                                                              
-
-                                    <h:outputLink id="track3" value="#">
-                                        <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " />
-                                    </h:outputLink>
-                                    <p:tooltip id="toolTipTrack3" for="track3" value="Quantidade limite de participantes na inscrição do Evento" trackMouse="true"></p:tooltip>
-                                    <p:inputText id="qntidadeIncritos" maxlength="60" size="10" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
-
-                                </h:panelGrid>
+                                    <p:selectBooleanCheckbox id="limite" binding="#{limite}" value="#{sisEventosBean.evento.limite_inscricoes}">
+                                        <p:ajax update="painelLimite" />
+                                    </p:selectBooleanCheckbox>
+                            </h:panelGrid>
+                        </h:panelGroup>
+                        <h:panelGroup id="painelLimite" layout="block">
+                            <h:panelGrid id="painelLim" rendered="#{limite.value eq true}">
+                                    
+                                        <h:outputLink id="track3" value="#">
+                                            <p:outputLabel for="qntidadeIncritos" value="Quantidade de Inscritos: " />
+                                        </h:outputLink>
+                                        <p:tooltip id="toolTipTrack3" for="track3" value="Quantidade limite de participantes na inscrição do Evento" trackMouse="true"></p:tooltip>
+                                        <p:inputText id="qntidadeIncritos" maxlength="60" size="10" value="#{sisEventosBean.evento.quantidade_inscritos}"/>
+                                    
+                            </h:panelGrid>
                             
 
                         </h:panelGroup>

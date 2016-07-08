@@ -90,9 +90,12 @@
 
                             <p:outputLabel for="imagem" value="Imagem:"/>
                             <p:graphicImage id="imagem" value="#{sisEventosBean.evento.imagem}"/>
-
-                            <h:panelGroup>
+                           
+                            <h:panelGroup rendered="#{sisEventosBean.verificarSessaoAdmin() eq false}">
                                 <p:button outcome="index" value="Voltar" icon="ui-icon-star"/>
+                            </h:panelGroup>
+                            <h:panelGroup rendered="#{sisEventosBean.verificarSessaoAdmin()}">
+                                <p:button outcome="listaEventos" value="Voltar" icon="ui-icon-star"/>
                             </h:panelGroup>
                         </h:panelGrid> 
                     </h:form>

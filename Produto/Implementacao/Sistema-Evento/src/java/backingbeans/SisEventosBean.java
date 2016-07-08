@@ -286,8 +286,9 @@ public class SisEventosBean {
         FacesMessage msg;
         if (!this.areaC.getNome().isEmpty()){
             areaConhecimentoDao.incluir(areaC);
+            evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
         }
-      
+
         CategoriaDAO categoriaDao = new CategoriaDAO();
         evento.setCategoria(categoriaDao.carregar(idCategoria));
                 
@@ -421,6 +422,11 @@ public class SisEventosBean {
     public String alterarEvento() {
         FacesContext context = FacesContext.getCurrentInstance();
         FacesMessage msg;
+        
+        if (!this.areaC.getNome().isEmpty()){
+            areaConhecimentoDao.incluir(areaC);
+            evento.adicionaAreasC(areaConhecimentoDao.carregar(this.listaAreasC.size()+1));
+        }
         
          evento.setCategoria(categoriaDao.carregar(idCategoria));
             
